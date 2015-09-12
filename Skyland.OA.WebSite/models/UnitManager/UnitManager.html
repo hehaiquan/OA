@@ -1,0 +1,454 @@
+﻿<div class="container-fluid">
+    
+    <div class="row" data-id="unitManagerGrid">
+        <div data-id="formContainer" class="pageContainer">
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>
+                    企业信息管理
+                </h3>
+            </div>
+            <!--头部按钮行-->
+            <div class="form-horizontal"  style="margin-top: 5px">
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            行政区域
+                        </span>
+                        <!--<select class="form-control" data-bind=" value: AreaCodeName,DictOptions: {dictype: 'area',displaychoose: false}">-->
+                        <select class="form-control" data-bind="DictOptions: {dictype: 'area',value:AreaCodeName}">
+                        <option value=""></option>
+                       </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            单位类别
+                        </span>
+                       <select class="form-control" data-id="ctgSelect" data-bind="DictOptions: {dictype: 'untctg',value:CtgCodeName }">
+                       <option value=""></option>
+                       </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            单位名称
+                        </span>
+                        <input type="text" class="form-control" data-bind="value: UnitName" />
+                    </div>
+                </div>
+                
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <button class="btn btn-default" data-bind="click: searchBtn"><i class="fa fa-search"></i>&nbsp;查询</button>
+                    <button class="btn btn-default" data-bind="click: addBtn" style ="display:none"><i class="fa fa-add"></i>&nbsp;新增</button>
+                </div>
+            </div>
+            <!--信息列表-->
+
+            <div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan='1'>
+                                <span>行政区域</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>企业名称</span>
+                            </th>
+                            <th>
+                                <span>企业类别</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>组织机构代码</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>企业规模</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>经济类型</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>隶属关系</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>法人</span>
+                            </th>                            
+                            <th colspan='1'>
+                                <span>操作</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td width="30px" data-bind="text: $root.itemNumber($index())"></td>
+                            <td width="80px">
+                                <span class="btn" data-bind="text:AdminDivision"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:UnitCName"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:UnitCategory"></span>
+                            </td>
+                            <td width="150px">
+                                <span class="btn" data-bind="text:OrgCode"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:CompanyScale"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:EconomicType"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:Membership"></span>
+                            </td>
+                            <td width="80px">
+                                <span class="btn" data-bind="text:LegalCName"></span>
+                            </td>
+                            
+                            <td width="120px">                               
+                                <span class="btn btn-link" data-bind='click: $root.editRow'><i class="fa fa-edit"></i>编辑</span>                                                          
+                                <span class="btn btn-link" data-bind='click: $root.removeRow'><i class="fa fa-times"></i>删除</span>                        
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <span>...</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" data-id="detailForm" style="display: none">
+        <div class="col-lg-10">
+            <!-- 表单 -->
+            <div data-id="formContainer" class="pageContainer">
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h3 style="display: inline">企业信息管理</h3>
+                </div>
+                <!--头部按钮行-->
+                <!--主表单-->
+
+                <div class="row form-horizontal form-bordered" data-id="baseInfo">
+                    <div class="col-md-12">            
+                        <div data-id="UnitInfo">
+                            <!--企业名称、组织结构代码-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">单位名称：</label>
+                                <div class="col-sm-4">                                   
+                                    <input data-id="fileNo" data-bind="value:UnitCName" type="text" class="form-control" placeholder=""/>                                                                            
+                                </div>
+                                <label class="col-sm-2 control-label">组织机构代码：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:OrgCode" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--行政区划、邮编-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">行政区划：</label>
+                                <div class="col-sm-2">                                  
+                                     <!--<input data-id="fileNo" data-bind="value:AdminDivision" type="text" class="form-control" placeholder=""/>-->
+                                     <select class="form-control" data-bind="DictOptions: {dictype: 'area',value:AdminDivision }">
+                                     <option value=""></option>
+                                     </select>                                      
+                                </div>
+                                <label class="col-sm-4 control-label">邮编：</label>
+                                    <div class="col-sm-4">
+                                        <input data-bind="value:PostalCode" type="text" class="form-control" placeholder=""  />
+                                    </div>
+                            </div>
+                            <!--单位地址-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">单位地址：</label>
+                                <div class="col-sm-2">
+                                    <input data-bind="value:Province" type="text" class="form-control" placeholder="省"  />
+                                </div>
+                                <div class="col-sm-2">
+                                    <input data-bind="value:City" type="text" class="form-control" placeholder="市"  />
+                                </div>
+                                <div class="col-sm-2">
+                                    <input data-bind="value:County" type="text" class="form-control" placeholder="县/区"  />
+                                </div>
+                                <div class="col-sm-2">
+                                    <input data-bind="value:Street" type="text" class="form-control" placeholder="街道" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-8">
+                                    <input data-bind="value:UnitAddress" type="text" class="form-control" placeholder="详细地址"/>
+                                </div>
+                            </div>
+                            <!--行业类别-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">行业类别：</label>
+                                <div class="col-sm-3">
+                                    <input data-bind="value:IndustryCategoryL" type="text" class="form-control" placeholder="大类"/>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input data-bind="value:IndustryCategoryM" type="text" class="form-control" placeholder="中类"/>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:IndustryCategoryS" type="text" class="form-control" placeholder="细类"/>
+                                </div>
+                            </div>
+                            <!--经济类型、企业规模-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">经济类型：</label>
+                                <div class="col-sm-3">
+                                        <!--<input data-id="fileNo" data-bind="value:EconomicType" type="text" class="form-control" placeholder=""/>-->
+                                        <select class="form-control" data-bind=" DictOptions: {dictype: 'econmtp',value:EconomicType }">
+                                        <option value=""></option>
+                                        </select>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">企业规模：</label>
+                                <div class="col-sm-4">
+                                    <!--<input data-bind="value:CompanyScale" type="text" class="form-control" placeholder=""/>-->
+                                    <select class="form-control" data-bind="DictOptions: {dictype: 'cmpscl',value:CompanyScale }">
+                                    <option value=""></option>
+                                    </select> 
+                                </div>
+                            </div>
+                            <!--隶属关系、占地面积-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">隶属关系：</label>
+                                <div class="col-sm-3">
+                                    
+                                        <!--<input data-id="fileNo" data-bind="value:Membership" type="text" class="form-control" placeholder=""/>-->
+                                        <select class="form-control" data-bind="DictOptions: {dictype: 'mbsp',value:Membership }">
+                                        <option value=""></option>
+                                        </select>                                        
+                                  
+                                </div>
+                                <label class="col-sm-3 control-label">占地面积：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:Area" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--投产日期、注册资金-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">投产日期：</label>
+                                <div class="col-sm-3">                                   
+                                        <!--<input data-id="fileNo" data-bind="value:ProductionDate" type="text" class="form-control" placeholder=""/> -->
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" data-bind="value:ProductionDate,dateFormat:'yy-mm-dd'" placeholder="" />
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        </div>                                       
+                                </div>
+                                <label class="col-sm-3 control-label">注册资金：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:RegisteredCapital" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--固定资产、法人代表-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">固定资产：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:FixedAssets" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">法人代表：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:LegalCName" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--证件类型、法人有效证件号-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">法人证件类型：</label>
+                                <div class="col-sm-3">
+                                        <!--<input data-id="fileNo" data-bind="value:CredentialsType" type="text" class="form-control" placeholder=""/>-->  
+                                        <select class="form-control" data-bind="DictOptions: {dictype: 'credntltp',value:CredentialsType }">
+                                        <option value=""></option>
+                                        </select>                                       
+                                </div>
+                                <label class="col-sm-3 control-label">法人有效证件号：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:LegalCredentialsCode" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--法人代表联系电话、上级主管部门详细名称-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">法人代表联系电话：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:LegalTel" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">上级主管部门详细名称：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ParentDepartmentName" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--本单位负责环保的部门、联系人-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">本单位负责环保的部门：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:CompanyEnvironment" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">联系人：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactName" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--联系人身份证号、联系人电话-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">联系人身份证号：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:ContactCredentialsCode" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">联系人电话：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactTel" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--联系人手机、联系人微信号-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">联系人手机：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:ContactPhone" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">联系人微信号：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactWeChat" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--联系人传真号、联系人电子邮箱-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">联系人传真号：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:ContactFax" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                               <!-- <label class="col-sm-2 control-label">联系人电子邮箱：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactTel" type="text" class="form-control" placeholder=""/>
+                                </div>-->
+                            </div>
+                            <!--经营场所经度、经营场所纬度-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">经营场所经度：</label>
+                                <div class="col-sm-3">
+                                        <input data-id="fileNo" data-bind="value:Longitude" type="text" class="form-control" placeholder=""/>                                        
+                                </div>
+                                <label class="col-sm-3 control-label">经营场所纬度：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:Latitude" type="text" class="form-control" placeholder=""/>
+                                </div>
+                            </div>
+                            <!--单位类别-->
+                            <div class="row" data-id="unitCtg">
+                                <div class="form-group">
+                                <label class="col-sm-2 control-label">单位类别：</label>
+                                </div>
+                                 <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                          <input type="checkbox" data-bind="checked:HwPcompy"> 固体、危险废物产生源企业&nbsp;&nbsp;
+                                    </div>
+                                    <label class="col-sm-10 control-label"></label>
+
+                                 </div>
+                                 <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                     <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:HwCcompy"> 危险废物收集证企业&nbsp;&nbsp;
+                                    </div>
+                                     <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:HwCcompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:HwDCompy"> 危险废物经营处置企业&nbsp;&nbsp;
+                                    </div>
+                                    <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:HwDCompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:MedclCompy"> 医疗卫生机构&nbsp;&nbsp;
+                                    </div>
+                                    <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:MedclCompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:MedclDCompy"> 医疗处置企业&nbsp;&nbsp;
+                                    </div>
+                                    <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:MedclDCompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:ImptCompy"> 进口废物加工利用企业&nbsp;&nbsp;
+                                    <label class="col-sm-5 control-label"></label>
+                                    </div>
+                                </div>  
+                                <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:SwDCompy"> 严控废物处置企业&nbsp;&nbsp;
+                                    </div>
+                                    <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:SwDCompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div>  
+                                <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:EcnoCompy"> 电子拆解、处置企业&nbsp;&nbsp;
+                                    </div>
+                                    <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:EcnoCompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div> 
+                                 <div class="col-sm-12">
+                                    <label class="col-sm-2 control-label"></label>
+                                     <div class="col-sm-3">
+                                    <input type="checkbox" data-bind="checked:TranCompy"> 危险废物运输企业&nbsp;&nbsp;
+                                     </div>
+                                    <label class="col-sm-3 control-label">证件号：</label>
+                                    <div class="col-sm-4">
+                                          <input data-bind="value:TranCompyNum" type="text" class="form-control" placeholder=""/>
+                                    </div>
+                                </div>   
+                            </div>                           
+                            <button style="position: fixed; right: 13%; bottom: 20px" class="btn btn-primary" data-bind="click:saveBtn">保存</button>
+                            <button style="position: fixed; right: 9.5%; bottom: 20px" class="btn btn-primary" data-bind="click:returnBtn">返回</button>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

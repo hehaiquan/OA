@@ -1,0 +1,74 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    出差申请
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" data-id="baseInfo">
+            <div style="margin-top: 10px">
+                <div class="col-sm-12" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">科室
+                        </span>
+                        <input disabled="disabled" type="text" data-id="dpname" class="form-control input-sm" data-bind="value:dpname" />
+                    </div>
+                </div>
+
+                <div class="col-sm-12" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">拟出差人员
+                        </span>
+                        <input disabled="disabled" type="text" data-id="travelerName" class="form-control input-sm" data-bind="value:travelerName" />
+                    </div>
+                </div>
+
+                <div class="col-sm-12" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">出差地点
+                        </span>
+                        <input type="text" data-id="travelAddress" class="form-control input-sm" data-bind="value:travelAddress" />
+                    </div>
+                </div>
+
+                <div class="col-sm-12" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">出差时间
+                        </span>
+                        <input type="text" data-id="travelStartTime" data-bind="value:travelStartTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm" required="required" placeholder="" />
+                        <span class="input-group-addon">至</span>
+                        <input type="text" data-id="travelEndTime" data-bind="value:travelEndTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm" required="required" placeholder="" />
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">出差事由
+                        </span>
+                        <input type="text" data-id="travelReason" class="form-control input-sm" data-bind="value:travelReason" />
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">派车情况
+                        </span>
+                        <input type="text" data-id="carStatus" class="form-control input-sm" data-bind="value:carStatus" />
+                    </div>
+                </div>
+
+                <div class="col-sm-12" style="margin-bottom: 5px;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">备注
+                        </span>
+                        <textarea data-id="remark" rows="3" class="form-control" data-bind="value:remark"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

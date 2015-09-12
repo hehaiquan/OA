@@ -1,0 +1,106 @@
+﻿<!-- 表格 -->
+<div data-id="dataGrid" style="margin-top: 10px">
+    <table class=" table table-condensed table-striped">
+        <thead>
+            <tr class="sort">
+                <!--<th>业务流ID</th>-->
+                <th style="width: 5%; text-align: center">序号</th>
+                <th style="width: 20%; text-align: center">
+                    <a href="title" data-sortkey="title">标题</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="code" data-sortkey="code">编号</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="userName" data-sortkey="userName ">承办人</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="dpName" data-sortkey="dpName">承办科室</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="createDate" data-sortkey="createDate">创建日期</a></th>
+                <th style="width: 15%; text-align: center">
+                    <a href="remark" data-sortkey="remark">备注</a></th>
+                <th style="width: 5%; text-align: center" data-id="handler">操作</th>
+            </tr>
+            <tr>
+                <th></th>
+                <!--标题-->
+                <th>
+                    <input type="text" class="form-control" data-filterkey="title" />
+                </th>
+                <!--来文编号-->
+                <th>
+                    <input class="form-control" value="" data-filterkey="code" />
+                </th>
+                <!--承办人-->
+                <th>
+                    <select tabindex="-1" class="form-control" data-filterkey="userName"></select>
+                </th>
+                <!--承办科室-->
+                <th>
+                    <select tabindex="-1" class="form-control" data-filterkey="dpName"></select>
+                </th>
+
+                <!--创建时间-->
+                <th>
+                    <select tabindex="-1" class="form-control" placeholder="时间" data-filterkey-daterange="createDate"></select>
+                </th>
+                <!--备注-->
+                <th>
+                    <input class="form-control" data-filterkey="remark" />
+                </th>
+                <!--操作-->
+                <th data-id="handler"></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <!--序号-->
+                <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                <!--文件名称-->
+                <td>
+                    <a data-bind="click:$root.editRow"><span data-bind="text:title"></span></a>
+                </td>
+                <!--编号-->
+                <td>
+                    <span data-bind="text:code"></span>
+                </td>
+                <!--承办人名-->
+                <td>
+                    <span data-bind="text:userName "></span>
+                </td>
+                <!--承办部门名-->
+                <td>
+                    <span data-bind="text:dpName"></span>
+                </td>
+                <!--创建时间-->
+                <td>
+                    <span data-bind="text:$root.formatCurDate(createDate)"></span>
+                </td>
+                <!--备注-->
+                <td>
+                    <span data-bind="text:remark"></span>
+                </td>
+                <td data-id="handler" style="text-align: center">
+                    <a data-bind="click:function(){$root._deleteRow(caseId())}" title="删除" class="btn-link glyphicon glyphicon-trash" style="color:black"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko --></li>
+            </ul>
+        </div>
+        <div style="float: right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

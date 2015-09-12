@@ -1,0 +1,74 @@
+﻿
+<table class="table table-striped" style="margin-top:-15px;margin-bottom:0px;">
+    <tr>
+        <td class="taTitle" colspan="2">流程设置</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div data-id="flow-tab-info-content">
+                <table style="width: 100%;" >
+
+                    <tr>
+                        <td width="15%" height="30" align="center">流程编号<font color="#FF0000">*</font> </td>
+                        <td width="35%" data-bind="text:flowID"></td>
+
+                        <td width="15%" height="30" align="center">流程名称<font color="#FF0000">*</font> </td>
+                        <td width="35%">
+                            <input type="text" data-bind="value:flowName" style="width: 100%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30" align="center">流程时限 </td>
+                        <td>
+                            <input data-bind="value:flowLimit" type="text" value="0" style="width:60px;" />
+                            (须为整型）
+                        </td>
+
+                        <td height="30" align="center">可新建 </td>
+                        <td>
+                            <select data-bind="value:flowIsCreated">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                    </tr>
+                    <tr>
+                        <td height="30" align="center">流程描述</td>
+                        <td colspan="3">
+                            <textarea rows="2" data-bind="value:flowRemark" style="width: 100%;"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30" align="center">查看该业务流程的节点用户</td>
+                        <td colspan="3">
+                            <textarea rows="2" style="width: 100%;"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="taTitle">角色管理</td><td class="taTitle">表单管理</td>
+    </tr>
+    <tr>
+        <td>
+
+            <div data-id="flow-tab-role-content" style="overflow: auto;max-height:380px;">
+                <ul class="ztree"></ul>
+            </div>
+        </td>
+        <td>
+            <div data-id="flow-tab-form-content" style="overflow: auto;max-height:380px;">
+                <ul class="ztree"></ul>
+            </div>
+
+        </td>
+    </tr>
+
+</table>
+<style>
+    .taTitle {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>

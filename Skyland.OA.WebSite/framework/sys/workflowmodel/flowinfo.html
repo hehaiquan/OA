@@ -1,0 +1,35 @@
+﻿<table width="95%" class="iwf-form-table">
+    <thead>
+        <tr>
+            <td height="25" colspan="2">&nbsp;流程基本信息</td>
+        </tr>
+    </thead>
+    <tr>
+        <td width="15%" height="30" align="center">流程编号<font color="#FF0000">*</font></td>
+        <td width="85%" data-bind="text:flowID"></td>
+    </tr>
+    <tr>
+        <td height="30" align="center">流程名称<font color="#FF0000">*</font></td>
+        <td>
+            <input type="text" data-bind="value:flowName" style="width: 95%;" /></td>
+    </tr>
+    <tr>
+        <td height="30" align="center">流程时限</td>
+        <td>
+            <input data-bind="value:flowLimit" type="text" value="0" />
+            (注：必须为整型）</td>
+    </tr>
+    <tr>
+        <td height="30" align="center">流程是否可新建</td>
+        <td>
+            <select style="width:75%" data-bind="value:flowIsCreated">
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+    </tr>
+    <tr>
+        <td height="30" align="center">流程描述</td>
+        <td>
+            <textarea rows="6" data-bind="value:flowRemark" style="width: 95%;"></textarea></td>
+    </tr>
+</table>

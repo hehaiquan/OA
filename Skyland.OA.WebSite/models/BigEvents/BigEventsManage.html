@@ -1,0 +1,57 @@
+﻿<div class="pageContainer"  style="height:100%">
+    <!-- 工具栏 -->
+    <div style="margin-bottom: 10px; height: 35px; margin-top: 5px; margin-left: 15px">
+        <button data-id="update" class="btn btn-primary" style="float: left; margin-right: 5px"><i class="fa fa-save" />刷新</button>
+        <button data-id="btnAdd" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left" />新增</button>
+          <button data-id="btnBack" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left" />返回</button>
+        <button data-id="saveEvent" class="btn btn-primary" style=""><i class="fa fa-save" />保存</button>
+    </div>
+
+    <div class="pageContainer" style="padding-bottom: 10px;">
+        <!--标题-->
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h4>大事记管理</h4>
+        </div>
+        <!--网格列表-->
+        <div style="margin-top: 15px">
+            <div data-id="eventsTableGrid" data-role="eventsTableGrid">
+            </div>
+        </div>
+
+        <!--事件编辑页面-->
+        <div data-id="editent" id="newTB">
+            <div class="pageContainer">
+                <!--标题栏-->
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h4>大事记编辑</h4>
+                </div>
+                <div data-id="editform">
+                    <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">标题：</label>
+                            <div class="col-md-11">
+                                    <input type="text" required="required" class="form-control" data-bind="value:title" />
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">创建时间：</label>
+                            <div class="col-md-11">
+                                <div class="input-group">
+                                <input type="text" class="form-control" data-bind="value:recordDate,datetimeFormat:'yy-mm-dd hh:mm'" />
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">内容：</label>
+                            <div class="col-md-11">
+                                <textarea class="form-control" name="editor_Substance" data-bind="value:substance" rows="12" required="required" placeholder="输入文字"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

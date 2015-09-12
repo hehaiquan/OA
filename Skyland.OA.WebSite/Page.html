@@ -1,0 +1,156 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="resources/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta name="description" content="云景业务平台" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="application-name" content="云景" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+
+
+    <link href="images/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>云景业务开发平台</title>
+    <link href="resources/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+    <link href="resources/iconv4/css/font-awesome.css" rel="stylesheet" />
+    <link href="script/leaflet/leaflet.awesome-markers.css" rel="stylesheet" />
+    <link href='script/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='script/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <link href="resources/common.css" rel="stylesheet" />
+    <link href="resources/zTreeStyle/metro.css" rel="stylesheet" />
+    <script src="script/require_dev.js" data-main="app2"></script>
+    <link rel="stylesheet" type="text/css" href="resources/common.css" />
+
+    <!--add by jyq on 2015-7-2-->
+    <link rel="stylesheet" type="text/css" href="nnepb/webDecl/css/Web_Common.css" />
+    <style type="text/css">
+        body {
+            margin: 0px;
+            font-family: 'Microsoft Yahei';
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+
+        div.maincontainer {
+            width: 100%;
+            margin: 0px;
+            line-height: 150%;
+            height:1080px;
+        }
+
+        #iwf-frame-top {
+            background: url('nnepb/webDecl/images/top_middle.png');
+            background-repeat: repeat-x;
+            height: 101px;  
+            margin: 0 auto;  
+            overflow: hidden;
+            /*background-size: cover;*/
+        }
+
+        div.footer {
+            padding: 0.5em;
+            color: white;
+            background-color: gray;
+            clear: left;
+        }
+
+        div.header {
+            /*height: 100px;
+            border: 1px solid #ccc;
+            z-index: 1200;*/
+        }
+
+        div.footer {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            height: 30px;
+            text-align: center;
+        }
+
+
+        div.left {
+            float: left;
+            width: 200px;
+            margin: 0;
+            padding: 1em;
+        }
+
+        .left div a {
+            text-decoration: none;
+        }
+
+        div.content {
+           
+            
+            padding: 5px;
+        }
+
+        #iwf-main {
+            float: left;
+        }
+
+        /*标题*/
+        .Apptitle {
+            float: left;
+            margin: 10px 20px;
+            text-shadow: 1px 1px 1px #b6c7d3;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="maincontainer">
+        <div id="iwf-frame-top" class ="header">
+            <!--<span class="Apptitle">广西壮族自治区环境监测中心站 企业服务门户</span>
+            <div style="position: absolute; right: 150px; top:20px;">
+                <div style="float: left;">
+                     <a id="login-userinfo" class="btn btn-link"><i class="fa fa-user"></i><span>请登录</span> <i class="caret"></i></a>
+                </div>
+            </div>-->
+            <div id="topleft" style="background-image: url(nnepb/webDecl/images/logo.png); background-repeat: no-repeat; text-align: right; float: left; width: 100%; height: 100px;">
+                    <a id="login-userinfo" class="btn btn-link" style ="margin-right:50px"><i class="fa fa-user"></i><span>请登录</span> <i class="caret"></i></a>
+            </div>  
+            <!--点击下边框会隐藏，所以注释掉下边框样式-->
+          <!--  <div style="background-image: url(nnepb/webDecl/images/bottomLine.png); background-repeat: repeat-x; height: 1px; width: 100%; margin: 100px 0 0 0;z-index:2000;">
+            </div>-->
+        </div>
+        <div id ="div-xxwh" class="cdlb" style="display:none; width:100px;">
+            <ul>
+                <li><a href='#fff.nnepb/webDecl/xxwh/qyxx:{title:"企业信息"}'>企业信息</a></li>
+                <li><a href='#fff.nnepb/webDecl/xxwh/xgmm:{title:"修改密码"}'>修改密码</a></li>
+                <li><a href="nnepb/webDecl/login.html">退出</a></li>
+            </ul>
+        </div>
+
+        <div style="float: left; margin-top:-48px; margin-left:30px;">
+             <ul class="menu-list">
+            </ul>
+        </div>
+        <div id ="menuList" class ="cdlb" style ="display:none;left:0px;">
+            <ul class ="menuList">
+            </ul>
+        </div>
+
+        <div class="content">
+            <div id="iwf-main" style="height: 100%; width: 100%; overflow: auto;">
+
+            </div>
+        </div>
+        <div class="footer">Copyright 2015 广州市云景信息科技有限公司.</div>
+    </div>
+</body>
+</html>

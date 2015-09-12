@@ -1,0 +1,146 @@
+﻿<div class="panel panel-info">
+    <div class="panel-heading">
+        <div data-id="tittleInform">
+            <div class="panel-title" style="font-size: 18px;">
+                用车查询
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal" data-id="search">
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">用车人
+                    </span>
+                    <input type="text" class="form-control" data-id="sqr" data-bind="sqr">
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">车牌号
+                    </span>
+                    <input type="text" class="col-md-1 form-control" data-id="cph" data-bind="cph">
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-3" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">日期
+                    </span>
+                    <input type="text" data-id="ycsj" data-bind="value:ycsj, datetimeFormat:'yy-mm-dd hh:mm:ss'" class="form-control" />
+
+                    <span class="input-group-addon">到</span>
+                    <input type="text" data-id="fhsj" data-bind="value:fhsj, datetimeFormat:'yy-mm-dd hh:mm:ss'" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-3" style="margin-right: 0px;">
+                <button class="btn btn-default" style="float: left;" data-id="searchBtn">
+                    <span class="icon-search" style="color: rgb(0, 0, 0);"></span>
+                    查询</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="todayBtn">今天</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="tomorrowBtn">明天</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="weekBtn">本周</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="monthBtn">本月</button>
+                <button class="btn " style="margin-left: 5px;" data-id="exportBtn">导出Excel</button>
+            </div>
+        </div>
+    </div>
+    <!--表格部分查看-->
+    <div data-id="inBoxGrid_Part">
+        <div data-role="deviceTableGrid" data-id="deviceTableGrid" style="padding-left: 3px; padding-right: 3px;">
+            <table class="table table-striped doingcase">
+                <thead>
+                    <tr>
+                        <th style="width: 50px">
+                            <span>用车人</span>
+                        </th>
+                        <th style="width: 150px">
+                            <span>预计用车时间</span>
+                        </th>
+                        <th style="width: 80px">
+                            <span>申请时间</span>
+                        </th>
+
+                        <th style="width: 50px">
+                            <span>车牌号</span>
+                        </th>
+                        <th style="width: 50px">
+                            <span>派车人</span>
+                        </th>
+                        <th style="width: 50px">
+                            <span>状态</span>
+                        </th>
+                        <th style="width: 300px"></th>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="sqr" />
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="useTime" />
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="CreatTime">
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="cph">
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="pcr" />
+                        </th>
+                        <th>
+                            <select class="form-control" data-filterkey="StatusText" />
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                    <tr>
+                        <td>
+                            <span data-bind="text:sqr"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text:useTime"></span>
+                        </td>
+
+                        <td>
+                            <span data-bind="text:CreatTime"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text:cph"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text:pcr"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text:StatusText"></span>
+                        </td>
+                        <th></th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--页数显示-->
+            <div>
+                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                    <ul class="pagination" data-bind="foreach: paginator">
+                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                            <a data-bind="text: name, click: $root.setPage"></a>
+                            <span>...</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="float: right;">
+                    <ul class="pagination pagination-right">
+                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

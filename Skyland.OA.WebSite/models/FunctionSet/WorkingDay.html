@@ -1,0 +1,103 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    考勤时间
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--表格部分查看-->
+            <div data-id="inBoxGrid_Part">
+                <!--按钮栏部分--->
+                <div style="margin-bottom: 10px; height: 35px;">
+                    <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="addNewBtn">
+                        <span class="icon-plus-sign" style="color: rgb(0, 0, 0);"></span>
+                        新增</button>
+                </div>
+
+                <div style="margin-top: 15px" class="row">
+                    <div data-role="tableGrid" data-id="tableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <table class="table table-striped doingcase">
+                            <thead>
+                                <tr>
+                                    <th style="width: 35px">
+                                        <span>编辑</span>
+                                    </th>
+                                     <th style="width: 200px">
+                                        <span>工作日</span>
+                                    </th>
+                                    <th style="width: 100px">
+                                        <span>上下班时间</span>
+                                    </th>
+                                    <th style="width: 120px">
+                                        <span>开始执行日期</span>
+                                    </th>
+                                    <th style="width: 600px">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <td>
+                                        <a data-bind="click:$root.editRow">
+                                            <span class="icon-pencil" style="color: rgb(0, 0, 0);"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span data-bind="text:WorkingDay"></span>
+                                    </td>
+                                    <td>
+                                        <span data-bind="text:WorkingTime"></span>
+                                    </td>
+                                    <td>
+                                        <span data-bind="text:BeginExecuteDay"></span>
+                                    </td>
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-id="editModel" style="display: none">
+    <div class="row form-horizontal form-bordered">
+        <div class="form-group">
+            <label class="col-md-2 control-label">工作日<span style="color: red;">*</span></label>
+            <input type="checkbox" data-id="Monday" data-bind="checked:Monday" />周一
+            <input type="checkbox" data-id="Tuesday" data-bind="checked:Tuesday" style="margin-left: 10px"/>周二
+            <input type="checkbox" data-id="Wednesday" data-bind="checked:Wednesday" style="margin-left: 10px"/>周三
+            <input type="checkbox" data-id="Thursday" data-bind="checked:Thursday" style="margin-left: 10px"/>周四
+            <input type="checkbox" data-id="Friday" data-bind="checked:Friday" style="margin-left: 10px"/>周五
+            <input type="checkbox" data-id="Saturday" data-bind="checked:Saturday" style="margin-left: 10px"/>周六
+            <input type="checkbox" data-id="Sunday" data-bind="checked:Sunday" style="margin-left: 10px"/>周日
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">上班时间</label>
+            <div class="col-md-2">
+                <input type="text" data-id="StartTime" data-bind="value:StartTime" class="form-control required" placeholder="格式：08：30"/>
+            </div>
+            
+            <label class="col-md-2 control-label">下班时间<span style="color: red;">*</span></label>
+            <div class="col-md-2">
+                <input type="text" data-id="EndTime" data-bind="value:EndTime" class="form-control required"placeholder="格式：17：30"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">开始执行日期</label>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" data-id="BeginExecuteDay" data-bind="value:BeginExecuteDay, datetimeFormat:'yy-mm-dd'" class="form-control required"/>
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

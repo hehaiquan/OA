@@ -1,0 +1,97 @@
+﻿<div class="col-md-12">
+
+    <div class="pageContainer" style="padding-bottom: 10px;">
+        <!--标题-->
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h4>固定资产统计</h4>
+        </div>
+        <!-- 工具栏 -->
+        <div style="margin-bottom: 10px; height: 35px; margin-top: 5px; margin-left: 15px" class="col-md-12" data-id="searchDiv">
+            <div style="padding-bottom: 5px;">
+                    <label class="col-md-3 col-lg-1 control-label" style="margin-top:5px">按日期查询：</label>
+            <div class="col-md-9">
+                <div class="input-group">
+                    <input data-id="beginText" type="text" class="form-control" data-bind="value: datetime, datetimeFormat:'yy-mm-dd'" style="float: left" />
+                    <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                    <input data-id="endText" type="text" class="form-control" data-bind="value: datetime1, datetimeFormat:'yy-mm-dd'" style="float: left" />
+
+                    <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                    <span class="input-group-btn">
+                        <button data-id="searchBn" class="btn btn-default" type="button" style="float: left">查询 </button>
+                    </span>
+                </div>
+            </div>
+                </div>
+        </div>
+        <!--网格列表-->
+        <div style="margin:10px" class="row">
+            <div data-role="staticList">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>部门名称</th>
+                            <th>借用</th>
+                            <th>转移</th>
+                            <th>退出</th>
+                            <th>维修</th>
+                            <th>减少的资产数量</th>
+                            <th>增加的资产数量</th>
+                        </tr>
+
+                        <tr>
+                            <!--行号-->
+                            <th></th>
+                            <!--部门名称-->
+                            <th>
+                                <select data-filterkey="useDepartmentName" />
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <!--行号-->
+                            <td width="30px" data-bind="text: $root.itemNumber($index())"></td>
+                            <!--部门名称-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:useDepartmentName"></span>
+                            </td>
+                            <!--借用数量-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:jy"></span>
+                            </td>
+                            <!--转移数量-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:zy"></span>
+                            </td>
+                            <!--退出数量-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:tc"></span>
+                            </td>
+                            <!--维修数量-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:wx"></span>
+                            </td>
+                         
+                            <!--减少数量-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:lessenCount"></span>
+                            </td>
+                            <!--增加数量-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:createCount"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

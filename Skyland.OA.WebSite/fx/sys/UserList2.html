@@ -1,0 +1,90 @@
+﻿<div style="width: 100%; height: 100%;">
+    <div class="iwf-frame-main-left well">
+        <div iwftype="UserToolBar" >
+            <input type="button" iwftype="SaveRank" value="保存变更后的排序" style="display:none" class="btn btn-primary btn-block" />
+        </div>
+        <div>
+              <span>注:左键拖拽可进行排序</span>
+        </div>
+        <ul treetype="User"></ul>
+    </div>
+    <div class="iwf-frame-main-center" style="overflow-y: auto;" formtype="content">
+        <div formtype="KOUserInfo" style="margin:20px;">
+
+            <div class="panel panel-info" style=" height: 100%;">
+                <div class="panel-heading">
+                    <span> 用户登陆资料</span><!--<span class="curselect" style="width: 60%;"></span>-->
+                    <input type="button" value="保存" action="save" class="btn btn-primary" style="float:right;margin:-6px;" />
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <td width="15%" align="right">用户编号</td>
+                            <td width="35%" field="UserID">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" align="right">登录名称</td>
+                            <td width="35%">
+                                <input type="text" style="width: 90%" field="EnName" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">中文名称</td>
+                            <td>
+                                <input type="text" field="CnName" style="width: 90%" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">登录密码</td>
+                            <td>
+                                <input type="text" field="PWD" style="width: 90%" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">手机号码</td>
+                            <td>
+                                <input type="text" field="Phone" style="width: 90%" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">用户部门</td>
+                            <td>
+                                <select field="DPID" style="width: 90%"></select>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<style>
+        .iwf-frame-main-center {
+        overflow: hidden;
+        height: 100%;
+    }
+    .frametreeMenu
+    {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        font-size: 13px;
+        border: 1px solid #808080;
+    }
+
+        .frametreeMenu li
+        {
+            padding: 2px 10px;
+            cursor: default;
+        }
+
+            .frametreeMenu li:hover
+            {
+                background-color: #0000ff;
+                color: #fff;
+            }
+</style>

@@ -1,0 +1,36 @@
+﻿
+.ztree .filterKey
+{
+	background-color: #00ff00;
+	color: black;
+	/*border: 2px #00ff00 solid;*/
+}
+
+.frametreeMenu
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 13px;
+	border: 1px solid #808080;
+}
+
+	.frametreeMenu li
+	{
+		padding: 2px 10px;
+		cursor: default;
+	}
+
+		.frametreeMenu li:hover
+		{
+			background-color: #0000ff;
+			color: #fff;
+		}
+
+
+/*可用ICO的样式集合*/
+
+.ztree .ico_abort
+{
+	background: url(images/abort.png) no-repeat 0px 0px !important;
+}

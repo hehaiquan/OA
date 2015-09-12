@@ -1,0 +1,298 @@
+﻿
+.app_file
+{
+	/*font-family: 'Microsoft YaHei';*/
+}
+
+	.app_file table td
+	{
+		/*padding: 10px 0 14px 25px;*/
+		border-top: 1px solid #FFF;
+		border-bottom: 1px dashed #E1E1E1;
+		vertical-align: top;
+	}
+
+	.app_file .name_wrap
+	{
+		position: relative;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 35px;
+		min-height: 32px;
+		_height: 32px;
+		#zoom:1;
+	}
+
+		.app_file .name_wrap .confirm
+		{
+			position: absolute;
+			top: 5px;
+			right: 33px;
+			color: #26709A;
+		}
+
+		.app_file .name_wrap .cancel
+		{
+			position: absolute;
+			top: 5px;
+			right: 0;
+			color: #26709A;
+		}
+
+	.app_file .ico
+	{
+		position: absolute;
+		top: 10px;
+		left: 0;
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -581px 0;
+	}
+
+	.app_file .ico_gif
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -218px 0;
+	}
+
+	.app_file .ico_jpg
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -251px 0;
+	}
+
+	.app_file .ico_png
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -284px 0;
+	}
+
+	.app_file .ico_folder
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -317px 0;
+	}
+
+	.app_file .ico_folder_documents
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -350px 0;
+	}
+
+	.app_file .ico_folder_image
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -383px 0;
+	}
+
+	.app_file .ico_folder_music
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -416px 0;
+	}
+
+	.app_file .ico_folder_video
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -449px 0;
+	}
+
+	.app_file .ico_3gp
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -482px 0;
+	}
+
+	.app_file .ico_avi
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -515px 0;
+	}
+
+	.app_file .ico_doc
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -548px 0;
+	}
+
+	.app_file .ico_file
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -581px 0;
+	}
+
+	.app_file .ico_file_broken
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -614px 0;
+	}
+
+	.app_file .ico_fla
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -647px 0;
+	}
+
+	.app_file .ico_htm
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -680px 0;
+	}
+
+	.app_file .ico_html
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -713px 0;
+	}
+
+	.app_file .ico_mod
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -746px 0;
+	}
+
+	.app_file .ico_mov
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -779px 0;
+	}
+
+	.app_file .ico_mp3
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -812px 0;
+	}
+
+	.app_file .ico_mp4
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -845px 0;
+	}
+
+	.app_file .ico_msg
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -878px 0;
+	}
+
+	.app_file .ico_pdf
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -911px 0;
+	}
+
+	.app_file .ico_ppt
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -944px 0;
+	}
+
+	.app_file .ico_psd
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -977px 0;
+	}
+
+	.app_file .ico_rar
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1010px 0;
+	}
+
+	.app_file .ico_rm
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1043px 0;
+	}
+
+	.app_file .ico_swf
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1076px 0;
+	}
+
+	.app_file .ico_txt
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1109px 0;
+	}
+
+	.app_file .ico_wav
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1142px 0;
+	}
+
+	.app_file .ico_wma
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1175px 0;
+	}
+
+	.app_file .ico_wmv
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1208px 0;
+	}
+
+	.app_file .ico_xls
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1241px 0;
+	}
+
+	.app_file .ico_zip
+	{
+		background-image: url(sprite/app_file.png?max_age=19830211&d=20120605195414);
+		background-position: -1274px 0;
+	}
+
+	.app_file .title
+	{
+		color: #545454;
+	}
+
+	.app_file .op
+	{
+		/*margin-top: 8px;*/
+	}
+
+		.app_file .op a
+		{
+			/*margin-right: 20px;*/
+			color: #26709A;
+		}
+
+
+.PBprogress
+{
+	display: inline-block;
+	width: 300px;
+	height: 10px;
+	background-color: white;
+	border-radius: 20px;
+	border: 2px groove #666;
+	vertical-align: middle;
+	padding: 0 2px;
+}
+
+.PBprogressbar
+{
+	width: 0;
+	height: 9px;
+	border-radius: 20px;
+	background: url(images/jdt.png) repeat-x center;
+}
+
+.PBfilelist li
+{
+	list-style-type: none;
+	margin-top: 10px;
+}
+
+.PBfilelist
+{
+	padding: 0;
+}

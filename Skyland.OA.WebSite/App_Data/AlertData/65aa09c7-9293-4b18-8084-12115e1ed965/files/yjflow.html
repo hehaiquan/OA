@@ -1,0 +1,311 @@
+﻿<div id="yjflow">
+    <style>
+        #yjflow .flowTitle {
+            padding-left: 5px;
+            padding-bottom: 5px;
+            padding-right: 0;
+            padding-top: 5px;
+            line-height: normal;
+            height: 30px;
+        }
+
+        #yjflow a {
+            cursor: pointer;
+            padding-right: 10px;
+        }
+
+        #yjflow .title {
+            font-weight: bolder;
+            padding-right: 5px;
+        }
+
+        #yjflow hr {
+            margin: 10px 0;
+        }
+
+        #yjflow .limitHeight {
+            max-height: 170px;
+            overflow-y: auto;
+        }
+    </style>
+    <div style="width: 100%; height: 30px; line-height: 30px;">
+        <!--margin-top: 5px; -->
+        <span data-id="alertStatus" class="btn btn-link" data-bind="disable: status() != '0'">
+            <i class="fa" data-bind="css: { 'fa-play': status() != '0', 'fa-pause': status() == '0' }, attr: { title: status() == 0 ? '终止该项接警!' : '该接警已终止!' }"></i>
+        </span>
+        <span style="margin: 8px 0px;">应急处理流程</span>
+        <a data-id="closemsg" style="float: right; padding-right: 10px" class="btn btn-link"><i class="fa fa-times"></i></a>
+        <a data-id="hidemsg" style="float: right; padding: 6px 0"><i class="fa fa-angle-up fa-lg"></i></a>
+    </div>
+    <div data-id="yjMsg" style="width: 100%; overflow-y: auto; padding: 5px; max-height: 700px">
+        <ul class="list-group">
+            <li class="list-group-item  disabled flowTitle">
+                <span>基本信息</span>
+                <a data-id="alertEdit" title="基本信息"><i class="fa" data-bind="css: { 'fa-edit': status() == '0', 'fa-info-circle': status() != '0' }"></i></a>
+                <span data-id="time" style="font-size: 11px; font-weight: bold;"></span>
+                <a data-id="hideli" style="float: right; padding-top: 2px;"><i class="fa fa-angle-up fa-lg"></i></a>
+            </li>
+            <li class="list-group-item" style="line-height: 20px">
+                <div data-id="alertinfo">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span class="title">名称:</span>
+                            <span data-bind="text: sjmc"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span class="title">发生时间:</span>
+                            <span data-bind="text: jjsj"></span>
+                        </div>
+                    </div>
+                    <div data-bind="visible: jarq" class="row">
+                        <div class="col-sm-12">
+                            <span class="title">结案时间:</span>
+                            <span data-bind="text: jarq"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8"><span class="title">地点:</span><span data-bind="text: sjdd"></span></div>
+                        <div class="col-sm-4"><span class="title">等级:</span><span data-bind="text: sjjb"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6" data-bind="visible: zywrw">
+                            <span class="title">污染物:</span><span data-bind="text: zywrw"></span>
+                        </div>
+                        <div class="col-sm-6" data-bind="visible: wrwsl">
+                            <span class="title">污染物数量:</span><span data-bind="text: wrwsl"></span>
+                        </div>
+                    </div>
+                    <div data-bind="visible: jbgc" style="font-size: 11px;" class="row">
+                        <div class="col-sm-12">
+                            <span class="title">概况:</span>
+                            <span data-bind="html: jbgc() && jbgc().length > 100 ? (jbgc().substr(0, 100) + '...') : jbgc, attr: { title: jbgc() && jbgc().length > 100 ? jbgc : '' }"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span data-bind="visible: jd() && wd()" style="margin-left: 15px;">
+                            <span class="title">位置:</span>
+                            <a data-bind="text: jd() + ' ' + wd()" data-id="flyto" title="点击定位到事故地点"></a>
+                        </span>
+                        <span data-bind="visible: status() == '0'">
+                            <button data-id="clearPoint" class="btn btn-xs btn-primary pull-right" data-bind="visible: jd() != '' && wd() != ''" style="margin-right: 5px;">清除位置</button>
+                            <button data-id="setPoint" class="btn btn-xs btn-primary pull-right" data-bind="text: (jd() != '' && wd() != '') ? '编辑位置' : '选定位置?'" style="margin-right: 5px"></button>
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item  disabled flowTitle">
+                <span>涉事企业</span>
+                <a data-id="selectunit" title="选择涉事企业" data-bind="visible: status() == '0'"><i class="fa fa-edit"></i></a>
+                <a data-id="hideli" style="float: right; padding-top: 2px;" title="隐藏/展开面板"><i class="fa fa-angle-up fa-lg"></i></a>
+            </li>
+            <li class="list-group-item">
+                <div data-id="ents" data-bind="foreach: ents, visible: ents().length > 0">
+                    <div style="height: 25px;">
+                        <a data-bind="text: ($index() + 1) + '.' + ((typeof name == 'function') ? name() : name), click: function () { $root.edit($data, 2); }"></a>
+                        <a data-bind="visible: $root.status() == '0'"><i style="float: right; line-height: 25px;" class="fa fa-times" data-bind="click: function () { $root.del($data, 2); }"></i></a>
+                    </div>
+                </div>
+                <h5 style="text-align: center" data-bind="visible: ents().length == 0">未选择涉事企业!</h5>
+            </li>
+            <li class="list-group-item  disabled flowTitle">
+                <span>预案信息</span>
+                <a data-id="selectyuan" title="选择预案" data-bind="visible: status() == '0'"><i class="fa fa-edit"></i></a>
+                <a data-id="hideli" style="float: right; padding-top: 2px;" title="隐藏/展开面板"><i class="fa fa-angle-up fa-lg"></i></a>
+            </li>
+            <li class="list-group-item">
+                <div data-id="plans" data-bind="foreach: plans, visible: plans().length > 0">
+                    <div style="height: 25px;">
+                        <a data-bind="text: name, click: function () { $root.edit($data, 3); }"></a>
+                        <a data-bind="visible: $root.status() == '0'"><i style="float: right; line-height: 25px;" class="fa fa-times" data-bind="click: function () { $root.del($data, 3); }"></i></a>
+                    </div>
+                </div>
+                <h5 style="text-align: center" data-bind="visible: plans().length == 0">未选择应急预案!</h5>
+            </li>
+            <li class="list-group-item  disabled flowTitle">
+                <span title="添加监测点截面">监测断面</span>
+                <a data-id="addJCD" title="添加监测点位" data-bind="visible: status() == '0'"><i class="fa fa-plus-circle"></i></a>
+                <a data-id="hideli" style="float: right; padding-top: 2px;" title="隐藏/展开面板"><i class="fa fa-angle-up fa-lg"></i></a>
+            </li>
+            <li class="list-group-item  limitHeight">
+                <div data-id="JCDList">
+                </div>
+            </li>
+            <li class="list-group-item  disabled flowTitle">
+                <span>监测信息</span>
+                <a data-id="addReport" title="添加应急监测信息" data-bind="visible: status() == '0'"><i class="fa fa-plus-circle"></i></a>
+                <a data-id="hideli" style="float: right; padding-top: 2px;" title="隐藏/展开面板"><i class="fa fa-angle-up fa-lg"></i></a>
+            </li>
+            <li class="list-group-item  limitHeight">
+                <div data-id="ReportList">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div data-id="jcdSet" class="row-fluid">
+    <div class="col-sm-5" data-id="baseInfo">
+        <form role="form">
+            <div class="form-group" style="margin-bottom: 0">
+                <label>截面名称</label>
+                <input type="text" class="form-control" placeholder="请输入名称" data-bind="value: name">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>创建时间</label>
+                <input type="text" class="form-control" data-bind="value: time, datetimeFormat: 'yy-mm-dd hh:mm'">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>经度</label>
+                <input type="text" class="form-control" data-bind="value: latlng()[1]">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>纬度</label>
+                <input type="text" class="form-control" data-bind="value: latlng()[0]">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>描述</label>
+                <textarea class="form-control" data-bind="value: description" rows="4"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-7">
+        <div data-id="itemType">
+            <label>监测类别:</label>
+            <select data-bind="options: types, value: selectType, enable: selectItems().length <= 0" data-id="tType" class="form-control"></select>
+            <label>监测项目:</label>
+            <select data-bind="options: items, value: selectItem" class="form-control"></select>
+            <span style="color: red; font-size: 12px;" data-bind="visible: repeat, text: repeat"></span>
+            <button class="btn btn-primary btn-xs" style="float: right; margin-top: 5px" data-id="addItem">添加</button>
+        </div>
+        <div data-id="itemList" style="max-height: 200px; overflow-y: auto; margin-top: 30px">
+            <table class="table">
+                <tbody data-bind="foreach: selectItems, visible: selectItems().length > 0">
+                    <tr>
+                        <td>
+                            <span data-bind="text: itemname"></span>
+                            <a style="float: right; cursor: pointer" data-bind="click: function () { $root.del($data); }"><i class="fa fa-times"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="yjreport">
+    <div data-id="rpType" style="margin-top: 10px;">
+        <label>信息类型:</label>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default active btn-sm">
+                <input type="radio" name="options" data-id="#option1" checked>
+                现场快报
+            </label>
+            <label class="btn btn-default btn-sm">
+                <input type="radio" name="options" data-id="#option2">
+                监测快报
+            </label>
+            <label class="btn btn-default btn-sm">
+                <input type="radio" name="options" data-id="#option3">
+                部署信息
+            </label>
+        </div>
+    </div>
+    <div data-id="rpInfo">
+    </div>
+    <div data-id="option1">
+        <form role="form">
+            <div class="form-group" style="margin-bottom: 0">
+                <label>快报名称</label>
+                <input type="text" class="form-control" placeholder="请输入名称" data-bind="value: name">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>收集时间</label>
+                <input type="text" class="form-control" data-bind="value: time, datetimeFormat: 'yy-mm-dd'">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>图片</label>
+                <input type="file" id="_pic_" name="_pic_" class="form-control" multiple>
+                <div data-bind="foreach: tps, visible: tps().length > 0" style="margin-top: 5px; margin-bottom: 5px;">
+                    <img style="width: 100px; height: 100px; margin-left: 5px" data-bind="attr: { src: $data }" />
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>文件</label>
+                <input type="file" id="_file_" name="_file_" class="form-control" multiple>
+                <div data-bind="foreach: files, visible: files().length > 0" style="margin-top: 5px; margin-bottom: 5px;">
+                    <div>
+                        <a data-bind="text: ($index() + 1) + '.' + $data.substr($data.lastIndexOf('/') + 1), attr: { href: $data }"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>概况</label>
+                <textarea class="form-control" data-bind="value: description" rows="6"></textarea>
+            </div>
+        </form>
+    </div>
+    <div data-id="option2">
+        <form role="form" data-id="baseInfo">
+            <div class="form-group" style="margin-bottom: 0">
+                <label>快报名称</label>
+                <input type="text" class="form-control" placeholder="请输入名称" data-bind="value: name">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>报送</label>
+                <input type="text" class="form-control" data-bind="value: bs">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>抄送</label>
+                <input type="text" class="form-control" data-bind="value: cs">
+            </div>
+            <div class="form-group" style="margin-bottom: 0">
+                <label>基本描述</label>
+                <textarea class="form-control" data-bind="value: description" rows="6"></textarea>
+            </div>
+        </form>
+        <div class="row-fluid">
+            <table class="table table-striped table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th>样品名称</th>
+                        <th>采样时间</th>
+                        <th>监测因子</th>
+                        <th>具体信息</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach:elementsShow,visible:currentElements().length>0">
+                    <tr>
+                        <td data-bind="text:name"></td>
+                        <td data-bind="text:time"></td>
+                        <td data-bind="text:(results().map(function(item){return item.name;})).join('、')"></td>
+                        <td data-bind="text:name">查看信息</td>
+                    </tr>
+                </tbody>
+            </table> 
+            <div class="row-fluid" style="margin-top:5px;">
+                <a href="javascript:void(0)" style="font-style:italic"><span><i class="fa fa-plus-circle"></i>添加监测记录</span></a>
+            </div>
+        </div>
+    </div>
+    <div data-id="option3"></div>
+</div>
+<div id="yjreportedit">
+    <form role="form" data-id="baseInfo">
+        <div class="form-group" style="margin-bottom: 0">
+            <label>样品名称</label>
+            <select class="form-control" data-bind="options:types,optionsText:name,value:selectedType" data-id="selType"></select>
+        </div>
+        <div class="form-group" style="margin-bottom: 0">
+            <label>采集时间</label>
+            <input type="text" class="form-control" data-bind="value: time, datetimeFormat: 'yy-mm-dd hh:mm:ss'">
+        </div>
+        <div data-bind="foreach:results">
+            <div class="form-group" style="margin-bottom: 0">
+                <label data-bind="text:name"></label>
+                <input class="form-control" data-bind="value:result" />
+            </div>
+        </div>
+        <h4 data-bind="visible:results().length<=0">该样品还未设定任何监测指标!</h4>
+    </form>
+</div>
+

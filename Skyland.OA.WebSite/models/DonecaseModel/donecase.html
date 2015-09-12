@@ -1,0 +1,86 @@
+﻿<div style="PADDING-BOTTOM: 8px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 6px" class="iwf-toolbar">
+    <div iwftype="pageDown" style="FLOAT: right" class="iwf-toolbar-item iwf-toolbar-item-circle" title="下一页" index="0" unselectable="on"><span style="MARGIN-TOP: 1px; MARGIN-LEFT: 1px" class="icon-arrow-right" unselectable="on"></span></div>
+    <div iwftype="pageUp" style="FLOAT: right" class="iwf-toolbar-item iwf-toolbar-item-circle" title="上一页" index="1" unselectable="on"><span style="MARGIN-TOP: 1px; MARGIN-LEFT: 1px" class="icon-arrow-left" unselectable="on"></span></div>
+    <div style="FLOAT: right; padding: 5px 8px 0px; font-family: 微软雅黑; font-weight: bold"><span iwftype="pageinfo"></span></div>
+    <div style="FLOAT: right; font-family: 微软雅黑; font-weight: bold;"><div class="iwf-toolbar-item" style="font-family: 微软雅黑; font-weight: bold" iwftype="GoTo">跳转至</div><input style="width:20px;" iwftype="GoInput" />页</div>
+    <div style="FLOAT: right; padding: 5px 8px 0px; font-family: 微软雅黑; font-weight: bold"><span >当前共<span iwftype="RecordCount"></span>条</span></div>
+</div>
+<div style="WIDTH: 100%; OVERFLOW: hidden" iwftype="iwfGridDiv">
+    <div style="BACKGROUND-COLOR: #dbe5ec; PADDING-RIGHT: 17px" iwftype="iwfGridHeaderDiv">
+        <table class="donemodel" width="100%">
+            <tbody class="header">
+                <tr>
+                    <td>
+                        <div style="WIDTH: 40%" class="trleft iwf-btndiv" field="Name">业务名称</div>
+                        <div style="WIDTH: 15%" class="iwf-btndiv" field="FlowName">流程类型</div>
+                        <div style="WIDTH: 50px" class="iwf-btndiv" field="CreaterCnName">创建人</div>
+                        <div style="WIDTH: 100px" class="iwf-btndiv" field="CreateDate">创建日期</div>
+                        <div style="WIDTH: 50px" class="iwf-btndiv" field="EnderCnName">办结人</div>
+                        <div style="WIDTH: 100px" class="tr iwf-btndiv" field="EndDate">办结日期</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="overflow-y: scroll" iwftype="iwfGridContentDiv">
+        <table class="iwf-grid donemodel" cellspacing="0" cellpadding="0" width="100%" align="center">
+            <tbody class="new-param-tmpl">
+                <tr class="iwf-grid-row">
+                    <td id="${ID}">
+                        <div style="WIDTH: 40%" class="trleft"><a href="javascript:void(0)">${Name}</a></div>
+                        <div style="WIDTH: 15%">${FlowName}</div>
+                        <div style="WIDTH: 50px">${CreaterCnName}</div>
+                        <div style="WIDTH: 100px">${$item.changeyyyyMMdd(CreateDate)}</div>
+                        <div style="WIDTH: 50px">${EnderCnName}</div>
+                        <div style="WIDTH: 100px" class="tr">${$item.changeyyyyMMdd(EndDate)}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    .donemodel a:link
+    {
+        color: #007ACC;
+    }
+
+    .donemodel a:visited
+    {
+        color: #007ACC;
+    }
+
+    .donemodel .header td
+    {
+        padding: 0 6px;
+    }
+
+    .donemodel .header .iwf-btndiv-offet
+    {
+        position: relative;
+        left: 1px;
+        top: 1px;
+    }
+
+    .donemodel .header div:hover
+    {
+        background-color: #C3E3F6;
+        cursor: pointer;
+    }
+
+    .donemodel TD DIV
+    {
+        TEXT-ALIGN: center;
+        DISPLAY: inline-block;
+    }
+
+    .donemodel .trleft
+    {
+        TEXT-ALIGN: left !important;
+    }
+
+    .donemodel .tr
+    {
+        TEXT-ALIGN: right !important;
+    }
+</style>

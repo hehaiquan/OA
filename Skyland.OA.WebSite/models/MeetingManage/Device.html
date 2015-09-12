@@ -1,0 +1,167 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    会议室设备信息
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--表格部分查看-->
+            <div data-id="inBoxGrid_Part">
+                <!--按钮栏部分--->
+                <div style="margin-bottom: 10px; height: 35px;">
+                    <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="addNewBtn">
+                        <span class="icon-plus-sign" style="color: rgb(0, 0, 0);"></span>
+                        新增</button>
+                    <button class="btn btn-default" style="float: left; margin-top: 5px; margin-left: 5px" data-id="deleteBtn">
+                        <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                        删除</button>
+                </div>
+
+                <div style="margin-top: 15px" class="row">
+                    <div data-role="deviceTableGrid" data-id="deviceTableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <table class="table table-striped doingcase">
+                            <thead>
+                                <tr>
+                                    <!--checkBox-->
+                                    <th style="width: 30px"></th>
+                                    <th style="width: 35px">
+                                        <span>编辑</span>
+                                    </th>
+                                     <th style="width: 100px">
+                                        <span>会议室</span>
+                                    </th>
+                                    <th style="width: 100px">
+                                        <span>设备名称</span>
+                                    </th>
+                                    <th style="width: 60px">
+                                        <span>设备状态</span>
+                                    </th>
+                                    <th style="width: 680px">
+                                        <span>备注</span>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th></th>
+                                    <!--编辑-->
+                                    <th></th>
+                                    <!--会议室-->
+                                    <th>
+                                        <select  class="form-control" data-filterkey="MeetingRoomName" />
+                                    </th>
+                                    <!--设备名称-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="DeviceName" />
+                                    </th>
+                                     <!--设备状态-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="StatusText"/>
+                                    </th>
+                                    <!--备注-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="Remark" />
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--checkBox控件-->
+                                    <td>
+                                        <input type="checkbox"  data-bind="checked:isCheck" />
+                                    </td>
+                                    <!--编辑-->
+                                    <td>
+                                        <a data-bind="click:$root.editRow">
+                                            <span class="icon-pencil" style="color: rgb(0, 0, 0);"></span>
+                                        </a>
+                                    </td>
+                                    <!--会议室-->
+                                    <td>
+                                        <span data-bind="text:MeetingRoomName"></span>
+                                    </td>
+                                    <!--设备名称-->
+                                    <td>
+                                        <span data-bind="text:DeviceName"></span>
+                                    </td>
+                                    <!--设备状态-->
+                                    <td>
+                                        <span data-bind="text:StatusText"></span>
+                                    </td>
+                                    <!--备注-->
+                                    <td>
+                                        <span data-bind="text:Remark"></span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-id="editDevice" style="display: none">
+    <div class="row form-horizontal form-bordered">
+        <div class="form-group">
+            <label class="col-md-2 control-label">会议室<span style="color: red;">*</span></label>
+            <div class="col-md-4">
+                <select data-id="flid" data-bind="DictOptions: {dictype: 'meetingRoomName', value:MeetingRoomID }"  class="form-control">
+                    <option value=""></option>
+                </select>
+            </div>
+
+            <label class="col-md-2 control-label">设备名称<span style="color: red;">*</span></label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input data-bind="value:DeviceName,usedPhraseType:{type:'DeviceName',input:DeviceName}" type="text" class="form-control" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" data-id="DeviceName" type="button">...</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">设备状态</label>
+            <div class="col-md-4">
+                <select class="form-control" data-id="DeviceStatus" data-bind="value:Status">
+                    <option value="0">正常</option>
+                    <option value="1">损坏</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">备注</label>
+            <div class="col-md-10">
+                <textarea class="form-control" data-bind="value:Remark" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

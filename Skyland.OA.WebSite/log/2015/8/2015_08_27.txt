@@ -1,0 +1,167 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-27 11:27:45
+内容：
+异常信息：System.Exception: QueryObject ERR：列名 'sendCheckType' 无效。 ---> System.Data.SqlClient.SqlException: 列名 'sendCheckType' 无效。
+   在 IWorkFlow.DataBase.DbFactory.GetSingleReader(String sql, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 31
+异常信息：QueryObject ERR：列名 'sendCheckType' 无效。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 31
+--------------------------------------------------------------------------------------
+时间：2015-08-27 11:28:05
+内容：
+异常信息：System.Exception: QueryObject ERR：列名 'sendCheckType' 无效。 ---> System.Data.SqlClient.SqlException: 列名 'sendCheckType' 无效。
+   在 IWorkFlow.DataBase.DbFactory.GetSingleReader(String sql, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 31
+异常信息：QueryObject ERR：列名 'sendCheckType' 无效。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 31
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:29:16
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:29:34
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:31:47
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:32:08
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:33:40
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:34:22
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:36:19
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:38:01
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:41:36
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:43:05
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-27 16:43:45
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375

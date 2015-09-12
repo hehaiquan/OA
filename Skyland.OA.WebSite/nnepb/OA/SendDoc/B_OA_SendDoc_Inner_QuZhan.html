@@ -1,0 +1,104 @@
+﻿<div class="row">
+    <div class="col-lg-8">
+        <!-- 表单 -->
+        <div data-id="formContainer" class="pageContainer">
+
+            <!--头部按钮行-->
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>内部事项审批处理笺</h3>
+                <div class="btn-group " style="float: right; margin-top: -40px;">
+                    <button data-id='printSendDoc' type="button" style="float: right; margin-left: 5px" class="btn btn-default">打印</button>
+                </div>
+            </div>
+
+            <div class="row form-horizontal form-bordered" data-id="baseInfo" data-part="主表" style="margin: auto; width: 847px;">
+                <!--纸质表格-->
+                <div style="color: red; padding-right: 10px; padding-left: 10px; font-family: 宋体; width: 900px">
+                    <div style="width: 100%; text-align: center">
+                        <h3 style="font-family: '宋体'; font-weight: bold">广西壮族自治区环境监测中心站</h3>
+                        <h3 style="font-family: '宋体'; font-weight: bold">内 部 事 项 审 批 处 理 笺</h3>
+                    </div>
+                    <div style="position: relative; font-family: '宋体'; color: red" class="documentTableNoneLine">
+                        <table style="margin: auto; width: 80%">
+                            <tr>
+                                <td>
+                                    <label style="float: left">时间：</label>
+                                    <input type="text" data-id="createDate" data-bind="value:createDate,datetimeFormat:'yy-mm-dd'" style="border: none; float: left" />
+                                </td>
+                                <td>
+                                    <input type="text" data-id="code" data-bind="value:code" style="float: right; border: none;" />
+                                    <label style="float: right">编号：</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="documentTable">
+                        <table style="margin: auto; width: 80%">
+                            <tr>
+                                <td style="text-align: center; width: 100px">
+                                    <label style="margin-top: 5px;">承办科室</label>
+                                </td>
+                                <td style="position: relative;">
+                                    <textarea class="" data-id="underTakeDep" disabled="disabled" data-bind="value: underTakeDep" rows="2" style="height: 100%; width: 100%;"></textarea>
+                                </td>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px; width: 100px">承办人</label>
+                                </td>
+                                <td style="position: relative;">
+                                    <textarea class="" data-id="undertakeMan" disabled="disabled" data-bind="value: undertakeMan" rows="2" style="height: 100%; width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px;">标题</label>
+                                </td>
+                                <td colspan="3">
+                                    <textarea style="height: 100%; width: 100%;" rows="2" data-bind="value:title"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px;">请示事项</label><br />
+                                    <label style="margin-top: 5px;">主要内容</label>
+                                </td>
+                                <td colspan="3">
+                                    <textarea style="height: 100%; width: 100%;" rows="10" data-bind="value:content"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px;">承办科室</label><br />
+                                    <label style="margin-top: 5px;">负责人</label><br />
+                                    <label style="margin-top: 5px;">意见</label>
+                                </td>
+                                <td colspan="3" data-id="cbksfzryj"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px;">会办科室</label><br />
+                                    <label style="margin-top: 5px;">意见</label>
+                                </td>
+                                <td colspan="3" data-id="hbdwyj"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px;">站领导</label><br />
+                                    <label style="margin-top: 5px;">批示</label>
+                                </td>
+                                <td colspan="3" data-id="zldps"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <label style="margin-top: 5px;">备注</label>
+                                </td>
+                                <td colspan="3">
+                                    <textarea style="height: 100%; width: 100%;" rows="10" data-bind="value:remark"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

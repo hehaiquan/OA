@@ -1,0 +1,107 @@
+﻿<div class="row">
+    <div class="col-lg-8">
+        <!-- 表单 -->
+        <div data-id="formContainer" class="pageContainer">
+
+            <!--头部按钮行-->
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>广西壮族自治区环境监测中心站文件处理笺</h3>
+                <div class="btn-group " style="float: right; margin-top: -40px;">
+                    <!--<button data-id='supervisionBtn' type="button" style="float: right; margin-left: 5px" class="btn btn-default">督办</button>-->
+                    <button data-id='printLw' type="button" style="float: right; margin-left: 5px" class="btn btn-default">打印处理笺</button>
+                </div>
+            </div>
+
+            <div class="row form-horizontal form-bordered" data-id="baseInfo" data-part="主表">
+                <!--纸质表格-->
+                <div style="color: red; padding-right: 10px; padding-left: 10px; font-family: 宋体;">
+                    <div style="width: 100%; text-align: center">
+                        <h3 style="font-family: '宋体'; font-weight: bold">广西壮族自治区环境监测中心站</h3>
+                        <h3 style="font-family: '宋体'; font-weight: bold">文件处理笺</h3>
+                    </div>
+                    <div style="position: relative; font-family: '宋体'; color: red" class="documentTableNoneLine">
+                        <table style="margin: auto; width: 80%">
+                            <tr>
+                                <td>
+                                    <label style="float: left">时间：</label>
+                                    <input type="text" class="required datetime" data-id="lwrq" data-bind="value:lwrq,datetimeFormat:'yy-mm-dd'" style="border: none; float: left" />
+                                </td>
+                                <td>
+                                    <input type="text" data-id="code" data-bind="value:code" style="float: right; border: none;" />
+                                    <label style="float: right">编号：</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="documentTable">
+                        <table style="margin: auto; width: 80%">
+                            <tr>
+                                <td style="width: 100px">
+                                    <span style="margin-top: 5px; float: left;">来文单位</span>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" data-id="lwdwBtn" data-bind="click: _getLwdw">...</button>
+                                    </span>
+                                </td>
+                                <td style="position: relative;">
+                                    <textarea class="" data-id="lwdw" data-bind="value: lwdw" rows="2" style="height: 100%; width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class=""><span style="margin-top: 5px; float: left;">文件名称<label style="color: red">*</label></span>
+                                </td>
+                                <td style="position: relative;">
+                                    <div data-id="attachments" style="display: none">
+                                    </div>
+                                    <textarea class="required" data-id="wjbt" data-bind="value: wjmc" style="height: 100%; width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table_label_paper"><span style="margin-top: 5px; float: left;">办公室拟办意见</span>
+                                </td>
+                                <td style="position: relative;" data-id="">
+                                    <textarea class="" data-id="toDoSug" data-bind="value: toDoSug" rows="5" style="height: 100%; width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table_label_paper">
+                                    <span style="margin-top: 5px; float: left;">站领导批示</span>
+                                </td>
+                                <td style="position: relative; color: black;">
+                                    <div data-id="zldps"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table_label_paper">
+                                    <span style="margin-top: 5px; float: left;">转办时间</span>
+                                </td>
+                                <td style="position: relative;">
+                                    <input type="text" style="color: black" class="form-control datetime" data-id="zbsj" data-bind="value: zbsj,datetimeFormat:'yy-mm-dd'" />
+                                </td>
+                            </tr>
+
+                            <tr class="table_label_paper">
+                                <!--<td>文件编号</td>-->
+                                <td>备注</td>
+                                <td style="position: relative;">
+                                    <div style="width: 100%">
+                                        <textarea class="" data-id="toDoSug" data-bind="value: remark" rows="5" style="height: 100%; width: 100%;"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">
+                                    <span style="margin-top: 5px; float: left;">来文单位类型</span>
+                                </td>
+                                <td style="position: relative;">
+                                    <select name="select" data-id="lwlx" style="width: 100%; height: 100%" class="form-control required" data-bind="DictOptions: {dictype: 'receiveDocTypeDic', value:lwdwTypeId}">
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

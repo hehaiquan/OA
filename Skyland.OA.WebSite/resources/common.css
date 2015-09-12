@@ -1,0 +1,249 @@
+﻿#emailManageMenu {
+}
+
+    #emailManageMenu, #emailManageMenu li {
+        list-style: none; /* 将默认的列表符号去掉 */
+        padding: 0; /* 将默认的内边距去掉 */
+        margin: 0; /* 将默认的外边距去掉 */
+        text-align: center;
+    }
+
+        #emailManageMenu li {
+            float: left; /* 往左浮动 */
+            text-align: center;
+            width: 100px;
+            margin-top: 10px;
+            display: inline-block;
+            /*background:#767A9F url(http://localhost:2717/resources/images/emialImages/skind_01/untitled.png) no-repeat;*/
+            background: #DDD;
+            color: #ffffff;
+            border: 1px solid #bebebe;
+        }
+
+            #emailManageMenu li a {
+                color: black;
+            }
+
+                #emailManageMenu li a:link {
+                    color: aliceblue;
+                }
+
+.TagDiv {
+    position: relative;
+    margin-top: -18px;
+    margin-right: -1px;
+    height: 25px;
+    text-align: right;
+    overflow: hidden;
+    background: none repeat scroll 0% 0% #FFF;
+    float: right;
+}
+
+.TagDiv_Detail {
+    position: relative;
+    margin-right: -1px;
+    /*height: 25px;*/
+    text-align: right;
+    overflow: hidden;
+    background: none repeat scroll 0% 0% #FFF;
+    float: right;
+}
+
+.tagleftDiv {
+    float: right;
+    margin: 0px 0px 3px 3px;
+    background: none repeat scroll 0% 0% #AA41CD;
+    color: #FFF;
+    border-radius: 3px;
+}
+
+.tagbgSpan {
+    height: 13px;
+    overflow: hidden;
+    padding: 0px 2px;
+    font-weight: normal;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.tagleftDiv td.falg_rounded {
+    background: none repeat scroll 0% 0% #FFF;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.tagbgSpan {
+    font-weight: normal;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+td, input, button, select, body {
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+    /*font-size: 12px;*/
+}
+
+table.M, table.F {
+    height: 24px;
+    border-bottom: 1px solid #E3E6EB;
+    font-weight: normal;
+    clear: both;
+}
+
+table.i {
+    table-layout: fixed;
+    width: 100%;
+}
+
+    table.i td.cx, table.i td.cx_s {
+        vertical-align: top;
+        padding: 3px 0px 1px 5px;
+        width: 24px;
+    }
+
+.txtflow, .tf {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+table.i td.ci {
+    vertical-align: top;
+    width: 50px;
+    padding: 4px 0px 0px;
+}
+
+.sub_title {
+    font: bold 14px "lucida Grande",Verdana,"Microsoft YaHei";
+}
+
+.left, .qm_left {
+    float: left;
+}
+
+.email_strart {
+    margin-top: -4px;
+    float: left;
+    margin-left: 3px;
+}
+
+/*.shadow_for_panel {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}*/
+
+/*收发文表格样式（纸质文件）*/
+.table_label_paper {
+    text-align: center;
+    width: 100px;
+}
+
+/*收发文表格样式（纸质文件）*/
+.table_text_paper {
+    border: none;
+    width: 100%;
+}
+/*缩起*/
+.minus {
+    background-image: url(images/common/minus.gif);
+    background-repeat: no-repeat;
+    padding-top: 1px;
+    padding-left: 20px;
+}
+/*展开*/
+.plus {
+    background-image: url(images/common/plus.gif);
+    background-repeat: no-repeat;
+    padding-top: 1px;
+    padding-left: 20px;
+}
+
+.required {
+}
+
+.forceRequired {
+}
+
+/*.formtips {
+    color: white;
+    background-color: rgb(229, 83, 83);
+    border: none;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-left: 10px;
+    padding-left: 10px;
+}*/
+.formtips {
+    display: block;
+    top: -25px;
+}
+
+.formtips-arrow{
+    border-right-color:rgb(229, 83, 83);
+}
+
+.formtips .tooltip-inner{
+    background-color: rgb(229, 83, 83);
+}
+
+.high {
+    color: red;
+    position: absolute;
+    font-size: 24px;
+    top: 0px;
+    right: 5px;
+}
+
+.high-btn {
+    color: red;
+    position: absolute;
+    font-size: 24px;
+    top: 0px;
+    right: 0px;
+    width: 1px;
+}
+
+.documentTable table{border-right:1px solid #F00;border-bottom:1px solid #F00;}
+.documentTable table td{border-left:1px solid #F00;border-top:1px solid #F00;font-family:STFangsong;font-size:16px}
+.documentTable table input{border:none;color: black;}
+.documentTable table select{border:none;color: black;width:100%;height:100%}
+.documentTable table textarea{border:none;color: black;}
+.documentTable table label{border:none;color:red;}
+
+
+.documentTableNormal table{border-right:1px solid #000000;border-bottom:1px solid #000000;}
+.documentTableNormal table td{border-left:1px solid #000000;border-top:1px solid #000000;font-family:STFangsong;font-size:16px}
+.documentTableNormal table input{border:none;color: black;}
+.documentTableNormal table select{border:none;color: black;width:100%;height:100%}
+.documentTableNormal table textarea{border:none;color: black;}
+
+.documentTable_QuZhan table{border-right:1px solid #F00;border-bottom:1px solid #F00;}
+.documentTable_QuZhan table td{border-left:1px solid #F00;border-top:1px solid #F00;font-family:STFangsong;font-size:16px}
+.documentTable_QuZhan table input{border:none;color: black;}
+.documentTable_QuZhan table select{border:none;color: black;width:100%;height:100%}
+.documentTable_QuZhan table textarea{border:none;color: black;}
+
+.documentTableNoneLine table td{font-family:STFangsong;font-size:16px}
+.documentTableNoneLine table label{border:none;color:red;}
+.documentTableNoneLine table input {
+    background-color: #efefef;  
+    border-color:#F00;   
+    border-style:solid;   
+    border-top-width:0px;   
+    border-right-width:0px;   
+    border-bottom-width:1px;   
+    border-left-width:0px;  
+    color: black
+}
+
+.border-bottom-3px {
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+.bordered-success {
+    border-color: #53a93f !important;
+}

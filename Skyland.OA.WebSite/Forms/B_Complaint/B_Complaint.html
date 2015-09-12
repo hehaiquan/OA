@@ -1,0 +1,227 @@
+﻿<!-- 说明：
+    表单需要实现响应式布局，
+    enable_actid：是否只读的对应工作流id
+    enable_status:控件状态（可选值：readonly-只读、hide-隐藏、disabled-禁用）
+
+     -->
+    <!-- 工作流控件 -->
+    <!--<div data-id="toolbar"></div>
+    <div data-id="WF_Attachment">    </div>-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <!--意见填写区域，预备加入工作流控件-->
+            <div class="row">
+                <div class="col-md-12" data-id="WF_RemarkBox">
+                </div>
+            </div>
+            <!-- 表单 -->
+            <div data-id="formContainer" class="pageContainer">
+
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h3>  信访登记表</h3>
+                    <div class="btn-group " style="float: right; margin-top:-40px;">
+                        <input data-id="btnLookJianChaZiYuan" disabled="disabled" type="button" class="btn btn-default" value="查看监察资源" />
+                        <input data-id="btnStartSuperviseFlow" type="button" value="启动监察" class="btn btn-default" />
+                    </div>
+                </div>
+                <!--头部按钮行-->
+
+                <!--主表单-->
+                <div class=" sub-header">
+                    信访基本内容
+                </div>
+
+                <div enable_actid="A001" class="row" data-id="baseInfo">
+                    <div class="col-md-9">
+                        <div class="form-horizontal form-bordered ">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">单位名称</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input data-id="unitname" type="text" required="required" class="form-control" data-bind="value:UnitName" placeholder="请选择..." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-bind="click: unitselect" enable_status="disabled">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">单位地址</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:UnitAdd" type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">登记人</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:CreatedUserName" type="text" class="form-control" placeholder="" disabled="disabled" />
+                                </div>
+                                <label class="col-sm-2 control-label">信访编号</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:FileNo" required="required" type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">信访人</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ComplaintMan" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">信访时间</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:ComplaintDate_TEXT,datetimeFormat:'yy-mm-dd hh:mm'" />
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">联系地址</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:LinkAdd" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">联系电话</label>
+                                <div class="col-sm-4">
+                                    <!--<input data-bind="value:LinkNo,datetimeFormat:'yy-mm-dd hh:mm'" type="text" class="form-control" placeholder="" />-->
+                                    <input data-bind="value:LinkNo" type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">信访性质</label>
+                                <div class="col-sm-4">
+                                    <!--data-dict-type="信访性质"-->
+                                    <select data-id="selSource" class="form-control" data-bind="DictOptions: { dictype: 'xfxzDic',value: Property }">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <label class="col-sm-2 control-label">信访来源</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" data-bind="DictOptions: { dictype: 'xflyDic',value: Source }">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">信访内容</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="5" data-bind="value:Content" class="form-control" placeholder=""></textarea>
+                                </div>
+                            </div>
+                            <div enable_actid="A004" class="form-group">
+                                <label class="col-sm-2 control-label">办理情况</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="5" data-bind="value:DealCondition" class="form-control" placeholder=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="2" data-bind="value:Comment" class="form-control" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="control-label">信访类型</label>
+                        <div class="form-group">
+                            <input type="text" data-bind="value:Category,TreeUserSource:$('#divtest') " class="form-control" placeholder="这里是树形多选控件，待实现" />
+                        </div>
+                        <div id="divtest" style="height:300px;overflow-y:auto;">人员</div>
+                    </div>
+                </div>
+                <!-- 信访来源 列表 -->
+                
+                <div class="page-header sub-header">
+                        信访来源<span style="float: right; margin-top:-10px;">
+                            <!--data-bind="click:Add"-->
+                            <button data-id="addSource" class="btn btn-default" ><i class="fa fa-plus"></i> 添加</button>
+                        </span>
+                    </div>
+                <div class="row">
+                    <div class="col-md-12" data-id="sourceList2">
+                        <table>
+                            <thead>
+                                <tr class="sort">
+                                    <th width="10%">
+                                        <a class="btn btn-link" href="number" data-sortkey="number">#</a>
+                                    </th>
+                                    <th width="20%"><a class="btn btn-link" href="Source" data-sortkey="Source">来源</a></th>
+                                    <th width="20%"><a class="btn btn-link" href="SourceNo" data-sortkey="SourceNo">来源编号</a></th>
+                                    <th width="20%"><a class="btn btn-link" href="SourcePhone" data-sortkey="SourcePhone">来源电话</a></th>
+                                    <th width="20%"><a class="btn btn-link" href="SourceDate" data-sortkey="SourceDate">来源时间</a></th>
+                                    <th width="10%" enable_status="hide" enable_actid="A001">操作</th>
+                                </tr>
+                                <tr>
+                                    <th width="10%"></th>
+                                    <th width="20%">
+                                        <select style="width: 90%;" data-filterkey="Source">
+                                            <!--<option value="全部">全部</option>
+                                <option value="来信">来信</option>
+                                <option value="来电">来电</option>
+                                <option value="来访">来访</option>
+                                <option value="邮件">邮件</option>
+                                <option value="媒体曝光">媒体曝光</option>
+                                <option value="其他">其他</option>-->
+                                        </select>
+                                    </th>
+                                    <th width="20%"></th>
+                                    <th width="20%"><input style="width: 90%;" type="text" placeholder="按名称模糊查询" value="" data-filterkey="SourcePhone"></th>
+                                    <th width="20%"></th>
+                                    <th width="10%" enable_status="hide" enable_actid="A001"></th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <td data-bind="text: $root.itemNumber($index())"></td>
+                                    <!--<td width="20%"><span class="btn btn-link" data-bind="text: $.Com.getDict('xfly')[ Source()],click: $root.editRow"></span></td>-->
+                                    <td width="20%"><span class="btn btn-link" data-bind="text:  Source,click: $root.editRow"></span></td>
+                                    <td width="20%" data-bind="text:SourceNo"></td>
+                                    <td width="20%" data-bind="text:SourcePhone"></td>
+                                    <td width="20%"><span data-bind=" text:SourceDate_TEXT"></span></td>
+                                    <td width="10%" enable_status="hide" enable_actid="A001">
+                                        <span class="btn" enable_status="hide" enable_actid="A001" data-bind="click: $root.removeRow,enable_set:null"><i class="fa fa-times"></i></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 弹出子表单 -->
+
+
+            </div>
+            <p/>
+        </div>
+        <!-- 审批意见，预备加入工作流控件 -->
+        <div class="col-lg-4 visible-lg" data-id="WF_RemarkList">
+        </div>
+    </div>
+
+</div>
+
+<div data-id="sourceListEdit2" style="display: none;">
+    <div class="form-horizontal form-bordered ">
+        <div class="form-group">
+            <label class="col-md-2 control-label">信访来源</label>
+            <div class="col-md-4">
+                <input data-bind="value:Source" type="text" class="form-control" placeholder="" />
+                <!--<select class="form-control" data-bind=" value: Source, DictOptions: 'xfly'">
+                    <option value=""></option>
+                </select>-->
+            </div>
+            <label class="col-md-2 control-label">来源编号</label>
+            <div class="col-md-4">
+                <input data-bind="value:SourceNo" type="text" class="form-control" placeholder="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">来源电话</label>
+            <div class="col-md-4">
+                <input data-bind="value:SourcePhone" type="text" class="form-control" placeholder="" />
+            </div>
+            <label class="col-md-2 control-label">来源时间</label>
+            <div class="col-md-4">
+                <input data-bind="value:SourceDate_TEXT,datetimeFormat:'yy-mm-dd hh:mm'" type="text" class="form-control" placeholder="" />
+            </div>
+        </div>
+    </div>
+
+</div>

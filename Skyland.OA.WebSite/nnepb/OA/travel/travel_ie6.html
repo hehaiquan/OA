@@ -1,0 +1,135 @@
+﻿<!-- 说明：
+    表单需要实现响应式布局，
+    enable_actid：是否只读的对应工作流id
+    enable_status:控件状态（可选值：readonly-只读、hide-隐藏、disabled-禁用）
+-->
+<!-- 工作流控件 -->
+<div data-id="toolbar"></div>
+<div data-id="WF_Attachment"></div>
+<div class="row" style="margin: 5px;">
+    <div class="col-lg-8">
+        <!--意见填写区域，预备加入工作流控件-->
+        <div class=" row">
+            <div class="form-group" style="margin-right: 10px">
+                <div class="col-md-20" data-id="WF_RemarkBox"></div>
+            </div>
+        </div>
+        <!-- 表单 -->
+        <div data-id="formContainer" class="pageContainer">
+            <div class="bg-info row" style="padding: 1px;">
+                <div class="col-md-4" style="float: left;">
+                    <h4>出差申请</h4>
+                </div>
+
+            </div>
+            <!--主表单-->
+            <div class="row">
+                <div class="col-md-12" data-id="baseInfo">
+                    <!--基本信息-->
+                    <div class="row form-horizontal form-bordered" style="margin-top: 10px; margin-bottom: 10px">
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">出差人：</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" data-id="traveler" class="form-control" data-bind="value:traveler,TreeUserSource:{opt:false,username:traveler}" />
+                                    <span class="input-group-btn">
+                                        <button data-id="travelerBn" class="btn btn-default" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <label class="col-md-2 control-label">申请日期：</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" data-id="travelDate" class="form-control" data-bind="value:travelDate,datetimeFormat:'yy-mm-dd'" />
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">原因：</label>
+                            <div class="col-md-8">
+                                <textarea data-id="reason" rows="3" class="form-control" data-bind="value:reason"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">备注：</label>
+                            <div class="col-md-8">
+                                <textarea data-id="remark" rows="3" class="form-control" data-bind="value:remark"></textarea>
+                            </div>
+                        </div>
+
+                        <br>
+                    </div>
+                </div>
+
+                <div class="panel-heading" style="margin-bottom:10px">
+                    出差明细
+                    <button data-id="AddSource" style="float: right;" class="btn btn-info">添加</button>
+                </div>
+                <div data-role="listGrid">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th style="text-align: center;width:140px"><strong>申请出差开始日期</strong></th>
+                            <th style="text-align: center;width:140px"><strong>申请出差结束日期</strong></th>
+                            <th style="text-align: center;width:100px"><strong>天数</strong></th>
+                            <th style="text-align: center;width:140px"><strong>实际开始日期</strong></th>
+                            <th style="text-align: center;width:140px"><strong>实际结束日期</strong></th>
+                            <th style="text-align: center;width:100px"><strong>实际天数</strong></th>
+                            <th  style="width:40px"></th>
+                        </tr>
+                        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+
+                                        <tr>
+                                            <td>
+                                                <div class="input-group">
+                                                    <input type="text" data-id="travelStartTime" class="form-control" data-bind="value:travelStartTime,datetimeFormat:'yy-mm-dd'" />
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <input type="text" data-id="travelEndTime" class="form-control" data-bind="value:travelEndTime,datetimeFormat:'yy-mm-dd'" />
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input data-id="totalDays" class="form-control" data-bind="value:totalDays" />
+                                            </td> 
+                                            <td>
+                                                <div class="input-group">
+                                                    <input type="text" data-id="travelStartTime1_sj" class="form-control" data-bind="value:travelStartTime1_sj,datetimeFormat:'yy-mm-dd'" />
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <input type="text" data-id="travelEndTime1_sj" class="form-control" data-bind="value:travelEndTime1_sj,datetimeFormat:'yy-mm-dd'" />
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input data-id="totalDays1_sj" class="form-control" data-bind="value:totalDays1_sj" />
+                                            </td>
+
+                                            <td>
+                                                <span data-id="remove" class="btn" data-bind='click: $root.removeRow'><i class="fa fa-times"></i></span>
+                                            </td>
+                                        </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 审批意见，预备加入工作流控件 -->
+    <div class="col-lg-4 visible-lg" data-id="WF_RemarkList"></div>
+</div>
+
+

@@ -1,0 +1,65 @@
+﻿<div class="col-md-1">
+    <div class="col-md-12" style="margin-top: 10px;">
+        <input data-id='newEmail' type="button" value="写邮件" class="btn btn-info" style="float: left" />
+    </div>
+    <div class="col-md-12" style="margin-top: 10px;">
+        <input data-id='ReceiveEmail' type="button" value="收件箱" class="btn btn-info" style="float: left" />
+    </div>
+    <div class="col-md-12" style="margin-top: 10px;">
+        <input data-id='ManuscriptEmail' type="button" value="草稿箱" class="btn btn-info" style="float: left" />
+    </div>
+    <div class="col-md-12" style="margin-top: 10px;">
+        <input data-id='SendEmail' type="button" value="已发送" class="btn btn-info" style="float: left" />
+    </div>
+    <div class="col-md-12" style="margin-top: 10px;">
+        <input data-id='RemoveEmail' type="button" value="已删除" class="btn btn-info" style="float: left" />
+    </div>
+</div>
+
+<!--网格列表-->
+<div class="col-md-10" style="margin-top: 5px;">
+    <div data-id="emailTableGrid" data-role="emailTableGrid">
+    </div>
+</div>
+
+
+<!--邮件编辑页面-->
+<div class="col-md-12" data-id="editent" style="display: none;">
+    <div class="row">
+        <div data-id="editform">
+            <div class="form-horizontal form-bordered">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">收件人：</label>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="hidden" data-id="v_userid" />
+                            <input type="text" required="required" class="form-control" data-bind="value:Mail_ReceivePersonName,TreeUserSource:{opt:true,username:Mail_ReceivePersonName,userid:Mail_ReceivePersonId}" />
+                            <!--<input  type="text" required="required" class="form-control" data-bind="value:frdb,TreeUserSource:{opt:false,userid:v_userid,username:frdb}"  />-->
+                            <!--<input  type="text" required="required" class="form-control" data-bind="value:frdb,TreeUserSource:{div:$('#userListdiv1'),opt:false,userid:$('#v_userid')}"  />-->
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">主题：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:Mail_Title" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">内容：</label>
+                    <div class="col-md-8">
+                        <!--富文本编辑-->
+                        <textarea class="form-control" name="Mail_SendText"  data-bind="value:Mail_SendText"  rows="12" required="required"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

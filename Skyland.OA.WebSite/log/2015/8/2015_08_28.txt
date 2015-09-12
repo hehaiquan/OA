@@ -1,0 +1,498 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-28 10:22:49
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 10:37:16
+内容：
+异常信息：System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：索引超出了数组界限。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-28 10:37:31
+内容：
+异常信息：System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：索引超出了数组界限。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:23:59
+内容：
+异常信息：System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：索引超出了数组界限。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:24:14
+内容：
+异常信息：System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：索引超出了数组界限。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:25:11
+内容：
+异常信息：System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：索引超出了数组界限。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:26:07
+内容：
+异常信息：System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+异常信息：索引超出了数组界限。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 520
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 375
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:30:55
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:44:40
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:44:53
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:45:03
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:45:47
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:59:39
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 11:59:56
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 12:01:14
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 12:01:54
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 12:02:10
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 12:08:36
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 12:59:53
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:01:42
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:02:07
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:03:29
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:06:13
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:06:30
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:07:22
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:08:11
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:08:39
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:10:49
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:12:52
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:15:43
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:18:57
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:19:33
+内容：
+异常信息：System.IO.IOException: 句柄无效。
+
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：句柄无效。
+
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 13:25:48
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 15:09:39
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 15:50:23
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 15:50:41
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\发文审批笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 376
+--------------------------------------------------------------------------------------
+时间：2015-08-28 16:35:36
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+--------------------------------------------------------------------------------------
+时间：2015-08-28 16:36:53
+内容：
+异常信息：System.InvalidOperationException: 序列不包含任何匹配元素
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+异常信息：序列不包含任何匹配元素
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+--------------------------------------------------------------------------------------
+时间：2015-08-28 16:48:46
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Receive\来文处理笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Receive\来文处理笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+--------------------------------------------------------------------------------------
+时间：2015-08-28 17:00:51
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Receive\来文处理笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Receive\来文处理笺.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.PrintDoc(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 136

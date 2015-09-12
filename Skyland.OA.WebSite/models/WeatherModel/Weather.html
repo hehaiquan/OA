@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        body
+        {
+            font-size: 14px;
+        }
+
+        .divCss
+        {
+            line-height: 30px;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="divCss" style="margin-left: 10px;">
+                    天气：<span>${weather}</span></div>
+            </td>
+            <td rowspan="3" style="">
+                <img src="${src}" style="height:75px;float:right;margin-left:30px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="divCss" style="margin-left: 10px;">
+                    温度：<span>${temp}</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="divCss" style="margin-left: 10px;">
+                    湿度：<span>${tempF}</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

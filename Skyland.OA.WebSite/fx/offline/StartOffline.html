@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="demo.appcache">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <a href="../Forms/B_Complaint/B_Complaint.html">../Forms/B_Complaint/B_Complaint.html</a>
+</body>
+<script type="text/javascript">
+    var appCache = window.applicationCache;
+    if (appCache = undefined) alert("您的浏览器不支持applicationCache功能");
+
+    applicationCache.onnoupdate = function () {
+        if (frameElement) frameElement.onnoupdate();
+    };
+
+    applicationCache.ondownloading = function () { };
+
+    applicationCache.onprogress = function (e) {
+        if (frameElement) frameElement.onprogress(e);
+    };
+
+    applicationCache.oncached = function () {
+        if (frameElement) frameElement.oncached();
+    };
+</script>
+</html>

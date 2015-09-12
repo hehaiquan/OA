@@ -1,0 +1,141 @@
+﻿<ul data-id="tabmodel-MaxPrivilege" style="user-select: none; padding: 5px 0 0 5px;">
+    <li data-id="MaxPrivilege-Work"><a>组视角</a></li>
+    <li data-id="MaxPrivilege-User"><a>用户视角</a></li>
+    <li data-id="MaxPrivilege-Func"><a>权限视角</a></li>
+</ul>
+
+<div data-id="MaxPrivilege-Work-content" viewingangle="Work" style="overflow-y:hidden"> 
+    <div style="width: 100%; height: 98%; position: relative;">
+        <div class="row" style="position: absolute; top: 0px; right: 15px; bottom: 0px; left: 0px; padding: 5px">
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-info" style="height: 100%;">
+                    <div class="panel-heading">
+                        <span>权限组：</span><span iwftype="curselect" style="width: 60%;"></span>
+                        <input type="button" value="保存配置" class="btn btn-primary" style="float: right; margin: -6px;" iwftype="save" />
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="group"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-default" style="height: 100%;">
+                    <div class="panel-heading">
+                        <span>权限</span>
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="privilege"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-success" style="height: 100%;">
+                    <div class="panel-heading" iwftype="UserToolBar">
+                        <span>人员</span>
+                        <input type="button" iwftype="fold" value="折叠" class="btn btn-default" style="float: right; margin: -6px 2px;" />
+                        <input type="button" iwftype="unfold" value="展开" class="btn btn-default" style="float: right; margin: -6px 2px;" />
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="user"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-id="MaxPrivilege-User-content" viewingangle="User" style="overflow-y:hidden">
+    <div style="width: 100%; height: 98%; position: relative;">
+        <div class="row" style="position: absolute; top: 0px; right: 15px; bottom: 0px; left: 0px; padding: 5px">
+
+            <div class="col-md-4" style="height: 100%;" id="mainindex-left-tree">
+                <div class="panel panel-success" style="height: 100%;">
+                    <div class="panel-heading" iwftype="UserToolBar">
+                        <span>用户：</span><span iwftype="curselect" style="width: 60%;"></span>
+                        <input type="button" iwftype="save" value="保存配置" class="btn btn-primary" style="float: right; margin: -6px 0px -6px 2px;" />
+                        <input type="button" iwftype="unfold" value="展开" class="btn btn-default" style="float: right; margin: -6px 2px;" />
+                        <input type="button" iwftype="fold" value="折叠" class="btn btn-default" style="float: right; margin: -6px 2px;" />
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="user"></ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-default" style="height: 100%;">
+                    <div class="panel-heading">
+                        <span>权限</span>
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="privilege"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-info" style="height: 100%;">
+                    <div class="panel-heading">
+                        <span>权限组</span>
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="group"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div data-id="MaxPrivilege-Func-content" viewingangle="Privilege" style="overflow-y:hidden">
+    <div style="width: 100%; height: 98%; position: relative;">
+        <div class="row" style="position: absolute; top: 0px; right: 15px; bottom: 0px; left: 0px; padding: 5px">
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-info" style="height: 100%;">
+                    <div class="panel-heading">
+                        <span>权限：</span><span iwftype="curselect" style="width: 60%;"></span>
+                        <input type="button" iwftype="save" value="保存配置" class="btn btn-primary" style="float: right; margin: -6px;" />
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="privilege"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-default" style="height: 100%;">
+                    <div class="panel-heading">
+                        <span>权限组</span>
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="group"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 100%;">
+                <div class="panel panel-success" style="height: 100%;">
+
+                    <div class="panel-heading" iwftype="UserToolBar">
+                        <span>用户</span>
+                        <input type="button" iwftype="fold" value="折叠" class="btn btn-default" style="float: right; margin: -6px 2px;" />
+                        <input type="button" iwftype="unfold" value="展开" class="btn btn-default" style="float: right; margin: -6px 2px;" />
+                    </div>
+                    <div class="panel-body" style="overflow-y: auto; position: absolute; top: 42px; left: 16px; bottom: 2px; right: 16px; padding: 3px;">
+                        <ul treetype="user"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+
+    [model=MaxPrivilege] .col-md-4
+    {
+        width: 33.3%;
+        float:left;
+    }
+
+</style>
+

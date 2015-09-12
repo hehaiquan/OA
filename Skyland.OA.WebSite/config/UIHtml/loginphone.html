@@ -1,0 +1,127 @@
+﻿
+    <style>
+        body {
+            background-image: url('resources/images/bg.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            padding: 0px;
+            font-family: 'Microsoft Yahei' !important;
+            color: white;
+        }
+
+        .title {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-top: 120px;
+            margin-bottom: 50px;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 35px;
+            text-shadow: 1px 1px 1px #b6c7d3;
+        }
+
+        .login-entry2 {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+            width: 300px;
+            height: 300px;
+            background-image: url('resources/images/bg.png');
+            background-repeat: no-repeat;
+            background-position: center -60px;
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+            -webkit-filter: blur(5px); /* Chrome, Opera */
+            -moz-filter: blur(5px);
+            filter: blur(5px);
+        }
+
+        .login-entry {
+            z-index: 10;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -300px;
+            width: 300px;
+            height: 300px;
+            box-shadow: 2px 4px 4px rgba(0,0,0,0.3);
+        }
+
+        .login-img {
+            width: 96px;
+            height: 96px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            display: block;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+        }
+
+        .login-form {
+            width: 274px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+    </style>
+
+    <div style="width: 100%; margin-left: 0px; margin-right: 0px;">
+
+        <div class="login-entry2"></div>
+        <div class="login-entry">
+            <div style="margin-left: auto; margin-right: auto; padding: 10px;">
+                <!-- <img src="resources/login2/avatar_2x.png" class="login-img" />-->
+                <div class="h3 text-center" style="margin: 20px 20px; text-shadow: 1px 1px 1px #4e4e4e;">
+                    业 务 管 理 信 息 系 统
+                </div>
+
+                <div class="login-form">
+
+
+                    <div class="form-group">
+                        <!--<label for="username">用户名：</label>-->
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                            <input type="text" class="form-control" id="username" placeholder="用户名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!--<label for="password">密码：</label>-->
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="密码" id="password" />
+                        </div>
+                    </div>
+
+                    <div class="checkbox" style="margin: 10px 10px;">
+                        <label>
+                            <input type="checkbox" />
+                            记住密码
+                        </label>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block" onclick="loginCookie()">登录</button>
+
+                    <!--<label class="login-name">用户名：</label>
+                    <input style="height: 45px; margin-left: auto; margin-right: auto; width: 100%; padding-left: 5px; padding-right: 5px; text-align: left;" name="username" type="text" id="username" />
+                    <label class="login-name">密码：</label>
+                    <input style="height: 45px; width: 100%; padding-left: 5px; padding-right: 5px;" name="password" type="password" id="password" value="" />
+                    <button class="btn btn-info" type="submit" style="vertical-align: middle; margin-left: 0px; margin-top: 10px; height: 40px; width: 100%;" onclick="loginCookie()" value=""><span style="font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;">登录</span></button>-->
+                    <!--            <input id="rmbUser" type="checkbox" style="margin:10px 5px 0px 0px; vertical-align: middle;" /><span style="font-size: 14px;">记住帐号</span>-->
+                    <!--            <div style="margin-top:20px;">
+                        <a href="清理IE缓存.bat" style="color: black; font-size: 14px; float: right;">清理IE缓存</a>
+                        <a href="解决附件下载.bat" style="color: black; font-size: 14px; float: right;">解决附件下载&nbsp;&nbsp;&nbsp;</a>
+                    </div>   -->
+                    <div id="msg" style="margin-top: 20px;" class="info"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div style="bottom: 0px; height: 40px; position: absolute; left: 0px; right: 0px; margin-left: 0px; padding: 10px" class="alert-info">@广州市云景信息科技有限公司 2014</div>

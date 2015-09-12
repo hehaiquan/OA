@@ -1,0 +1,60 @@
+﻿<!--开发人 黄欢-->
+<div class="col-md-3">
+    <div class="row">
+        <ul data-id="SharefileDeptTree" id="SharefileDeptTree"  class="ztree" style="height: 100%; border: 0; overflow: auto;"></ul>
+    </div>
+
+</div>
+<div class="col-md-9" style="margin-top: 10px">
+    <div class="pageContainer">
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h5>文档文件</h5>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-md-12">
+                  <div data-role="fileGrid">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th colspan='1'>
+                                    <input type="text" class="form-control"  placeholder="请输入文件名查询" value="" data-filterkey="BeforeFileName">
+                                </th>
+                            </tr>
+
+                        </thead>
+                        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                            <tr>
+                                <td width="30px" data-bind="text: $root.itemNumber($index())"></td>
+                                <td  width="100%">
+                                    <a href="#" data-bind="attr:{href:$root._HrefAttachment(RelativePath)}"  target='_blank'><span class="btn btn-link" data-bind="text:BeforeFileName"></span></a>
+                                    <span>  时间：<span data-bind="text:CreateTime"></span></span>
+                                    <span>  发布人：<span data-bind="text:Creater"></span></span>
+                                    <span>  部门：</span><span data-bind="text:NewsFromDeptName"></span></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <div style="float: left;" data-bind="visible: paginator().length > 1">
+                            <ul class="pagination" data-bind="foreach: paginator">
+                                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                    <a data-bind="text: name, click: $root.setPage"></a>
+                                    <span>...</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="float: right;">
+                            <ul class="pagination pagination-right">
+                                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

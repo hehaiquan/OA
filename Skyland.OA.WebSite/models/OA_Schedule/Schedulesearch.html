@@ -1,0 +1,134 @@
+﻿<div class="row" style="margin: 10px; margin-right: 20px">
+    <div class="pageContainer">
+        <div data-id="searchDiv"  class="bg-info row" style="padding: 1px;height:55px">
+            <div class="col-md-7">
+                <ul class="pagination pagination-left" style="margin-top:10px">
+                    
+                    <li><a data-bind="text:$root._setName(-3),click:function(){$root._search(-3)}"></a></li>
+                    <li><a data-bind="text:$root._setName(-2),click:function(){$root._search(-2)}"></a></li>
+                    <li><a data-bind="text:$root._setName(-1),click:function(){$root._search(-1)}">昨天</a></li>
+                    <li><a data-bind="text:$root._setName(0),click:function(){$root._search(0)}">今天</a></li>
+                    <li><a data-bind="text:$root._setName(1),click:function(){$root._search(1)}">二</a></li>
+                    <li><a data-bind="text:$root._setName(2),click:function(){$root._search(2)}">三</a></li>
+                    <li><a data-bind="text:$root._setName(3),click:function(){$root._search(3)}">四</a></li>
+                    <li><a data-bind="text:$root._setName(4),click:function(){$root._search(4)}">五</a></li>
+                    <li><a data-bind="text:$root._setName(5),click:function(){$root._search(5)}">六</a></li>
+                    <li><a data-bind="text:$root._setName(6),click:function(){$root._search(6)}">日</a></li>
+                    <li><a data-id="zjqt">最近七天</a></li>
+                    <li><a data-id="zjygy">最近一个月</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5"  style="margin-top:10px">
+                <div class="form-group">
+                    <label class="col-md-3 control-label" style="margin-top:5px">起始日期：</label>
+                    <div class="col-md-9">
+                        <div class="input-group">
+                            <input  data-id="beginText"  type="text" class="form-control" data-bind="value:datetime,datetimeFormat:'yy-mm-dd'"  />
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input  data-id="endText" type="text" class="form-control"  data-bind="value:datetime1,datetimeFormat:'yy-mm-dd'" />
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span> <span class="input-group-btn">
+                                <button data-id="searchBn" class="btn btn-default" type="button">查询</button>
+                            </span>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin: 10px">
+            <div data-role="ScheduleGrid">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan='1'>
+                                <span>日程名称</span>
+                            </th>
+                            <th>
+                                <span>日程内容</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>办事人</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>陪同人员</span>
+                            </th>
+                            <th>
+                                <span>地点</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>日程时间</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="ScheduleName">
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="ScheduleContent">
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="Leader">
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="Accompany">
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="Place">
+                            </th>
+                            <th>
+                         
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td width="30px" data-bind="text: $root.itemNumber($index())"></td>
+                            <td width="150px">
+                                <span class="btn" data-bind="text:ScheduleName,showAllContentDiv:{length:30}"></span>
+                            </td>
+                            <td>
+                                <span class="btn" data-bind="text:ScheduleContent,showAllContentDiv:{length:20}"></span>
+                            </td>
+                            <td width="60px">
+                                <span class="btn" data-bind="text:Leader"></span>
+                            </td>
+                            <td width="35px">
+                                <span class="btn" data-bind="text:Accompany"></span>
+                            </td>
+                            <td width="35px">
+                                <span class="btn" data-bind="text:Place,showAllContentDiv:{length:20}"></span>
+                            </td>
+                            <td width="30px">
+                                <span class="btn" data-bind="text:ScheduleTime"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <span>...</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

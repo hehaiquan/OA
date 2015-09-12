@@ -1,0 +1,117 @@
+﻿<!-- 表格 -->
+<div data-id="dataGrid" style="margin-top: 10px">
+    <table class=" table table-condensed table-striped">
+        <thead>
+            <tr class="sort">
+                <!--<th>业务流ID</th>-->
+                <th style="width: 3%; text-align: center">序号</th>
+                <th style="width: 20%; text-align: center">
+                    <a href="wjmc" data-sortkey="wjmc">标题</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="code" data-sortkey="code">来文编号</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="lwrq" data-sortkey="lwrq">来文日期</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="zbsj" data-sortkey="zbsj">转办时间</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="lwdw" data-sortkey="lwdw">来文单位</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="recordManName" data-sortkey="recordManName">打字员</a></th>
+                <th style="width: 11%; text-align: center">
+                    <a href="FileTypeName" data-sortkey="FileTypeName">来文单位类型</a></th>
+                <th  style="width: 5%; text-align: center" data-id="handler">
+                    <span>操作</span>
+                </th>
+            </tr>
+            <tr>
+                <th></th>
+                <!--标题-->
+                <th>
+                    <input type="text" class="form-control" data-filterkey="wjmc" />
+                </th>
+                <!--来文编号-->
+                <th>
+                    <input class="form-control" value="" data-filterkey="code" />
+                </th>
+                <!--来文日期-->
+                <th>
+                    <select tabindex="-1" class="form-control" placeholder="来文日期" data-filterkey-daterange="lwrq"></select>
+                </th>
+
+                <!--转办时间-->
+                <th>
+                    <select tabindex="-1" class="form-control" placeholder="转办时间" data-filterkey-daterange="zbsj"></select>
+                </th>
+                <!--来文单位-->
+                <th>
+                    <input type="text" class="form-control" data-filterkey="lwdw" />
+                </th>
+                <!--打字员-->
+                <th>
+                    <select class="form-control" data-filterkey="recordManName" />
+                </th>
+                <!--来文单位类型-->
+                <th>
+                    <select class="form-control" data-filterkey="FileTypeName" />
+                </th>
+                <th data-id="handler"></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <!--序号-->
+                <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                <!--文件名称-->
+                <td>
+                    <a data-bind="click:$root.editRow"><span data-bind="text:wjmc"></span></a>
+                </td>
+                <!--编号-->
+                <td>
+                    <span data-bind="text:code"></span>
+                </td>
+                <!--来文 日期-->
+                <td>
+                    <span data-bind="text:$root.formatCurDate(lwrq)"></span>
+                </td>
+                <!--转办时间-->
+                <td>
+                    <span data-bind="text:$root.formatCurDate(zbsj)"></span>
+                </td>
+                <!--来文单位-->
+                <td>
+                    <span data-bind="text:lwdw"></span>
+                </td>
+                <!--打字员-->
+                <td>
+                    <span data-bind="text:recordManName"></span>
+                </td>
+                <!--来文单位类型-->
+                <td>
+                    <span data-bind="text:FileTypeName"></span>
+                </td>
+                <td  data-id="handler" style="text-align: center">
+                    <a data-bind="click:function(){$root._deleteRow(caseid())}" class="btn-link glyphicon glyphicon-trash" style="color:black"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko --></li>
+            </ul>
+        </div>
+        <div style="float: right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

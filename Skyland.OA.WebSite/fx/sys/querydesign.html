@@ -1,0 +1,53 @@
+﻿<ul id="tabmodel-MaxPrivilege">
+    <li id="querydesign-design"><a>设计</a></li>
+    <li id="querydesign-look"><a>预览</a></li>
+</ul>
+<div id="querydesign-design-content" viewingangle="design" style="padding: 5px;">
+    <div style="margin: 2px; padding-right: 15px; text-align: right;">
+        <input type="button" value="新增" class="btn btn-info" action="new" />
+    </div>
+    <div style="border-bottom: 1px solid #CCC; padding: 2px; display: none" class="setting">
+        <table style="width: 100%">
+            <tr>
+                <td>实体标示</td>
+                <td>表名</td>
+                <td>条件</td>
+                <td>结果集类型</td>
+                <td>唯一键</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" field="mark" style="width: 100px;" /></td>
+                <td>
+                    <select field="alltable" style="width: 180px;"></select>
+                </td>
+                <td>
+                    <input field="conditions" type="text" /></td>
+                <td>
+                    <select field="type" style="width: 100px;">
+                        <option>Object</option>
+                        <option>List</option>
+                        <option>Dictionary</option>
+                        <option>Array</option>
+                    </select></td>
+                <td>
+                    <select field="unique" style="width: 90px;"></select></td>
+            </tr>
+            <tr>
+                <td colspan="5">字段集</td>
+
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <!--<textarea style="width: 90%; height: 60px;" field="field" ></textarea>-->
+                    <div field="fieldCombox"></div>
+
+                </td>
+                <td style="text-align: right; vertical-align: top">
+                    <input type="button" value="删除" action="del" class=".btn .btn-default" /></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<textarea id="querydesign-look-content" viewingangle="look" style="width:98%;height:89.5%;margin:1px;">
+</textarea>

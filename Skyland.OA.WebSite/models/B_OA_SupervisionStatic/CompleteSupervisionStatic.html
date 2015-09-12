@@ -1,0 +1,165 @@
+﻿<div class="shadow_for_panel">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    督办落实情况统计
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div data-id="searchCondition">
+                <div class="form-horizontal" style="margin-top: 5px;">
+                    <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: none;">年份
+                            </span>
+                            <select class="form-control" data-bind="DictOptions: {dictype: 'FX_WorkFlowCase_EndDateDic',value:year}">
+                                <option selected="selected" value="">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: none;">季度
+                            </span>
+                            <select class="form-control" data-bind="DictOptions: {dictype: 'QuarterDic',value:quarter}">
+                                <option selected="selected" value="">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                        <button class="btn btn-default" data-id="searchBtn"><i class="fa fa-search"></i>&nbsp;查询</button>
+
+                        <button class="btn btn-default" data-id="print"><i class="fa fa-print"></i>&nbsp;打印</button>
+                    </div>
+                </div>
+            </div>
+            <div data-id="supervisionCompleteStaticGrid">
+                <table class=" table table-condensed table-striped">
+                    <thead>
+                        <tr class="sort">
+                            <th style="width: 3%; text-align: center">序号</th>
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="code">督办编号</a></th>
+
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="title">督办事项</a></th>
+
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="supervisionManName">办公室督办人</a></th>
+
+
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="undertake_Department">承办科室、单位</a></th>
+
+
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="assistDepartment">协办科室、单位</a></th>
+
+
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="EndDate">办结时间</a></th>
+
+                            <th style="background: white; width: 11%; text-align: center;">
+                                <a href="wjbt" data-sortkey="Remark">办结情况</a></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <!--督办编号-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="code" />
+                            </th>
+                            <!--督办事项-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="title" />
+                            </th>
+                            <!--办公室督办人-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="supervisionManName" />
+                            </th>
+                            <!--承办科室、单位-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="undertake_Department" />
+                            </th>
+                            <!--协办科室、单位-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="assistDepartment" />
+                            </th>
+                            <!--办结时间-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="EndDate" />
+                            </th>
+                            <!--办结情况-->
+                            <th>
+                                <input type="text" class="form-control" data-filterkey="Remark" />
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+
+                        <tr>
+                            <!--序号-->
+                            <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                            <!--督办编号-->
+                            <td>
+                                <a data-bind="click:$root.editRow"><span data-bind="text:code"></span></a>
+                            </td>
+                            <!--督办事项-->
+                            <td>
+                                <span data-bind="text:title"></span>
+                            </td>
+                            <!--办公室 督办人-->
+                            <td>
+                                <span data-bind="text:supervisionManName"></span>
+                            </td>
+                            <!--承办可是、单位-->
+                            <td>
+                                <span data-bind="text:undertake_Department"></span>
+                            </td>
+                            <!--协办可是、单位-->
+                            <td>
+                                <span data-bind="text:assistDepartment"></span>
+                            </td>
+                            <!--办结时间-->
+                            <td>
+                                <span data-bind="html:$root.setDateTime(EndDate)"></span>
+                            </td>
+                            <!--办结情况-->
+                            <td>
+                                <span data-bind="text:Remark"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--页数显示-->
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <!-- ko if: name != '...' -->
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <!-- /ko -->
+                                <!-- ko if: name == '...' -->
+                                <span>...</span><!-- /ko -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

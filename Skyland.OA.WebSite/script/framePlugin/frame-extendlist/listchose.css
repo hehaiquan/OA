@@ -1,0 +1,106 @@
+﻿.div_txt
+{
+	min-height: 18px;
+	border-bottom: #c3c3c3 1px solid;
+	border-left: #9a9a9a 1px solid;
+	border-top: #7c7c7c 1px solid;
+	border-right: #c3c3c3 1px solid;
+	padding: 1px;
+	height: auto;
+	width: auto;
+	cursor: text;
+}
+
+.toolbar
+{
+	padding: 4px 2px 0 10px;
+}
+
+
+.addr_text
+{
+	margin: 1px -13px 1px 0;
+	cursor: pointer;
+}
+
+	.addr_text input
+	{
+		font: inherit;
+		background-color: transparent;
+		height: 100%;
+		border: none;
+		/*border:1px solid #f00*/
+	}
+
+.addr_normal
+{
+	height: 16px;
+	font: 12px 微软雅黑;
+	/*height: 20px;
+            font: 16px 微软雅黑;*/
+}
+
+.addr_extra b
+{
+	color: red;
+}
+
+
+.addr_text.edit
+{
+	margin: 1px -3px 1px 0px;
+}
+
+.addr_base
+{
+	margin: 1px 3px;
+}
+
+	.addr_base b
+	{
+		font-weight: normal;
+	}
+
+	.addr_base:hover
+	{
+		background-color: #C1D9F3;
+		cursor: default;
+	}
+
+	.addr_base.addr_Chose
+	{
+		background-color: #007ACC;
+		color: #fff;
+	}
+
+.addr_gap
+{
+	cursor: text;
+}
+
+
+/*单选***********************/
+.ico-drop-fromListchose
+{
+	height:20px;
+	width:20px;
+	background-image:url(images/icon-down.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.ico-del-fromListchose
+{
+	height:20px;
+	width:20px;
+	background-image:url(images/delete.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.ico-search
+{
+	height:24px;
+	width:24px;
+	background-image:url(images/search24.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}

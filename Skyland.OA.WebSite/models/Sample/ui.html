@@ -1,0 +1,205 @@
+﻿
+<div class="container-fluid ">
+    
+    <div class="page-header sub-header" >
+        <h3>标题</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4" data-id="list" style="height:100%">
+            <!-- 查询条件 工具栏 -->
+            <div data-id="conditions" class="row" style="margin-bottom: 10px;">
+                <div class="col-xs-8">
+                    <input type="text" placeholder="按名称查询" value="" data-filterkey="zwm" style="width: 100%">
+                </div>
+                <div class="col-xs-4">
+                    <button data-id="add" class="btn btn-default" style="float: right;"><i class="fa fa-file" />新增</button>
+                </div>
+            </div>
+
+            <!-- 表格 -->
+            <div data-id="listtable">
+                <table class=" table table-striped table-bordered">
+
+
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <a data-bind="click: $root.editRow" class="btn btn-link">
+                                            <span data-bind="text:CnName"></span>
+                                        </a>(<span data-bind="text:EnName"></span> ) &nbsp;
+                                    </div>
+                                    <div class="col-xs-2"><a class="btn btn-link" data-id="delbtn" data-bind="click: $root.removeRow"><i class="fa fa-times"></i></a></div>
+
+                                    <div class="col-xs-12" style="padding-top: 8px;">
+                                       
+                                        邮件: <span data-bind="text:EMail"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+           
+             </div>
+            <!-- 分页 -->
+            <div>
+                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                    <ul class="pagination" data-bind="foreach: paginator">
+                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                            <!-- ko if: name != '...' -->
+                            <a data-bind="text: name, click: $root.setPage"></a>
+                            <!-- /ko -->
+                            <!-- ko if: name == '...' -->
+                            <span>...</span><!-- /ko -->
+                        </li>
+                    </ul>
+                </div>
+                <div style="float: right;">
+                    <ul class="pagination pagination-right">
+                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-8" data-id="editent">
+            <!-- 工具栏 -->
+            <div style="margin-bottom: 10px; height: 35px;">
+                <button data-id="back" class="btn btn-primary hidden-lg hidden-md"><i class="fa fa-arrow-circle-o-left" />返回</button>
+                <button data-id="save" class="btn btn-primary" style="float: right;"><i class="fa fa-save" />保存</button>
+            </div>
+
+            <div class="pageContainer ">
+                <!--标题栏-->
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h3>&nbsp;<span data-bind="text:CnName"></span></h3>
+                </div>
+                <!-- 表单基本框 -->
+
+                <div class="form-horizontal" style="padding: 20px 0;">
+
+                    <div class="form-group">
+                        <!-- 产业代码  -->
+                        <label class="col-xs-2 control-label">产业代码：</label>
+                        <div class="col-xs-4">
+                            <input data-id="cydm" title="value: cydm" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <!-- casdm  -->
+                        <label class="col-xs-2 control-label">casdm：</label>
+                        <div class="col-xs-4">
+                            <input data-id="casdm" title="value: casdm" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 中文名  -->
+                        <label class="col-xs-2 control-label">中文名：</label>
+                        <div class="col-xs-4">
+                            <input data-id="zwm" title="value: zwm" type="text" class="form-control" placeholder="" />
+                        </div>
+
+                        <!-- 拼音简称  -->
+                        <label class="col-xs-2 control-label">拼音简称：</label>
+                        <div class="col-xs-4">
+                            <input data-id="pyjc" title="value: pyjc" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 英文名  -->
+                        <label class="col-xs-2 control-label">英文名：</label>
+                        <div class="col-xs-10">
+                            <input data-id="ywm" title="value: ywm" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 别名  -->
+                        <label class="col-xs-2 control-label">别名：</label>
+                        <div class="col-xs-4">
+                            <input data-id="bm" title="value: bm" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <!-- 类型  -->
+                        <label class="col-xs-2 control-label">类型：</label>
+                        <div class="col-xs-4">
+                            <input data-id="lx" title="value: lx" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 外观  -->
+                        <label class="col-xs-2 control-label">外观：</label>
+                        <div class="col-xs-10">
+                            <textarea rows="5" data-id="wg" title="value: wg" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 分子式  -->
+                        <label class="col-xs-2 control-label">分子式：</label>
+                        <div class="col-xs-10">
+                            <textarea rows="5" data-id="fzs" title="value: fzs" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 分子量  -->
+                        <label class="col-xs-2 control-label">分子量：</label>
+                        <div class="col-xs-4">
+                            <input data-id="fzl" title="value: fzl" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <!-- 熔点  -->
+                        <label class="col-xs-2 control-label">熔点：</label>
+                        <div class="col-xs-4">
+                            <input data-id="rd" title="value: rd" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 密度  -->
+                        <label class="col-xs-2 control-label">密度：</label>
+                        <div class="col-xs-10">
+                            <input data-id="md" title="value: md" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 临界值  -->
+                        <label class="col-xs-2 control-label">临界值：</label>
+                        <div class="col-xs-4">
+                            <input data-id="ljz" title="value: ljz" type="text" class="form-control" placeholder="" />
+                        </div>
+
+                        <!-- 沸点  -->
+                        <label class="col-xs-2 control-label">沸点：</label>
+                        <div class="col-xs-4">
+                            <input data-id="fd" title="value: fd" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 溶解性  -->
+                        <label class="col-xs-2 control-label">溶解性：</label>
+                        <div class="col-xs-10">
+                            <input data-id="rjx" title="value: rjx" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- 稳定度  -->
+                        <label class="col-xs-2 control-label">稳定度：</label>
+                        <div class="col-xs-4">
+                            <input data-id="wdd" title="value: wdd" type="text" class="form-control" placeholder="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <!-- 用途  -->
+                        <label class="col-xs-2 control-label">用途：</label>
+                        <div class="col-xs-10">
+                            <textarea rows="5" data-id="yt" title="value: yt" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

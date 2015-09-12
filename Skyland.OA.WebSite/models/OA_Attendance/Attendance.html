@@ -1,0 +1,155 @@
+﻿<div class="panel panel-info" data-id="editent">
+    <div class="panel-heading">
+        <div class="panel-title" style="font-size: 18px;">
+            考勤查询
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal" data-id="search" style="margin-top: 5px;">
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">部门
+                    </span>
+                    <input type="text" class="form-control" data-bind="value:dpname,TreeDepartmentSource:{opt:false,dpname:dpname}" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="ParticipantName" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">姓名
+                    </span>
+                        <input type="text" class="form-control" data-bind="value:userName" />
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">统计月份
+                    </span>
+                        <select data-id="monthAttendance" data-bind="value: monthAttendance" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+            </div>
+
+            <div class="form-group col-sm-6 col-lg-4" style="margin-right: 0px;">
+                <button class="btn btn-default" style="float: left;" data-id="searchBtn">
+                    <span class="icon-search" style="color: rgb(0, 0, 0);"></span>
+                    查询</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="todayBtn">今天</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="weekBtn">本周</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="monthBtn">本月</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="monthBtn">上月</button>
+            </div>
+
+        </div>
+
+        <div class="row" style="margin: 10px">
+            <div data-role="AttendanceGrid" class="table-responsive">
+                <table class="table table-striped doingcase">
+                    <thead>
+                        <tr>
+                            <th width="30px"></th>
+                            <th width="70px">
+                                <span>姓名</span>
+                            </th>
+                            <th width="120px">
+                                <span>部门</span>
+                            </th>
+                            <th width="50px">
+                                <span>迟到↓</span>
+                            </th>
+                            <th width="50px">
+                                <span>早退↓</span>
+                            </th>
+                            <th width="50px">
+                                <span>缺卡↓</span>
+                            </th>
+                            <th width="400px">
+                                <span></span>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th></th>
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="userName">
+                            </th>
+                            <th>
+                                <select class="form-control" data-filterkey="dpname" />
+                            </th>
+
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="late">
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="leaveEarly">
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="missing">
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td data-bind="text: $root.itemNumber($index())"></td>
+                            <td>
+                                <span data-bind="text:userName"></span>
+                            </td>
+                            <td>
+                                <span data-bind="text:dpname"></span>
+                            </td>
+                            <td>
+                                <span data-bind="text:late"></span>
+                            </td>
+                            <td>
+                                <span data-bind="text:leaveEarly"></span>
+                            </td>
+                            <td>
+                                <span data-bind="text:missing"></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--页数显示-->
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <!-- ko if: name != '...' -->
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <!-- /ko -->
+                                <!-- ko if: name == '...' -->
+                                <span>...</span><!-- /ko -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

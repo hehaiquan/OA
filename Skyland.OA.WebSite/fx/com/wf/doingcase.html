@@ -1,0 +1,120 @@
+﻿
+<div class="casebox tablehead text-info" style="text-align:center;">
+    <div class="col45">业务名称</div>
+    <div class="col15">当前位置</div>
+    <div class="col8">创建人</div>
+    <div class="col12">创建时间</div>
+    <div class="col8">提交人</div>
+    <div class="col12 tr">收件时间</div>
+</div>
+<div style="overflow-y:auto;height:100%;">
+    <div class="iwf-grid casebox">
+        <div class="iwf-grid-body">
+
+            <div class="treeview-bar"><span style="margin:-2px 5px 0 -10px;"><i class="fa fa-sort-desc"></i></span> ${text}&nbsp;(${count})</div>
+
+            <div data-id="${ID}" class="${$item.GetTrclass($data)} iwf-grid-row casebox-row">
+
+                <div class="col45"> <a href="javascript:void(0)"><i class="${$item.GetIcon($data)}"></i> ${descript} ${Name}</a></div>
+                <div class="col15">${ActName}</div>
+                <div class="col8">${CreaterCnName}</div>
+                <div class="col12">${$item.changeyyyyMMdd(CreateDate)}</div>
+                <div class="col8">${SenderName}</div>
+                <div class="col12 ">${$item.changeyyyyMMdd(ReceiveDate)}</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .tablehead {
+        padding: 8px 20px 5px 10px;
+        font-weight: bold;
+        height: 35px;
+    }
+
+   .casebox-row{
+        padding: 8px;
+        line-height: 1.4285;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+        border-left: 4px solid #fff;
+    }
+
+    /*.tr {
+        text-align: right;
+        line-height: 25px;
+    }*/
+
+    .casebox .unreaded .col45 {
+        font-weight: bold;
+    }
+
+    .iwf-gird-active {
+        border-left: 4px solid #337ab7;
+        background-color: #d9edf7;
+    }
+
+    .casebox .col45,
+    .casebox .col15,
+    .casebox .col12,
+    .casebox .col8 {
+        margin-left: 0px;
+        display: inline-block;
+        color: #888;
+    }
+
+    .casebox .col45 {
+        width: 45%;
+        color: #000;
+    }
+
+    .casebox .col15 {
+        width: 12%;
+    }
+
+    .casebox .col12 {
+        width: 12%;
+    }
+
+    .casebox .col8 {
+        width: 8%;
+    }
+
+    @media (max-width: 800px) {
+        .casebox td {
+            padding: 3px 2px;
+        }
+
+        .tablehead {
+            display: none;
+        }
+
+        .casebox .col45 {
+            width: 68%;
+        }
+
+        .casebox .col15 {
+            width: 30%;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        .casebox .col12 {
+            width: 30%;
+        }
+
+        .casebox .col8 {
+            width: 18%;
+        }
+
+        .casebox tbody div {
+            /*color: #808080;*/
+        }
+
+            .casebox tbody div a {
+                /*color: #000;*/
+            }
+    }
+ 
+</style>

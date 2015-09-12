@@ -1,0 +1,13 @@
+--------------------------------------------------------------------------------------
+时间：2015-09-11 17:05:16
+内容：
+异常信息：System.Exception: 当前业务不能被删除！！
+   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.B_OA_CarSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 399
+异常信息：当前业务不能被删除！！
+异常堆栈：   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.B_OA_CarSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 399

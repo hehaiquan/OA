@@ -1,0 +1,167 @@
+﻿<div class="row">
+    <div class="col-md-4" data-id="list">
+
+
+    </div>
+    <div class="col-md-8" data-id="editent">
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-default" data-id="new">新建</button>
+                <button type="button" class="btn btn-primary" data-id="save">保存</button>
+            </div>
+            <div class="col-md-12" role="main">
+                <div class="bs-docs-section">
+                    <h3 class="page-header">企业信息</h3>
+                    <div data-id="editform">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">企业名称</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">
+                                        <input data-bind="value: EntName" type="text" class="form-control" id="inputEntName" placeholder="请填写企业名称" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">所在区县</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">
+                                        <input data-bind="value: Area" type="text" class="form-control" id="inputArea" placeholder="请填写所在区县" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">街道</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">
+                                        <input data-bind="value: Street" type="text" class="form-control" id="inputStreet" placeholder="请填写所在街道" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">详细地址</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">
+                                        <input data-bind="value: Address" type="text" class="form-control" id="inputAddress" placeholder="请填写详细地址" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">经度</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">
+                                        <input data-bind="value: Lng" type="text" class="form-control" id="inputLng" placeholder="请填写经度" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">纬度</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">
+                                        <input data-bind="value: Lat" type="text" class="form-control" id="inputLat" placeholder="请填写纬度" />
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div data-id="boilerlist" class="bs-docs-section">
+                    <form class="form-horizontal" role="form">
+                        <div data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                            <h3 class="page-header">锅炉#1<!--<span data-bind="text: $root.itemoNumber($index())"></span>--></h3>
+
+                            <table style="width: 100%; background-color: #F7F7F9; border: #E1E1E8; border-radius: 5px;">
+
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;"></td>
+                                        <td style="width: 50%; text-align: right">
+                                            <span class="btn" data-bind="click: $root.removeRow"><i class="fa fa-times"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputNo">锅炉编号</label>
+                                                <input data-bind="value: BoilerNo" type="text" class="form-control" id="inputNo" placeholder="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputTon">蒸吨数</label>
+                                                <input data-bind="value: BoilerTon" type="text" class="form-control" id="inputTon" placeholder="" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputBeginDate">投用时间</label>
+                                                <input data-bind="value: BeginDate" type="text" class="form-control" id="inputBeginDate" placeholder="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputFuelType">燃料类型</label>
+                                                <input data-bind="value: FuelTypeNew" type="text" class="form-control" id="inputFuelType" placeholder="" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputUsed">锅炉性质</label>
+                                                <input data-bind="value: Used" type="text" class="form-control" id="inputUsed" placeholder="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputStatus">锅炉现状</label>
+                                                <input data-bind="value: Status" type="text" class="form-control" id="inputStatus" placeholder="" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputRepairDate">完成改造时间</label>
+                                                <input data-bind="value: RepairDate" type="text" class="form-control" id="inputRepairDate" placeholder="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" style="width: 95%; margin-left: 8px">
+                                                <label for="inputRemark">备注</label>
+                                                <input data-bind="value: Remark" type="text" class="form-control" id="inputRemark" placeholder="" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!--<div class="col-md-3">
+                <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" role="complementary">
+                    <ul class="nav bs-docs-sidenav">
+                        <li class="active">
+                            <a href="#entInfo">企业信息</a>
+                        </li>
+                        <li class="">
+                            <a href="#boi01">锅炉#1</a>
+                        </li>
+                        <li class="">
+                            <a href="#boi02">锅炉#2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+
+<div enable_type="keep" class="row">
+</div>
+

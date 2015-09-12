@@ -1,0 +1,86 @@
+﻿<!--邮件编辑页面-->
+<div class="pageContainer">
+    <div class="bg-info row" style="padding: 1px;">
+        <div style="font-weight: bold; font-size: 18px;margin-bottom: 10px;margin-top: 10px;">
+           编辑
+        </div>
+        <div class="col-md-3" style="margin-top: 3px">
+            <table width="120" height="95%" border="0" align="right" cellspacing="0">
+                <tr>
+                    <td valign="bottom">
+                        <input data-id='saveNews' type="button" value="保存" class="btn btn-info" style="float: right" />
+                    </td>
+                    <td valign="bottom">
+                        <input data-id='closeBn' type="button" value="关闭" class="btn btn-info" style="float: right" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px; margin-right: 10px">
+        <div class="col-md-12" data-id="baseInfo">
+            <div class="row form-horizontal form-bordered">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">标题：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:NewsTitle" type="text" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">信息类型：</label>
+                    <div class="col-md-3">
+                        <select data-id="NewsTypeId" disabled="disabled" class="form-control" data-bind="DictOptions: {dictype: 'NewsTypeId', value: NewsTypeId }">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-2 control-label">发布部门：</label>
+                    <div class="col-md-3">
+                        <div class="input-group" data-id="zbbm">
+                            <input type="text" class="form-control" data-bind="value:NewsFromDeptName,TreeDepartmentSource:{opt:false,dpname:NewsFromDeptName,dpid:NewsFromDept}" disabled="disabled" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" data-id="zbbm" disabled="disabled" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">文件类型：</label>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" data-bind="value:AttachmentTypeName"/>
+                            <input type="text" class="form-control" data-bind="value:AttachmentType" style="display:none"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" data-id="AttachmentType" type="button" data-bind="click:_getDocumentSelect">...</button>
+                            </span>
+                        </div>
+                        <!--     <select data-id="AttachmentType" class="form-control" data-bind=" value:AttachmentType, DictOptions: {dictype: 'AttachmentType',displaychoose: false}">
+                            <option value=""></option>
+                        </select>-->
+                    </div>
+                    <label class="col-md-2 control-label">文件是否共享：</label>
+                    <div class="col-md-3">
+                        <select data-id="ShareAttachment" class="form-control" data-bind="value:ShareAttachment">
+                            <option value="1">共享</option>
+                            <option value="0">不共享</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">文件：</label>
+                    <div class="col-md-10">
+                        <span class="btn btn-link" data-bind="uploadFileControl:{value:NewsAttachment,saveFolderPath:'attachment/OA_Notice',extension:'.xls,.doc,.docx,.xlsx,.pdf'}">添加文件&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label">内容：</label>
+                    <div class="col-md-11" data-id='NewsText'>
+                        <!--富文本编辑-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

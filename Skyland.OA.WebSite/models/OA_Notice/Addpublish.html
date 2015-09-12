@@ -1,0 +1,148 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    信息发布
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div style="margin-bottom: 10px; height: 35px; margin-top: 5px;">
+                <button class="btn btn-default" style="margin-top: 5px; float: left; margin-left: 5px" data-id="saveBtn">发布</button>
+                <button class="btn btn-default" style="float: left; margin-top: 5px; margin-left: 5px" data-id="editAgain">重新编辑</button>
+                <button class="btn btn-default" style="float: right; margin-top: 5px; margin-left: 5px; display: none" data-id="backBtn">返回</button>
+            </div>
+            <div class="col-md-12" data-id="baseInfo">
+                <div class="row form-horizontal form-bordered">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">标题 <span style="color: red">*</span>：</label>
+                        <div class="col-md-8">
+                            <input data-bind="value:NewsTitle" type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">作者 <span style="color: red">*</span>：</label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="hidden" data-id="CreaterId" disabled="disabled" />
+                                <input type="text" class="form-control" data-bind="value:CreateMan,TreeUserSource:{opt:true,username:CreateMan,userid:CreaterId}" disabled="disabled" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" disabled="disabled">...</button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <label class="col-md-2 control-label">审核人 <span style="color: red">*</span>：</label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="hidden" data-id="ChkMId" />
+                                <input type="text" class="form-control" data-bind="value:ChkM,TreeUserSource:{opt:true,username:ChkM,userid:ChkMId}" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">...</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">文件类型 <span style="color: red">*</span>：</label>
+                        <div class="col-md-8">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-bind="click:_getDocumentSelect">请选择文件类型</button>
+                            </span>
+                            <div data-id="haveChoiceContent" style="width: 100%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">发布范围：</label>
+                        <div class="col-md-3">
+                            <select class="form-control" data-id="publicRange" data-bind="value:publicRange">
+                                <option value="0">所有人员查看</option>
+                                <option value="1">指定人员查看</option>
+                            </select>
+                        </div>
+
+                        <div data-id="rangePeoleView" style="display: none">
+                            <label class="col-md-2 control-label">指定人员查看 <span style="color: red">*</span>：</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="hidden" data-id="rangeCheckManId" />
+                                    <input type="text" class="form-control" data-bind="value:rangeCheckManName,TreeUserSource:{opt:true,username:rangeCheckManName,userid:rangeCheckManId}" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">附件：</label>
+                        <div class="col-md-10">
+                            <span class="btn btn-link" data-bind="uploadFileControl:{value:AttachmentName,saveFolderPath:'attachment/documentCenter',extension:'.*',fileSize:'10240'}">添加文件&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">内容：</label>
+                        <div class="col-md-11" data-id='aticleText_Update'>
+                            <!--富文本编辑-->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-1 control-label"></label>
+                        <div class="col-md-11">
+                            <input type="checkbox" data-bind="checked:isPublicToOutLine" />
+                            <span>发布到外网</span>
+
+                            <input type="checkbox" data-bind="checked:isHomeDisplay" />
+                            <span>首页弹出通知</span>
+
+                            <input type="checkbox" data-id="isConferenceInform" data-bind="checked:isConferenceInform" />
+                            <span>会议通知</span>
+
+                            <input type="checkbox" data-bind="checked:isReadRecord" />
+                            <span>阅读记录</span>
+
+                            <input type="checkbox" data-bind="checked:isTextSuggetion" />
+                            <span>可对本文发表意见</span>
+
+                            <input type="checkbox" data-id="isSendEmail" data-bind="checked:isSendEmail" />
+                            <span>邮件送达</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div data-id="sendEmailToMan" data-bind="visible:isSendEmail()==true" style="display: none">
+                            <label class="col-md-2 control-label">邮件送达人：</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-bind="value:sendEmailToManName,TreeUserSource:{opt:true,username:sendEmailToManName,userid:sendEmailToManId}" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-id="conferenceEndDate" data-bind="visible:isConferenceInform()==true" style="display: none">
+                            <label class="col-md-2 control-label">会议通知截止时间：</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-bind="value: conferenceEndDate,datetimeFormat:'yy-mm-dd hh:mm'" />
+                                    <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

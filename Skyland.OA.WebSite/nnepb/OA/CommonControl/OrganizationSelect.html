@@ -1,0 +1,75 @@
+﻿<div style="border: 1px solid black; height: 40px" data-id="choiceContent">
+</div>
+<div data-role="organizationGrid" style="margin-top: 10px">
+    <div>
+        <button data-id="addBtn" style="float: left; margin-bottom: 5px" class="btn btn-default btn-sm">
+            <li class="fa fa-plus"></li>
+            新增</button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="sort">
+                <th style="width: 5%;"></th>
+                <th style="width: 5%;"></th>
+                <th style="width: 40%; background: white"><a href="fullName" data-sortkey="fullName">全称</a></th>
+                <th style="width: 40%; background: white"><a href="shortName" data-sortkey="shortName">简称</a></th>
+                <th  style="width:10%;">编辑</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>
+                    <input type="text" class="form-control input-sm" placeholder="" value="" data-filterkey="fullName" style="width: 100%;">
+                </th>
+                <th>
+                    <input type="text" class="form-control input-sm" placeholder="" value="" data-filterkey="shortName" style="width: 100%;">
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                <td>
+                    <input type="checkbox" data-bind="checked:isSelected,click: $root.toggleAssociation" />
+                </td>
+                <td style="">
+                    <span data-bind="text:fullName,click: $root.toggleAssociation" class="btn-link"></span>
+                </td>
+                <td style="">
+                    <span data-bind="text:shortName"></span>
+                </td>
+                <td style="">
+                   <i class="fa fa-pencil btn-link" data-bind="click:$root.editRow" ></i>
+                    
+                    <i class="fa fa-minus-circle btn-link" style="color: red" data-bind="click:function(){$root.deleteRow(id)}"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div data-id="editWind" style="display: none">
+    <table class="table table-striped doingcase">
+        <tbody>
+            <tr>
+                <td align="center">
+                    <span>全名</span>
+                </td>
+                <td>
+                    <input class="form-control" data-bind="value: fullName" />
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="width: 120px">
+                    <span>缩写</span>
+                </td>
+                <td>
+                    <input class="form-control" data-bind="value:shortName" />
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

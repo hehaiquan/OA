@@ -1,0 +1,192 @@
+﻿<div data-id="toolbar"></div>
+<div data-id="WF_Attachment"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- 意见填写区域，预备加入工作流控件 -->
+            <div class="row">
+                <div class="col-md-12" data-id="WF_RemarkBox"></div>
+            </div>
+            <!-- 表单 -->
+            <div data-id="formContainer" class="pageContainer">
+                <!--头部按钮行-->
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h3>会议申请</h3>
+                     <div class="btn-group " style="float: right; margin-top: -40px;">
+                        <input data-id='printConferenceMain' type="button" value="打印会议室申请表" style="float: right;" class="btn btn-default" />
+                    </div>
+                </div>
+
+                <div class="page-header sub-header">会议申请基本内容</div>
+
+                <div enable_actid="A001" class="row" data-id="baseInfo">
+                    <div class="form-horizontal form-bordered ">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">申请人：</label>
+                            <div class="col-sm-4" data-id="sqr">
+                                <div class="input-group" data-id="sqr">
+                                    <input type="hidden" data-id="v_userid" />
+                                    <input type="text" required="required" class="form-control" data-bind="value:sqr,TreeUserSource:{opt:false,username:sqr}" disabled="disabled" required="required" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-id="sqr" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!--<label class="col-sm-2 control-label">申请人：</label>
+                            <div class="col-sm-4">
+                                <input data-id="sqrid" data-bind="value: sqrid" type="text" class="form-control" placeholder="" />
+                            </div>-->
+
+                            <label class="col-sm-2 control-label">申请科室：</label>
+                            <div class="col-sm-4">
+                                <div class="input-group" data-id="sqks">
+                                    <input type="hidden" data-id="v_userid" />
+                                    <input type="text" required="required" class="form-control" data-bind="value:sqks,TreeDepartmentSource:{opt:false,dpname:sqks}" disabled="disabled" required="required" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-id="sqks" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- <label class="col-sm-2 control-label">申请科室：</label>
+                            <div class="col-sm-4">
+                                <input data-id="sqksid" data-bind="value: sqksid" type="text" class="form-control" placeholder="" />
+                            </div>-->
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">会议室：</label>
+                            <div class="col-sm-4">
+                                <input data-id="hysid" data-bind="value: hysid" type="text" class="form-control" placeholder="" />
+                            </div>
+
+                            <label class="col-sm-2 control-label">申请日期：</label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" data-id="sqrq" data-bind="value:sqrq, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control" required="required" placeholder="" />
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">需使用的设备：</label>
+                            <div class="col-sm-4">
+                                <input data-id="xsysb" data-bind="value: xsysb" type="text" class="form-control" placeholder="" />
+                            </div>
+
+                            <label class="col-sm-2 control-label">会议召开时间：</label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" data-id="zksj" data-bind="value:zksj, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control" required="required" placeholder="" />
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">主持人：</label>
+                            <div class="col-sm-4" data-id="ngr">
+                                <div class="input-group" data-id="zcr">
+                                    <input type="hidden" data-id="v_userid" />
+                                    <input type="text" required="required" class="form-control" data-bind="value:zcr,TreeUserSource:{opt:false,username:zcr}" disabled="disabled" required="required" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-id="zcr" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <label class="col-sm-2 control-label">参与人员：</label>
+                            <div class="col-sm-4" data-id="ngr">
+                                <div class="input-group" data-id="cyry">
+                                    <input type="hidden" data-id="v_userid" />
+                                    <input type="text" required="required" class="form-control" data-bind="value:cyry,TreeUserSource:{opt:true,username:cyry}" disabled="disabled" required="required" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-id="cyry" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">会议主题：</label>
+                            <div class="col-sm-10">
+                                <input data-id="hyzt" data-bind="value: hyzt" type="text" class="form-control" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div enable_actid="A001">
+                    <div class="page-header sub-header">
+                        议程安排
+                        <span style="float: right;"><button data-id="addSource" class="btn btn-info"><i class="fa fa-plus"></i>添加</button></span>
+                    </div>
+                    <div class="table table-striped table-bordered table-condensed" data-id="agendaList" data-role="agendaGrid"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 审批意见，预备加入工作流控件 -->
+        <div class="col-lg-4 visible-lg" data-id="WF_RemarkList"></div>
+    </div>
+</div>
+
+
+<!-- 弹出子表单 -->
+<div enable_actid="A001" class="row" data-id="agendaListEdit" style="display: none; margin: 15px;">
+    <div class="form-horizontal form-bordered ">
+        <!--<div class="form-group">
+                        <label class="col-md-2 control-label">编号：</label>
+                        <div class="col-sm-10">
+                            <input type="text" data-id="id" data-bind="value:id" class="form-control" required="required" placeholder="" />
+                        </div>
+                        <label class="col-md-2 control-label">工作流编号：</label>
+                        <div class="col-sm-10">
+                            <input type="text" data-id="workflowcaseid" data-bind="value:workflowcaseid" class="form-control" required="required" placeholder="" />
+                        </div>
+
+                    </div>-->
+        <div class="form-group">
+            <!-- 议程开始时间  -->
+            <label class="col-sm-2 control-label">议程开始时间：</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="text" data-id="kssj" data-bind="value:kssj, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control" required="required" placeholder="" />
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- 议程结束时间  -->
+            <label class="col-sm-2 control-label">议程结束时间：</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="text" data-id="jssj" data-bind="value:jssj, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control" required="required" placeholder="" />
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- 发言人  -->
+            <label class="col-sm-2 control-label">发言人：</label>
+            <div class="col-sm-10" data-id="fyr">
+                <div class="input-group" data-id="fyr">
+                    <input type="hidden" data-id="v_userid" />
+                    <input type="text" required="required" class="form-control" data-bind="value:fyr,TreeUserSource:{opt:false,username:fyr}" disabled="disabled" required="required" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="fyr" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- 议程内容  -->
+            <label class="col-sm-2 control-label">议程内容：</label>
+            <div class="col-sm-10">
+                <textarea rows="4" data-id="ycnr" data-bind="value: ycnr" type="text" class="form-control" placeholder=""></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>
+

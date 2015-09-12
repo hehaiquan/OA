@@ -1,0 +1,71 @@
+﻿<div class="row" style="margin: 10px; margin-right: 20px">
+    <div class="pageContainer">
+
+        <div data-id="searchDiv" class="bg-info row" style="padding: 1px; height: 40px">
+            <div class="col-md-6">
+                <h4>工作任务发起</h4>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-2" style="margin-top: 3px">
+                <button class="btn btn-default" type="button" data-id="AddBn" style="float: right">添加</button>
+            </div>
+        </div>
+        <div class="row" style="margin: 10px">
+            <div data-id='workPlanCalendar'></div>
+        </div>
+    </div>
+</div>
+
+<!--编辑页面-->
+<div class="col-md-12" data-id="edit" style="display: none;">
+    <div class="row">
+        <div data-id="editform">
+            <div class="form-horizontal form-bordered">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">工作名称：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:TaskName" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">执行人：</label>         
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" data-bind="value:userName,TreeUserSource:{opt:false,username:userName,userid:userid}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>      
+                    
+                    <label class="col-md-2 control-label">部门：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:deptName" disabled="disabled" type="text" class="form-control" />
+                    </div>          
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">开始时间：</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" data-bind="value:startTime,datetimeFormat:'yy-mm-dd hh:mm'" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">结束时间：</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" data-bind="value:endTime,datetimeFormat:'yy-mm-dd hh:mm'" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">工作内容：</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" data-bind="value:WorkContent" rows="3"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

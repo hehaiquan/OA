@@ -1,0 +1,44 @@
+﻿<div class="row" style="margin: 10px; margin-right: 20px">
+    <div class="pageContainer">
+
+        <div data-id="searchDiv" class="bg-info row" style="padding: 1px; height: 85px">
+            <div class="col-md-12">
+                <h4>工作计划统计</h4>
+            </div>
+            <div class="col-md-2">
+                </div>
+            <div class="col-md-10">
+                <table border="0" cellspacing="0">
+                    <tr>
+                        <td width="50">
+                            <label class=" control-label" style="margin-top: 5px">姓名：</label></td>
+                        <td width="100">
+                            <input data-id="name" type="text" class="form-control" data-bind="value:name" />
+                        </td>
+                        <td width="30">
+                            </td>
+                        <td width="70">
+                            <label class=" control-label" style="margin-top: 5px">起始日期：</label>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <input data-id="beginText" type="text" class="form-control" data-bind="value:datetime,datetimeFormat:'yy-mm-dd'" />
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                <input data-id="endText" type="text" class="form-control" data-bind="value:datetime1,datetimeFormat:'yy-mm-dd'" />
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><span class="input-group-btn">
+                                    <button data-id="searchBn" class="btn btn-default" type="button">查询</button>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div data-id="container" class="row" style="margin: 10px">
+        
+        </div>
+    </div>
+</div>
+

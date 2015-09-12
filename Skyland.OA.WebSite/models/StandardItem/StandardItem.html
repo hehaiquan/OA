@@ -1,0 +1,55 @@
+﻿<!--开发人 黄欢-->
+<div class="col-md-4">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="标准名称" value="" data-id="bzmc">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-id="searchBn">查询</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ul data-id="standardItemTree" id="standardItemTree" class="ztree" style="height: 100%; border: 0; overflow: auto;"></ul>
+    </div>
+
+</div>
+<div class="col-md-8" style="margin-top: 10px">
+    <div class="pageContainer">
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h5>排放标准</h5>
+        </div>
+        <div class="form-group" data-id="showInfo">
+            <br>
+            <a><span data-bind="text:StandardCode"></span></a>
+            <span data-bind="text:StandardName"></span>
+            <span data-id="StandardCondition"></span>
+            <br>
+            <a><span data-bind="text:UseRange,showAllContentDiv:{length:30}"></span></a>
+            <span data-bind="text:Remark,showAllContentDiv:{length:30}"></span>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-md-12">
+                <div data-id="standardMonitorGrid" data-role="standardMonitorGrid">
+                    <table class="table table-striped table-bordered">
+                        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                            <tr>
+                                <!--<td width="10px" data-bind="text: $root.itemNumber($index())"></td>-->
+                                <td>
+
+                                    <span data-bind="text:$root.formatItemsName(ItemsName,MonitorValueType)"></span>
+                                    <span>|</span>
+                                    <span data-bind="text:$root.formatLimit(UpperLimit, LowLimit, Units)"></span>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

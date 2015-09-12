@@ -1,0 +1,44 @@
+﻿.Overlay
+{
+	position: relative;
+	background-color: rgb(0,0,0);
+	z-index: 100;
+}
+
+.InnerProgressBar
+{
+	position: relative;
+	Z-INDEX: 99;
+}
+
+	.InnerProgressBar td
+	{
+		text-align: center;
+		font-weight: bold;
+		color: rgb(0,0,0);
+	}
+
+.bodyOverlay
+{
+	Z-INDEX: 100001;
+	POSITION: fixed;
+	BACKGROUND-COLOR: rgb(0,0,0);
+	WIDTH: 100%;
+	ZOOM: 1;
+	HEIGHT: 100%;
+	TOP: 0px;
+	LEFT: 0px;
+}
+
+.bodyInnerProgressBar
+{
+	position: fixed;
+	Z-INDEX: 100000;
+}
+
+	.bodyInnerProgressBar td
+	{
+		text-align: center;
+		font-weight: bold;
+		color: rgb(0,0,0);
+	}

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>文件上传下载</title>
+    <link href="../../Content/themes/base/uploadify/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/themes/base/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/themes/base/Biz.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/themes/base/easyui/easyui.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href='../../Content/themes/base/easyui/icon.css' />
+    <script type="text/javascript" src="../../Scripts/json2.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/knockout-2.1.0.js"></script>
+    <script type="text/javascript" src="../../Scripts/Skyland.Form.js?v=1.7.6"></script>
+    <script type="text/javascript" src="../../Scripts/Skyland.kohelper.js?v=1.7.6"></script>
+    <script type="text/javascript" src="../../Scripts/swfobject.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.uploadify.v2.1.0.min.js"></script>
+</head>
+<body>
+    <form id="form1">
+        <table>
+            <tr>
+                <td>
+                    <input type="file" name="uploadify" id="uploadify" /></td>
+                <td>
+                    <input type="button" id="btn_uploadify" value="上传" onclick="uploadify_click()" class="button" /></td>
+                <td>
+                    <input type="button" id="btn_CancelUploadify" value="清空文件列表" onclick="$('#uploadify').uploadifyClearQueue()" class="button" /></td>
+            </tr>
+            <tr>
+                <td colspan="5"><span id="span_text"></span>
+                </td>
+            </tr>
+        </table>
+        <div id="divContent" style="width: 100%;"></div>
+        <div id="fileQueue" style="width: 100%;"></div>
+    </form>
+    
+        <script type="text/javascript">
+            var urlHas = false;
+
+            function getFileSize() {
+                //文件大小目前为50M
+                return 1024 * 1024 * 20;
+            };
+
+            function setUploadify() {
+                $("#uploadify").uploadify({
+                    script: '/vimcom/Common/SaveUploadVIMFiles',//UpDownloadHandler.ashx?MethodName=UploadFile
+                    uploader: '../../Content/themes/base/uploadify/uploadify.swf',//            
+                    width: 70,//设置浏览按钮的宽度 ，默认值：110。 
+                    height: 27,//设置浏览按钮的高度 ，默认值：30。 button
+                    //buttonText: 'BROWSE',
+                    buttonImg: '../../Content/themes/base/uploadify/uploadifyBtn.png',
+                    cancelImg: '../../Content/themes/base/uploadify/cancel.png',
+                    queueID: 'fileQueue',
+                    fileDesc: '请选择pdf文件',//
+                    fileExt: '*.pdf',//文件类型
+                    uploadLimit: 5, //一次同步上传的文件数目  
+                    progressData: 'speed',
+                    sizeLimit: getFileSize(), //设置单个文件大小限制   
+                    queueSizeLimit: 5, //队列中同时存在的文件个数限制   
+                    auto: false,//是否选择文件后自动上传
+                    multi: true,//多文件上传
+                    fileDataName: 'FileData',
+                    method: 'post',
+                    onComplete: function (event, queueId, fileOb, response, data) {
+                        //var serverData = jQuery.parseJSON(response)
+                        //if (serverData.isOK) $("#divContent").append("<span style='color:green'>文件 " + fileOb.name + "(" + subFloat(parseFloat(fileOb.size) / 1024, 3) + "KB)上传成功！</span><br/>");
+                        //else $("#divContent").append("<span style='color:red'>文件 " + fileOb.name + "(" + subFloat(parseFloat(fileOb.size) / 1024, 3) + "KB)上传失败！</span><br/>");
+                          $.Com.showMsg('成功');
+                    },
+                    onError: function (event, queueId, fileObj) {
+                          $.Com.showMsg("文件:" + fileObj.name + "上传失败");
+                        setBtnUploadify(true);
+                    },
+                    onSelect: function (event, queueId, fileObj) {
+                        setBtnUploadify(false);
+                    },
+                    onClearQueue: function (event) { $("#divContent").html(""); }
+                });
+            };
+
+            function setBtnUploadify(value) {
+                $("#btn_uploadify").attr("disabled", value);
+            };
+            function setbtnCancelUploadify(value) {
+                $("#btn_CancelUploadify").attr("disabled", value);
+            };
+            function uploadify_click() {
+                if (!$("#fileQueue").html()) return;
+                //if (!$.trim(_vm.selectVec.VehicleID) || !$.trim(_vm.selectVec.UniqueString)) {
+                //      $.Com.showMsg("请选择车辆！");
+                //    return;
+                //}
+                if (!window.confirm("您确定当前上传的文档属于当前选中的车辆信息吗？"))
+                    return;
+
+                //var parms = { UniqueString: _vm.selectVec.UniqueString, VehicleID: _vm.selectVec.VehicleID };
+                //$('#uploadify').uploadifySettings('scriptData', parms);
+                $('#uploadify').uploadifyUpload();
+            }
+
+            function GJViewModel() {
+                //定义对象、变量
+                var self = this;
+
+                //self.selectCurrentVec = function () {
+                //    if (!urlHas)
+                //          $.Com.showMsg("当前操作车辆信息未保存或为空！");
+                //};
+
+            };
+            var _vm = new GJViewModel();
+            ko.applyBindings(_vm);
+
+            $(document).ready(function () {
+                //var url = document.location.search;
+
+                setUploadify();
+            });
+
+
+        </script>
+</body>
+</html>

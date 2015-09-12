@@ -1,0 +1,47 @@
+﻿<div class="col-md-12">
+
+    <div class="pageContainer" style="padding-bottom: 10px;">
+        <!--标题-->
+        <div style="font-weight: bold; font-size: 18px;margin-bottom: 10px;margin-top: 10px;">
+            文件夹管理
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <!--左边-->
+            <div data-id="documentCenterManageTreeMenu" class="col-md-3">
+            </div>
+            <!--右边-->
+            <div class="col-md-9" data-id="listDiv" style="height:50%">
+                <div style="height: 35px; margin-top: 5px;" class="col-md-12">
+                    <div class="col-md-2" style="float: left; margin-top: 10px">
+                        <label class="control-label">文件夹名称：</label>
+                    </div>
+                    <div class="col-md-5" style="float: left">
+                        <input data-id="inputDocument" data-bind="value:documentName" type="text" class="form-control" style="width: 100%" />
+                    </div>
+                    <button data-id="saveData" class="btn btn-primary" style=""><i class="fa fa-save" />保存</button>
+                    <button data-id="deleteData" class="btn btn-primary" style=""><i class="fa fa-save" />删除</button>
+                    <div class="form-group col-md-12" style="margin-top: 10px">
+
+                        <!--<button data-id="addEqualLevel" class="btn btn-default" type="button" style="float: left">添加同级菜单</button>-->
+                        <button data-id="addChildrenLevel" class="btn btn-default" type="button" style="float: left; margin-left: 10px">添加子级</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-->
+<div style="display: none" class="col-md-12" data-id="documentWindows">
+    <div data-id="editform">
+        <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+            <div class="col-md-4" style="margin-top: 10px;">
+                <label class="control-label">文件夹名称：</label>
+
+            </div>
+            <div class="col-md-8" style="float: left">
+                <input data-id="" data-bind="value:fileTypeName" type="text" class="form-control" style="width: 100%" />
+            </div>
+        </div>
+    </div>
+</div>

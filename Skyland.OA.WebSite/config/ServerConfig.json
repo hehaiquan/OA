@@ -1,0 +1,7 @@
+﻿{
+  "TempDir": "d:\\temp\\",
+  "FileDir": "officeFile\\",
+  "FileModelDir": "officeFileModel\\",
+  "mydata": "Data Source=.;Initial Catalog=skyland.oa;Integrated Security=false;Connect Timeout=30;User ID=sa;Password=1",
+  "airdata":"Data Source=192.168.0.250;Initial Catalog=Skyland.AUTO.NN;Persist Security Info=True;User ID=Skyland.iPad.GZEPB;Password=Skyland.iPad.GZEPB"
+}

@@ -1,0 +1,92 @@
+﻿<div data-role="projectTypeGrid">
+    <input  type="text" placeholder="按名称模糊查询" value="" data-filterkey="TradeName">
+    <table class="table table-striped table-bordered">
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td data-bind="text: $root.itemNumber($index())"></td>
+                <td width="60%">
+                    <span class="btn btn-link" data-bind="text:TradeName,click: $root.editRow"></span>
+                    <span data-bind="text:TradeCode"></span>
+                </td>
+
+                <!--<td width="40%">
+                    <span data-bind="text:lxr"></span>
+                    <span data-bind="text:lxdh"></span>
+                </td>-->
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <div style="float:left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' --> 
+                    <a data-bind="text: name, click: $root.setPage"></a><!-- /ko --> 
+                    <!-- ko if: name == '...' --><span>...</span><!-- /ko --> 
+                </li>
+            </ul>
+        </div> 
+        <div style="float:right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li> 
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li> 
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li> 
+            </ul> 
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--
+    
+    //表单绑定范例！！！！
+
+<table>
+    <thead>
+        <tr class="sort">
+            <th width="10%">
+                <a class="btn btn-link" href="number" data-sortkey="number">#</a>
+            </th>
+            <th width="20%"><a class="btn btn-link" href="Source" data-sortkey="Source">来源</a></th>
+            <th width="20%"><a class="btn btn-link" href="SourceNo" data-sortkey="SourceNo">来源编号</a></th>
+            <th width="20%"><a class="btn btn-link" href="SourcePhone" data-sortkey="SourcePhone">来源电话</a></th>
+            <th width="20%"><a class="btn btn-link" href="SourceDate" data-sortkey="SourceDate">来源时间</a></th>
+            <th width="10%" enable_status="hide" enable_actid="A001">操作</th>
+        </tr>
+        <tr>
+            <th width="10%"></th>
+            <th width="20%">
+                <select style="width: 90%;" data-filterkey="Source">
+                    <option value="全部">全部</option>
+                    <option value="来信">来信</option>
+                    <option value="来电">来电</option>
+                    <option value="来访">来访</option>
+                    <option value="邮件">邮件</option>
+                    <option value="媒体曝光">媒体曝光</option>
+                    <option value="其他">其他</option>
+                </select>
+            </th>
+            <th width="20%"></th>
+            <th width="20%"><input style="width: 90%;" type="text" placeholder="按名称模糊查询" value="" data-filterkey="SourcePhone"></th>
+            <th width="20%"></th>
+            <th width="10%" enable_status="hide" enable_actid="A001"></th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+        <tr>
+            <td data-bind="text: $root.itemNumber($index())"></td>
+            <td width="20%"><span class="btn btn-link" data-bind="text: $.Com.getDict('xfly')[ Source()],click: $root.editRow"></span></td>
+            <td width="20%" data-bind="text:SourceNo"></td>
+            <td width="20%" data-bind="text:SourcePhone"></td>
+            <td width="20%"><span data-bind=" text:SourceDate_TEXT"></span></td>
+            <td width="10%" enable_status="hide" enable_actid="A001">
+                <span class="btn" enable_status="hide" enable_actid="A001" data-bind="click: $root.removeRow,enable_set:null"><i class="fa fa-times"></i></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    -->

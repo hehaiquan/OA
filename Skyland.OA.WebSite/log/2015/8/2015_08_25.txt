@@ -1,0 +1,143 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-25 12:47:03
+内容：
+异常信息：System.ArgumentNullException: 值不能为 null。
+参数名: value
+   在 Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 53
+异常信息：值不能为 null。
+参数名: value
+异常堆栈：   在 Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 53
+--------------------------------------------------------------------------------------
+时间：2015-08-25 12:48:44
+内容：
+异常信息：System.ArgumentNullException: 值不能为 null。
+参数名: value
+   在 Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 53
+异常信息：值不能为 null。
+参数名: value
+异常堆栈：   在 Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 53
+--------------------------------------------------------------------------------------
+时间：2015-08-25 12:50:03
+内容：
+异常信息：System.ArgumentNullException: 值不能为 null。
+参数名: value
+   在 Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 53
+异常信息：值不能为 null。
+参数名: value
+异常堆栈：   在 Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 53
+--------------------------------------------------------------------------------------
+时间：2015-08-25 14:45:56
+内容：
+异常信息：System.Exception: 数据库操作:在应使用条件的上下文(在 'id4' 附近)中指定了非布尔类型的表达式。 
+ SQL Err:DELETE FROM B_OA_Organization WHERE  id4 
+ dbParms:
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Delete[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.DeleteData(String id) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 83
+异常信息：数据库操作:在应使用条件的上下文(在 'id4' 附近)中指定了非布尔类型的表达式。 
+ SQL Err:DELETE FROM B_OA_Organization WHERE  id4 
+ dbParms:
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Delete[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.DeleteData(String id) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 83
+--------------------------------------------------------------------------------------
+时间：2015-08-25 15:03:45
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_SendDoc_QuZhan (title,cs,zs,cb,sendType,printCount,mj,emergency,caseid,jd,jdId,fwrq,guiHuanZhan,daiTingNiWen,neiBuShiXiang,qiTa,mainBody) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16) 
+ dbParms:20150825发文测试环保部  中华人民共和国外交部  中华人民共和国国务院办公厅  中华人民共和国国务院办公厅  环保部  20150825145927_c3e0c115-ad2b-4879-a8e6-c046d203cd1f3022C0000302015/8/25 15:03:45自治区环保厅调研组赴南宁市7月14日，调研组在南宁召开座谈会。当地市直属部门、政风行风评议员、企业代表等20多人参座谈会加并踊跃发言，他们对环保系统高质高效的服务、认真踏实的工作作风以及公正严明的执法态度等方面表示满意。但在宣传力度、培训力度、部门之间联合执法等方面还存在不足，代表们还就存在问题提出解决方法。
+
+　　在15日上午崇左座谈会上，代表们认为，环保部门在依法履职、政务公开、服务质量、转变作风、勤政廉政等方面取得成效，并就加大信息公开力度、加强各部门联合执法、加强培训力度等方面提出了建设性意见。
+
+　　邓超冰副巡视员认真倾听了代表们对环保部门的意见和建议，他表示将把收集到的信息、了解到的情况、征求到的意见带回去，进行认真梳理分析，提出切实可行的整改措施，进一步改进政风行风和工作作风，坚持边评议、边查找、边整改，认真落实到工作中去，竭尽全力将环保工作做到高效、便民、利民。
+
+　　调研组一行走访了南宁市、崇左市政务服务中心环保窗口。邓超冰副巡视员强调，环保工作必须要强化服务意识，端正服务态度，提高工作效率，与其他部门通力合作，分清轻重缓急为群众办好实事。此外，他还建议在窗口多摆放业务办理流程图、新环保法宣传等资料，方便群众办事。
+
+　　调研期间，调研组还到广西农垦明阳生化集团股份有限公司、广西南宁凤凰纸业有限公司、安琪酵母（崇左）有限公司等企业进行实地调研，广泛征求企业意见和建议。
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 95
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 71
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_SendDoc_QuZhan (title,cs,zs,cb,sendType,printCount,mj,emergency,caseid,jd,jdId,fwrq,guiHuanZhan,daiTingNiWen,neiBuShiXiang,qiTa,mainBody) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16) 
+ dbParms:20150825发文测试环保部  中华人民共和国外交部  中华人民共和国国务院办公厅  中华人民共和国国务院办公厅  环保部  20150825145927_c3e0c115-ad2b-4879-a8e6-c046d203cd1f3022C0000302015/8/25 15:03:45自治区环保厅调研组赴南宁市7月14日，调研组在南宁召开座谈会。当地市直属部门、政风行风评议员、企业代表等20多人参座谈会加并踊跃发言，他们对环保系统高质高效的服务、认真踏实的工作作风以及公正严明的执法态度等方面表示满意。但在宣传力度、培训力度、部门之间联合执法等方面还存在不足，代表们还就存在问题提出解决方法。
+
+　　在15日上午崇左座谈会上，代表们认为，环保部门在依法履职、政务公开、服务质量、转变作风、勤政廉政等方面取得成效，并就加大信息公开力度、加强各部门联合执法、加强培训力度等方面提出了建设性意见。
+
+　　邓超冰副巡视员认真倾听了代表们对环保部门的意见和建议，他表示将把收集到的信息、了解到的情况、征求到的意见带回去，进行认真梳理分析，提出切实可行的整改措施，进一步改进政风行风和工作作风，坚持边评议、边查找、边整改，认真落实到工作中去，竭尽全力将环保工作做到高效、便民、利民。
+
+　　调研组一行走访了南宁市、崇左市政务服务中心环保窗口。邓超冰副巡视员强调，环保工作必须要强化服务意识，端正服务态度，提高工作效率，与其他部门通力合作，分清轻重缓急为群众办好实事。此外，他还建议在窗口多摆放业务办理流程图、新环保法宣传等资料，方便群众办事。
+
+　　调研期间，调研组还到广西农垦明阳生化集团股份有限公司、广西南宁凤凰纸业有限公司、安琪酵母（崇左）有限公司等企业进行实地调研，广泛征求企业意见和建议。
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 95
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 71
+--------------------------------------------------------------------------------------
+时间：2015-08-25 15:05:16
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_SendDoc_QuZhan (title,cs,zs,cb,sendType,printCount,mj,emergency,caseid,jd,jdId,fwrq,guiHuanZhan,daiTingNiWen,neiBuShiXiang,qiTa,mainBody) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16) 
+ dbParms:20150825发文测试环保部  中华人民共和国外交部  中华人民共和国国务院办公厅  中华人民共和国国务院办公厅  环保部  20150825145927_c3e0c115-ad2b-4879-a8e6-c046d203cd1f3022C0000302015/8/25 15:05:16自治区环保厅调研组赴南宁市7月14日，调研组在南宁召开座谈会。当地市直属部门、政风行风评议员、企业代表等20多人参座谈会加并踊跃发言，他们对环保系统高质高效的服务、认真踏实的工作作风以及公正严明的执法态度等方面表示满意。但在宣传力度、培训力度、部门之间联合执法等方面还存在不足，代表们还就存在问题提出解决方法。
+
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 95
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 71
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_SendDoc_QuZhan (title,cs,zs,cb,sendType,printCount,mj,emergency,caseid,jd,jdId,fwrq,guiHuanZhan,daiTingNiWen,neiBuShiXiang,qiTa,mainBody) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16) 
+ dbParms:20150825发文测试环保部  中华人民共和国外交部  中华人民共和国国务院办公厅  中华人民共和国国务院办公厅  环保部  20150825145927_c3e0c115-ad2b-4879-a8e6-c046d203cd1f3022C0000302015/8/25 15:05:16自治区环保厅调研组赴南宁市7月14日，调研组在南宁召开座谈会。当地市直属部门、政风行风评议员、企业代表等20多人参座谈会加并踊跃发言，他们对环保系统高质高效的服务、认真踏实的工作作风以及公正严明的执法态度等方面表示满意。但在宣传力度、培训力度、部门之间联合执法等方面还存在不足，代表们还就存在问题提出解决方法。
+
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 95
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 71
+--------------------------------------------------------------------------------------
+时间：2015-08-25 15:06:27
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_SendDoc_QuZhan (title,cs,zs,cb,sendType,printCount,mj,emergency,caseid,jd,jdId,fwrq,guiHuanZhan,daiTingNiWen,neiBuShiXiang,qiTa,mainBody) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16) 
+ dbParms:20150825发文测试环保部  中华人民共和国外交部  中华人民共和国国务院办公厅  中华人民共和国国务院办公厅  环保部  20150825145927_c3e0c115-ad2b-4879-a8e6-c046d203cd1f3022C0000302015/8/25 15:06:27自治区环保厅调研组赴南宁市7月14日，调研组在南宁召开座谈会。当地市直属部门、政风行风评议员、企业代表等20多人参座谈会加并踊跃发言，他们对环保系统高质高效的服务、认真踏实的工作作风以及公正严明的执法态度等方面表示满意。但在宣传力度、培训力度、部门之间联合执法等方面还存在不足，代表们还就存在问题提出解决方法。
+
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 95
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 71
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_SendDoc_QuZhan (title,cs,zs,cb,sendType,printCount,mj,emergency,caseid,jd,jdId,fwrq,guiHuanZhan,daiTingNiWen,neiBuShiXiang,qiTa,mainBody) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16) 
+ dbParms:20150825发文测试环保部  中华人民共和国外交部  中华人民共和国国务院办公厅  中华人民共和国国务院办公厅  环保部  20150825145927_c3e0c115-ad2b-4879-a8e6-c046d203cd1f3022C0000302015/8/25 15:06:27自治区环保厅调研组赴南宁市7月14日，调研组在南宁召开座谈会。当地市直属部门、政风行风评议员、企业代表等20多人参座谈会加并踊跃发言，他们对环保系统高质高效的服务、认真踏实的工作作风以及公正严明的执法态度等方面表示满意。但在宣传力度、培训力度、部门之间联合执法等方面还存在不足，代表们还就存在问题提出解决方法。
+
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 95
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 71

@@ -1,0 +1,206 @@
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:18:56
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:19:02
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:19:41
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:20:32
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:22:36
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetFileFatherList(B_OA_FileType file, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2178
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1833
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:24:09
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1835
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1835
+--------------------------------------------------------------------------------------
+时间：2015-09-05 10:25:56
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1835
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1835
+--------------------------------------------------------------------------------------
+时间：2015-09-05 12:12:54
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1827
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1827
+--------------------------------------------------------------------------------------
+时间：2015-09-05 12:21:52
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): ')' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1886
+ClientConnectionId:d44fac38-2201-417f-884f-5fc7f1e83884
+异常信息：')' 附近有语法错误。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1886
+--------------------------------------------------------------------------------------
+时间：2015-09-05 12:27:11
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): ')' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1886
+ClientConnectionId:d44fac38-2201-417f-884f-5fc7f1e83884
+异常信息：')' 附近有语法错误。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1886
+--------------------------------------------------------------------------------------
+时间：2015-09-05 12:31:01
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): ')' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1886
+ClientConnectionId:d44fac38-2201-417f-884f-5fc7f1e83884
+异常信息：')' 附近有语法错误。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.DocumentCenterSvc.GetDocumentCenterByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1886
+--------------------------------------------------------------------------------------
+时间：2015-09-05 23:56:26
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetArticleByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1155
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetArticleByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1155
+--------------------------------------------------------------------------------------
+时间：2015-09-05 23:56:29
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.DocumentCenterSvc.GetArticleByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1155
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.DocumentCenterSvc.GetArticleByFileTypeId(String fileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 1155

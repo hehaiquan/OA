@@ -1,0 +1,76 @@
+﻿<div data-id="container" style="margin: 20px; ">
+
+</div>
+
+
+<div data-id="container2" style="margin-top: 20px; ">
+
+</div>
+
+<div data-id="container3" style="margin-top: 20px; ">
+
+</div>
+
+<!--<div data-id="inline1" style="display: none;">
+    <div class="iwf-theme-ThemeDiv">
+        <img src="${ID}" class="iwf-theme-image" />
+        <br />
+
+        <input type="hidden" name="cssInput" value="${CssFile}" />${Name}
+    </div>
+</div>-->
+
+<div data-id="inline2" style="display: none;">
+    <div class="iwf-theme-ThemeDiv">
+        <img src="${img}" class="iwf-theme-image" />
+        <br />
+
+        <!--<input type="hidden" name="cssInput" value="M_${TempFile}" />${Name}-->
+        <input type="hidden" name="uisetting" value="${id}" />
+        <div style="text-align: left;margin:0 15px;">
+            <strong> ${Name} </strong> <br /> 支持分辨率：${maxWidth}-${minWidth}<br />最佳操作方式： ${uiMode}<br /> ${descript}
+        </div>
+    </div>
+</div>
+
+<!--<div data-id="inline3" style="display: none;">
+    <div class="iwf-theme-ThemeDiv">
+        <img src="${ID}" class="iwf-theme-image" />
+        <br />
+
+        <input type="hidden" name="cssInput" value="T_${TempFile}" />${Name}
+    </div>
+</div>-->
+
+<div data-id="popmenu" style="display: none; position: absolute; border: 1px solid black;"></div>
+
+<style>
+    .iwf-theme-ThemeDiv {
+        float: left;
+        margin-right: 10px;
+        text-align: center;
+    }
+
+    .iwf-theme-image {
+        width: 200px;
+        height: 120px;
+        border: 3px solid white;
+        margin: 15px;
+    }
+
+    .iwf-theme-largeimage {
+        width: 500px;
+        height: 400px;
+        background-repeat: no-repeat;
+        box-shadow: 0px 6px 12px rgba(0,0,0,0.175);
+        -webkit-box-shadow: 0px 6px 12px rgba(0,0,0,0.175);
+    }
+
+    .iwf-theme-typeTitle {
+        padding: 10px;
+        margin-top: 20px;
+        float: left;
+        width: 99%;
+        background-color: #d4e2ee;
+    }
+</style>

@@ -1,0 +1,566 @@
+﻿<div class="container-fluid">
+    
+    <div class="row" data-id="hwMainiGrid">
+        <div data-id="formContainer" class="pageContainer">
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>
+                    危险废物转移联单登记管理
+                    <!--<button class="btn btn-primary" style="float: right" data-bind="click:addBtn">新增</button>-->
+                </h3>
+            </div>
+            <!--头部按钮行-->
+            <div class="form-horizontal" style="margin-top: 5px">
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            编号
+                        </span>
+                        <input type="text" class="form-control" data-bind="value: HWmaniCode" placeholder="联单编号" />
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-8 col-lg-3" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            <i class="fa fa-clock-o"></i>
+                        </span>
+                        <input type="text" style="background: transparent; cursor: pointer;" class="form-control" data-bind="value:dateStart,dateFormat: 'yyyy-MM-dd'" placeholder="开始日期" />
+                        <span class="input-group-addon">至 </span>
+                        <input type="text" style="background: transparent; cursor: pointer;" class="form-control" data-bind="value:dateEnd,dateFormat: 'yyyy-MM-dd'" placeholder="结束日期" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-4 col-lg-1" style="margin-right: 0;">
+                    <select class="form-control" data-bind="options: ['市内', '跨市'], value: Type, optionsCaption: '转移类型'"></select>
+                </div>
+
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            转出单位
+                        </span>
+                        <input type="text" class="form-control" data-bind="value: Pcom" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background: transparent;">
+                            接收单位
+                        </span>
+                        <input type="text" class="form-control" data-bind="value: Dcom" />
+                    </div>
+                </div>
+
+                <!--<div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">
+                                <i class="fa fa-users"></i>
+                            </span>
+                            <input type="text" class="form-control" data-bind="value: UserName, userPickerOptions: { multiple: true }" placeholder="分析人员" />
+                        </div>
+                    </div>-->
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0;">
+                    <button class="btn btn-default" data-bind="click: searchBtn"><i class="fa fa-search"></i>&nbsp;查询</button>
+                    <button class="btn btn-default" data-bind="click: addBtn"><i class="fa fa-add"></i>&nbsp;新增</button>
+                </div>
+            </div>
+            <!--信息列表-->
+
+            <div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan='1'>
+                                <span>联单编号</span>
+                            </th>
+                            <th>
+                                <span>转移时间</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>转移类型</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>转出单位</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>接收单位</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>危废类别</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>危废名称</span>
+                            </th>
+                            <th colspan='1'>
+                                <span>转移量(吨)</span>
+                            </th>
+                            <th>
+                                <span>编辑</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="HWManifestCode">
+                            </th>
+                            <th>
+                                <!--<input type="text" class="form-control" data-bind="dateFormat:'yy-mm-dd'" value="" data-filterkey="TransferTime">-->
+                                <input type="datetime" class="form-control" value="" data-filterkey="TransferTime">
+                                <div class="col-md-3">
+                                </div>
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="TransferType">
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="PCompanyName">
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="DCompanyName">
+                            </th>
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="HWType">
+                                <div class="col-md-3">
+                                </div>
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="HWName">
+                            </th>
+                            <th colspan='1'>
+                                <input type="text" class="form-control" value="" data-filterkey="RealTransferAmount">
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td width="30px" data-bind="text: $root.itemNumber($index())"></td>
+                            <td width="50px">
+                                <span class="btn" data-bind="text:HWManifestCode"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:TransferTime"></span>
+                            </td>
+                            <td width="100px">
+                                <span class="btn" data-bind="text:TransferType"></span>
+                            </td>
+                            <td width="150px">
+                                <span class="btn" data-bind="text:PCompanyName"></span>
+                            </td>
+                            <td width="150px">
+                                <span class="btn" data-bind="text:DCompanyName"></span>
+                            </td>
+                            <td width="150px">
+                                <span class="btn" data-bind="text:HWType"></span>
+                            </td>
+                            <td width="150px">
+                                <span class="btn" data-bind="text:HWName"></span>
+                            </td>
+                            <td width="80px">
+                                <span class="btn" data-bind="text:RealTransferAmount"></span>
+                            </td>
+                            
+                            <td width="10px">
+                                <span class="btn btn-link" data-bind='click: $root.editRow'><i class="fa fa-edit"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <span>...</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" data-id="detailForm" style="display: none">
+        <div class="col-lg-10">
+            <!-- 表单 -->
+            <div data-id="formContainer" class="pageContainer">
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h3 style="display: inline">危险废物转移联单登记</h3>
+                    <div style="width: 40%; float: right" class="input-group">
+                        <label class="input-group-addon"><strong>联单号</strong></label>
+                        <input type="text" data-id="HWManifestCode1" class="form-control" placeholder="请输入六位数字" />
+                        <label class="input-group-addon"><strong>No.</strong></label>
+                        <input type="text" data-id="HWManifestCode2" class="form-control" placeholder="请输入八位数字" />
+                    </div>
+                </div>
+                <!--头部按钮行-->
+                <!--主表单-->
+
+                <div class="row form-horizontal form-bordered" data-id="baseInfo">
+                    <div class="col-md-12">
+
+                        <div class="page-header sub-header">
+                            第一部分：废物产生单位填写
+                        </div>
+                        <div data-id="Pcompany">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">产生单位：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input data-id="fileNo" data-bind="value:UnitCName" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-bind="click:selectPUnit">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">电话：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactTel" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通讯地址：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:UnitAddress" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                                <label class="col-sm-2 control-label">邮编：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:PostalCode" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div data-id="Tcompany">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">运输单位：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input data-id="fileNo" data-bind="value:UnitCName" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-bind="click:selectTUnit">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">电话：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactTel" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通讯地址：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:UnitAddress" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                                <label class="col-sm-2 control-label">邮编：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:PostalCode" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div data-id="Dcompany">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">接受单位：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input data-id="fileNo" data-bind="value:UnitCName" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-bind="click:selectDUnit">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">电话：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:ContactTel" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通讯地址：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:UnitAddress" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                                <label class="col-sm-2 control-label">邮编：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:PostalCode" type="text" class="form-control" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div data-id="HWKind">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">废物名称：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:HWName" placeholder="" readonly="readonly" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-bind="click:selectHWInfo">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">类别编号：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:HWType" type="text" class="form-control" readonly="readonly" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">数量：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:RealTransferAmount" type="text" class="form-control" />
+                                </div>
+                                <label class="col-sm-2 control-label">废物特性：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:HWCharacter" type="text" class="form-control" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-id="HWInfo">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">形态：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:HWForm" type="text" class="form-control" readonly="readonly" />
+                                </div>
+                                <label class="col-sm-2 control-label">包装方式：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:PackWay" type="text" class="form-control" readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">主要危险成分：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" data-bind="value:HWIngredient" placeholder="" readonly="readonly" />
+                                </div>
+                                <label class="col-sm-2 control-label">禁忌与应急措施：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" data-bind="value:TabooMeasures" placeholder="" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-id="HWMainifestReg">
+                            <label class="col-sm-2 control-label">外运目的：</label>
+                            <div class="col-sm-4">
+                                <input type="checkbox" data-bind="checked:TransportStore"> 中转贮存&nbsp;&nbsp;
+                                <input type="checkbox" data-bind="checked:TransportUse"> 利用&nbsp;&nbsp;
+                                <input type="checkbox" data-bind="checked:TransportTreatment"> 处理&nbsp;&nbsp;
+                                <input type="checkbox" data-bind="checked:TransportDispose"> 处置
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">发送人：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" data-bind="value:Shipper" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">运达地：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:Destination" type="text" class="form-control" />
+                                </div>
+                                <label class="col-sm-2 control-label">转移时间：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:TransferTime,dateFormat:'yy-mm-dd'" placeholder="" />
+                                        <!--<input class="form-control hasDatepicker" id="dp1427081585384" style="border: currentColor; border-image: none;" type="text" readonly="readonly" data-id="complaintDate" data-bind="value:ComplaintDate,dateFormat:'yy-mm-dd hh:mm:ss'">-->
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="page-header sub-header">
+                                第二部分：废物运输单位填写
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">第一承运人：</label>
+                                <div class="col-sm-4">
+                                    <input data-id="fileNo" data-bind="value:C1CarrierSign" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">运输日期：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:C1Time,dateFormat:'yy-mm-dd'" placeholder="" />
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">车（船）型：</label>
+                                <div class="col-sm-4">
+                                    <input data-id="complaintMan" data-bind="value:C1Model" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">牌号：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:C1LicPlate" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">道路运输证号：</label>
+                                <div class="col-sm-4">
+                                    <input data-id="linkPhone" data-bind="value:C1LicCode" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">运输起点</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:C1Start" placeholder="" />
+                                        <label class="input-group-addon"><strong>经由地</strong></label>
+                                        <input type="text" class="form-control" data-bind="value:C1TransportThrough" placeholder="" />
+                                        <label class="input-group-addon"><strong>运输终点</strong></label>
+                                        <input type="text" class="form-control" data-bind="value:C1Terminal" placeholder="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">运输人签名</label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" data-bind="value:C1Signature" />
+                                </div>
+                            </div>
+                            <!--<div class="form-group">
+                                    <label class="col-sm-2 control-label">经由地：</label>
+                                    <div class="col-sm-4">
+                                        <input data-bind="value:LimitDay" type="text" class="form-control" />
+                                    </div>
+                                    <label class="col-sm-2 control-label">运输终点：</label>
+                                    <div class="col-sm-4">
+                                        <input data-id="createdUserName" data-bind="value:CreatedUserName" type="text" class="form-control" placeholder=""  />
+                                    </div>
+                                </div>-->
+                            <hr />
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">第二承运人：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:C2CarrierSign" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">运输日期：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:C2Time,dateFormat:'yy-mm-dd'" placeholder="" />
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">车（船）型：</label>
+                                <div class="col-sm-4">
+                                    <input data-id="complaintMan" data-bind="value:C2Model" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">牌号：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:C2LicPlate" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">道路运输证号：</label>
+                                <div class="col-sm-4">
+                                    <input data-id="linkPhone" data-bind="value:C2LicCode" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">运输起点</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:C2Start" placeholder="" />
+                                        <label class="input-group-addon"><strong>经由地</strong></label>
+                                        <input type="text" class="form-control" data-bind="value:C2TransportThrough" placeholder="" />
+                                        <label class="input-group-addon"><strong>运输终点</strong></label>
+                                        <input type="text" class="form-control" data-bind="value:C2Terminal" placeholder="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">运输人签名</label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" data-bind="value:C2Signature" />
+                                </div>
+                            </div>
+
+                            <div class="page-header sub-header">
+                                第三部分：废物接受单位填写
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">经营许可证：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:HWBCCode" type="text" class="form-control" placeholder="" />
+                                </div>
+                                <label class="col-sm-2 control-label">接收人：</label>
+                                <div class="col-sm-4">
+                                    <input data-bind="value:Receiver" type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">接收日期：</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-bind="value:ReceiveDate,dateFormat:'yy-mm-dd'" placeholder="" />
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 control-label">单位负责人签字：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" data-bind="value:ResponsiblePerson" placeholder="" />
+                                </div>
+                            </div>
+
+                            <div class=" form-group">
+                                <label class="col-sm-2 control-label">废物处置方式：</label>
+                                <div class="col-sm-10">
+                                    <!--<div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" data-bind="checked:DisposeUse" > 利用
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" data-bind="checked:DisposeStore"> 贮存
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" data-bind="checked:DisposeBurn"> 焚烧
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" data-bind="checked:DisposeFill"> 安全填埋
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" data-bind="checked:DisposeOther"> 其它
+                                            </label>
+                                        </div>-->
+                                    <input type="checkbox" data-bind="checked:DisposeUse"> 利用&nbsp;&nbsp;
+                                    <input type="checkbox" data-bind="checked:DisposeStore"> 贮存&nbsp;&nbsp;
+                                    <input type="checkbox" data-bind="checked:DisposeBurn"> 焚烧&nbsp;&nbsp;
+                                    <input type="checkbox" data-bind="checked:DisposeFill"> 安全填埋&nbsp;&nbsp;
+                                    <input type="checkbox" data-bind="checked:DisposeOther"> 其它
+                                </div>
+                            </div>
+
+                            <button style="position: fixed; right: 13%; bottom: 20px" class="btn btn-primary" data-bind="click:saveBtn">保存</button>
+                            <button style="position: fixed; right: 9.5%; bottom: 20px" class="btn btn-primary" data-bind="click:returnBtn">返回</button>
+                        </div>
+                        <div class="page-header sub-header">
+                            附件上传
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 visible-lg">
+            <div class="page-header sub-header">
+                说明
+            </div>
+            <p style="letter-spacing: 3px">危险废物转移联单为五联单，第一，二联副联。第一联（白色）由接受单位交产生单位存档；第一联副联（白色）由产生单位自留存档；第二联、第二联副联（红色）由产生单位报产生地负责审批的市级环保行政主管部门；第三联（蓝色）由接受单位交运输单位存档；第四联（黄色）由接受单位自留存档；第五联（绿色）由接受单位报接受地负责审批的市级以上环保行政主管部门。</p>
+        </div>
+    </div>
+</div>

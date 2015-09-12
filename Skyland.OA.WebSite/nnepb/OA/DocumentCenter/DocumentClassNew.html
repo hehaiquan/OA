@@ -1,0 +1,71 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    文档管理
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--树状图-->
+            <div class="col-md-4" data-id="documentThree">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="panel-title">文档分类目录</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" data-id="dataValue">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-id="spreadTree">
+                                    展开
+                                </button>
+                                <button class="btn btn-default" type="button" style="display: none" data-id="foldTree">
+                                    折叠
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                        <ul data-id="DocumentClassNewTree" id="DocumentClassNewTree" class="ztree leftPanel" style="height: 100%; border: 0; overflow: auto;"></ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-8" style="height: 100%">
+                <div data-id="tools" class="row">
+                    <ol class="breadcrumb" data-id="breadCrumb">
+                    </ol>
+                    <!--     <div>
+                             <button class="btn btn-default" style="float: right; margin-left: 5px; margin-top: 5px" data-id="lastLevel">上一级</button>
+                             <button class="btn btn-default" style="float: right; margin-left: 5px; margin-top: 5px" data-id="orderBtn">订阅</button>
+                             <button class="btn btn-default" style="float: right; margin-left: 5px; margin-top: 5px" data-id="updateAticleBtn">上传文章</button>
+                         </div>-->
+                </div>
+
+
+                <!--文章表-->
+                <div class="rightPanel" data-id="articleGrid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--订阅弹窗-->
+<div style="display: none" data-id="addOrderWindow">
+    <div class="row form-horizontal form-bordered">
+        <div class="form-group">
+            <label class="col-md-3 control-label">订阅对象：</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" data-bind="value:orderDocumentName" maxlength="10" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">说明：</label>
+            <div class="col-md-8">
+                <span>通过建立订阅，当您的订阅的文件夹有新文档新增时，您将会查看到您所订阅到的文件(此文件必须是公开的并且您有权限查看的)</span>
+            </div>
+        </div>
+    </div>
+</div>

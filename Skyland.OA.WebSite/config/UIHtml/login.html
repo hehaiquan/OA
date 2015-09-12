@@ -1,0 +1,177 @@
+﻿<style>
+    body {
+        background: #fff;
+        padding: 0px;
+        margin: 0px;
+        font-size: 12px;
+    }
+
+   h1{
+       font-family:'Microsoft YaHei';
+       color:darkblue;
+       font-size:30px;
+   }
+    .topcon {
+        border-bottom: solid 1px #c9dce0;
+        height: 129px;
+        padding-top: 100px;
+    }
+
+        .topcon div {
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 27px;
+        }
+
+    .centercon {
+        background: #abdbe7;
+        height: 349px;
+        border-bottom: solid 1px #fff;
+    }
+
+        .centercon div {
+            background: url(resources/login2/login_centerbg.jpg) no-repeat top center;
+            height: 349px;
+        }
+
+    .loginbg {
+        background: url(resources/login2/login_bg02.gif) repeat;
+        height: 55px;
+        border-bottom: solid 1px #fff;
+    }
+
+    .logincon {
+        width: 800px;
+        margin: 0px auto;
+        text-align: center;
+        padding-top: 7px;
+        padding-left: 200px;
+    }
+
+    .loginuser {
+        border: solid 1px #c0c4c3;
+        height: 38px;
+        background: url(resources/login2/login_user.gif) no-repeat #fff;
+        padding-left: 49px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .loginpassword {
+        border: solid 1px #c0c4c3;
+        height: 38px;
+        background: url(resources/login2/login_password.gif) no-repeat #fff;
+        padding-left: 49px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .logininput {
+        border: 0px;
+        height: 36px;
+        line-height: 36px;
+        width: 191px;
+        font-size: 14px;
+        color: #2b2b2b;
+    }
+
+    .logininput2 {
+        border: 0px;
+        height: 36px;
+        line-height: 36px;
+        width: 191px;
+        font-size: 14px;
+        color: #000;
+    }
+
+    .loginbtn {
+        background: url(resources/login2/login_btn.gif) no-repeat;
+        width: 122px;
+        height: 39px;
+        display: block;
+        float: left;
+    }
+
+        .loginbtn:hover {
+            background: url(resources/login2/login_btn_h.gif) no-repeat;
+        }
+
+
+    .line {
+        border: 0px;
+        border-top: solid 1px #d8d8d8;
+        height: 1px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .pageend {
+        border-top: solid 1px #ececec;
+        margin-top: 70px;
+        color: #9b9b9b;
+        line-height: 40px;
+        font-family: Arial, Verdana, "宋体";
+    }
+
+        .pageend div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+            .pageend div span {
+                padding: 0 7px;
+            }
+
+            .pageend div a {
+                color: #989898;
+                text-decoration: none;
+            }
+
+                .pageend div a:hover {
+                    color: #00F;
+                }
+
+    .floatl {
+        float: left;
+    }
+
+    .floatr {
+        float: right;
+    }
+</style>
+
+<div class="topcon">
+    <div>
+        <!--<img src="resources/login2/login_logo.gif" />-->
+    <h1>广西壮族自治区环境监测中心站</h1>
+    </div>
+</div>
+<div class="centercon">
+    <div></div>
+</div>
+<div class="loginbg">
+    <div class="logincon">
+        <div class="loginuser">
+            <input type="text" value="" class="logininput" id="username" />
+        </div>
+        <div class="loginpassword">
+            <input type="password" value="" class="logininput" id="password" />
+        </div>
+        <a href="#" class="loginbtn" onclick="loginCookie()"></a>
+        <div style="padding-top:12px;">
+            <label>
+                <input type="checkbox" id="rmbUser" />
+                <span style="position: relative; top: -3px;">记住密码</span>
+            </label>
+        </div>
+    </div>
+</div>
+<hr class="line" />
+<div class="pageend">
+    <div>
+        <label class="floatl">Copyright &copy 广西壮族自治区环境监测中心站版权所有  </label>
+        <label class="floatr">
+            广州市云景信息科技有限公司技术支持
+        </label>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+﻿<div data-id="baseInfor">
+    <div class="row form-horizontal form-bordered">
+
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">车牌<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-bind="value:cph" disabled="disabled">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">品牌<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:carBrand,usedPhraseType:{type:'carBrand',input:carBrand}" type="text" class="form-control input-sm" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="carBrand" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">型号<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-bind="value:carModel" disabled="disabled">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">车辆类型<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:carType,usedPhraseType:{type:'carType',input:carType}" type="text" class="form-control input-sm" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="carType" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">发动机<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:carEngine" type="text" class="form-control input-sm" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">底盘
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:chassis,usedPhraseType:{type:'chassis',input:chassis}" type="text" class="form-control input-sm" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="chassis" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">座位
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:seatCount" type="text" class="form-control input-sm" />
+              
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">颜色
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:color,usedPhraseType:{type:'color',input:color}" type="text" class="form-control input-sm" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="color" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">载重
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input data-bind="value:loadWeight" type="text" class="form-control input-sm" />
+                    <span class="input-group-addon">KG</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">购买金额
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control positive-integer input-sm" data-bind="value:price" />
+                    <span class="input-group-addon">RMB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">生产日期
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control datetime input-sm" data-bind="value: proDate,datetimeFormat:'yy-mm-dd'" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">购买日期
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control datetime input-sm" data-bind="value: buyDate,datetimeFormat:'yy-mm-dd'" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">车辆状态
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <select class="form-control input-sm" data-id="sfky" data-bind="value:sfky">
+                        <option value="0">正常</option>
+                        <option value="1">停用</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">备注
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <textarea class="form-control input-sm" data-bind="value:remark" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

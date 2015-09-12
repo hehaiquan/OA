@@ -1,0 +1,114 @@
+﻿{
+  "columns": [
+    {
+      "width": "36%"
+    },
+    {
+      "width": "36%"
+    },
+    {
+      "width": "28%"
+    }
+  ],
+  "porlet": [
+    {
+      "id": "MyCaseModel",
+      "title": "待办业务",
+      "titleCss": "alert-info panel-info",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/MyCaseModel",
+      "params": "title:''",
+      "url":"#casemodule.fx/com/wf/doingCase:{}"
+    },
+    {
+      "id": "myEmailDataList",
+      "title": "邮件",
+       "titleCss": "alert-warning panel-warning",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/MyEmailPage",
+      "params": "title:''",
+      "url": "index.html#m2.emailinbox:{}"
+    },
+    {
+      "id": "NoticeMeetings",
+      "title": "会议通知",
+       "titleCss": "alert-warning panel-warning",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/NoticeMeetings",
+      "params": "title:''"
+    },
+    {
+      "id": "MyInitiateTask",
+      "title": "工作安排",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/MyInitiateTask",
+      "params": "title:''"
+    },
+    {
+      "id": "MySchedule_gr",
+      "title": "我的日程",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/MySchedule_gr",
+      "params": "title:''"
+    },
+    {
+      "id": "MyAdminOffice",
+      "title": "行政办公",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/OA/document",
+      "params": "title:''"
+    },
+
+    {
+      "id": "sendDocSearch",
+      "title": "公文查询",
+      "column": 0,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/sendDocSearch",
+      "params": "title:''"
+    },
+
+    {
+      "id": "MyNotice",
+      "title": "通知公告",
+       "titleCss": "alert-warning panel-warning",
+      "column": 1,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/MyNotice",
+      "params": "title:''",
+      "url": "#m2.nnepb/oa/DocumentCenter/main:{title:'通知公告',type:'通知公告'}"
+    },
+    {
+      "id": "DailySendDoc",
+      "title": "每日发文",
+      "column": 1,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/OA/DailySendDocumentPage",
+      "params": "title:''"
+    },
+    {
+      "id": "DailyRecieveDoc",
+      "title": "每日收文",
+      "column": 1,
+      "closable": true,
+      "fold": true,
+      "model": "nnepb/portlet/OA/DailyReceiveDocumentPage",
+      "params": "title:''"
+    }
+  ]
+}

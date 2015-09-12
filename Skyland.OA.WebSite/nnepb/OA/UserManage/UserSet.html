@@ -1,0 +1,187 @@
+﻿<div class="col-md-4">
+    <div class="panel panel-default" style="margin-top: 5px">
+        <div class="panel-heading">
+            <label>用户管理</label><br />
+            <button type="button" data-id="addSon" class="btn btn-primary btn-sm">
+                新增节点
+            </button>
+            <button type="button" data-id="editSon" class="btn btn-primary btn-sm">
+                修改
+            </button>
+            <button type="button" data-id="cutBtn" class="btn btn-primary btn-sm">
+                剪切
+            </button>
+            <button type="button" data-id="attachBtn" class="btn btn-primary btn-sm">
+                粘贴
+            </button>
+            <button type="button" data-id="deleteBtn" class="btn btn-primary btn-sm">
+                删除
+            </button>
+            <br />
+
+            <button type="button" style="margin-top: 5px" data-id="upBtn" class="btn btn-primary btn-sm">
+                上移
+            </button>
+            <button type="button" style="margin-top: 5px" data-id="downBtn" class="btn btn-primary btn-sm">
+                下移
+            </button>
+        </div>
+        <div class="panel-body">
+            <div class="input-group">
+                <input type="text" class="form-control" data-id="dataValue">
+                <span class="input-group-btn">
+                    <button class="btn btn-default fa fa-search" type="button" data-id="searchFiletypeButton">
+                    </button>
+                    <button class="btn btn-default" type="button" data-id="spreadTree">
+                        展开
+                    </button>
+                    <button class="btn btn-default" type="button" style="display: none" data-id="foldTree">
+                        折叠
+                    </button>
+                </span>
+            </div>
+            <!-- /input-group -->
+            <ul data-id="userTree" id="userTree" class="ztree leftPanel"></ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8" data-id="baseInfor" style="display: none">
+    <div style="margin: 20px;">
+        <div class="panel panel-info" style="height: 100%;">
+            <div class="panel-heading">
+                <span>用户登陆资料</span><!--<span class="curselect" style="width: 60%;"></span>-->
+                <input type="button" value="保存" data-id="saveBtn" class="btn btn-primary" style="float: right; margin: -6px;" />
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td width="15%" align="right">用户编号</td>
+                        <td width="35%" field="UserID">
+                            <span data-bind="text:UserID"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="15%" align="right">登录名称<span style="color: red">*</span></td>
+                        <td width="35%">
+                            <div style="position: relative">
+                                <input type="text" data-bind="value:EnName" class="form-control input-sm required" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">中文名称</td>
+                        <td style="position: relative">
+                            <input type="text" data-bind="value:CnName" class="form-control input-sm" />
+                        </td>
+                    </tr>
+                    <tr style="position: relative">
+                        <td align="right">登录密码<span style="color: red">*</span></td>
+                        <td style="position: relative">
+                            <input type="text" data-bind="value:PWD" class="form-control input-sm required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">手机号码</td>
+                        <td style="position: relative">
+                            <input type="text" data-bind="value:Phone" class="form-control input-sm" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">用户部门<span style="color: red">*</span></td>
+                        <td style="position: relative">
+                            <select data-bind="DictOptions: {dictype: 'InvestigateDic', value: DPID }" class="form-control input-sm required"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">参加工作时间<span style="color: red">*</span></td>
+                        <td style="position: relative">
+
+                            <input data-bind="value:inJobDate, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm datetime required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">应享受休假天数<span style="color: red">*</span></td>
+                        <td style="position: relative">
+                            <input data-bind="value:VDay" class="form-control input-sm integer required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">工作年限<span style="color: red">*</span></td>
+                        <td style="position: relative">
+                            <input data-bind="value:WYear" class="form-control input-sm integer required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">排序</td>
+                        <td style="position: relative">
+                            <input data-bind="value:RankID" class="form-control input-sm integer" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加文件夹弹窗-->
+<div style="display: none" data-id="userSetWind">
+    <table class="table table-bordered">
+        <tr>
+            <td width="15%" align="right">登录名称<span style="color: red">*</span></td>
+            <td width="35%">
+                <div style="position: relative">
+                    <input type="text" data-bind="value:EnName" class="form-control input-sm required" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">中文名称</td>
+            <td style="position: relative">
+                <input type="text" data-bind="value:CnName" class="form-control input-sm" />
+            </td>
+        </tr>
+        <tr style="position: relative">
+            <td align="right">登录密码<span style="color: red">*</span></td>
+            <td style="position: relative">
+                <input type="text" data-bind="value:PWD" class="form-control input-sm required" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">手机号码</td>
+            <td style="position: relative">
+                <input type="text" data-bind="value:Phone" class="form-control input-sm" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">用户部门<span style="color: red">*</span></td>
+            <td style="position: relative">
+                <select data-bind="DictOptions: {dictype: 'InvestigateDic', value: DPID }" class="form-control input-sm required"></select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">参加工作时间<span style="color: red">*</span></td>
+            <td style="position: relative">
+
+                <input data-bind="value:inJobDate, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm datetime required" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">应享受休假天数<span style="color: red">*</span></td>
+            <td style="position: relative">
+                <input data-bind="value:VDay" class="form-control input-sm integer required" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">工作年限<span style="color: red">*</span></td>
+            <td style="position: relative">
+                <input data-bind="value:WYear" class="form-control input-sm integer required" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">排序</td>
+            <td style="position: relative">
+                <input data-bind="value:RankID" class="form-control input-sm integer" />
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,352 @@
+﻿<!--
+    Author: zhoushining
+    表单需要实现响应式布局
+    enable_actid:是否只读的对应工作流id
+    enable_status:控制状态（可选值：readonly-只读；hide-隐藏；disabled-禁用；）
+    Title: 发文业务
+-->
+
+<!-- 工作流控件 -->
+<div class="row" style="margin: 5px;">
+    <div class="col-lg-8">
+        <!--意见填写区域，预备加入工作流控件-->
+   
+        <!-- 表单 -->
+        <div data-id="formContainer" class="pageContainer">
+            <!--头部按钮行-->
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>南宁市环境监察支队发文笺</h3>
+                <div class="btn-group " style="float: right; margin-top: -40px;">
+                    <!--<button data-id='filePlace' type="button" value="归档" style="float: right;" class="btn btn-default" />-->
+                    <button data-id='supervisionBtn' type="button" style="float: right; margin-left: 5px" class="btn btn-default">督办</button>
+                    <button data-id='choiceModel' type="button" style="float: right; margin-left: 5px" class="btn btn-default">模版</button>
+                    <button data-id='mainBody' type="button" style="float: right; margin-left: 5px" class="btn btn-default">正文</button>
+                    <button data-id='printSendDoc' type="button" style="float: right; margin-left: 5px" class="btn btn-default">打印发文笺</button>
+                    <!--<button data-id='test' type="button" value="测试" style="float: right;" class="btn btn-default" >-->
+                </div>
+            </div>
+            <div class="row">
+                <!-- 标题 -->
+                <!-- 表单 -->
+                <div class="col-md-12" data-id="talDiv">
+                    <ul data-id="tittleBar">
+                        <li data-id="activity-tab-ProjectTab1"><a><b>处理笺信息</b></a></li>
+                        <li data-id="activity-tab-ProjectTab2"><a><b>督办信息<span data-bind="text:supervisionCount"></span></b></a></li>
+                    </ul>
+                    <!--基本信息-->
+                    <div data-id="activity-tab-ProjectTab1-content">
+                        <div class="row form-horizontal form-bordered" data-id="sendDocBaseInfo" data-part="主表">
+                            <!--纸质表格-->
+                            <div style="color: #660192; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; font-family: 宋体;">
+                                <div style="width: 100%; text-align: center">
+                                    <h3 style="font-family: '宋体'; font-weight: bold">南宁市环境监察支队发文笺</h3>
+                                </div>
+                                <!--编辑页面-->
+                                <div class="documentTable_ZhiDui">
+                                    <table style="margin: auto; width: 847px">
+                                        <tr>
+                                            <td style="width: 88px; text-align: center"><span style="margin-top: 5px;">发文字号<label style="color: red">*</label></span>
+                                            </td>
+                                            <td style="position: relative;">
+                                                <div class="input-group">
+                                                    <input class="form-control" data-id="createSendNo" data-bind="value:fwzh" />
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button" data-id="createSendNoBtn">生成发文号</button>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td style="width: 88px; text-align: center"><span style="margin-top: 5px;">密 级<label style="color: red">*</label></span></td>
+                                            <td style="position: relative; width: 88px">
+                                                <select name="select" data-id="mj" data-bind="DictOptions: {dictype: 'mjTypeDic',value:mj }" class="required" data-part="密级">
+                                                    <option value=""></option>
+                                                </select>
+                                            </td>
+                                            <td style="width: 88px; text-align: center"><span style="margin-top: 5px;">印  数<label style="color: red">*</label></span></td>
+                                            <td style="position: relative;">
+                                                <input type="text" data-id="ys" data-bind="value: ys" class=" positive-integer" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="text-align: center"><span style="margin-top: 5px;">文件标题<label style="color: red">*</label></span>
+                                            </td>
+                                            <td colspan="4" style="position: relative">
+                                                <textarea class="required" data-id="wjbt" data-bind="value: wjbt" style="height: 100%; width: 100%;"></textarea>
+                                            </td>
+                                            <td class="" style="text-align: left; font-size: 15px">
+                                                <div style="border-bottom: 0.5px solid #000000">
+                                                    <input type="checkbox" id="initiativeOpenCheck" data-id="initiativeOpenCheck" data-bind="checked:gklx()=='1'" />
+                                                    <label for="initiativeOpenCheck">主动公开</label>
+                                                </div>
+                                                <div style="border-bottom: 0.5px solid #000000">
+                                                    <input type="checkbox" id="checkOpenCheck" data-id="checkOpenCheck" data-bind="checked:gklx()=='2'" />
+                                                    <label for="checkOpenCheck">依申请公开</label>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" id="unOpenCheck" data-id="unOpenCheck" data-bind="checked:gklx()=='3'" />
+                                                    <label for="unOpenCheck">不予公开</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="text-align: center">签  发
+                                            </td>
+                                            <td colspan="5">
+                                                <div class="input-group" style="width: 100%;" data-id="qf">
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="text-align: center">支队<br />
+                                                分管领导<br />
+                                                审 核
+                                            </td>
+                                            <td colspan="5" style="height: 50px; position: relative; color: black" data-id="fjldsh">
+                                                <!--  <textarea class="table_text_paper" style="color: black" data-id="hbdwyj" data-bind="value: hbdwyj" rows="4"></textarea>-->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">会办单位<br />
+                                                意 见
+                                            </td>
+                                            <td colspan="2" data-id="hbdwyj" style="height: 50px;width: 272px; color: black; position: relative"></td>
+
+                                            <td style="text-align: center">支队办公室<br />
+                                                负责人<br />
+                                                核 稿
+                                            </td>
+                                            <td colspan="2" data-id="bgsldsh" style="height: 50px;width: 272px; color: black; position: relative"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="text-align: center">拟稿部门<br />
+                                                负责人<br />
+                                                拟稿
+                                            </td>
+                                            <td colspan="2" data-id="ngbmfzrng" style="height: 50px;width: 272px; color: black; position: relative"></td>
+
+                                            <td style="text-align: center">拟稿部门<br />
+                                                及负责人
+                                            </td>
+                                            <td colspan="2" data-id="ngbmfzr" style="height: 50px;width: 272px; color: black; position: relative"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="" style="position: relative">
+                                                <span style="margin-top: 5px; float: left;">主 送</span>
+                                                <span style="margin-left: 10px; float: left;" class="input-group-btn" data-bind="click:$root._getOrganization_zs">
+                                                    <button class="btn btn-default" data-id="zs" type="button">...</button>
+                                                </span>
+                                            </td>
+                                            <td colspan="5" style="position: relative">
+                                                <textarea data-id="zs" style="width: 100%; height: 100%" data-bind="value: zs" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="" style="position: relative">
+                                                <span style="margin-top: 5px; float: left;">抄 送</span>
+                                                <span style="margin-left: 10px; float: left;" class="input-group-btn" data-bind="click:$root._getOrganization_cs">
+                                                    <button class="btn btn-default" data-id="cs" type="button">...</button>
+                                                </span>
+                                            </td>
+                                            <td colspan="2" style="position: relative">
+                                                <textarea data-id="cs" style="width: 100%; height: 100%" data-bind="value: cs" />
+                                            </td>
+
+                                            <td class="" style="position: relative">
+                                                <span style="margin-top: 5px; float: left;">抄 报</span>
+                                                <span class="input-group-btn" style="margin-left: 10px; float: left;" data-bind="click:$root._getOrganization_cb">
+                                                    <button class="btn btn-default" data-id="cb" type="button">...</button>
+                                                </span>
+                                            </td>
+                                            <td colspan="2" style="position: relative">
+                                                <textarea data-id="cb" style="width: 100%; height: 100%" data-bind="value: cb" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="" style="position: relative">
+                                                <span style="margin-top: 5px; float: left;" data-bind="value:dzy,TreeUserSourceSingleControl:{opt:true,username:dzy,userid:dzyId}">打 字</span>
+
+                                                <span class="input-group-btn" style="margin-left: 10px; float: left;">
+                                                    <button class="btn btn-default" data-id="dzy" type="button">...</button>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="input-group" style="width: 100%">
+                                                    <textarea data-id="dzy" style="width: 100%; height: 100%" data-bind="value: dzy" class="required" />
+                                                </div>
+
+                                                <!--        <input type="text" class="table_text_paper" data-id="dzy" data-bind="value: dzy,TreeUserSource:{opt:false,username:dzy}" />
+
+                                                    <button class="btn btn-default" data-id="dzy" type="button" data-part="打字">...</button>-->
+                                            </td>
+                                            <td class="" style="position: relative">
+                                                <span style="margin-top: 5px; float: left;" data-bind="value:yx,TreeUserSourceSingleControl:{opt:true,username:yx,userid:yxId}">一 校</span>
+                                                <span class="input-group-btn" style="margin-left: 10px; float: left;">
+                                                    <button class="btn btn-default" data-id="yx" type="button" data-part="打字">...</button>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <textarea data-id="yx" style="width: 100%; height: 100%" data-bind="value: yx" />
+                                            </td>
+                                            <td class="" style="position: relative">
+                                                <span style="margin-top: 5px; float: left;" data-bind="value:ex,TreeUserSourceSingleControl:{opt:true,username:ex,userid:exId}">二 校</span>
+                                                <span class="input-group-btn" style="margin-left: 10px; float: left;">
+                                                    <button class="btn btn-default" data-id="ex" type="button" data-part="打字">...</button>
+                                                </span>
+                                            </td>
+                                            <td style="position: relative">
+                                                <textarea data-id="ex" style="width: 100%; height: 100%" data-bind="value: ex" class="" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="position: relative; text-align: center"><span>主题词</span>
+                                            </td>
+                                            <td colspan="5" style="position: relative">
+                                                <textarea data-bind="value:ztc" data-id="ztc" style="width: 100%; height: 100%" class="table_text_paper" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="" style="position: relative; text-align: center">备 注
+                                            </td>
+                                            <td colspan="5" style="position: relative">
+                                                <textarea class="table_text_paper" data-id="bz" style="width: 100%; height: 100%" data-bind="value: bz" rows="4"></textarea>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class=""><span style="margin-top: 5px; float: left;">发文日期<label style="color: red">*</label></span></td>
+                                            <td colspan="5" style="color: red; position: relative">
+                                                <input type="text" style="width: 100%; height: 100%" class="required" data-id="fwrq" data-bind="value: fwrq,datetimeFormat:'yy-mm-dd'" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="">
+                                                <span style="margin-top: 5px; float: left;">办文<br />
+                                                    依据</span>
+                                                <span class="input-group-btn" style="margin-left: 10px; float: left; margin-top: 10px" data-bind="click:_getReceiveSelect">
+                                                    <button class="btn btn-default" data-id="receiveDocument" type="button">...</button>
+                                                </span>
+                                            </td>
+                                            <td colspan="5">
+                                                <div class="input-group" style="color: black; width: 100%">
+                                                    <input class="form-control" data-bind="value:receiveTittleName" />
+                                                    <input type="text" class="form-control" data-bind="value:receiveCaseId" style="display: none" />
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" data-bind="click:_getReceiveByCaseId" data-id="viewReceive" type="button">查看依据</button>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class=""><span style="margin-top: 5px; float: left;">发文类型<label style="color: red">*</label></span></td>
+                                            <td colspan="5" style="position: relative">
+                                                <select name="select" style="width: 100%; height: 100%" class=" required" data-id="fwlx" data-bind="DictOptions: {dictype: 'sendDocTypeDic_ZhiDui',value:fwlxId }">
+                                                    <option value=""></option>
+                                                </select>
+                                                <!--<input type="text" style="color: black" class="table_text_paper required" data-bind="value: fwlx" />-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="activity-tab-ProjectTab2-content">
+                        <div class="form-horizontal form-bordered">
+                            <div class="page-header sub-header" style="margin-left: 10px;">
+                                督办申请
+                            </div>
+                            <table data-id="supervisionList" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr class="sort">
+                                        <th style="width: 100px; text-align: center; background: white"><a href="Name" data-sortkey="Name">督办编号</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="Name" data-sortkey="Name">督办事项</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="Name" data-sortkey="Name">主承办人</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="Name" data-sortkey="Name">主承办科室</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="Name" data-sortkey="Name">督办人</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="Name" data-sortkey="Name">办理期限</a></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <span data-bind="text:code,click:$root._getInforByCaseId" style="color: black" class="btn btn-link"></span>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle; display: table-cell;">
+                                            <span data-bind="text:title" style="color: black"></span>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle; display: table-cell;">
+                                            <span data-bind="text:undertakeManName" style="color: black"></span>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle; display: table-cell;">
+                                            <span data-bind="text:undertake_Department" style="color: black"></span>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle; display: table-cell;">
+                                            <span data-bind="text:supervisionManName" style="color: black"></span>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle; display: table-cell;">
+                                            <span data-bind="html:$root.setDateTime(manageDate)"></span>
+                                        </td>
+
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模版选择弹窗-->
+<div data-id="modelDiv" class="modelDiv" style="display: none;">
+    <div class="table-responsive" data-role="emailTableGrid" data-id="emailTableGrid" style="padding-left: 3px; padding-right: 3px;">
+        <table class="table table-striped doingcase">
+            <thead>
+                <tr>
+                    <th style="text-align: center; width: 10%"></th>
+                    <th style="width: 90%">标题</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        <input type="text" class="form-control" value="" data-filterkey="title">
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                <tr>
+                    <!--radio-->
+                    <td style="text-align: center">
+                        <input type="radio" name="choiceSendDocModel" data-bind="checked:check" />
+                    </td>
+                    <td style="text-align: left">
+                        <span data-bind="text:title"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!--自动生成文号弹窗-->
+<div style="display: none;" data-id="addSendCodeWind">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <select data-id="topCode" class="form-control" data-bind="DictOptions: {dictype: 'sendDocTypeDic', value: topCode }">
+                <option value=""></option>
+            </select>
+            <span data-bind="text:endCode"></span>
+        </div>
+    </div>
+</div>

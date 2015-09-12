@@ -1,0 +1,384 @@
+﻿
+<div id="iwf-frame-top" class="iwf-frame-top">
+    <div style="height: 53px;">
+        <div class="Apptitle h3">云景业务开发平台</div>
+        <div style="margin: 0; float: left;">
+            <div style="display: inline; float: left;">
+                <a id="login-userinfo" href="javascript:void(0)" class="btn btn-link" style="color:white;"><i class="fa fa-user"></i><span id="login-name">请登录</span> <span class="caret"></span></a>
+            </div>
+            &nbsp;&nbsp;
+        </div> 
+              <div>
+            <div class="input-group" style="display:none; float: right; width: 200px; margin: 5px 10px">
+                <input class="form-control" id="navSearch" type="text" /><span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-search fa-fw"></i>&nbsp;</button>
+                </span>
+            </div>
+        </div>
+
+        <div id="iwf-navigation" style="display: inline; float: right; width:360px; margin: 10px 0 0 0;">
+            <ul class="nav nav-pills">
+                <li class="list-item"></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+<div style="height: 100%; padding: 0px; background-color:white;  clear: both;">
+
+    <div id="iwf-frame-left" class="iwf-frame-main-left">
+        <ul class="nav nav-list"></ul>
+    </div>
+    <div id="iwf-frame-main" style="height: 100%; margin-left: 200px; overflow: auto;"></div>
+
+</div>
+
+<style>
+    body {
+        overflow-y: no-display;
+    }
+
+    [data-id=gismenu] {
+        background-color: #6F5499;
+        color:white;
+    }
+        [data-id=gismenu] a {
+        color:white;
+    }
+        [data-id=subtitle] {
+        color:white;
+    }
+
+    .iwf-toolbar .active {
+        box-shadow:inset 0px 3px 5px rgba(0,0,0,0.20);
+    }
+
+       .iwf-toolbar a:hover {
+        box-shadow:inset 0px 3px 5px rgba(0,0,0,0.20);
+    }
+
+    .iwf-frame-top {
+        background-color: #6F5499;
+    }
+
+
+    .Apptitle {
+        float: left;
+        color: white;
+        margin: 10px 20px;
+        text-shadow: 1px 1px 1px #b6c7d3;
+    }
+
+    .iwf-frame-split {
+        border-bottom: 1px solid #2a73a8;
+        height: 2px;
+        border-top: 1px solid #2a73a8;
+        background-color: #5AA8E0;
+    }
+
+    .iwf-frame-main-left {
+        float: left;
+        overflow: auto;
+        width: 200px;
+        height: 100%;
+        padding: 8px;
+        /*position: absolute;
+    display: block;*/
+    }
+
+    .iwf-frame-main-center {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .iwf-tabs-item {
+        /*float: left;
+    height: 20px;
+    padding: 10px 10px 5px 10px;
+    color: #205484;
+    cursor: default;
+    border-radius: 3px 3px 0px 0px;*/
+    }
+
+
+        .iwf-tabs-item:hover {
+            height: 21px;
+            padding: 9px 9px 5px 9px;
+            border-top: 1px solid #b6c7d3;
+            border-right: 1px solid #b6c7d3;
+            border-left: 1px solid #b6c7d3;
+            background-color: #EEF4F7;
+        }
+
+    .iwf-tabs-item-selected {
+        height: 22px;
+        padding: 9px 9px 5px 9px;
+        border-top: 1px solid #b6c7d3;
+        border-right: 1px solid #b6c7d3;
+        border-left: 1px solid #b6c7d3;
+        background-color: #FFF;
+    }
+
+        .iwf-tabs-item-selected:hover {
+            height: 22px;
+            background-color: #FFF;
+        }
+
+    .iwf-toolbar, .iwf-tabs {
+        height: 50px;
+        padding: 6px;
+        margin: 0px;
+        vertical-align: central;
+        /*background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#DEEDF8),to(#C7DEEF));
+    background-image: -webkit-linear-gradient(top,#DEEDF8,#C7DEEF);
+    background-image: -o-linear-gradient(top,#DEEDF8,#C7DEEF);
+    background-image: linear-gradient(to bottom,#DEEDF8,#C7DEEF);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEEDF8', endColorstr='#C7DEEF');
+    border-bottom:1px solid #A3C0D5;*/
+    }
+
+        .iwf-tabs li {
+            list-style-type: none;
+        }
+
+    .iwf-navmodule-topNav {
+        height: 35px;
+        width: 200px;
+        line-height: 30px;
+        padding: 4px 0;
+        background-color: #5AA8E0;
+        background-repeat: repeat-x;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        border-right: 1px solid #2a73a8;
+        border-bottom: 1px solid #2a73a8;
+        float: left;
+        margin-top: -1px;
+        background-image: linear-gradient(to bottom,#5AA8E0,#2a73a8);
+    }
+
+    .iwf-button-new {
+        height: 23px;
+        width: 80px;
+    }
+
+    .iwf-navmodule-topNav span {
+        margin-right: 8px;
+    }
+
+
+
+    .iwf-grid {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .iwf-grid thead tr {
+            background: #dbe5ec;
+            background: -webkit-gradient(linear,0 0,0 100%,from(#e7f1f9),to(#d7e6f2));
+            background: -moz-linear-gradient(top,#e7f1f9,#d7e6f2);
+            background: -o-linear-gradient(#e7f1f9,#d7e6f2);
+            background: linear-gradient(#e7f1f9,#d7e6f2);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7F1F9', endColorstr='#D7E6F2');
+        }
+
+        .iwf-grid thead td {
+            padding: 0 8px;
+            border: 1px solid #aab7c0;
+        }
+
+        .iwf-grid tbody td {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+
+    .iwf-grid-row {
+        /*background-color: #FFF;*/
+        border-bottom: 1px dashed #CCC;
+    }
+
+    .iwf-grid-row-split {
+        border-bottom: 1px solid #999;
+    }
+
+    .iwf-grid-row:hover {
+        /*background-color: #F7F7F7;*/
+    }
+
+    .iwf-grid-row-selected {
+        /*background-color: #E9F0F5;*/
+    }
+
+        .iwf-grid-row-selected:hover {
+            /*background-color: #E9F0F5;*/
+        }
+
+    .iwf-navmodule-item-small {
+        line-height: 35px;
+        text-indent: 25px;
+        font-size: 12px;
+        color: #205484;
+    }
+
+    .iwf-navmodule-item-line {
+        height: 1px;
+        background-color: #CCC;
+        margin: 10px;
+    }
+
+    /*导航栏*/
+
+    #iwf-navigation a {
+        outline: none !important;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+        padding: 10px 18px;
+        color: white;
+        font-size: 16px;
+                background-color:transparent;
+
+    }
+
+    #iwf-navigation .active a {
+        /*box-shadow: 2px -2px 4px -1px #888888 ;*/
+        /*color: black;*/
+        font-weight:bold;
+    }
+
+
+    .iwf-portal-portlet .title a:hover {
+        color: red;
+    }
+
+    .iwf-window-title a:hover {
+        color: #000;
+    }
+
+    .iwf-portal {
+        background-color: #FFF;
+    }
+
+    .iwf-portal-column {
+        float: left;
+        padding: 5px;
+        min-height: 200px;
+    }
+
+    .iwf-portal-portlet {
+        margin: 5px;
+    }
+
+    .iwf-portal-portlet-empty {
+        margin: 5px;
+        background-color: #F9F9F9;
+        border: 1px dashed #CCC;
+    }
+
+    .iwf-portal-portlet-move {
+        position: absolute;
+        filter: Alpha(Opacity=70);
+        opacity: 0.7;
+        z-index: 9999;
+        background-color: #E6EBEC;
+    }
+
+    .iwf-portal-heading a {
+        display: none;
+        float: right;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        right: -5px;
+        top: 1px;
+        color: #666;
+        line-height: 16px;
+        border-radius: 0px 0px 2px 2px;
+        padding: 2px 3px;
+        margin-right: 10px;
+        text-indent: 0px;
+    }
+
+        .iwf-portal-heading a:hover {
+            display: block;
+            text-decoration: none;
+        }
+
+    /*控制主页导航的关闭按钮*/
+
+    .nav-tabs > li > a > i {
+        opacity: 0.2;
+    }
+
+    .nav-tabs > li > a:hover > i {
+        opacity: 1;
+    }
+
+    .panel-default > .panel-heading {
+        /*background-color: #6F5499;*/
+    }
+
+    /* Popup弹出框样式 */
+    .popup-blue .popup-title-blue {
+        color: #2a6496;
+    }
+
+    .popup-blue .popup-title-white {
+        /*color: #fff;*/
+        color: #2a6496;
+        font-weight: bold;
+    }
+
+    .popup-blue h5 {
+        margin: 6px 0;
+    }
+
+    .popup-blue .table {
+        font-size: 14px;
+    }
+
+    .popup-blue .table thead {
+        /*background-color: #428bca;*/
+        background-color: #D9EDF7;
+    }
+
+    .popup-blue .table {
+        border-top-color: #428bca;
+        border-top-width: 2px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .popup-blue .table thead tr th {
+        border-bottom: none;
+    }
+
+    .popup-blue .table thead tr th, .popup-blue .table tbody tr td {
+        /*border-color: #428bca;*/
+        border-color: #ddd;
+    }
+
+    .popup-blue .table thead tr th {
+        padding: 6px 8px;
+    }
+
+    .popup-blue .table tbody tr td {
+        height: 20px;
+        padding: 5px 8px;
+    }
+
+    .popup-blue .table thead tr th, .popup-blue .table tbody tr td {
+        text-align: center;
+    }
+
+    .popup-blue .table tbody tr td button {
+        height: 20px;
+        padding: 0;
+    }
+</style>
+
+<link href="../Forms/GIS/boiler/miduWin.css" rel="stylesheet" />

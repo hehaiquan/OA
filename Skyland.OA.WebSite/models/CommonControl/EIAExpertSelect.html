@@ -1,0 +1,158 @@
+﻿<div style="border:1px solid black; height:30px; display:none;" data-id="choiceContent">
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row form-horizontal form-bordered">
+            <div class="form-group" style="margin-top: 10px">
+                <label class="col-md-2 control-label">本次抽取数量：</label>
+                <div class="col-md-2">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" data-id="btnMinus" type="button">-</button>
+                        </span>
+                        <input type="text" data-id="getNum" class="form-control" value="1" readonly="readonly" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" data-id="btnPlus" type="button">+</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button data-id="btnKSZJ" class="btn btn-primary">开始抽取</button>
+                </div>
+                <div class="col-md-6">
+                    请先在专家库中筛选并选择符合条件的专家后，再开始抽取
+                </div>
+            </div>
+        </div>
+    </div>
+    <table style="" border="0">
+    <tr>
+        <td style="width:20%; vertical-align:top;">
+            <div data-role="expertSelectedGrid" style="margin-top:10px;  padding:4px;">
+                <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; background-color:#F9F9F9;" colspan="5">
+                                <h4>抽取结果</h4> 
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="background: white; text-align:center;"><a href="#" data-sortkey="name">姓名</a></th>
+                            <!--<th style="background: white; text-align:center;"><a href="#" data-sortkey="gzdw">工作单位</a></th>
+                            <th style="background: white; text-align:center;"><a href="#" data-sortkey="tel">单位电话</a></th>
+                            <th style="background: white; text-align:center;"><a href="#" data-sortkey="mobile">手机号码</a></th>-->
+                            <th style="background: white; text-align:center;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td style="text-align:center;">
+                                <span data-bind="text: name"></span>
+                            </td>
+                           <!-- <td style="text-align:center;">
+                                <span data-bind="text: gzdw"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: tel"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: mobile"></span>
+                            </td>-->
+                            <td style="text-align:center;">
+                                 <span class="btn-link" data-bind="text: '删除', click: $root.removeRow" title="删除"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+        <td style="width:80%; vertical-align:top;">
+            <div data-role="expertGrid" style="margin-top:10px; padding:4px;">
+                <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; background-color:#F9F9F9;" colspan="8">
+                                <h4>环评专家库</h4> 
+                            </th>
+                        </tr>
+                        <tr class="sort">
+                            <th style="width: 8%; text-align:center;">选择</th>
+                            <th style="background: white; text-align:center;"><a href="javascript:void();" data-sortkey="name">姓名</a></th>
+                            <th style="width: 10%; background: white; text-align:center;"><a href="javascript:void();" data-sortkey="sex">性别</a></th>
+                            <th style="width: 15%; background: white; text-align:center;"><a href="javascript:void();" data-sortkey="zc">职称</a></th>
+                            <th style="width: 15%; background: white; text-align:center;"><a href="javascript:void();" data-sortkey="zjlx">专家类型</a></th>
+                            <th style="width: 12%; background: white; text-align:center;"><a href="javascript:void();" data-sortkey="sfcp">是否常聘</a></th>
+                            <th style="width: 15%; background: white; text-align:center;"><a href="javascript:void();" data-sortkey="sfhpgcs">是否环评工程师</a></th>
+                            <th style="width: 12%; background: white; text-align:center;"><a href="javascript:void();" data-sortkey="cjpscs">参加评审次数</a></th>
+                        </tr>
+                        <tr>
+                            <th style="text-align:center;">
+                                <input type="checkbox" id="selectAll" title="全选/取消" />
+                            </th>
+                            <th style="text-align:center;">
+                                <input type="text" placeholder="" value="" data-filterkey="name" style="width: 100%;">
+                            </th>
+                            <th style="text-align:center;">
+                                <select data-filterkey="sex">
+                                    <option value="全部">全部</option>
+                                    <option value="1">男</option>
+                                    <option value="2">女</option>
+                                </select>
+                            </th>
+                            <th style="text-align:center;">
+                                <input type="text" placeholder="" value="" data-filterkey="zc" style="width: 100%;">
+                            </th>
+                            <th style="text-align:center;">
+                                <select data-id="zjlxSelect" data-filterkey="zjlxName" />
+                            </th>
+                            <th style="text-align:center;">
+                                <select data-filterkey="sfcp">
+                                    <option value="全部">全部</option>
+                                    <option value="1">是</option>
+                                    <option value="2">否</option>
+                                </select>
+                            </th>
+                            <th style="text-align:center;">
+                                <select data-filterkey="sfhpgcs">
+                                    <option value="全部">全部</option>
+                                    <option value="1">是</option>
+                                    <option value="2">否</option>
+                                </select>
+                            </th>
+                            <th style="text-align:center;"></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td style="text-align:center;">
+                                <input type="checkbox" data-bind="value: ExpertsId" class="chkexpert" />
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: name"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: (sex() == null || sex() == '' ? '' : (sex() == '1' ? '男' : '女'))"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: zc"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: zjlxName"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: sfcp() == '1' ? '是' : '否'"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: sfhpgcs() == '1' ? '是' : '否'"></span>
+                            </td>
+                            <td style="text-align:center;">
+                                <span data-bind="text: cjpscs"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr> 
+</table>
+ </div>

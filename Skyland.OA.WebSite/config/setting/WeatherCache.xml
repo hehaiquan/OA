@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://WebXml.com.cn/">
+  <string>广东 广州</string>
+  <string>广州</string>
+  <string>2350</string>
+  <string>2014/07/11 08:59:23</string>
+  <string>今日天气实况：气温：26℃；风向/风力：东北风 1级；湿度：94%</string>
+  <string>空气质量：暂无；紫外线强度：中等</string>
+  <string>穿衣指数：炎热，建议穿短衫、短裤等清凉夏季服装。
+过敏指数：暂无。
+运动指数：较不宜，有降水，推荐您在室内进行休闲运动。
+洗车指数：不宜，有雨，雨水和泥水会弄脏爱车。
+晾晒指数：不宜，降水可能会淋湿衣物，请选择在室内晾晒。
+旅游指数：暂无。
+路况指数：潮湿，有降水，路面潮湿，请小心驾驶。
+舒适度指数：很不舒适，阴天，天热湿度较大，很闷热。
+空气污染指数：暂无。
+紫外线指数：中等，涂擦SPF大于15、PA+防晒护肤品。</string>
+  <string>7月11日 雷阵雨</string>
+  <string>26℃/35℃</string>
+  <string>无持续风向微风</string>
+  <string>4.gif</string>
+  <string>4.gif</string>
+  <string>7月12日 多云</string>
+  <string>26℃/35℃</string>
+  <string>无持续风向微风</string>
+  <string>1.gif</string>
+  <string>1.gif</string>
+  <string>7月13日 多云</string>
+  <string>26℃/35℃</string>
+  <string>无持续风向微风</string>
+  <string>1.gif</string>
+  <string>1.gif</string>
+  <string>7月14日 晴</string>
+  <string>26℃/35℃</string>
+  <string>无持续风向微风</string>
+  <string>0.gif</string>
+  <string>0.gif</string>
+  <string>7月15日 晴</string>
+  <string>26℃/35℃</string>
+  <string>无持续风向微风</string>
+  <string>0.gif</string>
+  <string>0.gif</string>
+</ArrayOfString>

@@ -1,0 +1,29 @@
+﻿<!-- 通用表单布局    -->
+<!-- 工作流控件 -->
+
+<div class="container-fluid">
+    <div data-id="iwf_toolbar" class="row"></div>
+    <div data-id="iwf_preActInfo" class="row alert-info" style="padding: 3px 15px;">
+        上步由<strong>${username}</strong> 于<strong>${completedate}</strong>发送
+        &nbsp;&nbsp; &nbsp;&nbsp;<span title="${remark}" style="word-wrap:break-word; overflow:hidden;"> ${remark} </span>
+    </div>
+    <div data-id="iwf_DraftDemo" class="row alert-success" style="padding: 3px 15px;"></div>
+    <div data-id="iwf_WF_Attachment" class="row">    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <!--意见填写区域，预备加入工作流控件-->
+            <div class="row">
+                <div data-id="iwf_WF_RemarkBox" class="col-md-12">                </div>
+            </div>
+            <!-- 表单 -->
+
+            <div data-id="iwf_wf_Formpage" style="overflow-y:auto;padding:15px;  margin: -10px;"></div>
+
+        </div>
+        <!-- 审批意见，预备加入工作流控件 -->
+        <div data-id="iwf_WF_RemarkList" class="col-lg-4 visible-lg">        </div>
+    </div>
+
+</div>
+

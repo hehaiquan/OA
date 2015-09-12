@@ -1,0 +1,24 @@
+﻿ /*--通用流程表单样式--*/
+      .pageContainer {
+            /*padding: 5px;*/
+        }
+.sub-header {
+    padding-bottom:5px!important;
+    font-size: 18px;
+}
+
+        /*.form-group .btn-link {
+            font-weight: bold;
+            text-decoration: underline;
+        }*/
+
+        .control-label {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+ 
+
+/*#toolbar {
+    z-index:999 !important;
+}*/

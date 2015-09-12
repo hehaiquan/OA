@@ -1,0 +1,27 @@
+﻿{columns:[{width:'30%'},{width:'45%'},{width:'25%'}],
+	porlet:[		
+		{ id: 'MyCaseModel', title: '待办业务', column: 0, closable: true, fold: true ,model:'MyCaseModel',params:'title:""' },	
+		{ id: 'myEmailDataList', title: '邮件', column: 0, closable: true, fold: true, model:'myEmailDataList',params:'title:""'},
+		{ id: 'NoticeMeetings', title: '会议通知', column: 0, closable: true, fold: true, model:'NoticeMeetings',params:'title:""'},
+		{ id: 'MyInitiateTask', title: '工作安排', column: 0, closable: true, fold: true, model:'MyInitiateTask',params:'title:""'},
+		{ id: 'MySchedule_gr', title: '我的日程', column: 0, closable: true, fold: true, model:'MySchedule_gr',params:'title:""'},		
+		{ id: 'MyAdminOffice', title: '行政办公', column: 0, closable: true, fold: true ,model:'MyAdminOffice',params:'title:""' },
+		{ id: 'InnerManagement', title: '内部管理', column: 0, closable: true, fold: true ,model:'InnerManagement',params:'title:""' },
+		{ id: 'sendDocSearch', title: '公文查询', column: 0, closable: true, fold: true ,model:'sendDocSearch',params:'title:""' },		
+		{ id: 'SpecialBriefing', title: '专题简报', column: 0, closable: true, fold: true ,model:'SpecialBriefing',params:'title:""' },		
+		{ id: 'Literature', title: '文献资料', column: 0, closable: true, fold: true ,model:'Literature',params:'title:""' },		
+					
+		{ id: 'MyNotice', title: '通知公告', column: 1, closable: true, fold: true, model:'MyNotice',params:'title:""'},
+		{ id: 'takeAddvice', title: '征求意见', column: 1, closable: true, fold: true, model:'takeAddvice',params:'title:""'},
+		{ id: 'workOfPartyBuild', title: '党建工作', column: 1, closable: true, fold: true, model:'workOfPartyBuild',params:'title:""'},
+		{ id: 'womenWork', title: '工青妇工作', column: 1, closable: true, fold: true, model:'womenWork',params:'title:""'},
+		{ id: 'ResearchReport', title: '调研报告', column: 1, closable: true, fold: true, model:'ResearchReport',params:'title:""'},		
+		{ id: 'DailySendDoc', title: '每日发文', column: 1, closable: true, fold: true, model:'dailysenddocument',params:'title:""'},
+		{ id: 'environmentalNews', title: '环保要闻', column: 1, closable: true, fold: true, model:'environmentalNews',params:'title:""'},
+		{ id: 'DailyRecieveDoc', title: '每日收文(传阅)', column: 1, closable: true, fold: true, model:'dailyrecievedocument',params:'title:""'},
+		{ id: 'DailyRecieveDoc_Handle', title: '每日收文(办理)', column: 1, closable: true, fold: true, model:'dailyrecievedocument_Handle',params:'title:""'},
+		{ id: 'Dynamemic', title: '工作动态', column: 1, closable: true, fold: true, model:'Dynamemic',params:'title:""'},	
+		{ id: 'LZJYJSG', title: '廉政教育警示馆', column: 1, closable: true, fold: true, model:'LZJYJSG',params:'title:""'},		
+		{ id: 'Learning', title: '学习园地', column: 1, closable: true, fold: true, model:'Learning',params:'title:""'},
+		]	
+	}

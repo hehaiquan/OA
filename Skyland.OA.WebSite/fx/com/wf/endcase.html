@@ -1,0 +1,195 @@
+﻿<div class="pageTitle" style="padding:5px;margin:0px;">
+
+    <div style="FLOAT: right; margin: 7px 0px;">
+        <strong><span iwftype="pageinfo"></span></strong>
+    </div>
+
+    <div style="FLOAT: right; margin: 2px 5px" iwftype="pagedown" class="btn btn-default btn-circle" title="下一页" index="0" unselectable="on">
+        <span class="fa fa-arrow-right" unselectable="on"></span>
+    </div>
+
+
+    <div style="FLOAT: right; margin: 2px 5px" iwftype="pageup" class="btn btn-default  btn-circle" title="上一页" index="1" unselectable="on">
+        <span class="fa fa-arrow-left" unselectable="on"></span>
+    </div>
+
+    <div style="FLOAT: right; margin: 7px">页 </div>
+
+    <div style="FLOAT: right;">
+        <div class="btn btn-link" iwftype="GoTo" style="FLOAT: left; padding-right: 2px;">跳转至</div>
+        <input class="form-control input-sm" iwftype="GoInput" style="width: 40px;" />
+    </div>
+
+    <div style="FLOAT: left; margin-right: 2px;">
+        <div class="input-group">
+            <!--<div class="input-group-addon">业务名称</div>-->
+            <input class="form-control" style="width:100px;" iwftype="CaseName" placeholder="业务名称" />
+        </div>
+    </div>
+
+    <div style="FLOAT: left; margin-right: 2px">
+        <div class="input-group">
+            <!--<div class="input-group-addon">业务类型</div>-->
+            <select class="form-control" iwftype="FlowType"></select>
+        </div>
+    </div>
+
+    <div title="检索" class="btn btn-default" style="margin-right: 2px; float: left;" iwftype="QuickSearch">
+        &nbsp;<span class="fa fa-search" unselectable="on"></span>&nbsp;
+        <!--<span style="margin-right: 5px; margin-left: 5px;" unselectable="on">快速检索</span>-->
+    </div>
+    <div title="高级检索" class="btn btn-default" style="margin-right: 2px; float: left;" iwftype="AdvancedSearch">
+        <span style="margin-right: 5px; margin-left: 5px;" unselectable="on">高级检索</span>
+    </div>
+    <div style="clear:both"></div>
+</div>
+
+
+
+
+
+<div style="WIDTH: 100%; OVERFLOW: hidden" iwftype="iwfGridDiv">
+    <div class="casebox tablehead text-info" style="text-align:center;" iwftype="iwfGridHeaderDiv">
+
+        <div class="col45" field="Name" iwftype="iwfGridSort">业务名称</div>
+        <div class="col15" field="FlowName" iwftype="iwfGridSort">流程类型</div>
+        <div class="col8" field="CreaterCnName" iwftype="iwfGridSort">创建人</div>
+        <div class="col12" field="CreateDate" iwftype="iwfGridSort">创建日期</div>
+        <div class="col8" field=" endercnname" iwftype="iwfGridSort">办结人</div>
+        <div class="col12" field="EndDate" iwftype="iwfGridSort">办结日期</div>
+
+    </div>
+    <div style="overflow-y: scroll" iwftype="iwfGridContentDiv">
+        <!--<table width="100%" align="center" cellpadding="0" cellspacing="0" class="table table-striped doingcase">
+            <tbody class="">
+                <tr class="iwf-grid-row">
+                    <td>-->
+        <div class="iwf-grid casebox">
+            <div class="iwf-grid-body new-param-tmpl">
+                <div class="treeview-bar"><span style="margin:-2px 5px 0 -10px;"><i class="fa fa-sort-desc"></i></span> ${text}&nbsp;(${count})</div>
+
+                <div data-id="${ID}" class="${$item.GetTrclass($data)} iwf-grid-row">
+                    <div class="col45"><a href="javascript:void(0)">${Name}</a></div>
+                    <div class="col15">${FlowName}</div>
+                    <div class="col8">${CreaterCnName}</div>
+                    <div class="col12">${$item.changeyyyyMMdd(CreateDate)}</div>
+                    <div class="col8">${EnderCnName}</div>
+                    <div class="col12">${$item.changeyyyyMMdd(EndDate)}</div>
+
+                    <!--</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .tablehead {
+        padding: 8px 20px 5px 10px;
+        font-weight: bold;
+        height: 35px;
+    }
+
+    .casebox-row {
+        padding: 8px;
+        line-height: 1.4285;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+        border-left: 4px solid #fff;
+    }
+
+    /*.tr {
+            text-align: right;
+            line-height: 25px;
+        }*/
+
+    .casebox .unreaded {
+        font-weight: bold;
+    }
+
+    .iwf-gird-active {
+        border-left: 4px solid #337ab7;
+        background-color: #d9edf7;
+    }
+
+    .casebox .col45,
+    .casebox .col15,
+    .casebox .col12,
+    .casebox .col8 {
+        margin-left: 0px;
+        display: inline-block;
+    }
+
+    .casebox .col45 {
+        width: 45%;
+    }
+
+    .casebox .col15 {
+        width: 12%;
+    }
+
+    .casebox .col12 {
+        width: 12%;
+    }
+
+    .casebox .col8 {
+        width: 8%;
+    }
+
+    @media (max-width: 800px) {
+        .casebox td {
+            padding: 3px 2px;
+        }
+
+        .tablehead {
+            display: none;
+        }
+
+        .casebox .col45 {
+            width: 68%;
+        }
+
+        .casebox .col15 {
+            width: 30%;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        .casebox .col12 {
+            width: 30%;
+        }
+
+        .casebox .col8 {
+            width: 18%;
+        }
+
+        .casebox tbody div {
+            /*color: #808080;*/
+        }
+
+            .casebox tbody div a {
+                /*color: #000;*/
+            }
+    }
+    /*暂时先放这里*/
+    .treeview-item {
+        text-align: left !important;
+        border: 0px !important;
+        margin: 6px !important;
+    }
+
+    .treeview-bar {
+        /*position: relative;
+        display: block;*/
+        /*height:30px;*/
+        border-top-width: 0px !important;
+        background-color: #f5f5f5 !important;
+        padding: 2px 15px !important;
+        color: #888 !important;
+    }
+</style>

@@ -1,0 +1,118 @@
+﻿<!--邮件编辑页面-->
+<div class="shadow_for_panel">
+    <div class="panel panel-info" data-id="editent">
+        <div class="panel-heading">
+            <div class="panel-title" style="font-size: 18px;">
+                <span class="fa fa-pencil"></span>写邮件
+            </div>
+        </div>
+        <div class="panel-body">
+            <!-- 工具栏 -->
+            <div>
+                <button data-id="saveEmail" class="btn btn-default" data-toggle="tooltip" type="button" title="保存至草稿箱">
+                    <span class="icon-save"></span>
+                    存草稿</button>
+                <button data-id="sendEmail" class="btn btn-default" data-toggle="tooltip" type="button" title="发送至收件人">
+                    <span class=" icon-envelope-alt"></span>
+                    发送</button>
+                <button data-id="cancel" class="btn btn-default" data-toggle="tooltip" type="button" title="清空所填写内容">
+                    <span class=" icon-remove-sign"></span>
+                    取消</button>
+                <button class="btn btn-default" style="float: right; margin-top: 5px; margin-left: 5px; display: none" data-id="backBtn">
+                    <span class="icon-reply"></span>
+                    返回</button>
+
+            </div>
+            <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+                <div class="form-group">
+                    <label class=" control-label col-md-2">收件人</label>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="hidden" data-id="v_userid" />
+                            <input disabled="disabled" type="text" data-toggle="tooltip" title="请选择收件人" data-id="personName" class="form-control" data-bind="value:Mail_ReceivePersonName,TreeUserSourceControl:{opt:true,username:Mail_ReceivePersonName,userid:Mail_ReceivePersonId}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="display: none" data-id="CCMan">
+                    <label class=" control-label col-md-2">抄送人</label>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="hidden" data-id="v_userid" />
+                            <input disabled="disabled" type="text" class="form-control" data-toggle="tooltip" title="请选择抄送人" data-bind="value:CCName,TreeUserSourceControl:{opt:true,username:CCName,userid:CCId}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display: none" data-id="CCSecretMan">
+                    <label class=" control-label col-md-2">密送人</label>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="hidden" data-id="v_userid" />
+                            <input disabled="disabled" type="text" class="form-control" data-toggle="tooltip" title="请选择秘送人" data-bind="value:CCSecretIdName,TreeUserSourceControl:{opt:true,username:CCSecretIdName,userid:CCSecretId}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <!--        <input type="checkbox" data-id="isHaveCC"   data-bind="checked:isHaveCC, click:function(){$root.isHaveCCFunction(isHaveCC)}" />
+                    <span>添加抄送</span>
+                       <input type="checkbox" data-id="isHaveSecretCC"  data-bind="checked:isHaveSecretCC, click:function(){$root.isHaveSecretCC(isHaveSecretCC)}"/>
+                    <span>添加密送</span>-->
+
+                        <a data-id="addCC" class="text-primary">添加抄送</a>
+                        <a data-id="cancelAddCC" class="text-primary" style="display: none">取消抄送</a>
+                        -<a data-id="addSecretCC" class="text-primary">添加密送</a>
+                        <a data-id="cancelAddSecretCC" class="text-primary" style="display: none">取消密送</a>
+                        <!-- |<span>分别发送</span><span style="display:none">取消分别发送</span>-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">主题</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:Mail_Title" type="text" class="form-control required" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <input type="checkbox" data-bind="checked:isSaveSendBox" />
+                        <span>保存至发件箱</span>
+                        <input type="checkbox" data-bind="checked:isImportant" />
+                        <span>重要</span>
+                   <!--     <input type="checkbox" data-bind="checked:isReadReceipt" />
+                        <span>已读回执</span>-->
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">附件</label>
+                    <div class="col-md-8">
+                        <button type="button" class="btn btn-default" data-bind="uploadFileControl:{value:Mail_SendAttachment,saveFolderPath:'attachment/email',extension:'.*',fileSize:'50000'}"><span class="icon-upload" style="color: rgb(0, 0, 0);"></span>添加文件</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">内容</label>
+                    <div class="col-md-8">
+                        <!--富文本编辑-->
+                        <textarea class="form-control" name="editor1" data-id="editor1" rows="12"></textarea>
+                        <!--<textarea data-bind="value:Mail_SendText" rows="12" class="form-control" />-->
+                        <!--<div id="summernote" class="summernote">Hello Summernote</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

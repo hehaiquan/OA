@@ -1,0 +1,337 @@
+﻿<!--查询条件-->
+<div class="col-md-12" style="margin-top: 10px;">
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label">企业名称：</label>
+                <div class="col-md-3">
+                    <input data-id="qymc" type="text" class="form-control" />
+                </div>
+                <label class="col-md-2 control-label">企业状态：</label>
+                <div class="col-md-2">
+                    <select data-id="qyzt" class="form-control">
+                        <option value="1">正常</option>
+                        <option value="0">关闭</option>
+                        <option value="2">临时企业</option>
+                    </select>
+                </div>
+                <div style="text-align:right;right:35px;" class="col-md-3">
+                    <button type="button" class="btn btn-default" data-id="search">查询</button>
+                    <button type="button" class="btn btn-default" data-id="new">新增企业</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12" style="margin-top: 5px;">
+    <div data-id="Base_UnitinfoGrid" data-role="Base_UnitinfoGrid">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>序号</th><th>单位名称</th><th>单位地址</th><th>企业状态</th><th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                <tr>
+                    <td width="45px" data-bind="text: $root.itemNumber($index())"></td>
+                    <td style="text-align:left;" width="150px">
+                        <span class="btn btn-link" data-bind="text:qymc,click:$root.editRow"></span>
+                    </td>
+                    <td style="text-align:left;" data-bind="text:qydz"></td>
+                    <td width="75px"><span  data-bind="text:qyzt"'></span></td>
+                    <td width="80px">
+                        <span title="编辑" style="padding:5px;" class="btn"   data-bind='click: $root.editRow'><i class="fa fa-edit"></i></span>
+                        <span title="删除" style="padding:5px;" class="btn" data-bind='click: $root.removeRow'><i class="fa fa-times"></i></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                <ul class="pagination" data-bind="foreach: paginator">
+                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                        <!-- ko if: name != '...' -->
+                        <a data-bind="text: name, click: $root.setPage"></a>
+                        <!-- /ko -->
+                        <!-- ko if: name == '...' -->
+                        <span>...</span><!-- /ko -->
+                    </li>
+                </ul>
+            </div>
+            <div style="float: right;">
+                <ul class="pagination pagination-right">
+                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--编辑页面-->
+<div class="col-md-12" data-id="editData" style="display: none;">
+    <div class="row">
+        <div data-id="editform">
+            <div class="form-horizontal form-bordered">
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">企业名称：</label>
+                    <div class="col-md-3">
+                        <input type="hidden" data-bind="value:qydm" />
+                        <input data-bind="value:qymc" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">曾用名：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:cym" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">企业地址：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:qydz" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">工商注册号：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:gszch" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">企业状态：</label>
+                    <div class="col-md-3">
+
+                        <select class="form-control" data-bind=" value: qyzt">
+                            <option value="1">正常</option>
+                            <option value="0">关闭</option>
+                            <option value="2">临时企业</option>
+                        </select>
+                    </div>
+                    <label class="col-md-3 control-label">组织机构代码：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:zzjgdm" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">镇街代码：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:jzdm" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">行政区域代码：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:ssqydm" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">行业名称：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:hymc" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">企业规模：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:qygm" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">经济类型：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:jjlx" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">隶属关系：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:lsgx" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">环保机构：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:hbjg" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">传真：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:cz" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">邮编：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:yzbm" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">负责人：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:fzr" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">性别：</label>
+                    <div class="col-md-3">
+                        <input name="cc" value="1" type="radio" data-bind="checked:xb" />女
+                        <input name="cc" value="0" type="radio" data-bind="checked:xb" />男
+                    </div>
+                    <label class="col-md-3 control-label">身份证号：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:sfzh" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">职务：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:zw" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">负责人住址：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:fzrzz" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">负责人电话：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:fzrdh" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">法人代表：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:frdb" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">法人地址：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:frdz" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">法人电话：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:frdh" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">法人：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:fr" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">法人代码：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:frdm" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">证件号码：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:zjhm" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">证件类型：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:zjlx" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">监察企业类型：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:jclx" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">建设项目审批文号：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:spwh" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">投产日期：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:tcrq,datetimeFormat:'yy-mm-dd hh:mm'" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">验收日期：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:ysrq,datetimeFormat:'yy-mm-dd hh:mm'" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">是否收费企业：</label>
+                    <div class="col-md-3">
+                        <input name="aa" value="1" type="radio" data-bind="checked:sfsfqy" />是
+                        <input name="aa" value="0" type="radio" data-bind="checked:sfsfqy" />否
+                    </div>
+                    <label class="col-md-3 control-label">是否在线监控企业：</label>
+                    <div class="col-md-3">
+                        <input name="bb" value="1" type="radio" data-bind="checked:sfzxjk" />是
+                        <input name="bb" value="0" type="radio" data-bind="checked:sfzxjk" />否
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">开户行：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:khh" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">银行账户：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:yhzh" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">开户名：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:khm" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">排污口规范化：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:pwkgfh" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">污染类别：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:wrlb" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">企业类型：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:qylx" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">联系人：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:lxr" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">联系电话：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:lxdh" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">是否环统企业：</label>
+                    <div class="col-md-3">
+                        <input name="dd" value="1" type="radio" data-bind="checked:sfhtqy" />是
+                        <input name="dd" value="0" type="radio" data-bind="checked:sfhtqy" />否
+                    </div>
+                    <label class="col-md-3 control-label">是否污染源普查企业：</label>
+                    <div class="col-md-3">
+                        <input name="ee" value="1" type="radio" data-bind="checked:sfwpqy" />是
+                        <input name="ee" value="0" type="radio" data-bind="checked:sfwpqy" />否
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">经度：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:jd" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">纬度：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:wd" type="text" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">许可证编号：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:xkzh" type="text" required="required" class="form-control" />
+                    </div>
+                    <label class="col-md-3 control-label">发证机关：</label>
+                    <div class="col-md-3">
+                        <input data-bind="value:fzjg" type="text" required="required" class="form-control" />
+                    </div>
+                </div><!---->
+
+            </div>
+        </div>
+    </div>
+</div>

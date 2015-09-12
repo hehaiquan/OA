@@ -1,0 +1,75 @@
+--------------------------------------------------------------------------------------
+时间：2015-09-10 11:33:58
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CombindMainBody(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 599
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.AutoTypesetting(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 344
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CombindMainBody(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 599
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.AutoTypesetting(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 344
+--------------------------------------------------------------------------------------
+时间：2015-09-10 11:53:58
+内容：
+异常信息：System.Exception: 数据库操作:在应使用条件的上下文(在 'id2' 附近)中指定了非布尔类型的表达式。 
+ SQL Err:UPDATE B_OA_Organization SET shortName=@F_0,fullName=@F_1 WHERE  id2 
+ dbParms:国务院办公厅111中华人民共和国国务院办公厅11
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 62
+异常信息：数据库操作:在应使用条件的上下文(在 'id2' 附近)中指定了非布尔类型的表达式。 
+ SQL Err:UPDATE B_OA_Organization SET shortName=@F_0,fullName=@F_1 WHERE  id2 
+ dbParms:国务院办公厅111中华人民共和国国务院办公厅11
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 62
+--------------------------------------------------------------------------------------
+时间：2015-09-10 11:54:30
+内容：
+异常信息：System.Exception: 数据库操作:在应使用条件的上下文(在 'id2' 附近)中指定了非布尔类型的表达式。 
+ SQL Err:UPDATE B_OA_Organization SET shortName=@F_0,fullName=@F_1 WHERE  id2 
+ dbParms:国务院办公厅111中华人民共和国国务院办公厅11
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 62
+异常信息：数据库操作:在应使用条件的上下文(在 'id2' 附近)中指定了非布尔类型的表达式。 
+ SQL Err:UPDATE B_OA_Organization SET shortName=@F_0,fullName=@F_1 WHERE  id2 
+ dbParms:国务院办公厅111中华人民共和国国务院办公厅11
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_OrganizationSvc.B_OA_OrganizationSvc.SaveData(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_OrganizationSvc.cs:行号 62
+--------------------------------------------------------------------------------------
+时间：2015-09-10 16:31:13
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+--------------------------------------------------------------------------------------
+时间：2015-09-10 16:32:04
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+--------------------------------------------------------------------------------------
+时间：2015-09-10 16:32:04
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+--------------------------------------------------------------------------------------
+时间：2015-09-10 16:32:06
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateWordSendDocData(String caseid, IDbTransaction tran) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 418
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 378

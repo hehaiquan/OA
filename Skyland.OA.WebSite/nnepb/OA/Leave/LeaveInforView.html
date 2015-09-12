@@ -1,0 +1,51 @@
+﻿<div data-id="baseInfor">
+    <label>名字：</label><span data-bind="text:applyName"></span>&nbsp;
+    <label>本年度已休天数：</label><span  data-bind="text:haveLeaveDate"></span>&nbsp;
+    <label>应享受休假天数：</label><span data-bind="text:orghtoLeaveDate"></span>&nbsp;
+    <label>工作年限：</label><span data-bind="text:workYear"></span>&nbsp;
+</div>
+<div data-id="dataGrid">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width: 20%">
+                    <span>请假原因</span>
+                </th>
+                <th style="width: 11%">
+                    <span>请假类型</span>
+                </th>
+                <th style="width: 11%">
+                    <span>请假时间</span>
+                </th>
+                <th style="width: 11%">
+                    <span>请假天数</span>
+                </th>
+                <th style="width: 11%">
+                    <span>实际天数</span>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody data-bind="foreach: elementsShow">
+            <tr onclick="javascript: void (0);" class="small">
+                <td>
+                    <div data-bind="text:leaveReason"></div>
+                </td>
+                <td>
+                    <div data-bind="text:leaveTypeName"></div>
+                </td>
+                <td >
+                    <span  data-bind="text:$root.formatCurDate(leaveStartTime)"></span>
+                    --
+                    <span  data-bind="text:$root.formatCurDate(leaveEndTime)"></span>
+                </td>
+                <td>
+                    <div data-bind="text:totalDays"></div>
+                </td>
+                <td>
+                    <div data-bind="text:actualDays"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

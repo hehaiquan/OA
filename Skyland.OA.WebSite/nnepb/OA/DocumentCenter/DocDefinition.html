@@ -1,0 +1,135 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    加载程序定义
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div data-bind="toolBar">
+                <button style="float: right" class="btn btn-default " data-id="addBtn"><span class="fa fa-plus">添加</span></button>
+            </div>
+            <br />
+            <div data-id="dataGrid">
+                <table class="table table-striped doingcas">
+                    <thead>
+                        <tr class="sort">
+                            <th style="width: 3%; text-align: center;">序号</th>
+                            <th style="width: 20%; text-align: center; background: white"><a href="name" data-sortkey="name">名称</a></th>
+                            <th style="width: 20%; text-align: center; background: white"><a href="remark" data-sortkey="remark">描述</a></th>
+                            <th style="width: 20%; text-align: center; background: white"><a href="linkName" data-sortkey="linkName">加载页面地址</a></th>
+                            <th style="width: 5%; text-align: center; background: white"><a href="isEffective" data-sortkey="isEffectiveName">是否有效</a></th>
+                            <th style="width: 10%; text-align: center; background: white">操作</th>
+                        </tr>
+
+                        <tr>
+                            <th></th>
+                            <!--名称-->
+                            <th>
+                                <input class="form-control" data-filterkey="name" />
+                            </th>
+                            <!--描述-->
+                            <th>
+                                <input class="form-control" data-filterkey="remark" />
+                            </th>
+                            <!--加载页面地址-->
+                            <th>
+                                <input class="form-control" data-filterkey="linkName" />
+                            </th>
+                            <!--是否有效-->
+                            <th>
+                                <select class="form-control" data-filterkey="isEffectiveName"></select>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <!--序号-->
+                            <td style="text-align: center" data-bind="text: $root.itemNumber($index())"></td>
+                            <!--名称-->
+                            <td>
+                                <span data-bind="text:name"></span>
+                            </td>
+                            <!--描述-->
+                            <td style="">
+                                <span class="" data-bind="text:remark"></span>
+                            </td>
+                            <!--连接页面地址-->
+                            <td style="">
+                                <span class="" data-bind="text:linkName"></span>
+                            </td>
+                            <!--是否有效-->
+                            <td style="text-align: center">
+                                <span data-bind="text:isEffectiveName,style: { color: isEffectiveName() == '有效' ? 'green' : 'red' }"></span>
+                            </td>
+
+                            <td style="text-align: center">
+                                <div class="btn-link fa fa-pencil" style="color: black;" data-bind="click:$root.editRow"></div>
+                                <div class="btn-link glyphicon glyphicon-trash" style="color: black;" data-bind="click:function() { $root.deleteData(id)}"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--添加文件夹弹窗-->
+<div style="display: none" data-id="addWindDow">
+
+    <table class="table table-striped doingcase">
+        <tbody>
+            <tr>
+                <td align="center">
+                    <span>名称</span>
+                </td>
+                <td>
+                    <input class="form-control" data-bind="value:name">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <span>连接名</span>
+                </td>
+                <td>
+                    <input class="form-control" data-bind="value:linkName">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <span>序号</span>
+                </td>
+                <td>
+                    <input class="form-control" data-bind="value:sort">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <span>是否有效</span>
+                </td>
+                <td>
+                    <select class="form-control" data-bind="DictOptions: {dictype: 'isEffectiveDic', value: isEffective }">
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <span>描述</span>
+                </td>
+                <td>
+                    <textarea data-bind="value:remark" class="form-control" rows="3">
+
+                    </textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

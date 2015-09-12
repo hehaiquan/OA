@@ -1,0 +1,719 @@
+﻿<div class="col-md-12" style="margin-top: 10px;">
+    <div class="pageContainer" style="padding-bottom: 10px;">
+        <!--标题-->
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h4>固定资产编辑</h4>
+        </div>
+        <div class="row" style="margin-top: 5px;">
+            <!--左边查询-->
+            <div class="col-md-4" data-id="list">
+                <div style="margin-bottom: 5px; height: 35px;" class="col-mx-12">
+
+                    <!--<button data-id="refresh" class="btn btn-primary" style="float: left"><i class="fa fa-arrow-circle-o-right" />刷新</button>-->
+
+                    <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="add">
+                        <span class="icon-plus-sign" style="color: rgb(0, 0, 0);"></span>
+                        新增</button>
+
+                </div>
+                <!--工具栏-->
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" placeholder="按资产编号查询" value="" data-filterkey="zcbh" style="width: 100%">
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" placeholder="按资产名称查询" value="" data-filterkey="zcmc" style="width: 100%">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" placeholder="资产类别查询" value="" data-filterkey="zclbName" style="width: 100%">
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 10px;">
+                        <input class="form-control" type="text" placeholder="使用部门查询" value="" data-filterkey="sybmName" style="width: 100%">
+                    </div>
+                </div>
+                <div class="form-horizontal" style="margin-left: 15px;">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: none;">资产类别
+                            </span>
+                            <div class="input-group">
+                                <select data-filterkey="zclbName" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--表格显示内容-->
+                <table class=" table table-striped table-bordered">
+                    <tbody data-id="tbodyList" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a data-bind="click: $root.editRow" class="btn-link">资产名称：<span style="font-weight: bold;" data-bind="text:zcmc" id="content"></span>
+                                            (编号：<span data-bind="text:zcbh"></span> ) &nbsp;                                           </a>
+                                        <a class="btn-link" id="delete" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+
+                                    </div>
+                                    <!--  <div class="col-md-2"><a class="btn btn-link" data-bind="click: $root.removeRow"><i class="fa fa-times"></i></a></div>-->
+                                    <div class="col-md-12">
+                                        <a class="btn-link" id="borrow" style="float: left; padding-right: 5px;" data-bind="click: $root.editRow">借用</a>
+                                        <a class="btn-link" id="change" style="float: left; padding-right: 5px;" data-bind="click: $root.editRow">转移</a>
+                                        <a class="btn-link" id="fix" style="float: left; padding-right: 5px;" data-bind="click: $root.editRow">维修</a>
+                                        <a class="btn-link" id="normal" style="float: left; padding-right: 5px;" data-bind="click: $root.editRow">归还</a>
+                                        <a class="btn-link" id="quit" style="float: left; padding-right: 5px;" data-bind="click: $root.editRow">退出</a>
+                                    </div>
+                                    <div class="col-md-12" style="padding-top: 8px;">
+                                        <div style="float: left;">
+                                            资产类别：<span data-bind="text:zclbName"></span>&nbsp;&nbsp;
+                                        使用部门：<span data-bind="text:sybmName"></span>&nbsp;&nbsp;
+                                        物品状态：<span data-bind="text:wpztName"></span>&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--页数显示-->
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <!-- ko if: name != '...' -->
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <!-- /ko -->
+                                <!-- ko if: name == '...' -->
+                                <span>...</span><!-- /ko -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--右边显示-->
+            <div class="col-md-8">
+                <div style="margin-bottom: 5px; height: 35px;">
+                    <button data-id="save" class="btn btn-primary" style=""><i class="fa fa-arrow-circle-o-right" />保存</button>
+                </div>
+
+                <div class="pageContainer">
+
+                    <!--信息内容-->
+                    <div data-id="talDiv" style="margin-top: 5px;">
+                        <ul>
+                            <li data-id="activity-tab-ProjectTab_a"><a>物品信息</a></li>
+                            <li data-id="activity-tab-ProjectTab_b"><a>借用记录</a></li>
+                            <li data-id="activity-tab-ProjectTab_c"><a>转移记录</a></li>
+                            <li data-id="activity-tab-ProjectTab_d"><a>维修记录</a></li>
+                            <li data-id="activity-tab-ProjectTab_e"><a>归还记录</a></li>
+                            <li data-id="activity-tab-ProjectTab_f"><a>退出记录</a></li>
+                        </ul>
+                        <div data-id="activity-tab-ProjectTab_a-content">
+                            <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;" data-id="detailent">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">资产名称：</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" data-id="zcmc" style="width: 99%;" type="text" data-bind="value: zcmc" class="form-control required" />
+                                    </div>
+
+                                    <label class="col-md-2 control-label">资产编号：</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" style="width: 99%;" disabled="disabled" type="text" data-bind="value: zcbh" class="form-control required" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">资产类别：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="zclbOption" class="form-control required" data-bind="DictOptions: {dictype: 'goodsTypeDic',  value: zclb }">
+                                        </select>
+                                    </div>
+                                    <label class="col-md-2 control-label">计量单位：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="jldwOption" class="form-control required" data-bind="DictOptions: {dictype: 'unitDic', value: jldw }">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">购买日期：</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" class="form-control datetime" data-bind="value: gmrq,datetimeFormat:'yy-mm-dd hh:mm'" />
+                                            <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                                        </div>
+                                    </div>
+                                    <label class="col-md-2 control-label">采购金额：</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" style="width: 99%;" type="text" data-bind="value: cgje" class="form-control positive-integer" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">生产日期：</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" class="form-control datetime" data-bind="value:scrq,datetimeFormat:'yy-mm-dd hh:mm'" />
+                                            <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                                        </div>
+                                    </div>
+                                    <label class="col-md-2 control-label">单位名称：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="zclbOption" class="form-control" data-bind="DictOptions: {dictype: 'institutionDic', value: dwmc }">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">供货单位：</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" style="width: 99%;" type="text" data-bind="value: ghdw" />
+                                    </div>
+                                    <label class="col-md-2 control-label">启用日期：</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" class="form-control datetime" data-bind="value:qyrq,datetimeFormat:'yy-mm-dd hh:mm'" />
+                                            <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">保管人员：</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" style="z-index: auto" class="form-control" data-bind="value:bgryName,TreeUserSourceSingleControl:{opt:true,username:bgryName,userid:bgry,departmentName:sybmName}" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" data-id="bgry" type="button">...</button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <label class="col-md-2 control-label">使用部门：</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" style="z-index: auto" class="form-control" data-bind="value:sybmName,TreeDepartmentSource:{opt:false,dpid:sybm,dpname:sybmName}" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" data-id="bgry" type="button">...</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">折旧率：</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" style="width: 99%;" type="text" data-bind="value: zjl" class="form-control" />
+                                    </div>
+                                    <label class="col-md-2 control-label">规定使用年限：</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" style="width: 99%;" type="text" data-bind="value: gdsynx,datetimeFormat:'yy-mm-dd hh:mm'" class="form-control datetime" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">保管情况：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="zclbOption" class="form-control" data-bind="DictOptions: {dictype: 'protectTypeDic', value: bgqk }">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+
+                                    <!--     <label class="col-md-2 control-label">退出方式：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="quitMethodOption" class="form-control"  data-bind=" value: quitMethod, DictOptions: {dictype: 'quitMethodDic', displaychoose: true}">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>-->
+
+                                    <label class="col-md-2 control-label">存放地：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="wpztOption" class="form-control" data-bind="DictOptions: {dictype: 'storagePlaceDic', value: instoragePlace }">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">购置方式：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="zclbOption" class="form-control" data-bind="DictOptions: {dictype: 'buyMethodTypeDic',  value: buyMethod }">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <label class="col-md-2 control-label">物品状态：</label>
+                                    <div class="col-md-4">
+                                        <select data-id="wpztOption" class="form-control" disabled="disabled" data-bind="DictOptions: {dictype: 'goodsStatusDic', value: wpzt }">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">退出方式：</label>
+                                    <div class="col-md-4">
+                                        <select disabled="disabled" data-id="quitMethodOption" class="form-control" data-bind="DictOptions: {dictype: 'quitMethodDic', value: quitMethod }">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">备注：</label>
+                                    <div class="col-md-10">
+                                        <textarea style="width: 100%;" data-bind="value: bz" placeholder="" class="form-control" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--借用记录表-->
+                        <div data-id="activity-tab-ProjectTab_b-content">
+                            <table class="table table-striped table-bordered">
+                                <tbody data-id="borrowRecord" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    物品状态:<span data-bind="text:goodsStatusName"></span>&nbsp;&nbsp;
+                                                    录入人:<span data-bind="text:recordManName"></span>&nbsp;&nbsp;
+                                                    录入日期:<span data-bind="text:recordDate"></span>&nbsp;&nbsp;
+                                                    <a class="btn-link" id="A1" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    原物品状态:<span data-bind="text:originalGoodsStatusName"></span>&nbsp;&nbsp;
+                                                    原使用部门:<span data-bind="text:originalUseDepartmentName"></span>&nbsp;&nbsp;
+                                                    原保管人员:<span data-bind="text:originalProtectManName"></span>&nbsp;&nbsp;
+                                                </div>
+                                                <div class="col-md-12">
+                                                    状态备注:<span data-bind="text:statusRemark"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--转移记录-->
+                        <div data-id="activity-tab-ProjectTab_c-content">
+                            <table class="table table-striped table-bordered">
+                                <tbody data-id="borrowRecord" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    物品状态:<span data-bind="text:goodsStatusName"></span>&nbsp;&nbsp;
+                                                    录入人:<span data-bind="text:recordManName"></span>&nbsp;&nbsp;
+                                                    录入日期:<span data-bind="text:recordDate"></span>&nbsp;&nbsp;
+                                                    <a class="btn-link" id="A2" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    原物品状态:<span data-bind="text:originalGoodsStatusName"></span>&nbsp;&nbsp;
+                                                    原使用部门:<span data-bind="text:originalUseDepartmentName"></span>&nbsp;&nbsp;
+                                                    原保管人员:<span data-bind="text:originalProtectManName"></span>&nbsp;&nbsp;
+                                                </div>
+                                                <div class="col-md-12">
+                                                    状态备注:<span data-bind="text:statusRemark"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--维修记录-->
+                        <div data-id="activity-tab-ProjectTab_d-content">
+                            <table class="table table-striped table-bordered">
+                                <tbody data-id="borrowRecord" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    物品状态:<span data-bind="text:goodsStatusName"></span>&nbsp;&nbsp;
+                                                    录入人:<span data-bind="text:recordManName"></span>&nbsp;&nbsp;
+                                                    录入日期:<span data-bind="text:recordDate"></span>&nbsp;&nbsp;
+                                                    <a class="btn-link" id="A3" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    原物品状态:<span data-bind="text:originalGoodsStatusName"></span>&nbsp;&nbsp;
+                                                    原使用部门:<span data-bind="text:originalUseDepartmentName"></span>&nbsp;&nbsp;
+                                                    原保管人员:<span data-bind="text:originalProtectManName"></span>&nbsp;&nbsp;
+                                                </div>
+                                                <div class="col-md-12">
+                                                    状态备注:<span data-bind="text:statusRemark"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--正常状态记录-->
+                        <div data-id="activity-tab-ProjectTab_e-content">
+                            <table class="table table-striped table-bordered">
+                                <tbody data-id="borrowRecord" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    物品状态:<span data-bind="text:goodsStatusName"></span>
+                                                    录入人:<span data-bind="text:recordManName"></span>
+                                                    录入日期:<span data-bind="text:recordDate"></span>
+                                                    <a class="btn-link" id="A5" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    原物品状态:<span data-bind="text:originalGoodsStatusName"></span>
+                                                    原使用部门:<span data-bind="text:originalUseDepartmentName"></span>
+                                                    原保管人员:<span data-bind="text:originalProtectManName"></span>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    状态备注:<span data-bind="text:statusRemark"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--正常状态记录-->
+                        <div data-id="activity-tab-ProjectTab_f-content">
+                            <table class="table table-striped table-bordered">
+                                <tbody data-id="borrowRecord" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    物品状态:<span data-bind="text:goodsStatusName"></span>
+                                                    录入人:<span data-bind="text:recordManName"></span>
+                                                    录入日期:<span data-bind="text:recordDate"></span>
+                                                    <a class="btn-link" id="A4" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    原物品状态:<span data-bind="text:originalGoodsStatusName"></span>
+                                                    原使用部门:<span data-bind="text:originalUseDepartmentName"></span>
+                                                    原保管人员:<span data-bind="text:originalProtectManName"></span>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    状态备注:<span data-bind="text:statusRemark"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--记录编辑弹窗页面-->
+<div class="col-md-12" data-id="showBox" style="display: none;">
+    <div data-id="activity-tab-ProjectTab_e-content">
+        <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+            <div data-id="goodsStatusWrite1">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">物品状态：</label>
+                    <div class="col-md-4">
+                        <select data-id="goodsStatus" class="form-control" disabled="disabled" data-bind="DictOptions: {dictype: 'goodsStatusDic', value: goodsStatus }">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" data-bind="visible:goodsStatus() == '5'">
+                    <label class="col-md-2 control-label">退出方式：</label>
+                    <div class="col-md-4">
+                        <select data-id="quitMethod" class="form-control" data-bind="DictOptions: {dictype: 'quitMethodDic', value: quitMethod }">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">保管人员：</label>
+                    <div class="col-md-4">
+
+                        <div class="input-group">
+                            <input type="text" style="z-index: auto" class="form-control" data-bind="value:protectManName,TreeUserSourceSingleControl:{opt:true,username:protectManName,userid:protectMan,departmentName:useDepartmentName}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" data-id="bgry" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">使用部门：</label>
+                    <div class="col-md-4">
+                        <div class="input-group" style="width: 100%">
+                            <input class="form-control" type="text" disabled="disabled" style="width: 85%" class="form-control" data-bind="value:useDepartmentName" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-id="goodsStatusWrite2">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">状态备注：</label>
+                    <div class="col-md-10">
+                        <textarea style="width: 99%;" data-bind="value: statusRemark" placeholder="" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--固品增加的弹窗-->
+<div class="col-md-12" style="display: none;" data-id="addGoodBox">
+    <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+        <div class="form-group">
+            <label class="col-md-2 control-label">资产名称：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" type="text" data-bind="value: zcmc" />
+            </div>
+            <label class="col-md-2 control-label">资产编号：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" type="text" disabled="disabled" data-bind="value: zcbh" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">资产类别：</label>
+            <div class="col-md-4">
+                <select data-id="zclbOption" class="form-control" data-bind="DictOptions: {dictype: 'goodsTypeDic', value: zclb }">
+                    <option value=""></option>
+                </select>
+            </div>
+            <label class="col-md-2 control-label">计量单位：</label>
+            <div class="col-md-4">
+                <select data-id="jldwOption" class="form-control" data-bind="DictOptions: {dictype: 'unitDic', value: jldw }">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">购买日期：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" type="text" data-bind="value: gmrq,datetimeFormat:'yy-mm-dd hh:mm'" class="form-control datetime" />
+            </div>
+            <label class="col-md-2 control-label">采购金额：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" type="text" data-bind="value: cgje" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">生产日期：</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" class="form-control datetime" data-bind="value:scrq,datetimeFormat:'yy-mm-dd hh:mm'" />
+            </div>
+            <label class="col-md-2 control-label">单位名称：</label>
+            <div class="col-md-4">
+                <select data-id="zclbOption" class="form-control" data-bind="DictOptions: {dictype: 'institutionDic', value: dwmc }">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">供货单位：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" type="text" data-bind="value: ghdw" />
+            </div>
+            <label class="col-md-2 control-label">启用日期：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control datetime" data-bind="value:qyrq,datetimeFormat:'yy-mm-dd hh:mm'" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">保管人员：</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input class="form-control" type="text" style="z-index: auto" class="form-control" data-bind="value:bgryName,TreeUserSourceSingleControl:{opt:true,username:bgryName,userid:bgry,departmentName:sybmName}" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="bgry" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+
+            <label class="col-md-2 control-label">使用部门：</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" style="z-index: auto" class="form-control" data-bind="value:sybmName,TreeDepartmentSource:{opt:false,dpid:sybm,dpname:sybmName}" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="bgry" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">折旧率：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" type="text" data-bind="value: zjl" />
+            </div>
+            <label class="col-md-2 control-label">规定使用年限：</label>
+            <div class="col-md-4">
+                <input class="form-control" style="width: 99%;" class="form-control datetime" type="text" data-bind="value: gdsynx,datetimeFormat:'yy-mm-dd hh:mm'" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">保管情况：</label>
+            <div class="col-md-4">
+                <select data-id="zclbOption" class="form-control" data-bind="DictOptions: {dictype: 'protectTypeDic', value: bgqk }">
+                    <option value=""></option>
+                </select>
+            </div>
+            <label class="col-md-2 control-label">物品状态：</label>
+            <div class="col-md-4">
+                <select data-id="wpztOption" class="form-control" disabled="disabled" data-bind="DictOptions: {dictype: 'goodsStatusDic', value: wpzt }">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">退出方式：</label>
+            <div class="col-md-4">
+                <select disabled="disabled" data-id="quitMethodOption" class="form-control" data-bind="DictOptions: {dictype: 'quitMethodDic', value: quitMethod }">
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">备注：</label>
+            <div class="col-md-10">
+                <textarea class="form-control" style="width: 100%;" data-bind="value: bz" placeholder=""></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--推出方式-->
+<div class="col-md-12" style="display: none;" data-id="quitBox">
+</div>

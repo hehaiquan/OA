@@ -1,0 +1,46 @@
+﻿<div data-role="EmissionFateGrid" class ="panel-list">
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th colspan='4' style="text-align: left;">名称&nbsp;&nbsp;<input type="text" data-filterkey="jgmc">
+                </th>
+            </tr>
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>代码</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td data-bind="text: $root.itemNumber($index())"></td>
+                <td>
+                    <span class="btn btn-link" data-bind="text:mc"></span>
+                </td>
+                <td>
+                    <span class="btn btn-link" data-bind="text:dm,click"></span>
+                </td>
+                <td>
+                    <button data-id="btnOk" data-bind="click: $root.editRow">确定</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>

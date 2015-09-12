@@ -1,0 +1,244 @@
+﻿<div class="col-md-12" style="height: 100%">
+    <div class="pageContainer" style="margin-bottom: 10px; margin-top: 10px; height: 100%">
+
+        <!--标题-->
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h4>学习交流</h4>
+        </div>
+
+        <div class="col-md-12">
+
+            <div class="row">
+                <!-- 模块表格界面 -->
+                <div class="col-md-12" data-id="listSection">
+                    <div class="leftPanel" style="margin-top: 10px">
+                        <table class=" table table-bordered table-condensed table-striped">
+                            <thead>
+                                <tr class="sort">
+                                    <th style="width: 50px; text-align: center">序号</th>
+                                    <th style="width: 250px; text-align: center">
+                                        <a href="sName" data-sortkey="sName">模块名称</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sCreateManName" data-sortkey="sCreateManName">创建人</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sRemark" data-sortkey="sRemark">备注</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sClickCount" data-sortkey="sClickCount">点击数量</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sTopicCount" data-sortkey="sTopicCount">主贴数量</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--行号-->
+                                    <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                                    <!--模块名称-->
+                                    <td style="text-align: center">
+                                        <a data-bind="click:$root.editRow"><span data-bind="text:sName"></span></a>
+                                    </td>
+                                    <!--创建人-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sCreateManName"></span>
+                                    </td>
+                                    <!--备注-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sRemark,showAllContentDiv:{length:30}"></span>
+                                    </td>
+                                    <!--点击数量-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sClickCount"></span>
+                                    </td>
+                                    <!--主贴数量-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sTopicCount"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--主贴表界面-->
+                <div class="col-md-12" data-id="listTopic">
+                    <!--按钮-->
+                    <div style="margin-top: 5px">
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="add">发帖</button>
+                        </div>
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="rebackToSection" style="float: right;">返回模块页</button>
+                        </div>
+                    </div>
+                    <div class="leftPanel" style="margin-top: 10px">
+                        <table class=" table table-bordered table-condensed table-striped">
+                            <thead>
+                                <tr class="sort">
+                                    <th style="width: 50px; text-align: center">序号</th>
+                                    <th style="width: 250px; text-align: center">
+                                        <a href="tTopic" data-sortkey="tTopic">主贴标题</a>
+                                    </th>
+                                    <th style="width: 50px; text-align: center">
+                                        <a href="replyCount" data-sortkey="replyCount">回复数量</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="tCreateTime" data-sortkey="tCreateTime">发帖时间</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="tCreateUserName" data-sortkey="tCreateUserName">发帖人</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--行号-->
+                                    <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                                    <!--主贴标题-->
+                                    <td style="text-align: center">
+                                        <a data-bind="click:$root.editRow"><span data-bind="text:tTopic"></span></a>
+                                    </td>
+                                    <!--回复数量-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:replyCount"></span>
+                                    </td>
+                                    <!--发帖时间-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:tCreateTime"></span>
+                                    </td>
+                                    <!--发帖人-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:tCreateUserName"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <!--发帖界面-->
+                <div class="col-md-12" data-id="editBBSTopic" style="margin-top: 10px">
+                    <!--按钮-->
+                    <div style="margin-top: 5px">
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="rebackToSection" style="float: right;">返回模块页</button>
+                        </div>
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="rebackToTopic" style="float: right;">返回主贴页</button>
+                        </div>
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="saveData" style="float: right;">保存</button>
+                        </div>
+                    </div>
+                    <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+                        <div class="form-group">
+                            <label class=" control-label col-md-2">标题：</label>
+                            <div class="col-md-9">
+                                <input data-bind="value:tTopic" type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class=" control-label col-md-2">发帖人：</label>
+                            <div class="col-md-9">
+                                <input data-bind="value:tCreateUserName" type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class=" control-label col-md-2">发帖日期：</label>
+                            <div class="col-md-9">
+                                <input data-bind="value:tCreateTime,datetimeFormat:'yy-mm-dd hh:mm'" type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">内容：</label>
+                            <div class="col-md-9" data-id="tContents">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--查看帖子-->
+                <div class="col-md-12" data-id="topicView" style="margin-top: 10px">
+                    <!--按钮-->
+                    <div style="margin-top: 5px">
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="rebackToSection" style="float: right;">返回模块页</button>
+                        </div>
+                        <div style="float: right; margin-right: 10px;">
+                            <button class="btn btn-default" data-id="rebackToTopic" style="float: right;">返回主贴页</button>
+                        </div>
+                    </div>
+                    <!--查看的帖子内容 -->
+                    <div data-id="topicContents">
+                        <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+                            <div class="col-md-12" style="text-align: center">
+                                <div style="font-family: STSong; font-size: 28px; font-weight: bold;" data-id="topicTile"></div>
+                            </div>
+                            <div class="col-md-12" style="text-align: left">
+                                <span style="font-family: STSong;">发帖人:<span data-bind="text:tCreateUserName"></span>
+                                    发帖日期:<span data-bind="text:tCreateTime"></span>
+                                </span>
+                            </div>
+                            <div class="col-md-11" data-id="contents">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--评论表-->
+                    <div data-id="replyList">
+                        <table class=" table table-striped table-bordered">
+                            <tbody data-id="tbodyList" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <td>
+                                        <div class="col-md-12">
+                                            <span data-bind="text:RContent"></span>&nbsp;&nbsp;
+                                              <span data-bind="text:RTUIDName"></span>&nbsp;&nbsp;
+                                             <span data-bind="text:RTime"></span>&nbsp;&nbsp;
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--评论栏-->
+                    <div class="col-md-12" data-id="replayContents" style="margin-top: 10px; width: 100%">
+                        <textarea rows="6" style="width: 100%" data-bind="value:RContent"></textarea>
+                        <button data-id="replyAdd"><span style="text-align: left">评论</span></button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿<div class="pageTitle iwf-WFToolbar">
+    <div class="col-md-8" iwftype="left">
+        <div class="btn-group btn-group-justified" style="margin: 5px 0;">
+            <div class="btn btn-default" iwftype="save"><span onselectstart="return false;"><i class="fa fa-save"></i>保存</span></div>
+            <div class="btn btn-default" iwftype="end"><i class="fa fa-forward"></i><span onselectstart="return false;" iwftype="endspanText">办结</span></div>
+            <div class="btn btn-default" iwftype="chartbutton"><span onselectstart="return false;"><i class="fa fa-sitemap"></i>流程图</span></div>
+            <div class="btn btn-default" iwftype="backbutton"><span onselectstart="return false;"><i class="fa fa-reply"></i>回退</span></div>
+            <div class="btn btn-default" iwftype="Attachbutton"><span onselectstart="return false;"><i class="fa fa-paperclip"></i></span></div>
+            <div class="btn btn-default" iwftype="Unlockbutton"><span onselectstart="return false;"><i class="fa fa-unlock"></i>解锁</span></div>
+        </div>
+        <div class="input-group" iwftype="send">
+            <span class="input-group-btn">
+                <span class="btn btn-primary" iwftype="sendbtn"><span onselectstart="return false;" iwftype="sendspanText"><i class="fa fa-sign-out"></i>发送</span></span>
+            </span>
+            <div class="btn btn-default form-control" iwftype="sendlistchose"><span style="white-space: normal; text-align: left;" onselectstart="return false;" iwftype="listchoseContent">局长审核（王局）</span><span class="caret"></span></div>
+        </div>
+    </div>
+    <div class="col-md-8" iwftype="Extra">
+        <div class="btn btn-default" iwftype="Lock"><span onselectstart="return false;"><i class="fa fa-lock"></i>锁定编辑</span></div>
+    </div>
+    <div class="col-md-2" iwftype="right">
+    </div>
+    <div iwftype="dropDiv" style="display: none; width: 500px;" class="dropdown-menu">
+        <div style="padding: 3px; width: 100%">
+            <div style="width: 35%; float: left;">
+                <div class="list-group" style="max-height: 320px; overflow-y: auto">
+                    <a class="list-group-item" iwftype="ActionTmpl" title="${Name}" data-actid="${ID}">${Name}</a>
+                </div>
+            </div>
+            <div style="width: 64%; float: right;">
+                <div iwftype="personsbox" style="width: 100%"></div>
+                <ul iwftype="persontree" style="height: 300px; width: 100%; overflow: auto; border: 1px solid #617775; margin: 2px 0 0 0"></ul>
+            </div>
+        </div>
+    </div>
+</div>

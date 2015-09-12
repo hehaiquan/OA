@@ -1,0 +1,197 @@
+.pageContainer {
+    padding:0 15px;
+    /*margin:3px;*/
+    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /*border-radius: 6px;*/
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+}
+
+@media (max-width: 330px) {
+    .pageContainer {
+        padding: 0px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        background-clip: padding-box;
+    }
+}
+.sub-header {
+    padding-bottom:5px!important;
+    font-size: 18px;
+}
+
+.btn-circle {
+	border-radius:16px !important;
+    /*padding: 5px !important;*/
+}
+
+.btn-split {
+	height:28px;
+	width:15px;
+	float:left;
+}
+
+.iwf-window {
+	position:absolute;
+	background-color: #FFF;
+	border: 1px solid #81989e;
+}
+
+.iwf-window-bg {
+	background-image:url(images/default/transparent-bg.png);
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:9999;
+	height: 100%;
+	width: 100%;
+}
+.iwf-window-title {
+	background-image:url(images/default/sec-tab-bg.png);
+	cursor: move;
+}
+.iwf-window-title span {
+	padding-top: 10px;
+	padding-left: 15px;
+	float: left;
+	display: block;
+	font-weight: bold;
+}
+.iwf-window-title a {
+	display: block;
+	float: right;
+	position: relative;
+	right: 10px;
+	height: 18px;
+	width: 25px;
+	background-image:url(images/default/sec-tab-bg.png);
+	background-position:0 20px;
+	color: #666;
+	border-right: 1px solid #BBC7CA;
+	border-bottom: 1px solid #BBC7CA;
+	border-left: 1px solid #BBC7CA;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	border-radius:0px 0px 2px 2px;
+}
+
+.iwf-window-content {
+	border-top: 1px solid #ccc;
+	overflow: auto;
+}
+.iwf-window-tmpl-over {
+	background-color: #EFEFEF;
+}
+.iwf-window-tmpl-select {
+	background-color: #00F;
+	color: #FFF;
+}
+.iwf-window-foot {
+	border-top: 1px solid #ccc;
+	text-align: right;
+	background-image: url(images/default/sec-tab-bg.png);
+}
+.iwf-window-foot input {
+	margin:5px 10px 0 0;
+}	
+
+
+
+.iwf-autocomplete {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid rgb(102, 102, 102);
+    overflow: auto;
+    position: absolute;
+    z-index: 9999;
+    max-height: 200px;
+    background-color: rgb(255, 255, 255);
+}
+    .iwf-autocomplete li {
+        line-height: 28px;
+        padding-left: 10px;
+        list-style-type: none;
+        cursor: default;
+    }
+        .iwf-autocomplete li:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 255);
+        }
+
+.col-sm-label,.col-sm-control {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/***
+Bordered form layout
+***/
+.form-horizontal.form-bordered .form-group:first-child {
+  border-bottom: 1px solid #eee !important;
+}
+
+.form-horizontal.form-bordered .form-group {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.form-horizontal.form-bordered .form-group.last {
+  border-bottom: 0;
+}
+
+.portlet.box .form-horizontal.form-bordered .form-group {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.portlet.box .form-horizontal.form-bordered .form-group:first-child {
+  margin-top: -10px;
+}
+
+.form-horizontal.form-bordered .form-group .controls {
+  padding: 10px;
+  position: relative;
+  border-left: 1px solid #eee;
+}
+
+.form-horizontal.form-bordered .form-group .controls .chosen-container,
+.form-horizontal.form-bordered .form-group .controls .select2-wrapper  {
+  min-height: 32px;
+}
+
+.form-horizontal.form-bordered .form-group .controls .chosen-container .help-block,
+.form-horizontal.form-bordered .form-group .controls .select2-wrapper .help-block {
+  clear: both;
+  padding-top: 10px !important;
+}
+
+.form-horizontal.form-bordered .form-group .control-label {
+  margin-top: 10px;
+}
+
+.form-horizontal.form-bordered.form-row-stripped .form-group:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+.form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even) {
+  background-color: #fcfcfc;
+} 
+
+.form-horizontal.form-bordered.form-row-stripped .m-wrap {
+  background: #fff !important;
+}
+  
+.form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even) .controls {
+  background-color: #ffffff;  
+}
+
+.form-horizontal.form-bordered .help-inline,
+.form-horizontal.form-bordered .help-block {
+  padding-left: 0;
+}

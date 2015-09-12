@@ -1,0 +1,522 @@
+--------------------------------------------------------------------------------------
+时间：2015-09-04 09:23:19
+内容：
+异常信息：System.Exception: 当前业务不能被删除！！
+   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.Common.B_OA_MeetingSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 563
+异常信息：当前业务不能被删除！！
+异常堆栈：   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.Common.B_OA_MeetingSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 563
+--------------------------------------------------------------------------------------
+时间：2015-09-04 09:24:03
+内容：
+异常信息：Newtonsoft.Json.JsonSerializationException: Error converting value {null} to type 'System.Decimal'. Path 'baseInfo.actualDays', line 1, position 208. ---> System.InvalidCastException: 空对象不能转换为值类型。
+   在 System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.Services.B_OA_LeaveSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 113
+异常信息：Error converting value {null} to type 'System.Decimal'. Path 'baseInfo.actualDays', line 1, position 208.
+异常堆栈：   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.Services.B_OA_LeaveSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 113
+--------------------------------------------------------------------------------------
+时间：2015-09-04 09:43:05
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 213
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 213
+--------------------------------------------------------------------------------------
+时间：2015-09-04 09:43:05
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 227
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 266
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 227
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 266
+--------------------------------------------------------------------------------------
+时间：2015-09-04 09:59:18
+内容：
+异常信息：System.Exception: 当前业务不能被删除！！
+   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.Common.B_OA_MeetingSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 604
+异常信息：当前业务不能被删除！！
+异常堆栈：   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.Common.B_OA_MeetingSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 604
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:00:06
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception (0x80004005): 等待的操作过时。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TrySetMetaData(_SqlMetaDataSet metaData, Boolean moreInfo)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.Common.B_OA_MeetingSvc.GetData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 84
+ClientConnectionId:6f334a04-57cb-41aa-b816-4175730ae355
+异常信息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TrySetMetaData(_SqlMetaDataSet metaData, Boolean moreInfo)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.Common.B_OA_MeetingSvc.GetData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 84
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:00:17
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception (0x80004005): 等待的操作过时。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TrySetMetaData(_SqlMetaDataSet metaData, Boolean moreInfo)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.Common.B_OA_MeetingSvc.GetData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 84
+ClientConnectionId:64bed392-0568-4958-8e39-3f6f8193ae2f
+异常信息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TrySetMetaData(_SqlMetaDataSet metaData, Boolean moreInfo)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.Common.B_OA_MeetingSvc.GetData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 84
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:00:45
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception (0x80004005): 等待的操作过时。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TrySetMetaData(_SqlMetaDataSet metaData, Boolean moreInfo)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.Common.B_OA_MeetingSvc.GetData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 84
+ClientConnectionId:f00542ce-c8cd-4a2e-9191-2ef6e4b4207f
+异常信息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TrySetMetaData(_SqlMetaDataSet metaData, Boolean moreInfo)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.Common.B_OA_MeetingSvc.GetData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 84
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:56:25
+内容：
+异常信息：System.Exception: 当前业务不能被删除！！
+   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.B_OA_TravelSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 308
+异常信息：当前业务不能被删除！！
+异常堆栈：   在 IWorkFlow.Engine.CaseContent.Delete(String caseID, String userID, Object args)
+   在 IWorkFlow.Engine.EngineHost.Delete(String caseID, String creater, Object args)
+   在 IWorkFlow.BaseService.engineAPI.Delete(String caseID, String creater, Object args) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\SkyLandDeveloper.cs:行号 419
+   在 BizService.Services.B_OA_TravelSvc.DeleteData(String caseId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 308
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:04
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:14
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:17
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:17
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:17
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:17
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:37
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:47
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 10:57:54
+内容：
+异常信息：System.Exception: QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.Data.SqlClient.SqlException: Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。 ---> System.ComponentModel.Win32Exception: 等待的操作过时。
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+异常信息：QueryObject ERR：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.GetTravelByCaseId(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 255
+--------------------------------------------------------------------------------------
+时间：2015-09-04 14:46:16
+内容：
+异常信息：System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 BizService.Services.DocumentCenterSvc.GetFileTypeByFileTypeId(String fileTypeId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2312
+异常信息：索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+异常堆栈：   在 System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 BizService.Services.DocumentCenterSvc.GetFileTypeByFileTypeId(String fileTypeId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2312
+--------------------------------------------------------------------------------------
+时间：2015-09-04 14:46:27
+内容：
+异常信息：System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 BizService.Services.DocumentCenterSvc.GetFileTypeByFileTypeId(String fileTypeId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2312
+异常信息：索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+异常堆栈：   在 System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 BizService.Services.DocumentCenterSvc.GetFileTypeByFileTypeId(String fileTypeId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\DocumentCenterSvc.cs:行号 2312

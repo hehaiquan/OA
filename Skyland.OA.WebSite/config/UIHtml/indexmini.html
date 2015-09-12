@@ -1,0 +1,363 @@
+﻿<div style="position:fixed;top:0px; padding:5px;z-index:10;">
+    <button class="btn btn-link btn-lg" id="iwf-startMenu" style="outline:none;"><i class="fa fa-bars fa-lg"></i></button>
+    <button class="btn btn-link btn-lg" id="iwf-closeModuleBtn" style="outline:none;"><i class="fa fa-arrow-left  fa-lg"></i></button>
+</div>
+<div id="iwf-frame-top" style="position:fixed;top:0px;height:50px;z-index:9;">
+
+    <div style="position:fixed; left:50px;padding:10px;">
+        <div id="iwf-frame-top-title" class="Apptitle">标题</div>
+    </div>
+    <div style="position:fixed;right:0px;padding:10px;">
+        <div>
+            <a id="login-userinfo" href="javascript:void(0)" class="btn"><i class="fa fa-user"></i><span>默认用户</span> <i class="caret"></i></a>
+        </div>
+    </div>
+
+    <div style="width: 250px; position: absolute; right: 0px; display: none;" id="search_user">
+
+        <div class="input-group" style="float: right; width: 200px; margin: 0px 10px">
+            <input class="form-control" id="navSearch" type="text" /><span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="icon-search"></i>&nbsp;</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div id="iwf-main" class="iwf-frame-main" style="margin-top:50px; width: 100%;min-height:500px;z-index:1;"></div>
+
+
+<style>
+    /*标题栏*/
+    #iwf-frame-top {
+        /*background: url('resources/images/livesino_bg.jpg');
+        background-size: cover;*/
+        background-image: -webkit-linear-gradient(top,#d9edf7 0,#c4e3f3 100%);
+        background-image: -o-linear-gradient(top,#d9edf7 0,#c4e3f3 100%);
+        background-image: -webkit-gradient(linear,left top,left bottom,from(#d9edf7),to(#c4e3f3));
+        background-image: linear-gradient(to bottom,#d9edf7 0,#c4e3f3 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
+        background-repeat: repeat-x;
+        color: #31708f;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+        width: 100%;
+    }
+    /*标题*/
+    #iwf-frame-top-title {
+        font-size: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+        white-space: nowrap; /* 不换行 */
+    }
+
+    /*各页面标题*/
+    .pageTitle {
+        background-color: #e7f1f9;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        margin-top: -5px;
+    }
+
+
+
+    /*工具栏*/
+    .iwf-toolbar {
+        height: 50px;
+        padding: 6px;
+        margin: 0px;
+        vertical-align: central;
+        /*background-color: #e7f1f9;*/
+        /*background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+        background-image: -webkit-gradient(linear,0 0,0 100%,from(#DEEDF8),to(#C7DEEF));
+        background-image: -webkit-linear-gradient(top,#DEEDF8,#C7DEEF);
+        background-image: -o-linear-gradient(top,#DEEDF8,#C7DEEF);
+        background-image: linear-gradient(to bottom,#DEEDF8,#C7DEEF);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEEDF8', endColorstr='#C7DEEF');
+        border-bottom:1px solid #A3C0D5;*/
+    }
+
+        .iwf-toolbar .btn {
+            border: 0px;
+        }
+
+            .iwf-toolbar .btn .btn-default {
+                background-color: transparent;
+            }
+    /*圆形按钮*/
+    .btn-circle {
+        border-radius: 16px !important;
+        /*padding: 5px !important;*/
+    }
+    /*工具栏分割*/
+    .btn-split {
+        height: 28px;
+        width: 15px;
+        float: left;
+    }
+
+
+ 
+
+    /*控制主页导航的关闭按钮*/
+
+    .nav-tabs > li > a > i {
+        opacity: 0.2;
+    }
+
+    .nav-tabs > li > a:hover > i {
+        opacity: 1;
+    }
+
+    /*门户*/
+
+    .iwf-portal-portlet .title a:hover {
+        color: red;
+    }
+
+
+    .iwf-portal {
+        background-color: #FFF;
+    }
+
+        .iwf-portal .panel {
+            border: none !important;
+        }
+
+    .iwf-portal-column {
+        float: left;
+        padding: 5px;
+        min-height: 200px;
+    }
+
+    .iwf-portal-portlet {
+        margin: 5px;
+    }
+
+    .iwf-portal-portlet-empty {
+        margin: 5px;
+        background-color: #F9F9F9;
+        border: 1px dashed #CCC;
+    }
+
+    .iwf-portal-portlet-move {
+        position: absolute;
+        filter: Alpha(Opacity=70);
+        opacity: 0.7;
+        z-index: 9999;
+        background-color: #E6EBEC;
+    }
+
+    .iwf-portal-heading {
+        font-weight: bold;
+        font-size: 17px;
+        /*background-color:transparent!important;*/
+        border-bottom: 2px solid #8de5ee;
+        padding: 4px;
+    }
+
+        .iwf-portal-heading span {
+            padding: 5px 15px;
+            color: #4f96ba;
+            border-bottom: 2px solid #79d5de;
+        }
+
+        .iwf-portal-heading a {
+            display: none;
+            float: right;
+            position: relative;
+            height: 20px;
+            width: 20px;
+            right: -5px;
+            top: 1px;
+            color: #69b6dd;
+            line-height: 16px;
+            border-radius: 0px 0px 2px 2px;
+            padding: 2px 3px;
+            margin-right: 10px;
+            text-indent: 0px;
+        }
+
+            .iwf-portal-heading a:hover {
+                display: block;
+                text-decoration: none;
+            }
+
+
+    /*表单容器*/
+    .pageContainer {
+        padding: 0 15px;
+        /*margin:3px;*/
+        /*border: 1px solid #999999;
+        border: 1px solid rgba(0, 0, 0, 0.2);*/
+        /*border-radius: 6px;*/
+        /*-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);*/
+        /*box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);*/
+        background-clip: padding-box;
+    }
+    /*小屏幕手机*/
+    @media (max-width: 330px) {
+        .pageContainer {
+            padding: 0px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: none;
+            background-clip: padding-box;
+        }
+    }
+    /*子标题*/
+    .sub-header {
+        padding-bottom: 5px !important;
+        font-size: 18px;
+    }
+    /*填写办理意见*/
+    .remarkBox {
+    }
+    /*办理意见列表*/
+    .remarkList {
+    }
+    /*工作流控件*/
+    .iwf-WFToolbar {
+    }
+
+    /*自动完成*/
+    .iwf-autocomplete {
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid rgb(102, 102, 102);
+        overflow: auto;
+        position: absolute;
+        z-index: 9999;
+        max-height: 200px;
+        background-color: rgb(255, 255, 255);
+    }
+
+        .iwf-autocomplete li {
+            line-height: 28px;
+            padding-left: 10px;
+            list-style-type: none;
+            cursor: default;
+        }
+
+            .iwf-autocomplete li:hover {
+                color: rgb(255, 255, 255);
+                background-color: rgb(0, 0, 255);
+            }
+    /*表单专用*/
+    .col-sm-label, .col-sm-control {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*required="required"*/
+
+    .requiredInput [required] {
+        border-color: #ccc;
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        outline: thin dotted \9;
+        -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
+        box-shadow: 0 0 8px rgba(82,168,236,.6);
+    }
+
+    /***
+    加入表单边框
+    ***/
+    /*.form-horizontal.form-bordered .form-group:first-child
+    {
+        border-bottom: 1px solid #eee !important;
+    }
+
+    .form-horizontal.form-bordered .form-group
+    {
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+        .form-horizontal.form-bordered .form-group.last
+        {
+            border-bottom: 0;
+        }
+
+    .portlet.box .form-horizontal.form-bordered .form-group
+    {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+        .portlet.box .form-horizontal.form-bordered .form-group:first-child
+        {
+            margin-top: -10px;
+        }*/
+    /*表单样式 紧凑样式*/
+
+    /*.form-horizontal.form-bordered .form-group .controls
+    {
+        padding: 10px;
+        position: relative;
+        border-left: 1px solid #eee;
+    }
+
+        .form-horizontal.form-bordered .form-group .controls .chosen-container,
+        .form-horizontal.form-bordered .form-group .controls .select2-wrapper
+        {
+            min-height: 32px;
+        }
+
+            .form-horizontal.form-bordered .form-group .controls .chosen-container .help-block,
+            .form-horizontal.form-bordered .form-group .controls .select2-wrapper .help-block
+            {
+                clear: both;
+                padding-top: 10px !important;
+            }
+
+    .form-horizontal.form-bordered .form-group .control-label
+    {
+        margin-top: 10px;
+    }
+
+    .form-horizontal.form-bordered.form-row-stripped .form-group:nth-child(even)
+    {
+        background-color: #fcfcfc;
+    }
+
+    .form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even)
+    {
+        background-color: #fcfcfc;
+    }
+
+    .form-horizontal.form-bordered.form-row-stripped .m-wrap
+    {
+        background: #fff !important;
+    }
+
+    .form-horizontal.form-bordered.form-label-stripped .form-group:nth-child(even) .controls
+    {
+        background-color: #ffffff;
+    }
+
+    .form-horizontal.form-bordered .help-inline,
+    .form-horizontal.form-bordered .help-block
+    {
+        padding-left: 0;
+    }*/
+
+    .treeview-item {
+        text-align: left !important;
+        border: 0px !important;
+        margin: 6px !important;
+    }
+
+    .treeview-bar {
+        /*position: relative;
+    display: block;*/
+        /*height:30px;*/
+        border-top-width: 0px !important;
+        background-color: #f5f5f5 !important;
+        padding: 2px 15px !important;
+        color: #888 !important;
+    }
+</style>

@@ -1,0 +1,222 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info" data-id="gridModelPage">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform_Draft">
+
+                <div class="panel-title" style="font-size: 18px;">
+                    <span class="icon-edit"></span>
+                    草稿箱
+                <small style="font-weight: normal;">(共<span style="font-weight: bold" data-bind="text:totalCount"></span>封)
+                </small>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div data-id="inBoxGrid_Part">
+                <!--按钮栏部分--->
+                <div style="margin-bottom: 10px; height: 35px;">
+                    <!--  <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="changeSend">
+                        <span class="glyphicon glyphicon-share-alt" style="color: rgb(0, 0, 0);"></span>
+                        转发</button>-->
+                    <button class="btn btn-default" style="margin-top: 5px; float: left; margin-left: 5px" data-id="thoroughDeleteBtn">
+                        <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                        删除草稿</button>
+                    <!--标记下拉-->
+                    <div style="float: left;" data-id="emailMarkSelect">
+                    </div>
+                    <!--文件夹下拉-->
+                    <div style="float: left;" data-id="emailDocumentSelect">
+                    </div>
+                </div>
+                <br />
+                <!--网格列表-->
+                <div style="" class="row" data-role="emailDraftTableGrid" data-id="emailDraftTableGrid">
+                    <div class="table-responsive" style="padding-left: 3px; padding-right: 3px;">
+                            <table class="table table-striped doingcase">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center; width: 27px"></th>
+
+                                        <th style="width: 35px">
+                                            <table>
+                                                <tr>
+                                                    <td style="width: 12px">
+                                                        <img src="../resources/images/colums/email/email_excalmatory.png" data-toggle="tooltip" title="重要" />
+                                                    </td>
+                                                    <td style="width: 12px">
+                                                        <img src="../resources/images/colums/email/email.png" data-toggle="tooltip" title="邮件" />
+
+                                                    </td>
+                                                    <td style="width: 12px">
+                                                        <img src="../resources/images/colums/email/accessories.png" data-toggle="tooltip" title="附件" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+
+                                        <th style="width: 140px">
+                                            <span>发件人</span>
+                                        </th>
+
+                                        <th style="width: 560px">
+                                            <span>主题</span>
+                                        </th>
+
+                                        <th style="width: 90px">
+                                            <span>时间</span>
+                                        </th>
+
+                                        <th style="text-align: center; width: 14px"></th>
+                                    </tr>
+
+                                    <tr>
+                                    </tr>
+
+                                    <tr>
+                                        <!--checkbox控件-->
+                                        <th></th>
+                                        <!--是否查看-->
+                                        <th>
+                                            <!--<select class="form-control" data-filterkey="isSeeName" />-->
+                                        </th>
+                                        <!--发件人姓名-->
+                                        <th>
+                                            <select class="form-control" data-filterkey="Mail_SendPersonName" />
+                                        </th>
+                                        <!--标题-->
+                                        <th>
+                                            <input type="text" class="form-control" value="" data-filterkey="Mail_Title">
+                                        </th>
+                                        <!--时间-->
+                                        <th>
+                                            <input type="text" class="form-control" value="" data-filterkey="Mail_SendDate">
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <!--文件转移checkBox-->
+                                        <td style="text-align: center" class="cx">
+                                            <input type="checkbox" data-bind="value:isSelected(),click: $root.toggleAssociation" />
+                                        </td>
+                                        <!--图标-->
+                                        <td style="text-align: center;">
+                                            <table>
+                                                <tr>
+                                                    <td style="width: 12px">
+                                                        <img data-bind="visible:isImportant()==true" src="../resources/images/colums/email/email_excalmatory.png" />
+                                                    </td>
+                                                    <td style="width: 16px">
+                                                        <img src="../../resources/images/colums/email/email_draft.png" />
+                                                    </td>
+                                                    <td style="width: 16px">
+                                                        <img data-bind="visible:haveAttachment()==true" src="../resources/images/colums/email/accessories.png" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+
+                                        <!--发件人-->
+                                        <td>
+                                            <span data-bind="text:Mail_SendPersonName"></span>
+                                        </td>
+                                        <!--标题-->
+                                        <td>
+                                            <div class="tf no">
+                                                <a data-bind="click: $root.editRow"><span data-bind="html:$root.fileterMailConten(Mail_Title)"></span></a>
+                                            </div>
+                                            <div class="TagDiv" data-bind="visible:markName().length>0">
+                                                <table class="tagleftDiv">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="falg_rounded"></td>
+                                                            <td colspan="2"></td>
+                                                            <td class="falg_rounded"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="tagbgSpan">
+                                                                <span data-bind="text:markName" style="color: white"></span>
+                                                                <div style="color: white; float: right;">
+                                                                    <a data-bind="click:function(){$root.setCancelMark(ID)}" title="取消此标签">
+                                                                        <img src="../resources/images/colums/email/cancel.gif" style="margin-top: 4px;" />
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="falg_rounded"></td>
+                                                            <td colspan="2"></td>
+                                                            <td class="falg_rounded"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--    <div style="height: 20px; float: right;" data-bind="html:$root.getIsMark(markId,markName)"">
+                            
+                                </div>-->
+                                        </td>
+                                        <!--创建时间-->
+                                        <td data-bind="html:$root.setDateTime(Mail_CreateData)">
+                                            <!--<span class="btn" data-bind="text:Mail_CreateData"></span>-->
+                                        </td>
+                                        <td style="text-align: center" data-bind="html:$root.getIsCollection(isCollection),click:function(){$root.setIsCollection(ID,isCollection)}">
+                                            <!--<img src="../resources/images/colums/email/start.png" />-->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--新建标签窗口-->
+<div data-id="newMarkWindows" style="display: none" class="col-md-12">
+    <div class="form-group">
+        <label class="col-md-5 control-label">请你输入标签名称：</label>
+        <div class="col-md-6">
+            <input data-id="markName" data-bind="value:markName" type="text" class="form-control" maxlength="10" />
+            <span style="color: red">显示10个字符以内</span>
+        </div>
+    </div>
+</div>
+
+<!--新建文件夹窗口-->
+<div data-id="newDocumentWindows" style="display: none" class="col-md-12">
+    <div class="form-group">
+        <label class="col-md-5 control-label">请你输入文件夹名称：</label>
+        <div class="col-md-6">
+            <input data-id="documentName" data-bind="value:documentName" type="text" class="form-control" maxlength="10" />
+            <span style="color: red">显示10个字符以内</span>
+        </div>
+    </div>
+</div>
+</div>

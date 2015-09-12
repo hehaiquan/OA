@@ -1,0 +1,64 @@
+﻿<div class="col-md-12" data-id="articleUpdate">
+    <!--标题-->
+    <div class="bg-info row" data-id="" style="padding: 0 15px;">
+        <div style="font-weight: bold; font-size: 18px;margin-bottom: 10px;margin-top: 10px;">
+            通知公告查询
+        </div>
+    </div>
+
+    <!--文章表-->
+    <div data-id="articleGrid">
+        <table class="table table-bordered table-condensed table-striped">
+            <thead>
+                <tr class="sort">
+                    <th style="width: 250px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">名称</a></th>
+                    <th style="width: 100px; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">作者</a></th>
+                    <th style="width: 100px; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">上传人</a></th>
+                    <th style="width: 100px; text-align: center; background: white"><a href="CreateTime" data-sortkey="CreateTime">上传时间</a></th>
+                    <th style="width: 50px; text-align: center; background: white">打印</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                <tr>
+                    <td style="text-align: center">
+                        <!--<span data-bind="text:NewsTitle,click:function(){$root.editArticle(NewsId)}" data-id="view"></span>-->
+                        <span data-bind="text:NewsTitle,click:function(){$root._getDocumentCenterView(NewsId)}" class="btn btn-link"></span>
+                    </td>
+                    <td style="text-align: center">
+                        <span class="" data-bind="text:CreateMan"></span>
+                    </td>
+                    <td style="text-align: center">
+                        <span class="" data-bind="text:CreateMan"></span>
+                    </td>
+                    <td style="text-align: center">
+                        <span class="" data-bind="text:CreateTime"></span>
+                    </td>
+                    <td style="text-align: center">
+                        <a data-bind="">打印</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--页数显示-->
+        <div>
+            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                <ul class="pagination" data-bind="foreach: paginator">
+                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                        <!-- ko if: name != '...' -->
+                        <a data-bind="text: name, click: $root.setPage"></a>
+                        <!-- /ko -->
+                        <!-- ko if: name == '...' -->
+                        <span>...</span><!-- /ko -->
+                    </li>
+                </ul>
+            </div>
+            <div style="float: right;">
+                <ul class="pagination pagination-right">
+                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

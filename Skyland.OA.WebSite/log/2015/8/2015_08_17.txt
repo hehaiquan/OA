@@ -1,0 +1,407 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-17 12:49:03
+内容：
+异常信息：System.Exception: QueryObject ERR：对象名 'B_OA_SendDoc_QuZhan' 无效。 ---> System.Data.SqlClient.SqlException: 对象名 'B_OA_SendDoc_QuZhan' 无效。
+   在 IWorkFlow.DataBase.DbFactory.GetSingleReader(String sql, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 25
+异常信息：QueryObject ERR：对象名 'B_OA_SendDoc_QuZhan' 无效。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 25
+--------------------------------------------------------------------------------------
+时间：2015-08-17 12:51:28
+内容：
+异常信息：System.Exception: QueryObject ERR：对象名 'B_OA_SendDoc_QuZhan' 无效。 ---> System.Data.SqlClient.SqlException: 对象名 'B_OA_SendDoc_QuZhan' 无效。
+   在 IWorkFlow.DataBase.DbFactory.GetSingleReader(String sql, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 25
+异常信息：QueryObject ERR：对象名 'B_OA_SendDoc_QuZhan' 无效。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 25
+--------------------------------------------------------------------------------------
+时间：2015-08-17 19:09:02
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 189
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 189
+--------------------------------------------------------------------------------------
+时间：2015-08-17 19:09:02
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 203
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 242
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 203
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 242
+--------------------------------------------------------------------------------------
+时间：2015-08-17 19:14:20
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 189
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 189
+--------------------------------------------------------------------------------------
+时间：2015-08-17 19:14:20
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 203
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 242
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.Common.B_OA_MeetingSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 203
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 242
+--------------------------------------------------------------------------------------
+时间：2015-08-17 19:15:19
+内容：
+异常信息：Newtonsoft.Json.JsonSerializationException: Error converting value {null} to type 'System.Int32'. Path 'baseInfo.MeetingRoomID', line 1, position 45. ---> System.InvalidCastException: 空对象不能转换为值类型。
+   在 System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 215
+异常信息：Error converting value {null} to type 'System.Int32'. Path 'baseInfo.MeetingRoomID', line 1, position 45.
+异常堆栈：   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 BizService.Services.Common.B_OA_MeetingSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_MeetingSvc.cs:行号 215
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:17:19
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 113
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 113
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:17:19
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 122
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 91
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+异常堆栈：   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 122
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 91
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:18:18
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 113
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 113
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:18:18
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 122
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 91
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseID = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅ererewrewrC000949rrewrewrewrw2015/8/18 0:00:0020150305095643_99a8a6fa-2bd3-4f7f-b5f1-f71eac6c55d2U000008系统管理员C000949
+异常堆栈：   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 122
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 91
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:20:35
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseid = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅dsdsdsdsdsC000949dsdsdsdsdsdddddddddddddddddddddd2015/8/18 0:00:0020150305095735_05208d31-670f-470e-8011-127c6f5693bbU000008系统管理员C000949
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 112
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseid = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅dsdsdsdsdsC000949dsdsdsdsdsdddddddddddddddddddddd2015/8/18 0:00:0020150305095735_05208d31-670f-470e-8011-127c6f5693bbU000008系统管理员C000949
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 112
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:20:39
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseid = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅dsdsdsdsdsC000949dsdsdsdsdsdddddddddddddddddddddd2015/8/18 0:00:0020150305095735_05208d31-670f-470e-8011-127c6f5693bbU000008系统管理员C000949
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 121
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 90
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9 WHERE  caseid = @W_0 
+ dbParms:2015-08-18 00:00LW[2015]00001广西环保厅dsdsdsdsdsC000949dsdsdsdsdsdddddddddddddddddddddd2015/8/18 0:00:0020150305095735_05208d31-670f-470e-8011-127c6f5693bbU000008系统管理员C000949
+异常堆栈：   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 121
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 90
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:55:15
+内容：
+异常信息：System.IO.FileNotFoundException: 未能找到文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\红头示例.docx”。
+文件名:“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\红头示例.docx”
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+异常信息：未能找到文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\红头示例.docx”。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:56:12
+内容：
+异常信息：System.IO.FileNotFoundException: 未能找到文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\红头示例.docx”。
+文件名:“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\红头示例.docx”
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+异常信息：未能找到文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Send\红头示例.docx”。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:58:38
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:58:46
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+--------------------------------------------------------------------------------------
+时间：2015-08-17 20:59:53
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 275
+--------------------------------------------------------------------------------------
+时间：2015-08-17 21:01:51
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 276
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 276
+--------------------------------------------------------------------------------------
+时间：2015-08-17 21:02:41
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 276
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.PrintSendDocContent(String content, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 276
+--------------------------------------------------------------------------------------
+时间：2015-08-17 21:04:25
+内容：
+异常信息：System.Exception: 发文正文模版路径不存在！
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+异常信息：发文正文模版路径不存在！
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+--------------------------------------------------------------------------------------
+时间：2015-08-17 21:04:42
+内容：
+异常信息：System.Exception: 发文正文模版路径不存在！
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+异常信息：发文正文模版路径不存在！
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+--------------------------------------------------------------------------------------
+时间：2015-08-17 21:05:20
+内容：
+异常信息：System.Exception: 发文正文模版路径不存在！
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+异常信息：发文正文模版路径不存在！
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+--------------------------------------------------------------------------------------
+时间：2015-08-17 21:06:52
+内容：
+异常信息：System.Exception: 发文正文模版路径不存在！
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+异常信息：发文正文模版路径不存在！
+异常堆栈：   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.GetFilePath(String docType, String caseId, String userid, IDbTransaction tran, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 171
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.CreateMainBody(String content, String guid, String caseid, String userid, String type, String actId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 132
+--------------------------------------------------------------------------------------
+时间：2015-08-17 22:18:31
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): 对象名 'B_OA_SendDoc' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.OASendDocSearchSvc.OASendDocSearchSvc.GetData(String FileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\OASendDocSearchSvc.cs:行号 85
+ClientConnectionId:d8fbc2cd-2a75-42c9-aa35-572d8a09ae87
+异常信息：对象名 'B_OA_SendDoc' 无效。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizService.Services.OASendDocSearchSvc.OASendDocSearchSvc.GetData(String FileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\OASendDocSearchSvc.cs:行号 85
+--------------------------------------------------------------------------------------
+时间：2015-08-17 22:18:36
+内容：
+异常信息：System.Data.SqlClient.SqlException (0x80131904): 对象名 'B_OA_ReceiveDoc' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizServices.Services.OAReceiveDocSearchSvc.OAReceiveDocSearchSvc.GetData(String FileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\OAReceiveDocSearchSvc.cs:行号 87
+ClientConnectionId:851e903f-3fff-439c-a052-44367e1fce93
+异常信息：对象名 'B_OA_ReceiveDoc' 无效。
+异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 IWorkFlow.DataBase.DbFactory.ExcuteDataSet(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 BizServices.Services.OAReceiveDocSearchSvc.OAReceiveDocSearchSvc.GetData(String FileTypeId, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\OAReceiveDocSearchSvc.cs:行号 87

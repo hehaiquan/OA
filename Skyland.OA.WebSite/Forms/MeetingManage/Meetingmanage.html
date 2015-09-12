@@ -1,0 +1,134 @@
+﻿<div class="row" style="margin: 5px;">
+    <!-- 表单 -->
+    <div data-id="pageContainer" class="pageContainer">
+        <div class="bg-info row" style="padding: 1px;">
+            <div class="col-md-4" style="float: left;">
+                <h4>会议申请</h4>
+            </div>
+            <div class="col-md-5" style="float: right; text-align: right; margin-top: 2px;">
+                <button data-id="PrintDoc" style="float: right;" class="btn btn-default"><i class="glyphicon glyphicon-print"></i>打印</button>
+            </div>
+        </div>
+        <!--主表单-->
+        <div class="row">
+            <div data-id="talDiv">
+                <ul>
+                    <li data-id="activity-tab-ProjectTab1"><a>申请信息</a></li>
+                    <li data-id="activity-tab-ProjectTab2"><a>预订情况</a></li>
+                </ul>
+                <div data-id="activity-tab-ProjectTab1-content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            申请信息
+                        </div>
+                        <div class="col-md-12" data-id="baseInfo">
+                            <!--基本信息-->
+                            <div class="row form-horizontal form-bordered" style="margin-top: 12px; margin-bottom: 10px">
+
+                                <div class="col-sm-12" style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent; ">会议名称<span style="color:red">*</span>
+                                        </span>
+                                        <input type="text" class="form-control input-sm required" data-bind="value:MeetingName" data-id="MeetingName" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12" style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent;">主要内容
+                                        </span>
+                                        <textarea type="text" class="form-control input-sm" data-bind="value:Purpose" data-id="Purpose" required="required" />
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12 " style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent;">会议时间
+                                        </span>
+                                        <input type="text" data-id="StartTime" data-bind="value:StartTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm required"  placeholder="" />
+                                        <span class="input-group-addon">至</span>
+                                        <input type="text" data-id="EndTime" data-bind="value:EndTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm required" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 " style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon " style="background: transparent;">会议室
+                                            <span style="color: red;">*</span>
+                                        </span>
+                                        <select  data-id="meetingRoomName" class="form-control input-sm required" data-bind="DictOptions: {dictype: 'meetingRoomName', value:MeetingRoomID }" class="form-control" required="required">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 " style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent;">申请部门
+                                        </span>
+                                        <input type="text" class="form-control input-sm" data-bind="value:Dpname,TreeDepartmentSource:{opt:false,dpname:Dpname,dpid:DpnameID}" disabled="disabled" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default btn-sm" data-id="ParticipantName" type="button">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12" style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent;">经办人<span style="color: red;">*</span>
+                                        </span>
+                                        <div class="input-group" style="width: 100%;" >
+                                            <input type="text" class="form-control input-sm required" data-bind="value:OrganizerName,TreeUserSource:{opt:false,username:OrganizerName,userid:OrganizID}" disabled="disabled" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-sm" data-id="Organizer" type="button">...</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12" style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent;">参会人员
+                                        </span>
+                                        <input type="text" data-toggle="tooltip" class="form-control input-sm" title="参会人员" data-id="personName" readonly="readonly" class="form-control" data-bind="value:ParticipantNames,TreeUserSourceControl:{opt:true,username:ParticipantNames,userid:ParticipantNameid,count:Number}" />
+                                        <span class="input-group-btn ">
+                                            <button class="btn btn-default btn-sm" type="button">...</button>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 col-sm-12" style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent;">参会人数
+                                        </span>
+                                        <input type="text" class="form-control input-sm" disabled="disabled"  data-bind="value:Number" data-id="Number" />
+                                    </div>
+                                </div>
+                       
+                                <div class="col-sm-12"  style="margin-bottom: 5px;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="background: transparent; ">备注
+                                        </span>
+                                        <textarea data-id="Remark" class="form-control input-sm" rows="3" data-bind="value:Remark"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-id="activity-tab-ProjectTab2-content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            会议室预订情况   
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div data-id='workPlanCalendar' style="margin-left: 13px; width: 98.2%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

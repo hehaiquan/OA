@@ -1,0 +1,301 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    车辆信息资料管理
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--表格部分查看-->
+            <div data-id="inBoxGrid_Part">
+                <!--按钮栏部分--->
+                <div style="margin-bottom: 10px; height: 35px;">
+                    <!--<button data-id="update" class="col-md-0.5 btn btn-primary" style="float: left; margin-right: 5px"><i class="fa fa-save" />刷新</button>-->
+                    <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="addNewCarBtn">
+                        <span class="icon-plus-sign" style="color: rgb(0, 0, 0);"></span>
+                        新增</button>
+                    <!--<label class="col-md-2 control-label" style="padding-top: 0px; margin-top: 10px;float: left;width:150px">将邮件移动到：</label>-->
+                    <button class="btn btn-default" style="float: left; margin-top: 5px; margin-left: 5px" data-id="deleteBtn">
+                        <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                        删除</button>
+                </div>
+
+                <div style="margin-top: 15px" class="row">
+                    <div data-role="carTableGrid" data-id="carTableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <table class="table table-striped doingcase">
+                            <thead>
+                                <tr>
+                                    <!--checkBox-->
+                                    <th style="width: 50px"></th>
+                                    <th style="width: 50px">
+                                        <span>编辑</span>
+                                    </th>
+                                    <th style="width: 200px">
+                                        <span>车牌</span>
+                                    </th>
+                                    <th style="width: 200px">
+                                        <span>车辆类型</span>
+                                    </th>
+
+                                    <th style="width: 200px">
+                                        <span>品牌</span>
+                                    </th>
+
+                                    <th style="width: 200px">
+                                        <span>型号</span>
+                                    </th>
+
+                                    <th style="width: 200px">
+                                        <span>发动机</span>
+                                    </th>
+                                    <th style="width: 200px">
+                                        <span>底盘</span>
+                                    </th>
+                                    <th style="width: 90px">
+                                        <span>颜色</span>
+                                    </th>
+                                    <th style="width: 200px">
+                                        <span>载重</span>
+                                    </th>
+                                    <th style="width: 200px">
+                                        <span>座位</span>
+                                    </th>
+
+                                </tr>
+
+                                <tr>
+                                    <th></th>
+                                    <!--编辑-->
+                                    <th></th>
+                                    <!--车牌号-->
+                                    <th>
+                                      <a><input type="text" class="form-control" value="" data-filterkey="cph"></a>  
+                                    </th>
+                                    <!--车辆类型-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="carType" />
+                                    </th>
+                                    <!--车辆品牌-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="carBrand" />
+                                    </th>
+                                    <!--型号-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="carModel">
+                                    </th>
+                                    <!--发动机-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="carEngine">
+                                    </th>
+                                    <!--底盘-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="chassis">
+                                    </th>
+                                    <!--颜色-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="color" />
+                                    </th>
+                                    <!--载重-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="loadWeight" />
+                                    </th>
+                                    <!--座位-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="seatCount" />
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--checkBox控件-->
+                                    <td>
+                                        <input type="checkbox" data-bind="value:isCheck" />
+                                    </td>
+                                    <!--编辑-->
+                                    <td>
+                                        <a data-bind="click:$root.editRow">
+                                            <span class="icon-pencil" style="color: rgb(0, 0, 0);"></span>
+                                        </a>
+                                    </td>
+                                    <!--车牌号-->
+                                    <td>
+                                        <span data-bind="text:cph"></span>
+                                    </td>
+                                    <!--车辆类型-->
+                                    <td>
+                                        <span data-bind="text:carType"></span>
+                                    </td>
+                                    <!--车辆品牌-->
+                                    <td>
+                                        <span data-bind="text:carBrand"></span>
+                                    </td>
+                                    <!--型号-->
+                                    <td>
+                                        <span data-bind="text:carModel"></span>
+                                    </td>
+                                    <!--发动机-->
+                                    <td>
+                                        <span data-bind="text:carEngine"></span>
+                                    </td>
+                                    <!--底盘-->
+                                    <td>
+                                        <span data-bind="text:chassis"></span>
+                                    </td>
+                                    <!--颜色-->
+                                    <td>
+                                        <span data-bind="text:color"></span>
+                                    </td>
+                                    <!--载重-->
+                                    <td>
+                                        <span data-bind="text:loadWeight"></span>
+                                    </td>
+                                    <!--座位-->
+                                    <td>
+                                        <span data-bind="text:seatCount"></span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-id="editCar" style="display: none">
+    <div class="row form-horizontal form-bordered">
+        <div class="form-group">
+            <label class="col-md-2 control-label">车牌：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:cph" maxlength="10" />
+            </div>
+            <label class="col-md-2 control-label">品牌：</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input data-bind="value:carBrand,usedPhraseType:{type:'carBrand',input:carBrand}" type="text" class="form-control" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="carBrand" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">型号：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:carModel" maxlength="10" />
+            </div>
+            <label class="col-md-2 control-label">车辆类型：</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input data-bind="value:carType,usedPhraseType:{type:'carType',input:carType}" type="text" class="form-control" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="carType" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">发动机：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:carEngine" maxlength="10" />
+            </div>
+            <label class="col-md-2 control-label">底盘：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:chassis" maxlength="10" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">颜色：</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input data-bind="value:color,usedPhraseType:{type:'color',input:color}" type="text" class="form-control" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="color" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+
+            <label class="col-md-2 control-label">载重：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:loadWeight" maxlength="10" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">座位：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:seatCount" maxlength="10" />
+            </div>
+            <label class="col-md-2 control-label">购买金额：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:price" maxlength="10" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">生产时间：</label>
+            <div class="col-md-4">
+                <input class="form-control datetime" type="text" data-bind="value: proDate,datetimeFormat:'yy-mm-dd hh:mm'">
+            </div>
+            <label class="col-md-2 control-label">购买时间：</label>
+            <div class="col-md-4">
+                <input class="form-control datetime" type="text" data-bind="value: buyDate,datetimeFormat:'yy-mm-dd hh:mm'">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">归属单位：</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input data-bind="value:belongTo,usedPhraseType:{type:'belongTo',input:belongTo}" type="text" class="form-control" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="belongTo" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">备注：</label>
+            <div class="col-md-10">
+                <textarea class="form-control" data-bind="value:remark" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+

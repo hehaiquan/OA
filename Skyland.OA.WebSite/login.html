@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--     <link href="login/style.css" rel="stylesheet" type="text/css" />-->
+    <!--    <link href="resources/login2/style.css" rel="stylesheet" type="text/css" />-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="script/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="config/config.js"></script>
+    <script type="text/javascript" src="fx/login.js"></script>
+    <!--<link href="resources/v3/css/bootstrap.css" rel="stylesheet" type="text/css" />-->
+    <style>
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            min-width: 160px;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            font-size: 14px;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: 4px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        }
+
+            .dropdown-menu.pull-right {
+                right: 0;
+                left: auto;
+            }
+
+            .dropdown-menu .divider {
+                height: 1px;
+                margin: 9px 0;
+                overflow: hidden;
+                background-color: #e5e5e5;
+            }
+
+            .dropdown-menu > li > a {
+                display: block;
+                padding: 3px 20px;
+                clear: both;
+                font-weight: normal;
+                line-height: 1.42857143;
+                color: #333;
+                white-space: nowrap;
+            }
+
+                .dropdown-menu > li > a:hover,
+                .dropdown-menu > li > a:focus {
+                    color: #262626;
+                    text-decoration: none;
+                    background-color: #f5f5f5;
+                }
+
+            .dropdown-menu > .active > a,
+            .dropdown-menu > .active > a:hover,
+            .dropdown-menu > .active > a:focus {
+                color: #fff;
+                text-decoration: none;
+                background-color: #428bca;
+                outline: 0;
+            }
+    </style>
+
+    <script>
+        var loginnamelist = getCookie('loginnamelist');
+        var hash = location.hash;
+        if (hash == "#") hash = "";
+
+        function loginCookie(pwd) {
+            var loginname;
+            var rmbUser = false;
+            var bNewlogin = false;
+            if (pwd == undefined) {
+                bNewlogin = true;
+                pwd = $("#password").val();
+                pwd = coreCode.encode(pwd);
+                loginname = $("#username").val();
+                rmbUser = $("#rmbUser").is(":checked");
+
+            } else
+                loginname = getCookie('loginname');
+
+            var params = { username: loginname, password: pwd, rmb: rmbUser };
+
+            $.post("org.data?action=login", params, function (s) {
+                try {
+                    var data = eval("(" + s + ")");
+                }
+                catch (err) {
+                    alert("未知错误:" + s + ",请联系管理员！");
+                    return;
+                }
+
+                if (data.success == false) {
+                    alert(data.msg);
+                    document.cookie = "password=;expires=" + new Date('2000/01/01');
+                    if (!bNewlogin)  location.reload();
+                } else {
+
+                    if (bNewlogin) {
+
+                        var exdate = new Date();
+                        exdate.setDate(exdate.getDate() + 30);
+
+                        var loginname2 = escape(loginname);
+                        document.cookie = "loginname=" + loginname2 + ";expires=" + exdate.toGMTString();
+                        document.cookie = "userid=" + data.UserID;
+
+                        if (loginnamelist == '') loginnamelist = loginname2
+                        else if (loginnamelist.indexOf(loginname) < 0) loginnamelist = escape(loginnamelist) + "|" + loginname2;
+
+                        document.cookie = "loginnamelist=" + loginnamelist + ";expires=" + exdate.toGMTString();
+
+                        if (rmbUser) document.cookie = "password=" + data.PWD + ";expires=" + exdate.toGMTString();
+                    }
+
+                    document.cookie = "username=" + escape(data.cnname);
+                    if (appConfig.nodeService) {
+                        $.post(window.location.protocol + '//' + window.location.hostname + appConfig.nodeService + "../fx/org/relogin", { id: data.id, session: data.UserID }, function (e) { });
+                        $.post(window.location.protocol + '//' + window.location.hostname + appConfig.nodeService + "../fx/DB/init", { id: data.id, session: data.UserID }, function (e) { });
+                    }
+
+                    login(data.UserID);
+                }
+            });
+        }
+
+        function login(uid) {
+            document.location.href = "index.html?sid=" + uid + hash;
+        }
+
+        $(document).attr("title", appConfig.appName);
+
+        function getEnter() {
+            if (event.keyCode == 13) loginCookie();
+        }
+
+        $(document).ready(function () {
+            CheckOnline(function (flag) {
+                var userid = getCookie('userid');
+                //如果离线
+                //if (userid && getCookie('password') && !flag) { login(userid); return; }
+                //else if (userid && userid != "" )
+                //     login(userid);
+
+                var pwd = getCookie('password');
+
+                if (pwd && pwd != "")
+                    loginCookie(pwd);
+                else {
+                    var htmlfile = "config/UIHtml/login.html";
+                    if (window.screen.width < 800) htmlfile = "config/UIHtml/loginphone.html";
+
+                    $("body").load(htmlfile, function () {
+
+                        if (loginnamelist.indexOf('|') > 0) $("#username").iwfautocomplete({ values: loginnamelist.split('|') });
+
+                        $("#username").val(getCookie('loginname'));
+
+                        $("#username").keyup(function (event) {
+                            if (event.keyCode == 13) $("#password").focus();
+                        });
+
+                        $("#password").keyup(function (event) {
+                            if (event.keyCode == 13) loginCookie();
+                        });
+
+
+
+                        $(".title").text(appConfig.appName);
+                    });
+                }
+            });
+
+        });
+    </script>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

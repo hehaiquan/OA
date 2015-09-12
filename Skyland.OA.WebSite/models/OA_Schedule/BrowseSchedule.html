@@ -1,0 +1,51 @@
+﻿<!--邮件编辑页面-->
+
+
+<div class="col-md-12" data-id="baseInfo">
+    <div class="row">
+        <div data-id="editform">
+            <div class="form-horizontal form-bordered">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">日程名称：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:ScheduleName" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">办事人：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:Leader" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">陪同人员：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:Accompany" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">地点：</label>
+                    <div class="col-md-8">
+                        <input data-bind="value:Place" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">日程时间：</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" data-bind="value:ScheduleTime,datetimeFormat:'yy-mm-dd'" />
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">日程内容：</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" data-bind="value:ScheduleContent" rows="8"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

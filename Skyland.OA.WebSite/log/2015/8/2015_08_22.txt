@@ -1,0 +1,13 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-22 00:41:22
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.AutoTypesetting(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 341
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_SendDoc_QuZhanSvc.AutoTypesetting(String caseid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_QuZhanSvc.cs:行号 341

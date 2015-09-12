@@ -1,0 +1,47 @@
+﻿<div data-role="itemGrid">
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <div>
+                            <input class="col-md-12" type="text" value="" placeholder="项目名称" data-filterkey="xmmc" />
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <!--<td data-bind="text: $root.itemNumber($index())"></td>-->
+                <td width="50%">
+                    <span class="btn btn-link" data-bind="text:xmmc,click: $root.editRow"></span>
+                </td>
+                <td width="50%">
+                    建设单位:<span data-bind="text:tbdw"></span>;
+                    环评批复文件:<span data-bind="text:pfwzh"></span>;
+                    审批部门:<span data-bind="text:bgsspbm"></span>;
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div>
+        <div style="float:left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' --> 
+                    <a data-bind="text: name, click: $root.setPage"></a><!-- /ko --> 
+                    <!-- ko if: name == '...' --><span>...</span><!-- /ko --> 
+                </li>
+            </ul>
+        </div> 
+        <div style="float:right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li> 
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li> 
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li> 
+            </ul> 
+        </div>
+    </div>
+</div>

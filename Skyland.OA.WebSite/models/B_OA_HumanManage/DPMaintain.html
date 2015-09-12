@@ -1,0 +1,121 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    组织机构维护
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div style="height: 35px; margin-bottom: 10px;">
+                <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="addNewBtn">
+                    <span class="icon-plus-sign" style="color: rgb(0, 0, 0);"></span>
+                    新增</button>
+            </div>
+            <div data-id="dpGrid">
+                <div style="margin-top: 15px" class="row">
+                    <div class="table-responsive" data-role="emailTableGrid" data-id="emailTableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <div class="rightPanel" style="height: 635px; -ms-overflow-x: hidden; -ms-overflow-y: auto;">
+                            <table class="table table-striped doingcase">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 11%">
+                                            <span>部门名称</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>部门全名</span>
+                                        </th>
+                                        <th align="center">
+                                            <span>操作</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <span data-bind="text:DPName"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text:FullName"></span>
+                                        </td>
+                                        <td>
+                                            <span class="icon-pencil" data-bind="click:$root.editRow">修改</span>
+                                            <span class="glyphicon glyphicon-trash" data-bind="click:function(){$root._DeleteData(DPID)}">删除</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--部门名称编辑弹窗-->
+<div data-id="showEditWind" style="display: none">
+    <table class="table table-striped doingcase">
+        <tbody>
+            <tr>
+                <td align="center" style="WIDTH: 86px">部门名称</td>
+                <td>
+                    <input width="225" data-bind="value:DPName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center" style="WIDTH: 86px">部门全名</td>
+                <td>
+                    <input width="225" data-bind="value:FullName" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<!--部门名称编辑弹窗-->
+<div data-id="showAddWind" style="display: none">
+    <table class="table table-striped doingcase">
+        <tbody>
+            <tr>
+                <td align="center" style="WIDTH: 86px">部门名称</td>
+                <td>
+                    <input width="225" data-bind="value:DPName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center" style="WIDTH: 86px">部门全名</td>
+                <td>
+                    <input width="225" data-bind="value:FullName" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

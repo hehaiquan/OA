@@ -1,0 +1,130 @@
+﻿<!-- 工作流控件 -->
+<div data-id="toolbar"></div>
+<div data-id="WF_Attachment"></div>
+<div class="row" style="margin: 5px;">
+    <div class="col-lg-8">
+        <!--意见填写区域，预备加入工作流控件-->
+        <div class=" row">
+            <div class="form-group" style="margin-right: 10px">
+                <div class="col-md-20" data-id="WF_RemarkBox"></div>
+            </div>
+        </div>
+
+        <!-- 表单 -->
+        <div data-id="formContainer" class="pageContainer">
+            <!--头部按钮行-->
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>南宁市环境保护科学研究所发文笺</h3>
+                <div class="btn-group " style="float: right; margin-top: -40px;">
+                    <!--<button data-id='filePlace' type="button" value="归档" style="float: right;" class="btn btn-default" />-->
+                    <!--        <button data-id='supervisionBtn' type="button" style="float: right; margin-left: 5px" class="btn btn-default">督办</button>
+                    <button data-id='choiceModel' type="button" style="float: right; margin-left: 5px" class="btn btn-default">模版</button>-->
+                    <button data-id='mainBody' type="button" style="float: right; margin-left: 5px" class="btn btn-default">发文内容</button>
+                    <button data-id='printSendDoc' type="button" style="float: right; margin-left: 5px" class="btn btn-default">打印发文笺</button>
+                    <!--<button data-id='test' type="button" value="测试" style="float: right;" class="btn btn-default" >-->
+                </div>
+            </div>
+
+            <div class="row">
+                <div style="color: red; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; font-family: 宋体;">
+                    <div style="width: 100%; text-align: center">
+                        <h3 style="font-family: '宋体'; font-weight: bold">南宁市环境保护科学研究所发文笺</h3>
+                    </div>
+
+                    <div class="documentTable" data-id="sendDocBaseInfo">
+                        <table  style="margin: auto;width:847px">
+
+                            <tr>
+                                <td class="table_label_paper">文件标题
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width: 100%">
+                                        <textarea class="table_text_paper" style="color: black" data-bind="value: title" rows="2"></textarea>
+                                    </div>
+                                </td>
+                            </tr> 
+
+                            <tr>
+                                <td class="table_label_paper">拟稿人
+                                </td>
+                                <td data-id="ngr">
+                                    
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">核稿人
+                                </td>
+                                <td data-id="hgr">
+                                    
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">签发人
+                                </td>
+                                <td data-id="qf">
+                                  
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">主送
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width: 100%">
+                                        <textarea class="table_text_paper" style="color: black"  data-bind="value: mainDelivery" rows="2"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">抄送
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width: 100%">
+                                        <textarea class="table_text_paper" style="color: black"  data-bind="value: cc" rows="2"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">抄报
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width: 100%">
+                                        <textarea class="table_text_paper" style="color: black"  data-bind="value: copyAndrecord" rows="2"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="table_label_paper">印数
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width: 100%">
+                                        <input class="table_text_paper" style="color: black"  data-bind="value: printCount"></input>
+                                    </div>
+                                </td>
+                            </tr>
+
+                              <tr>
+                                <td class="table_label_paper">发文依据
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width: 100%;">
+                                        <a href="#" data-bind="click:_gotobasecase">
+                                            <span data-bind="text: sendBasisTitle"></span>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 visible-lg" data-id="WF_RemarkList"></div>
+</div>

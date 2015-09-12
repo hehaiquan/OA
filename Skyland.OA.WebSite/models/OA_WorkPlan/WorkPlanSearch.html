@@ -1,0 +1,161 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    工作计划查询
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div data-id="searchDiv">
+                <div style="margin-top: 5px;">
+                    <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: none;">姓名
+                            </span>
+                            <div class="input-group">
+                                <input data-id="name" type="text" class="form-control" data-bind="value:name,TreeUserSource:{opt:false,username:name}" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">...</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: none;">部门
+                            </span>
+                            <div class="input-group">
+                                <input type="text" data-id="dept" class="form-control" data-bind="value:dept,TreeDepartmentSource:{opt:false,dpname:dept}" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">...</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-8 col-lg-3" style="margin-right: 0px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: none;">起始日期
+                            </span>
+                            <div class="input-group">
+                                <input data-id="beginText" type="text" class="form-control" data-bind="value:datetime,datetimeFormat:'yy-mm-dd'" />
+                                <span class="input-group-addon">至</span>
+                                <input data-id="endText" type="text" class="form-control" data-bind="value:datetime1,datetimeFormat:'yy-mm-dd'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                    <button data-id="searchBn" class="btn btn-default" type="button">查询</button>
+                </div>
+            </div>
+
+            <div class="row" style="margin: 5px; height: 100%">
+
+                <div data-role="listGrid">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%; text-align: center">
+                                    <span>序号</span>
+                                </th>
+                                <th style="width: 11%">
+                                    <a data-sorkey="workPlanName"><span>计划名称</span></a>
+                                </th>
+                                <th style="width: 11%; text-align: center">
+                                    <a data-sorkey="userName"><span>计划人</span></a>
+                                </th>
+                                <th style="width: 11%; text-align: center">
+                                    <a data-sorkey="startTime"><span>计划开始时间</span></a>
+                                </th>
+                                <th style="width: 11%; text-align: center">
+                                    <a data-sorkey="endTime"><span>计划结束时间</span></a>
+                                </th>
+                                <th style="width: 11%; text-align: center">
+                                    <a data-sorkey="deptName"><span>部门</span></a>
+                                </th>
+                                <th style="width: 11%">
+                                    <span>备注</span>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th></th>
+                                <th>
+                                    <input class="form-control" data-filterkey="workPlanName">
+                                </th>
+                                <th>
+                                    <input class="form-control" data-filterkey="userName">
+                                </th>
+                                <th>
+                                    <input class="form-control" data-filterkey="startTime">
+                                </th>
+                                <th>
+                                    <input class="form-control" data-filterkey="endTime">
+                                </th>
+                                <th>
+                                    <input class="form-control" data-filterkey="deptName">
+                                </th>
+                                <th>
+                                    <input class="form-control" data-filterkey="remark">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                            <tr>
+                                <td style="text-align: center">
+                                    <span data-bind="text: $root.itemNumber($index())"></span>
+                                </td>
+                                <td>
+                                    <span data-bind="text:workPlanName"></span>
+                                </td>
+                                <td style="text-align: center">
+                                    <span data-bind="text:userName"></span>
+                                </td>
+                                <td style="text-align: center">
+                                    <span data-bind="text:startTime"></span>
+                                </td>
+                                <td style="text-align: center">
+                                    <span data-bind="text:endTime"></span>
+                                </td>
+                                <td style="text-align: center">
+                                    <span data-bind="text:deptName"></span>
+                                </td>
+                                <td>
+                                    <span data-bind="text:remark,showAllContentDiv:{length:30}"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--页数显示-->
+                    <div>
+                        <div style="float: left;" data-bind="visible: paginator().length > 1">
+                            <ul class="pagination" data-bind="foreach: paginator">
+                                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                    <!-- ko if: name != '...' -->
+                                    <a data-bind="text: name, click: $root.setPage"></a>
+                                    <!-- /ko -->
+                                    <!-- ko if: name == '...' -->
+                                    <span>...</span><!-- /ko -->
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="float: right;">
+                            <ul class="pagination pagination-right">
+                                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

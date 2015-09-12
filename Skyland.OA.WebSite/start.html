@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>系统初始化中。。</title>
+
+    <script src="script/jquery/jquery-1.11.1.min.js"></script>
+
+    <script>
+        function init() {
+            var int;
+            //window.location = "fx.data?action=init";
+            function poll() {
+                $.get("fx.data?action=log", function (d) {
+                    if (d == "end") {
+                        window.location = "login.html";
+                    }
+                    else if (d == "err") {
+                        window.clearInterval(int);
+                    }
+                    else
+                        $("#log").text(d);
+                });
+            };
+
+            int = setInterval(function () {
+                poll();
+            }, 300);
+
+            $.get("fx.data?action=init", function (d) {
+                $("#log").text(d);  //全部的错误信息
+            });
+        }
+
+
+
+    </script>
+</head>
+<body onload="init()">
+
+    <h1 style="font-family: 黑体;margin:100px 0 0 200px;">系统初始化中...</h1>
+    <div style="font-size:16px;margin:30px 200px;">仅服务器初始化调用，之后直接通过 <a href="login.html"><b> login.html </b></a> 登陆</div>
+    <pre id="log" style="width:90%;margin:20px;">
+
+    </pre>
+
+</body>
+</html>

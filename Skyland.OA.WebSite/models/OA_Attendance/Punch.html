@@ -1,0 +1,51 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    考勤打卡
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+           
+            <div class="row form-horizontal form-bordered" data-id="baseInfo" style="margin-left: 100px;"> 
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <div class="input-group">
+                            <span class="input-group-addon" data-bind ="text:StartTimeText"></span> 
+                            <input type="text" class="form-control"data-id ="ToWorkTime" data-bind="value:ToWorkTime"/>
+                        </div>
+                    </div>
+                    <button class="btn btn-default"  data-id="signlBtn">
+                        <span class="icon-pencil" style="color: rgb(0, 0, 0);"></span>
+                        签到</button>
+                </div>
+                <div class="form-group"  >
+                    <div class="col-md-5">
+                        <div class="input-group">
+                            <span class="input-group-addon"data-bind ="text:EndTimeText"></span> 
+                            <input type="text" class="form-control"data-id ="DownWorkTime" data-bind="value:DownWorkTime"/>
+                        </div>
+                    
+                    </div>
+                    <button class="btn btn-default"  data-id="signOutlBtn">
+                        <span class="icon-pencil" style="color: rgb(0, 0, 0);"></span>
+                        签退</button>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <div class="input-group">
+                            <span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                            <textarea class="form-control" data-bind="value:Remark" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" style="margin-top: 15px" data-id="saveBtn">
+                        <span class="icon-save" style="color: rgb(0, 0, 0);"></span>
+                        保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

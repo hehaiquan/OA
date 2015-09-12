@@ -1,0 +1,360 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    <span class="icon-search"></span>
+                    邮件搜索
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--表格部分查看-->
+            <div data-id="inBoxGrid_Part">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-group">
+                        <button class="btn btn-default" data-id="advanceSearch" style="float: right; margin-right: 10px">
+                            高级查询</button>
+                    </div>
+                    <div data-id="searchForm" style="display: none">
+                        <div class="form-group">
+                            <label class=" control-label col-md-2">查找文字：</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" data-bind="value:sText" />
+                                <input type="checkbox" data-bind="checked:sCheckTittle" />标题
+                    <input type="checkbox" data-bind="checked:sCheckText" />正文
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class=" control-label col-md-2">发件人：</label>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="hidden" data-id="v_userid" />
+                                    <input disabled="disabled" type="text" class="form-control" data-bind="value:Mail_SendPersonName,TreeUserSourceControl:{opt:true,username:Mail_SendPersonName,userid:Mail_SendPersonId}" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class=" control-label col-md-2">时间：</label>
+                            <div class="col-md-8" style="margin-top: 5px; margin-bottom: 5px">
+                                <div class="input-group">
+                                    <input data-id="" type="text" class="form-control" data-bind="value:sDate, datetimeFormat:'yy-mm-dd hh:mm'" style="float: left" />
+                                    <span class="input-group-addon">到</span>
+                                    <input data-id="" type="text" class="form-control" data-bind="value:sEndDate,datetimeFormat:'yy-mm-dd hh:mm'" style="float: left" />
+                                    <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="btnSearch">搜索</button>
+                                <button class="btn btn-default" style="margin-top: 5px; float: left; margin-left: 5px" data-id="btnCleanUp">清空条件</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-role="emailTableGrid" data-id="emailTableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <table class="table table-striped doingcase">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center; width: 2%"></th>
+
+                                    <th style="width:3%">
+                                        <table>
+                                            <tr>
+                                                <td style="width: 12px">
+                                                    <img src="../resources/images/colums/email/email_excalmatory.png" data-toggle="tooltip" title="重要" />
+                                                </td>
+                                                <td style="width: 12px">
+                                                    <img src="../resources/images/colums/email/email.png" data-toggle="tooltip" title="邮件" />
+
+                                                </td>
+                                                <td style="width: 12px">
+                                                    <img src="../resources/images/colums/email/accessories.png" data-toggle="tooltip" title="附件" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </th>
+
+                                    <th style="width: 11%">
+                                        <span>发件人</span>
+                                    </th>
+
+                                    <th style="width: 20%">
+                                        <span>主题</span>
+                                    </th>
+
+                                    <th style="width: 11%">
+                                        <span>时间</span>
+                                    </th>
+                                    <th style="text-align: center; width: 2%"></th>
+                                </tr>
+
+                                <tr>
+                                </tr>
+
+                                <tr>
+                                    <!--checkbox控件-->
+                                    <th></th>
+                                    <!--是否查看-->
+                                    <th>
+                                        <!--<select class="form-control" data-filterkey="isSeeName" />-->
+                                    </th>
+                                    <!--发件人姓名-->
+                                    <th>
+                                        <select class="form-control" data-filterkey="Mail_SendPersonName" />
+                                    </th>
+                                    <!--标题-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="Mail_Title">
+                                    </th>
+                                    <!--时间-->
+                                    <th>
+                                        <select class="form-control" data-filterkey-daterange="Mail_SendDate" />
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--文件转移checkBox-->
+                                    <td style="text-align: center" class="cx">
+                                        <input type="checkbox" data-bind="checked:isSelected" />
+                                    </td>
+                                    <!--是否查看-->
+                                    <td style="text-align: center;">
+                                        <table>
+                                            <tr>
+                                                <td style="width: 12px">
+                                                    <img data-bind="visible:isImportant()==true,attr:{title:'重要'}" src="../resources/images/colums/email/email_excalmatory.png" data-toggle="tooltip" />
+                                                </td>
+                                                <td style="width: 16px" data-bind="html:$root.getIsSeeName(isSeeName,haveReply,hasChangeEmail)"></td>
+                                                <td style="width: 16px">
+                                                    <img data-bind="visible:haveAttachment()==true,attr:{title:'附件'}" src="../resources/images/colums/email/accessories.png" data-toggle="tooltip" title="附件" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!--发件人-->
+                                    <td>
+                                        <span data-bind="text:Mail_SendPersonName"></span>
+                                    </td>
+                                    <!--标题-->
+                                    <td>
+                                        <!--    <a data-bind="click: $root.editRow"><span data-bind="text:Mail_Title,showAllContentDiv:{length:30}"></span></a>
+                                    - 
+                                <span style="color: #A0A0A0;" data-bind="html:$root.fileterMailConten(Mail_SendText),showAllContentDiv:{length:50}"></span>-->
+                                        <div class="tf no">
+                                            <a data-bind="click: $root.editRow,style: { color: isSeeName() == '已读' ? 'black' : 'blue' }"><span data-bind="html:$root.fileterMailConten(Mail_Title)"></span></a>
+                                        </div>
+                                        <div class="TagDiv" data-bind="visible:markName().length>0">
+                                            <table class="tagleftDiv">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="falg_rounded"></td>
+                                                        <td colspan="2"></td>
+                                                        <td class="falg_rounded"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="tagbgSpan">
+                                                            <span data-bind="text:markName" style="color: white"></span>
+                                                            <div style="color: white; float: right;">
+                                                                <a data-bind="click:function(){$root.setCancelMark(ID)}" title="取消此标签">
+                                                                    <img src="../resources/images/colums/email/cancel.gif" style="margin-top: 4px;" />
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="falg_rounded"></td>
+                                                        <td colspan="2"></td>
+                                                        <td class="falg_rounded"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--   <div style="color: white; background: #AA41CD; float: right;">
+                                            <a data-bind="click:function(){$root.setCancelMark(ID)}" title="取消此标签">
+                                                <img src="../resources/images/colums/email/cancel.gif" style="margin-top: 4px;" />
+                                            </a>
+                                        </div>
+                                        <div data-bind="html:$root.getIsMark(markId,markName)" style="float: right;background: #AA41CD;"></div>
+                                    </div>-->
+                                        <!--    <div style="height: 20px; float: right;" data-bind="html:$root.getIsMark(markId,markName)"">
+                            
+                                </div>-->
+                                    </td>
+                                    <!--收件时间-->
+                                    <td data-bind="html:$root.setDateTime(emailRecieveDate)">
+                                        <!--<span class="btn" data-bind="text:Mail_SendDate"></span>-->
+                                    </td>
+                                    <td style="text-align: center" data-bind="html:$root.getIsCollection(isCollection),click:function(){$root.setIsCollection(ID,isCollection)}">
+                                        <!--<img src="../resources/images/colums/email/start.png" />-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--查看详细部分-->
+            <div data-id="detailView_Part" style="display: none;">
+                <!--按钮部分-->
+                <div style="margin-bottom: 10px; height: 35px;">
+                    <button class="btn btn-default" style="float: left; margin-top: 5px;" data-id="backButton">
+                        <span class="icon-double-angle-left" style="color: rgb(0, 0, 0);"></span>返回</button>
+                    <button class="btn btn-default" style="float: left; margin-left: 5px; margin-top: 5px;" data-id="replyEmail">
+                        <span class="icon-reply" style="color: rgb(0, 0, 0);"></span>回复</button>
+                    <button class="btn btn-default" style="float: left; margin-left: 5px; margin-top: 5px;" data-id="changeSend_Two">
+                        <span class="glyphicon glyphicon-share-alt" style="color: rgb(0, 0, 0);"></span>转发</button>
+                    <button class="btn btn-default" style="float: left; margin-left: 5px; margin-top: 5px;" data-id="deleteBtn_Two">
+                        <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                        删除</button>
+                    <button class="btn btn-default" style="float: left; margin-left: 5px; margin-top: 5px;" data-id="thoroughDeleteBtn_Two">
+                        <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                        彻底删除</button>
+
+
+                    <button class="btn btn-default" style="float: right; margin-left: 5px; margin-top: 5px;" data-id="nextMail">
+                        <span class="glyphicon glyphicon-arrow-down" style="color: rgb(0, 0, 0);"></span>下一封</button>
+                    <button class="btn btn-default" style="float: right; margin-left: 5px; margin-top: 5px;" data-id="nextMail_Top">
+                        <span class="glyphicon glyphicon-arrow-up" style="color: rgb(0, 0, 0);"></span>上一封</button>
+
+
+                    <!--标记下拉-->
+                    <div style="float: left;" data-id="emailMarkSelect_Two">
+                    </div>
+                    <!--文件夹下拉-->
+                    <div style="float: left;" data-id="emailDocumentSelect_Two">
+                    </div>
+                    <!--<button data-id="certainly" class="btn btn-primary" style="float: left; margin-left: 5px"><i class="fa fa-check-circle-o" />确定</button>-->
+                </div>
+
+                <!--内容栏-->
+                <div style="height: 635px; -ms-overflow-x: hidden; -ms-overflow-y: auto; margin-top: 15px" class="row" data-id="detailPage">
+
+                    <div class="col-md-12 col-xs-12 col-md-12">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span style="font-weight: bold; float: left" data-bind="text:Mail_Title"></span>
+                                    </td>
+                                    <td>
+                                        <!--撤销收藏-->
+                                        <a data-bind="click:function(){$root.setUnCollection()}">
+                                            <img class="email_strart" src="../resources/images/colums/email/unblind_start.png" data-bind="visible:isCollection()==false" />
+                                        </a>
+                                        <!--收藏-->
+                                        <a data-bind="click:function(){$root.setCollection()}">
+                                            <img class="email_strart" src="../resources/images/colums/email/start.png" data-bind="visible:isCollection()==true" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div style="float: left;" class="TagDiv_Detail" data-bind="visible:markName().length>0">
+                                            <table class="tagleftDiv">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="falg_rounded"></td>
+                                                        <td colspan="2"></td>
+                                                        <td class="falg_rounded"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="tagbgSpan">
+                                                            <span data-bind="text:markName" style="color: white"></span>
+                                                            <div style="color: white; float: right;">
+                                                                <a data-bind="click:function(){$root.setCancelMark(ID)}" title="取消此标签">
+                                                                    <img src="../resources/images/colums/email/cancel.gif" style="margin-top: 4px;" />
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="falg_rounded"></td>
+                                                        <td colspan="2"></td>
+                                                        <td class="falg_rounded"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 col-md-12">
+                        <span>发件人：</span>
+                        <span data-bind="text:Mail_SendPersonName"></span>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 col-md-12">
+                        <span>时&nbsp&nbsp&nbsp间：</span>
+                        <span data-bind="html:$root.setDateTime(emailRecieveDate)"></span>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 col-md-12">
+                        <span>收件人：</span>
+                        <span data-bind="text:Mail_ReceivePersonName"></span>
+                    </div>
+
+
+                    <div class="col-md-12 col-xs-12 col-md-12" data-id="isHaveCC">
+                        <span>抄送人：</span>
+                        <span data-bind="text:CCName"></span>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 col-md-12" data-id="isHaveSecretCC">
+                        <span>密送人：</span>
+                        <span data-bind="text:CCSecretIdName"></span>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 col-md-12" data-id="haveAttachment">
+                        <span>附  件：</span>
+                        <span style="padding-top: 0px; padding-left: 0px;" data-bind="showFileControl:{value:Mail_SendAttachment,columns:12}"></span>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 col-md-12" style="background-color: white">
+                        <div data-id="dataContent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

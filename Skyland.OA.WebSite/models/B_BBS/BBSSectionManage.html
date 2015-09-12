@@ -1,0 +1,125 @@
+﻿<div class="col-md-12" style="height: 100%">
+    <div class="pageContainer" style="margin-bottom: 10px; margin-top: 10px; height: 100%">
+
+        <!--标题-->
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h4>模块管理</h4>
+        </div>
+        <div class="col-md-12">
+            <div style="margin-top: 5px">
+                <button class="btn btn-default" data-id="add" style="float: right">
+                    添加
+                </button>
+            </div>
+        </div>
+        <div class="row" data-id="listDetal" style="height: 100%">
+            <div data-id="listDiv">
+                <!-- 表格 -->
+                <div class="col-md-12">
+                    <div class="leftPanel" style="margin-top: 10px">
+                        <table class=" table table-bordered table-condensed table-striped">
+                            <thead>
+                                <tr class="sort">
+                                    <th style="width: 50px; text-align: center">序号</th>
+                                    <th style="width: 250px; text-align: center">
+                                        <a href="sName" data-sortkey="sName">模块名称</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sCreateManName" data-sortkey="sCreateManName">创建人</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sRemark" data-sortkey="sRemark">备注</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sClickCount" data-sortkey="sClickCount">点击数量</a>
+                                    </th>
+                                    <th style="width: 150px; text-align: center">
+                                        <a href="sTopicCount" data-sortkey="sTopicCount">主贴数量</a>
+                                    </th>
+                                    <th style="width: 80px; text-align: center">
+                                        <span>编辑</span>
+                                    </th>
+                                    <th style="width: 80px; text-align: center">
+                                        <span>删除</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--行号-->
+                                    <td data-bind="text: $root.itemNumber($index())" style="text-align: center"></td>
+                                    <!--模块名称-->
+                                    <td style="text-align: center">
+                                     <span data-bind="text:sName"></span>
+                                    </td>
+                                    <!--创建人-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sCreateManName"></span>
+                                    </td>
+                                    <!--备注-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sRemark,showAllContentDiv:{length:30}"></span>
+                                    </td>
+                                    <!--点击数量-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sClickCount"></span>
+                                    </td>
+                                    <!--主贴数量-->
+                                    <td style="text-align: center">
+                                        <span data-bind="text:sTopicCount"></span>
+                                    </td>
+                                    <!--编辑-->
+                                    <td style="text-align: center">
+                                        <a><span data-bind="click:$root.editRow">编辑</span></a>
+                                    </td>
+                                    <!--删除-->
+                                    <td style="text-align: center">
+                                        <a><span data-bind="click:$root.removeRow">删除</span></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 分页 -->
+                    <div>
+                        <div style="float: left;" data-bind="visible: paginator().length > 1">
+                            <ul class="pagination" data-bind="foreach: paginator">
+                                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                    <a data-bind="text: name, click: $root.setPage"></a>
+                                    <span>...</span><!-- /ko --></li>
+                            </ul>
+                        </div>
+                        <div style="float: right;">
+                            <ul class="pagination pagination-right">
+                                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-->
+<div style="display: none" data-id="showBox">
+    <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+        <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;" data-id="detailent">
+            <div class="form-group">
+                <label class="col-md-4 control-label">模块名称：</label>
+                <div class="col-md-8">
+                    <input style="width: 99%;" type="text" data-bind="value: sName" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">备注：</label>
+                <div class="col-md-8">
+                    <input style="width: 99%;" type="text" data-bind="value: sRemark"  />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

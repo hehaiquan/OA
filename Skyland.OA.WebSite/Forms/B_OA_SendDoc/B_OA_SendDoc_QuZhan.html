@@ -1,0 +1,225 @@
+﻿<div class="row" style="margin: 5px;">
+    <div class="col-lg-8">
+        <!-- 表单 -->
+        <div data-id="formContainer" class="pageContainer">
+            <!--头部按钮行-->
+            <div class="bg-info row" style="padding: 0 15px;">
+                <h3>广西壮族自治区环境监测中心站文件审批笺</h3>
+                <div class="btn-group " style="float: right; margin-top: -40px;">
+                    <!--<button data-id='filePlace' type="button" value="归档" style="float: right;" class="btn btn-default" />-->
+                    <!--<button data-id='supervisionBtn' type="button" style="float: right; margin-left: 5px" class="btn btn-default">督办</button>-->
+                    <button data-id='autoTypesetting' type="button" style="float: right; margin-left: 5px" class="btn btn-default">自动排版</button>
+                    <!--<button data-id='choiceModel' type="button" style="float: right; margin-left: 5px" class="btn btn-default">模版</button>-->
+                    <!--<button data-id='mainBody' type="button" style="float: right; margin-left: 5px" class="btn btn-default">正文</button>-->
+                    <button data-id='mainBodyText' type="button" style="float: right; margin-left: 5px" class="btn btn-default">正文</button>
+                    <button data-id='printSendDoc' type="button" style="float: right; margin-left: 5px" class="btn btn-default">打印发文笺</button>
+                    <!--<button data-id='test' type="button" value="测试" style="float: right;" class="btn btn-default" >-->
+                </div>
+            </div>
+
+            <div class="row" style="overflow-x: auto;">
+                <div class="row form-horizontal form-bordered" style="margin: auto; width: 847px;margin-top: 20px" data-id="sendDocBaseInfo" data-part="主表">
+
+                    <div style="font-family: '宋体'; color: red" class="documentTableNoneLine">
+                        <table style="width: 100%">
+                            <tr >
+                                <td style="float: right;position: relative">
+                                    <label style="">打印份数</label><input data-bind="value:printCount" class="integer" style="width: 200px" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: right">
+                                    <label style="">机密程度</label>
+                                    <select name="select" data-id="mj" style="width: 200px" data-bind="DictOptions: {dictype: 'mjTypeDic',value:mj }" class="" data-part="密级">
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right">
+                                    <label style="">紧急程度</label><select data-bind="DictOptions: {dictype: 'emergencyLevelDic',value:emergency }" style="width: 200px" />
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="width: 100%; text-align: center">
+                            <h3 style="font-family: '宋体'; font-weight: bold">广西壮族自治区环境监测中心站文件审批笺</h3>
+                        </div>
+                    </div>
+                    <div data-id="checkBox" style="font-family: '宋体'; color: red" class="documentTableNoneLine">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 50%">
+                                    <input type="checkbox" id="checkOpenCheck" data-id="guiHuanZhan" data-bind="checked:sendCheckType()=='1'" />
+                                    <label for="">桂环站</label>
+                                    <input data-bind="value:guiHuanZhan" />
+                                </td>
+                                <td style="width: 50%">
+                                    <input type="checkbox" id="Checkbox1" data-id="daiTingNiWen" data-bind="checked:sendCheckType()=='2'" />
+                                    <label for="">代厅拟文</label>
+                                    <input data-bind="value:daiTingNiWen" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%">
+                                    <input type="checkbox" id="Checkbox2" data-id="neiBuShiXiang" data-bind="checked:sendCheckType()=='3'" />
+                                    <label for="">内部事项</label>
+                                    <input data-bind="value:neiBuShiXiang" />
+                                </td>
+                                <td style="width: 50%">
+                                    <input type="checkbox" id="Checkbox3" data-id="qiTa" data-bind="checked:sendCheckType()=='4'" />
+                                    <label for="">其他</label>
+                                    <input data-bind="value:qiTa" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="font-family: '宋体'; color: red" class="documentTable">
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 10%">
+                                    <label>签发人：</label>
+                                </td>
+                                <td>
+                                   <div data-id="qfr"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="documentTable">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width:422px">
+                                    <label>承办科室负责人：</label><br />
+                                    <div style="width: 100%" data-id="cbksfzr"></div>
+                                </td>
+                                <td style="width:422px">
+                                    <label>
+                                        办公室核稿意见：                                                
+                                    </label>
+                                    <br />
+                                    <div data-id="bgshgyj" style="width: 100%;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        承办科室拟稿人：
+                                    </label>
+                                    <br />
+                                    <div data-id="cbksngr" style="width: 100%"></div>
+                                </td>
+                                <td>
+                                    <label>校对人：</label><br />
+                                    <div data-id="jdr" style="width: 100%"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="documentTable">
+                        <table style="width: 100%">
+                            <tr>
+                                <td>
+                                    <div style="float: left; margin-top: 10px; height: 45px">
+                                        <label style="float: left;">
+                                            主送：                                                
+                                        </label>
+                                        <button class="btn btn-default btn-sm" data-id="zs" type="button" data-bind="click:$root._getOrganization_zs">...</button>
+                                    </div>
+                                    <div style="float: left; width: 90%">
+                                        <textarea rows="2" style="width: 100%;" data-bind="value:zs"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left; margin-top: 10px; height: 45px">
+                                        <label style="float: left;">
+                                            抄报：                                                
+                                        </label>
+                                        <button class="btn btn-default btn-sm" data-id="cb" type="button" data-bind="click:$root._getOrganization_cb">...</button>
+                                    </div>
+                                    <div style="float: left; width: 90%">
+                                        <textarea rows="2" style="width: 100%;" data-bind="value:cb"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left; margin-top: 10px; height: 45px">
+                                        <label style="float: left;">
+                                            抄送：                                                
+                                        </label>
+                                        <button class="btn btn-default btn-sm" data-id="cs" type="button" data-bind="click:$root._getOrganization_cs">...</button>
+                                    </div>
+                                    <div style="float: left; width: 90%">
+                                        <textarea rows="2" style="width: 100%;" data-bind="value:cs"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="position: relative">
+                                    <div style="float: left; margin-top: 10px; height: 45px">
+                                        <label style="float: left;">
+                                            文件标题：                                                
+                                        </label>
+                                    </div>
+                                    <div style="float: left; width: 90%">
+                                        <textarea class="required" rows="2" style="width: 100%;" data-bind="value:title"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="position: relative">
+                                    <div style="float: left; margin-top: 10px;">
+                                        <label style="float: left;">
+                                            发文类型：                                                
+                                        </label>
+                                    </div>
+                                    <div style="float: left; width: 90%; margin-top: 10px;">
+                                        <select name="select" style="width: 100%; height: 100%" class="required" data-id="sendType" data-bind="DictOptions: {dictype: 'sendDocTypeDic',value:sendType }">
+                                   
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--模版选择弹窗-->
+<div data-id="modelDiv" class="modelDiv" style="display: none;">
+    <div class="table-responsive" data-role="emailTableGrid" data-id="emailTableGrid" style="padding-left: 3px; padding-right: 3px;">
+        <table class="table table-striped doingcase">
+            <thead>
+                <tr>
+                    <th style="text-align: center; width: 10%"></th>
+                    <th style="width: 90%">标题</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        <input type="text" class="form-control" value="" data-filterkey="title">
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                <tr>
+                    <!--radio-->
+                    <td style="text-align: center">
+                        <input type="radio" name="choiceSendDocModel" data-bind="checked:check" />
+                    </td>
+                    <td style="text-align: left">
+                        <span data-bind="text:title"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

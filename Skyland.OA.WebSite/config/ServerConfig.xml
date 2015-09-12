@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="RelativeUploadDir" value="App_Data\附件目录" />
+  </appSettings>
+  <connectionStrings>
+    <add name="mydata" connectionString="Data Source=.;Initial Catalog=skyland.oa;Persist Security Info=True;User ID=sa;Password=1"/>
+    <!--<add name="mydata" connectionString="Data Source=.;Initial Catalog=fx;Integrated Security=True" />-->
+    <!--<add name="mydata" connectionString="Data Source=192.168.0.250;Initial Catalog=Skyland.EES.NNEPB;User ID=Skyland.iPad.GZEPB;Password=Skyland.iPad.GZEPB;Pooling=true;Max Pool Size = 5120;Min Pool Size=0;"/>-->
+  </connectionStrings>
+</configuration>

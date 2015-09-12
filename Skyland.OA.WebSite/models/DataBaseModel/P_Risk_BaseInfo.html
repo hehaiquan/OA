@@ -1,0 +1,212 @@
+﻿<div class="container-fluid ">
+    <div class="page-header sub-header">
+        <h3><b>环境风险源管理</b></h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4" data-id="listDiv" style="height: 100%">
+            <!-- 查询条件 工具栏 -->
+            <div data-id="conditions" class="row" style="margin-bottom: 10px;">
+                <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                    <div class="input-group" style="float: right;">
+                        <button data-id="add" class="btn btn-default"><i class="fa fa-file" />新增</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leftPanel">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="background: none;">单位名称</span>
+                                            <input class="form-control" type="text" placeholder="" data-filterkey="dwmc">
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <a class="btn btn-link" data-bind="click: $root.editRow">
+                                            <span style="font-weight: bold;" data-bind="text:dwmc"></span>
+                                        </a>|
+                                        法人表：<span data-bind="text:fddbr"></span>|
+                                        行业类别：<span data-bind="text:hylb"></span>
+                                    </div>
+                                    <div class="col-xs-2"><a class="btn btn-link" data-bind="click: $root.removeRow"><i class="fa fa-times"></i></a></div>
+                                    <div class="col-xs-12" style="padding-top: 8px;">
+                                        地址：<span data-bind="text:xxdz"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                    <ul class="pagination" data-bind="foreach: paginator">
+                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                            <a data-bind="text: name, click: $root.setPage"></a>
+                            <span>...</span>
+                        </li>
+                    </ul>
+                </div>
+              
+                <div style="float: right;">
+                    <ul class="pagination pagination-right">
+                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8" data-id="detailDiv">
+            <div style="margin-bottom: 10px; height: 35px;">
+                <button data-id="back" class="btn btn-primary hidden-lg hidden-md"><i class="fa fa-arrow-circle-o-left" />返回</button>
+                <button data-id="save" class="btn btn-primary" style="float: right;"><i class="fa fa-save" />保存</button>
+            </div>
+
+            <div class="pageContainer">
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h4><b>环境风险源信息</b></h4>
+                </div>
+
+                <div class="form-horizontal rightPanel" style="margin: 0 -15px; padding: 10px; background-color: white;">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">单位名称：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: dwmc" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">组织机构代码：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: zzjgdm" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">地址：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: xxdz" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">门牌号：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: mph" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">法定代表人：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: fddbr" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">行政区划代码：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: xzqhdm" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">市：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: shi" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">区县：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: qx" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">乡：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: xiang" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">经度—度：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: jd_d" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">经度—分：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: jd_f" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">经度—秒：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: jd_m" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">纬度-度：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: wd_d" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">纬度-分：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: wd_f" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">纬度-秒：</label>
+                        <div class="col-xs-2">
+                            <input data-bind="value: wd_m" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">所在工业园区名称：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: szgyyq" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">行业类别：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: hylb" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">年生产时间：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: nscsj" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">工业总产值：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: gyzcz" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">企业环境风险等级：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: hjfxdj" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">厂区面积：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: cqmj" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">风险源类别：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: fxylb" type="text" class="form-control" placeholder="" />
+                        </div>
+                        <label class="col-xs-2 control-label">应急预案编制时间：</label>
+                        <div class="col-xs-4">
+                            <input data-bind="value: yjya_bzsj" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

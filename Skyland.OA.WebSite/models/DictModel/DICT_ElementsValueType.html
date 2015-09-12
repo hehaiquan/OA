@@ -1,0 +1,122 @@
+﻿<!--   开发者 黄欢 20141210-->
+
+<div class="container-fluid ">
+    <div class="page-header sub-header">
+        <h3><b>字典类型</b></h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4" data-id="listDiv" style="height: 100%">
+            <!-- 查询条件 工具栏 -->
+            <div data-id="conditions" class="row" style="margin-bottom: 10px;">
+                <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                    <div class="input-group" style="float: right;">
+                        <button data-id="add" class="btn btn-default"><i class="fa fa-file" />新增</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leftPanel">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <td colspan ="3">
+                                <div class="row">
+                                    <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="background: none;">字典类型</span>
+                                            <select class="form-control" data-filterkey="EVTTypeName"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="width: 60px"><span>元素值域名称</span></th>
+                            <th style="width: 60px"><span>元素值域标识</span></th>
+                            <th style="width: 10px"></th>
+                        </tr>
+                        <tr>
+                            <th ><input class="form-control" type="text" placeholder="" data-filterkey="EVTName"></th>
+                            <th ><input class="form-control" type="text" placeholder="" data-filterkey="EVTCode"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td>
+                                 <a class="btn btn-link" data-bind="click: $root.editRow"><span data-bind="text:EVTName"></span></a>
+                            </td>
+                            <td>
+                                 <span data-bind="text:EVTCode"></span>
+                                 <span data-bind="text:EVTTypeName" style ="display:none"></span>
+                            </td>
+                            <td>
+                                <a data-bind="click:$root.removeRow">
+                                    <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                    <ul class="pagination" data-bind="foreach: paginator">
+                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                            <a data-bind="text: name, click: $root.setPage"></a>
+                        </li>
+                    </ul>
+                </div>
+              
+                <div style="float: right;">
+                    <ul class="pagination pagination-right">
+                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8" data-id="detailDiv">
+            <div style="margin-bottom: 10px; height: 35px;">
+                <button data-id="back" class="btn btn-primary hidden-lg hidden-md"><i class="fa fa-arrow-circle-o-left" />返回</button>
+                <button data-id="save" class="btn btn-primary" style="float: right;"><i class="fa fa-save" />保存</button>
+            </div>
+
+            <div class="pageContainer">
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h4><b>值域类型信息</b></h4>
+                </div>
+
+                <div class="form-horizontal rightPanel" style="margin: 0 -15px; padding: 10px;">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">字典类型</label>
+                        <div class="col-md-4">
+                            <select data-id="dictType" data-bind="DictOptions: {dictype: 'DICT_ElementsValueType', value:EVTType }"  class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">元素值域名称</label>
+                        <div class="col-md-4">
+                            <input data-bind="value: EVTName" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">元素值域标识</label>
+                        <div class="col-md-4">
+                            <input data-bind="value: EVTCode" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

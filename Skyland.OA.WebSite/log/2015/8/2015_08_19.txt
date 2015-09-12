@@ -1,0 +1,125 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-19 14:45:08
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_Car (workflowcaseid,applyDepartment,applyDepartmentId,strartTime,endTime,strarDestination,endDestination,travelReson,personList,personListId,useMan,useManId,useManPhone,diverMan,carName,useDepSign,remark,CreatTime,diverManId) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16,@F_17,@F_18) 
+ dbParms:C000010系统管理部门2015月08日19 时002015月08日20 时00南宁北海系统管理员;U000008;系统管理员U000008cxcxccxcxcx测试员1dsdsdsds下次下次下次现在2015/8/19 13:45:40U000192
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_CarSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 143
+   在 BizService.Services.B_OA_CarSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 187
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_Car (workflowcaseid,applyDepartment,applyDepartmentId,strartTime,endTime,strarDestination,endDestination,travelReson,personList,personListId,useMan,useManId,useManPhone,diverMan,carName,useDepSign,remark,CreatTime,diverManId) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16,@F_17,@F_18) 
+ dbParms:C000010系统管理部门2015月08日19 时002015月08日20 时00南宁北海系统管理员;U000008;系统管理员U000008cxcxccxcxcx测试员1dsdsdsds下次下次下次现在2015/8/19 13:45:40U000192
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_CarSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 143
+   在 BizService.Services.B_OA_CarSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 187
+--------------------------------------------------------------------------------------
+时间：2015-08-19 14:46:55
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_Car (workflowcaseid,applyDepartment,applyDepartmentId,strartTime,endTime,strarDestination,endDestination,travelReson,personList,personListId,useMan,useManId,useManPhone,diverMan,carName,useDepSign,remark,CreatTime,diverManId) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16,@F_17,@F_18) 
+ dbParms:C000010系统管理部门2015月08日19 时002015月08日20 时00南宁北海系统管理员;U000008;系统管理员U000008cxcxccxcxcx测试员1dsdsdsds下次下次下次现在2015/8/19 13:45:40U000192
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_CarSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 143
+   在 BizService.Services.B_OA_CarSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 187
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:INSERT INTO B_OA_Car (workflowcaseid,applyDepartment,applyDepartmentId,strartTime,endTime,strarDestination,endDestination,travelReson,personList,personListId,useMan,useManId,useManPhone,diverMan,carName,useDepSign,remark,CreatTime,diverManId) VALUES (@F_0,@F_1,@F_2,@F_3,@F_4,@F_5,@F_6,@F_7,@F_8,@F_9,@F_10,@F_11,@F_12,@F_13,@F_14,@F_15,@F_16,@F_17,@F_18) 
+ dbParms:C000010系统管理部门2015月08日19 时002015月08日20 时00南宁北海系统管理员;U000008;系统管理员U000008cxcxccxcxcx测试员1dsdsdsds下次下次下次现在2015/8/19 13:45:40U000192
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Insert[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_CarSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 143
+   在 BizService.Services.B_OA_CarSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_CarSvc.cs:行号 187
+--------------------------------------------------------------------------------------
+时间：2015-08-19 22:27:28
+内容：
+异常信息：IWorkFlow.DataBase.DataBaseException: 数据读取失败，错误:列名 'carStatus' 无效。 ---> System.Exception: 数据读取失败，错误:列名 'carStatus' 无效。 ---> System.Data.SqlClient.SqlException: 列名 'carStatus' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 IWorkFlow.DataBase.DbFactory.GetReader(String sql, DbParameter[] dbParms)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.DbFactory.GetReader(String sql, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryList[T](T obj)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryList[T](T obj)
+   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 30
+异常信息：数据读取失败，错误:列名 'carStatus' 无效。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryList[T](T obj)
+   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 30
+--------------------------------------------------------------------------------------
+时间：2015-08-19 22:33:09
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 39
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 39
+--------------------------------------------------------------------------------------
+时间：2015-08-19 22:34:00
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 39
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 39
+--------------------------------------------------------------------------------------
+时间：2015-08-19 22:39:21
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 36
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 36
+--------------------------------------------------------------------------------------
+时间：2015-08-19 22:40:16
+内容：
+异常信息：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 36
+异常信息：未将对象引用设置到对象的实例。
+异常堆栈：   在 BizService.Services.B_OA_TravelSvc.GetData(String userid, String caseId, String baid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 36
+--------------------------------------------------------------------------------------
+时间：2015-08-19 23:29:32
+内容：
+异常信息：System.Exception: 数据库操作:从 nvarchar 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。 
+ SQL Err:UPDATE B_OA_TravelList SET carStatus=@F_0,caseId=@F_1,travelStartTime=@F_2,travelEndTime=@F_3,totalDays=@F_4,travelStartTime1_sj=@F_5,travelEndTime1_sj=@F_6,totalDays1_sj=@F_7,traveler=@F_8,travelAddress=@F_9,travelFee=@F_10,remark=@F_11,travelReason=@F_12,travelStatus=@F_13 WHERE  caseId = @W_0 
+ dbParms:dsdsdsaC0000132015-08-19 00:00 00:00:002015-08-20 00:00 00:00:0001900-1-11900-1-10U000008奋斗奋斗0dsdsds1C000013
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 85
+异常信息：数据库操作:从 nvarchar 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。 
+ SQL Err:UPDATE B_OA_TravelList SET carStatus=@F_0,caseId=@F_1,travelStartTime=@F_2,travelEndTime=@F_3,totalDays=@F_4,travelStartTime1_sj=@F_5,travelEndTime1_sj=@F_6,totalDays1_sj=@F_7,traveler=@F_8,travelAddress=@F_9,travelFee=@F_10,remark=@F_11,travelReason=@F_12,travelStatus=@F_13 WHERE  caseId = @W_0 
+ dbParms:dsdsdsaC0000132015-08-19 00:00 00:00:002015-08-20 00:00 00:00:0001900-1-11900-1-10U000008奋斗奋斗0dsdsds1C000013
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_TravelSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 85
+--------------------------------------------------------------------------------------
+时间：2015-08-19 23:29:32
+内容：
+异常信息：System.Exception: 数据库操作:从 nvarchar 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。 
+ SQL Err:UPDATE B_OA_TravelList SET carStatus=@F_0,caseId=@F_1,travelStartTime=@F_2,travelEndTime=@F_3,totalDays=@F_4,travelStartTime1_sj=@F_5,travelEndTime1_sj=@F_6,totalDays1_sj=@F_7,traveler=@F_8,travelAddress=@F_9,travelFee=@F_10,remark=@F_11,travelReason=@F_12,travelStatus=@F_13 WHERE  caseId = @W_0 
+ dbParms:dsdsdsaC0000132015-08-19 00:00 00:00:002015-08-20 00:00 00:00:0001900-1-11900-1-10U000008奋斗奋斗0dsdsds1C000013
+   在 BizService.Services.B_OA_TravelSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 93
+   在 BizService.Services.B_OA_TravelSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 129
+异常信息：数据库操作:从 nvarchar 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。 
+ SQL Err:UPDATE B_OA_TravelList SET carStatus=@F_0,caseId=@F_1,travelStartTime=@F_2,travelEndTime=@F_3,totalDays=@F_4,travelStartTime1_sj=@F_5,travelEndTime1_sj=@F_6,totalDays1_sj=@F_7,traveler=@F_8,travelAddress=@F_9,travelFee=@F_10,remark=@F_11,travelReason=@F_12,travelStatus=@F_13 WHERE  caseId = @W_0 
+ dbParms:dsdsdsaC0000132015-08-19 00:00 00:00:002015-08-20 00:00 00:00:0001900-1-11900-1-10U000008奋斗奋斗0dsdsds1C000013
+异常堆栈：   在 BizService.Services.B_OA_TravelSvc.SaveData(SaveDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 93
+   在 BizService.Services.B_OA_TravelSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_TravelSvc.cs:行号 129

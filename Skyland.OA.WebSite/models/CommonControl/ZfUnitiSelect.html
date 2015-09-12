@@ -1,0 +1,83 @@
+﻿<div class="col-md-12" data-role="unitGrid1">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th colspan='3'>
+                    <div class="input-group">
+                        <input type="text" placeholder="单位名称..." value="" data-id="dwmc" data-filterkey="dwmc">
+                        <input type="text" placeholder="联系人..." value="" data-id="lxr" data-filterkey="lxr">
+                        <input type="text" placeholder="联系电话..." value="" data-id="lxdh" data-filterkey="lxdh">
+                        <input type="text" placeholder="地址..." value="" data-id="txdz" data-filterkey="txdz">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" data-id="save">新增</button>
+                        </span>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td width="60px" data-bind="text: $root.itemNumber($index())"></td>
+                <td width="100%">
+                    <span class="btn btn-link" data-bind="text:dwmc,click: $root.editRow"></span>
+                    <span data-bind="text:lxr"></span>
+                    <span data-bind="text:lxdh"></span>
+                    <span data-bind="text:txdz"></span>
+                    <span data-bind="text:yzbm"></span>
+                </td>
+                <td width="10px">
+                    <span class="btn" class="btn btn-link" data-bind='click: $root.removeRow'><i class="fa fa-times"></i></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        <div style="float: right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-md-4" data-id="showInfo" style="display:none">
+    <div class="form-horizontal form-bordered" style="margin-top: 10px">
+        <div class="form-group" data-id="showInfo">
+            <label class="col-sm-4 control-label">单位名称：</label>
+            <div class="col-sm-8">
+                <input data-bind="value:dwmc" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group" data-id="showInfo">
+            <label class="col-sm-4 control-label">联系人：</label>
+            <div class="col-sm-8">
+                <input data-bind="value:lxr" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group" data-id="showInfo">
+            <label class="col-sm-4 control-label">联系电话：</label>
+            <div class="col-sm-8">
+                <input data-bind="value:lxdh" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group" data-id="showInfo">
+            <label class="col-sm-4 control-label">地址：</label>
+            <div class="col-sm-8">
+                <input data-bind="value:txdz" type="text" class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>

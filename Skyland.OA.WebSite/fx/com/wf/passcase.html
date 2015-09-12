@@ -1,0 +1,121 @@
+﻿
+<div class="casebox tablehead text-info" style="text-align:center;">
+    <div class="col50">业务名称</div>
+    <!--<div class="col15">当前位置</div>
+    <div class="col8">创建人</div>-->
+    <!--<div class="col12">创建时间</div>-->
+    <div class="col25">提交人</div>
+    <div class="col25 tr">收件时间</div>
+</div>
+<div style="overflow-y:auto;height:100%;">
+    <div class="iwf-grid casebox">
+        <div class="iwf-grid-body">
+
+            <div class="treeview-bar"><span style="margin:-2px 5px 0 -10px;"><i class="fa fa-sort-desc"></i></span> ${text}&nbsp;(${count})</div>
+
+            <div data-id="${ID}" class="${$item.GetTrclass($data)} iwf-grid-row">
+
+                <div class="col50"> <a href="javascript:void(0)"> ${Name}</a></div>
+                <!--<div class="col15">${ActName}</div>
+                <div class="col8">${CreaterCnName}</div>-->
+                <!--<div class="col12">${$item.changeyyyyMMdd(CreateDate)}</div>-->
+                <div class="col25">${SenderName}</div>
+                <div class="col25 ">${$item.changeyyyyMMdd(ReceiveDate)}</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .tablehead {
+        padding: 8px 20px 5px 10px;
+        font-weight: bold;
+        height: 35px;
+    }
+
+    .iwf-grid-row {
+        padding: 8px;
+        line-height: 1.4285;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+        border-left: 4px solid #fff;
+    }
+
+    /*.tr {
+        text-align: right;
+        line-height: 25px;
+    }*/
+
+    .casebox .unreaded .col45 {
+        font-weight: bold;
+    }
+
+    .iwf-gird-active {
+        border-left: 4px solid #337ab7;
+        background-color: #d9edf7;
+    }
+
+    .casebox .col50,
+    .casebox .col25 {
+        margin-left: 0px;
+        display: inline-block;
+        color: #888;
+    }
+
+    .casebox .col50 {
+        width: 45%;
+        color: #000;
+    }
+
+    .casebox .col25 {
+        width: 25%;
+    }
+
+
+
+    @media (max-width: 800px) {
+        .casebox td {
+            padding: 3px 2px;
+        }
+
+        .tablehead {
+            display: none;
+        }
+
+        .casebox .col45 {
+            width:90%;
+        }
+
+        .casebox .col25 {
+            width: 30%;
+            text-align: right;
+            vertical-align: top;
+        }
+
+      
+
+        .casebox tbody div {
+            /*color: #808080;*/
+        }
+
+            .casebox tbody div a {
+                /*color: #000;*/
+            }
+    }
+    /*暂时先放这里*/
+    .treeview-item {
+        text-align: left !important;
+        border: 0px !important;
+        margin: 6px !important;
+    }
+
+    .treeview-bar {
+        /*position: relative;
+    display: block;*/
+        /*height:30px;*/
+        border-top-width: 0px !important;
+        background-color: #f5f5f5 !important;
+        padding: 2px 15px !important;
+        color: #888 !important;
+    }
+</style>

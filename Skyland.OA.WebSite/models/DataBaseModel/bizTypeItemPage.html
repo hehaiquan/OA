@@ -1,0 +1,163 @@
+﻿<!--    左右布局的界面，左边为列表， 左边的为 data-id="listDiv"，右边为 data-id="detailDiv"
+    需要注意的是  Table需要放在class=leftPanel 的div里面，表单需要放在 class=rightPanel 里面 
+    对应的js需要包括initUILayout():初始化界面布局，特别是设定 leftPanel、rightPanel的高度。！请根据实际情况调整，高度设置！！！！
+    另外有showListDIV(), showDetailDIV(),控制显示，主要是在新建、查看、保存、返回等几处代码加入
+    
+    -->
+
+<div class="container-fluid ">
+    <!-- 标题名称 -->
+    <div class="page-header sub-header">
+        <h3><b>字典值域</b></h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4" data-id="listDiv" style="height: 100%">
+            <!-- 查询条件 工具栏 -->
+            <div data-id="conditions" class="row" style="margin-bottom: 10px;">
+                <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                    <div class="input-group" style="float: right;">
+                        <button data-id="add" class="btn btn-default"><i class="fa fa-file" />新增</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 表格 -->
+            <div class="leftPanel">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="background: none;">元素值域名称</span>
+                                            <input class="form-control" type="text" placeholder="" data-filterkey="mc">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-lg-12" style="margin-right: 0px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="background: none;">字典类型</span>
+                                            <select class="form-control" data-filterkey="flmc"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <a class="btn btn-link" data-bind="click: $root.editRow">
+                                            <span style="font-weight: bold;" data-bind="text:mc"></span>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-2"><a class="btn btn-link" data-bind="click: $root.removeRow"><i class="fa fa-times"></i></a></div>
+                                    <div class="col-xs-12" style="padding-top: 8px;">
+										字典类型：<span data-bind="text: flmc"></span> |
+                                        元素值域编码：<span data-bind="text: csz"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 分页 -->
+            <div>
+                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                    <ul class="pagination" data-bind="foreach: paginator">
+                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                            <!-- ko if: name != '...' -->
+                            <a data-bind="text: name, click: $root.setPage"></a>
+                            <!-- /ko -->
+                            <!-- ko if: name == '...' -->
+                            <span>...</span><!-- /ko -->
+                        </li>
+                    </ul>
+                </div>
+                <div style="float: right;">
+                    <ul class="pagination pagination-right">
+                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-8" data-id="detailDiv">
+            <!-- 工具栏 -->
+            <div style="margin-bottom: 10px; height: 35px;">
+                <button data-id="back" class="btn btn-primary hidden-lg hidden-md"><i class="fa fa-arrow-circle-o-left" />返回</button>
+                <button data-id="save" class="btn btn-primary" style="float: right;"><i class="fa fa-save" />保存</button>
+            </div>
+
+            <div class="pageContainer">
+                <!--标题栏-->
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h4><b>字典值域信息</b></h4>
+                </div>
+                <!-- 表单基本框 -->
+
+                <div class="form-horizontal rightPanel" style="margin: 0 -15px; padding: 10px;">
+                     <div class="form-group">
+                        <label class="col-xs-2 control-label">字典类型</label>
+                        <div class="col-xs-4">
+                            <!--<input data-id="flid" data-bind="value: flid" type="text" class="form-control" placeholder="" />-->
+                            <select data-id="flid" data-bind="DictOptions: { dictype: 'bizTypeDic', value: flid }" class="form-control required">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">元素值域名称</label>
+                        <div class="col-xs-4">
+                            <input data-id="mc" data-bind="value: mc" type="text" class="form-control required" placeholder="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">元素值域编码</label>
+                        <div class="col-xs-4">
+                            <input data-id="csz" data-bind="value: csz" type="text" class="form-control required" placeholder="" />
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">排序号</label>
+                        <div class="col-xs-4">
+                            <input data-id="pxh" data-bind="value: pxh" type="text" class="form-control integer" placeholder="" />
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label class="col-xs-2 control-label">是否启用</label>
+                        <div class="col-xs-4">
+                            <input name="sfqy" data-id="sfqy1" data-bind="checked: sfqy" type="radio" value="1" checked="checked"/>是
+                            <input name="sfqy" data-id="sfqy2" data-bind="checked: sfqy" type="radio" value="0" />否
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">上报代码</label>
+                        <div class="col-xs-4">
+                            <input data-id="sbdm" data-bind="value: sbdm" type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">创建时间</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control datetime required" data-bind="value:cjsj,datetimeFormat:'yy-mm-dd hh:mm'" />
+                        </div>
+                    </div>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

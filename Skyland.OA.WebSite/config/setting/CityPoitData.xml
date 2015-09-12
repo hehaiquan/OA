@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<citys>
+  <city>
+    <cityname>北海市</cityname>
+    <mapzuoxiajiaolng>108.972073924825</mapzuoxiajiaolng><!--左下角lng109.028664 -->
+    <mapzuoxiajiaolat>21.1960814666667</mapzuoxiajiaolat><!--左下角lat21.367408-->
+    <mapyoushangjiaolng>109.659390146853</mapyoushangjiaolng><!--右上角lng109.276886-->
+    <mapyoushangjiaolat>21.8696536933333</mapyoushangjiaolat><!--右上角lat21.592639-->
+    <zfxzuoxiajiaolng>108.9</zfxzuoxiajiaolng><!--正方形左下角lng109-->
+    <zfxzuoxiajiaolat>21.1</zfxzuoxiajiaolat> <!--正方形左下角lat21.3-->
+    <zfxyoushangjiaolng>109.7</zfxyoushangjiaolng><!--正方形右上角lng109.4-->
+    <zfxyoushangjiaolat>21.9</zfxyoushangjiaolat> <!--正方形右上角lat21.7-->
+  </city>
+
+  <city>
+    <cityname>桂林市</cityname>
+    <mapzuoxiajiaolng>110.034346108571</mapzuoxiajiaolng>
+    <mapzuoxiajiaolat>24.9224623333333</mapzuoxiajiaolat>
+    <mapyoushangjiaolng>110.594608428571</mapyoushangjiaolng>
+    <mapyoushangjiaolat>25.4003525555556</mapyoushangjiaolat>
+    <zfxzuoxiajiaolng>110</zfxzuoxiajiaolng>
+    <zfxzuoxiajiaolat>24.9</zfxzuoxiajiaolat>
+    <zfxyoushangjiaolng>110.6</zfxyoushangjiaolng>
+    <zfxyoushangjiaolat>25.5</zfxyoushangjiaolat>
+  </city>
+
+  <city>
+    <cityname>柳州市</cityname>
+    <mapzuoxiajiaolng>109.09563686052</mapzuoxiajiaolng>
+    <mapzuoxiajiaolat>24.124908762</mapzuoxiajiaolat>
+    <mapyoushangjiaolng>109.638650862884</mapyoushangjiaolng>
+    <mapyoushangjiaolat>24.662432238</mapyoushangjiaolat>
+    <zfxzuoxiajiaolng>109</zfxzuoxiajiaolng>
+    <zfxzuoxiajiaolat>24</zfxzuoxiajiaolat>
+    <zfxyoushangjiaolng>109.7</zfxyoushangjiaolng>
+    <zfxyoushangjiaolat>24.7</zfxyoushangjiaolat>
+  </city>
+
+  <city>
+    <cityname>nn</cityname>
+    <mapzuoxiajiaolng>107.758888</mapzuoxiajiaolng>
+    <mapzuoxiajiaolat>22.203167</mapzuoxiajiaolat>
+    <mapyoushangjiaolng>108.860177</mapyoushangjiaolng>
+    <mapyoushangjiaolat>23.126067</mapyoushangjiaolat>
+    <zfxzuoxiajiaolng>107.6</zfxzuoxiajiaolng>
+    <zfxzuoxiajiaolat>22.0</zfxzuoxiajiaolat>
+    <zfxyoushangjiaolng>108.9</zfxyoushangjiaolng>
+    <zfxyoushangjiaolat>23.3</zfxyoushangjiaolat>
+  </city>
+
+  <city>
+    <cityname>全区地图</cityname>
+    <mapzuoxiajiaolng>104.47998</mapzuoxiajiaolng>
+    <mapzuoxiajiaolat>21.432617</mapzuoxiajiaolat>
+    <mapyoushangjiaolng>112.071533</mapyoushangjiaolng>
+    <mapyoushangjiaolat>26.372185</mapyoushangjiaolat>
+    <zfxzuoxiajiaolng>104.2</zfxzuoxiajiaolng>
+    <zfxzuoxiajiaolat>20</zfxzuoxiajiaolat>
+    <zfxyoushangjiaolng>112.2</zfxyoushangjiaolng>
+    <zfxyoushangjiaolat>28</zfxyoushangjiaolat>
+  </city>
+</citys>

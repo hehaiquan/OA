@@ -1,0 +1,138 @@
+﻿<!-- 工作流控件 -->
+<div data-id="toolbar"></div>
+<div data-id="WF_Attachment"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- 意见填写区域，预备加入工作流控件 -->
+            <div class="row">
+                <div class="col-md-12" data-id="WF_RemarkBox"></div>
+            </div>
+            <div data-id="formContainer" class="pageContainer">
+                <!--头部按钮行-->
+                <div class="bg-info row" style="padding: 0 15px;">
+                    <h3>督办延期申请</h3>
+                    <div class="btn-group " style="float: right; margin-top: -40px;">
+                        <button data-id="printBtn" class="btn btn-default" data-toggle="tooltip" type="button" title="打印">打印</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row form-horizontal form-bordered" data-id="sendDocBaseInfo" data-part="主表">
+                    <!--纸质表格-->
+                    <div style="padding-right: 10px; padding-bottom: 10px; padding-left: 10px; font-family: 宋体;">
+                        <div style="width: 100%; text-align: center">
+                            <h3>督办事项延期办理申请单</h3>
+
+                        </div>
+                        <!--编辑页面-->
+                        <div data-id="delayApplyModel">
+                            <table border="1" style="width: 100%; float: right; border: 1px">
+                                <tr>
+                                    <td class="table_label_paper">督办事项名称
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 100%">
+                                            <textarea class="table_text_paper" style="color: black" data-id="title" data-bind="value: title" rows="2"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_label_paper">申请延期理由
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 100%">
+                                            <textarea class="table_text_paper" style="color: black" data-bind="value: applyReason" data-id="applyReason" rows="5"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_label_paper">局办公室意见
+                                    </td>
+                                    <td data-id="officeSuggestion" style="height: 50px; color: black"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_label_paper">局领导审批
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 100%;">
+                                            <!--<textarea class="table_text_paper" style="color: black" data-id="ldps" data-bind="value: ldps" rows="18"></textarea>-->
+                                            <div data-id="leaderApprovalImage">
+                                            </div>
+                                            <br />
+                                            <div data-id="showLeaderSighture">
+                                                <a data-id="showLeaderSightureClick"><i class="icon-pencil"></i>手写签批</a>
+                                            </div>
+                                            <div data-id="sighture_leaderApproval" style="display: none">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_label_paper">延期后的办结时间
+                                    </td>
+                                    <td style="position: relative">
+                                        <div class="input-group" style="width: 100%">
+                                            <input type="text" style="border: none; width: auto" class="form-control required" data-id="delayDate" data-bind="value: delayDate,datetimeFormat:'yy-mm-dd hh:mm'" />
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_label_paper">承办科室负责人签字
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 100%;">
+                                            <!--<textarea class="table_text_paper" style="color: black" data-id="ldps" data-bind="value: ldps" rows="18"></textarea>-->
+                                            <div data-id="assitantApprovalImage">
+                                            </div>
+                                            <br />
+                                            <div data-id="showSighture">
+                                                <a data-id="showAssistantSightureClick"><i class="icon-pencil"></i>手写签批</a>
+                                            </div>
+                                            <div data-id="sighture_AssitanLeader" style="display: none">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table_label_paper">申请人
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 100%">
+                                            <textarea class="table_text_paper" style="color: black" rows="1" data-bind="value: applyManName"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table_label_paper">申请时间
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 100%">
+                                            <textarea class="table_text_paper" style="color: black" rows="1" data-bind="value: createDate,datetimeFormat:'yy-mm-dd hh:mm'"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table_label_paper">延期依据
+                                    </td>
+                                    <td>
+                                       <a class="link-btn" data-bind="click:_getSupervisionByCaseId"><span class="help-block" data-bind="text:relationTitle"></span></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 审批意见，预备加入工作流控件 -->
+        <div class="col-lg-4 visible-lg" data-id="WF_RemarkList"></div>
+
+    </div>
+</div>

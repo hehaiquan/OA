@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------------
+时间：2015-09-08 15:17:14
+内容：
+异常信息：System.InvalidCastException: 指定的转换无效。
+   在 BizService.Services.B_OA_LeaveSvc.GetLeveListByUser(String uid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 222
+异常信息：指定的转换无效。
+异常堆栈：   在 BizService.Services.B_OA_LeaveSvc.GetLeveListByUser(String uid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 222
+--------------------------------------------------------------------------------------
+时间：2015-09-08 17:28:12
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Leave\公休假申请表.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_LeaveSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 289
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Leave\公休假申请表.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_LeaveSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 289
+--------------------------------------------------------------------------------------
+时间：2015-09-08 17:56:06
+内容：
+异常信息：System.IO.IOException: 文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Leave\公休假申请表.docx”正由另一进程使用，因此该进程无法访问此文件。
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_LeaveSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 289
+异常信息：文件“D:\软件项目\Skyland.OA\code\Skyland.OA.WebSite\officeFileModel\Leave\公休假申请表.docx”正由另一进程使用，因此该进程无法访问此文件。
+异常堆栈：   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord(String TmplPath, String targetPath, String tempPath, Dictionary`2 Marks, Boolean IsNeedToDoc, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 119
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks, ReplaceMode mode) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 65
+   在 IWorkFlow.OfficeService.IWorkFlowOfficeHandler.ProduceWord2007UP(String TmplPath, String targetPath, Dictionary`2 marks) 位置 d:\软件项目\Skyland.OA\code\OfficeService\IWorkFlowOfficeHandler.cs:行号 72
+   在 BizService.Services.B_OA_LeaveSvc.PrintDoc(String caseid, String userid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_LeaveSvc.cs:行号 289

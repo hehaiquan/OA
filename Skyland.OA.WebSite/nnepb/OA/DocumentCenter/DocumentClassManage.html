@@ -1,0 +1,213 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    文档分类管理
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--树状图-->
+            <div class="col-md-4" data-id="documentThree">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">文档分类目录</div>
+                        <button type="button" data-id="addSon" class="btn btn-primary btn-sm">
+                            新增节点
+                        </button>
+                        <button type="button" data-id="editSon" class="btn btn-primary btn-sm">
+                            修改
+                        </button>
+                        <button type="button" data-id="cutBtn" class="btn btn-primary btn-sm">
+                            剪切
+                        </button>
+                        <button type="button" data-id="attachBtn" class="btn btn-primary btn-sm">
+                            粘贴
+                        </button>
+                        <button type="button" data-id="deleteBtn" class="btn btn-primary btn-sm">
+                            删除
+                        </button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" data-id="dataValue">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-id="spreadTree">
+                                    展开
+                                </button>
+                                <button class="btn btn-default" type="button" style="display: none" data-id="foldTree">
+                                    折叠
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                        <ul data-id="DocumentClassTree" id="DocumentClassTree" class="ztree  leftPanel" style="height: 100%; border: 0; overflow: auto;"></ul>
+                    </div>
+                </div>
+            </div>
+            <!--文件表-->
+            <div class="col-md-8" style="height: 100%">
+                <div data-id="tools">
+                    <ol class="breadcrumb" data-id="breadCrumb">
+                    </ol>
+                </div>
+                <!--文档文件管理-->
+                <div class="rightPanel" data-id="documentManage">
+                    <table class="table table-striped doingcas">
+                        <thead>
+                            <tr class="sort">
+                                <th style="width: 5%; text-align: center;">序号</th>
+                                <th style="width: 30%; text-align: center; background: white"><a href="name" data-sortkey="name">名称</a></th>
+                                <th style="width: 11%; text-align: center; background: white"><a href="isParent" data-sortkey="isParent">是否有子栏</a></th>
+                                <th style="width: 11%; text-align: center; background: white"><a href="isEffective" data-sortkey="isEffectiveName">是否有效</a></th>
+                                <th style="width: 11%; text-align: center; background: white">操作 </th>
+                                <th style="width: 20%; text-align: center; background: white"><a href="CreateDate" data-sortkey="CreateDate">创建时间</a></th>
+                            </tr>
+
+                            <tr>
+                                <th></th>
+                                <th>
+                                    <input type="text" class="form-control" value="" data-filterkey="name">
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control" value="" data-filterkey="isParent">
+                                </th>
+                                <th>
+                                    <select class="form-control" data-filterkey="isEffectiveName"></select>
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control" value="" data-filterkey="name">
+                                </th>
+                                <th>
+                                    <select tabindex="-1" class="form-control" data-filterkey-daterange="CreateDate" value="" placeholder="创建时间"></select>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                            <tr>
+                                <td data-bind="text: $root.itemNumber($index())"></td>
+                                <td>
+                                    <span data-bind="text:name, click:$root.editName" class="btn-link"></span>
+                                </td>
+                                <td style="text-align: center">
+                                    <span data-bind="text:isParent()=='1'?'是':'否'"></span>
+                                </td>
+
+                                <td style="text-align: center">
+                                    <span data-bind="text:isEffectiveName,style: { color: isEffectiveName() == '有效' ? 'green' : 'red' }"></span>
+                                </td>
+
+                                <td style="text-align: center">
+                                    <table>
+                                        <tbody>
+                                            <!--       <tr style="width: 16px">
+                                                <span class="fa fa-pencil btn-link" data-bind="click:$root.editName" style="color: rgb(0, 0, 0);"></span>
+                                            </tr>-->
+                                            <tr style="width: 16px">
+                                                <span class="glyphicon glyphicon-trash btn-link" data-bind="click:$root.deleteData" style="color: rgb(0, 0, 0);"></span>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="text-align: center">
+                                    <span data-bind="html:$root.setDateTime(CreateDate)"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--页数显示-->
+                    <div>
+                        <div style="float: left;" data-bind="visible: paginator().length > 1">
+                            <ul class="pagination" data-bind="foreach: paginator">
+                                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                    <!-- ko if: name != '...' -->
+                                    <a data-bind="text: name, click: $root.setPage"></a>
+                                    <!-- /ko -->
+                                    <!-- ko if: name == '...' -->
+                                    <span>...</span><!-- /ko -->
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="float: right;">
+                            <ul class="pagination pagination-right">
+                                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="rMenu" style="position: absolute; left: 0px; top: 0px; z-index: 99999999; background-color: rgb(234, 216, 216); visibility: hidden;">
+    <ul class="frametreeMenu">
+        <li data-id="m_add">增加子节点</li>
+        <li data-id="m_edit">修改节点</li>
+        <li data-id="m_addFather" style="display: none">添加同级节点</li>
+        <li data-id="m_del">删除节点</li>
+    </ul>
+</div>-->
+<!--添加文件夹弹窗-->
+<div style="display: none" data-id="addDocumentClassWindow">
+
+    <table class="table table-striped doingcase">
+        <tbody>
+            <tr>
+                <td align="center" style="width: 120px">
+                    <span>文件夹名称</span>
+                </td>
+                <td>
+                    <input class="form-control" data-bind="value:FileTypeName">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <span>资源类型</span>
+                </td>
+                <td>
+                    <select class="form-control" data-bind="DictOptions: {dictype: 'sourceTypeDic', value: sourceType }"></select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <span>跳转连接</span>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <input disabled="disabled" class="form-control" data-bind="value:linkName">
+                        <span class="input-group-btn" data-bind="click:function(){$root.choiceDefUrl()}">
+                            <button class="btn btn-default" type="button">...</button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <span>跳转连接url</span>
+                </td>
+                <td>
+                    <input disabled="disabled" class="form-control" data-bind="value:linkUrl">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <span>描述</span>
+                </td>
+                <td>
+                    <textarea class="form-control" rows="3" data-bind="value:remark"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <span>是否有效</span>
+                </td>
+                <td>
+                    <select class="form-control" data-bind="DictOptions: {dictype: 'isEffectiveDic', value: isEffective }"></select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

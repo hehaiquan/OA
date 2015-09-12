@@ -1,0 +1,99 @@
+﻿<div class="row">
+    <div data-id="formContainer" class="pageContainer">
+        <div class="bg-info row" style="padding: 1px;">
+            <div class="col-md-7" style="float: left;">
+                <h4>请假申请</h4>
+            </div>
+            <div class="col-md-5" style="float: right; text-align: right; margin-top: 2px;">
+                <button data-id="printDocBtn" style="float: right;" class="btn btn-default"><i class="glyphicon glyphicon-print"></i>打印</button>
+            </div>
+        </div>
+        <div class="panel-body" data-id="baseInfo">
+            <div style="margin-top: 10px">
+                <div class="col-sm-12" style="margin-bottom: 5px;">
+
+                    <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">申请人
+                            </span>
+                            <input disabled="disabled" type="text" data-id="leaveName" class="form-control input-sm" data-bind="value:leaveName" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">所在科室
+                            </span>
+                            <input disabled="disabled" type="text" data-id="dpname" class="form-control input-sm" data-bind="value:dpname" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">请假事由
+                            </span>
+                            <textarea type="text" data-id="leaveReason" class="form-control input-sm" data-bind="value:leaveReason" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">请假日期
+                            </span>
+                            <input type="text" data-id="leaveStartTime" data-bind="value:leaveStartTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm" required="required" placeholder="" />
+                            <span class="input-group-addon">至</span>
+                            <input type="text" data-id="leaveEndTime" data-bind="value:leaveEndTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm" required="required" placeholder="" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">请假天数
+                            </span>
+                            <div class="input-group">
+                                <input type="text" data-id="totalDays" class="form-control input-sm" data-bind="value:totalDays" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-sm" data-bind="click:function(){$root.autoCalculation(leaveStartTime(),leaveEndTime())}" data-id="Organizer" type="button">自动计算</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">实际休假天数<span style="color: red">*</span>
+                            </span>
+                            <input type="text" data-id="actualDays" class="form-control input-sm" data-bind="value:actualDays" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">请假类型<span style="color: red">*</span>
+                            </span>
+                            <div class="input-group">
+                                <select data-id="leaveType" data-bind="DictOptions: {dictype: 'leaveType', value:leaveType }" class="form-control input-sm required">
+                                    <option value=""></option>
+                                </select>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-sm" data-bind="click:function(){$root.GetLeveViewByUserId(leaveer())}" type="button">查看请假情况</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12" style="margin-bottom: 5px;">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background: transparent;">备注
+                            </span>
+                            <textarea type="text" data-id="remark" class="form-control input-sm" data-bind="value:remark" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

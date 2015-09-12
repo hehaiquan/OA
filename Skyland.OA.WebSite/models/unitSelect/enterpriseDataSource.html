@@ -1,0 +1,121 @@
+﻿ <div data-id="talDiv">
+    <ul>
+        <li data-id="activity-tab-ProjectTab1"><a>企业单位</a></li>
+        <li data-id="activity-tab-ProjectTab2"><a>建设项目</a></li>
+    </ul>
+    <div data-id="activity-tab-ProjectTab1-content">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                企业单位
+            </div>
+            <div data-role="unitGrid1">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:40px">序号</th>
+                            <th style="width:100px">企业代码</th>
+                            <th style="width:200px">企业名称</th>
+                            <th style="width:200px">地址</th>
+                            <th style="width:55px">联系人</th>
+                            <th style="width:70px">联系方式</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="qydm" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="qymc" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="qydz" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="lxr" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="lxdh" /></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr style="cursor:pointer;">
+                            <td data-bind="text: $root.itemNumber($index())"></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:qydm"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:qymc"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:qydz"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:lxr"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:lxdh"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <div style="float:left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <span>...</span>
+                            </li>
+                        </ul>
+                    </div> 
+                    <div style="float:right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li> 
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li> 
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li> 
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div data-id="activity-tab-ProjectTab2-content">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                建设项目   
+            </div>
+            <div data-role="unitGrid2">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:40px">序号</th>
+                            <th style="width:100px">项目代码</th>
+                            <th style="width:200px">项目名称</th>
+                            <th style="width:200px">地址</th>
+                            <th style="width:55px">联系人</th>
+                            <th style="width:70px">联系方式</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="jsxmbh" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="xmmc" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="jsdd" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="jsdw_lxr" /></th>
+                            <th><input type="text" class="form-control" value="" data-filterkey="pjdw_lxdh" /></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr style="cursor:pointer">
+                            <td data-bind="text: $root.itemNumber($index())"></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:jsxmbh"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:xmmc"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:jsdd"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:jsdw_lxr"></a></td>
+                            <td data-bind="click: $root.editRow"><a style ="text-decoration:none;" data-bind="text:pjdw_lxdh"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <div style="float:left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <span>...</span>
+                            </li>
+                        </ul>
+                    </div> 
+                    <div style="float:right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li> 
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li> 
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li> 
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

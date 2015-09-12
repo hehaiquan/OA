@@ -1,0 +1,150 @@
+﻿陈江林数据库增加主键：时间：2013-05-10
+sql：
+/*
+alter table FX_GroupPrivilegeR
+	add constraint PID_GID unique (PID,GID)
+alter table FX_UserGroupR
+	add constraint UserID_GID unique (UserID,GID)
+*/
+
+
+//增加FX_WorkFlowBusAct，已读，未读状态
+  alter table FX_WorkFlowBusAct add IsReaded int
+  alter table FX_WorkFlowBusAct add FinishDate datetime
+  alter table FX_WorkFlowCase add LimitDays int
+
+//增加portal设置
+  ALTER TABLE [dbo].[FX_UserInfo]
+    ADD [PortalConfig] TEXT NULL;
+
+//加入日志表(SqlServer)
+create TABLE FX_SysLog(
+    [id] [int] IDENTITY(1,1) NOT NULL primary key,
+	[userid] [nvarchar](50) NULL,
+	[typekey] [nvarchar](50) NULL,   
+)
+CREATE TABLE FX_UserPrivilegeR(
+	[UserID] [nvarchar](50) NULL,
+	[PID] [nvarchar](50) NULL,
+	[Origin] [nvarchar](50) NULL,
+	[OriginID] [nvarchar](50) NULL
+）
+//加入FX_Privilege的一个字段
+alter table FX_Privilege add ModelKey varchar(50)
+//加入用户和权限对应表
+
+//增加FX_WorkFlowCase3个字段
+alter table FX_WorkFlowCase add Ender varchar(50)
+alter table FX_WorkFlowCase add EnderCnName varchar(50)
+alter table FX_WorkFlowCase add EndDate datetime
+
+//增加FX_UserInfo，FX_Department一个字段
+alter table FX_UserInfo add RankID varchar(50)
+alter table FX_Department add RankID varchar(50)
+
+
+//增加FX_Privilege 2014-3-24
+alter table FX_Privilege add PType varchar(50)
+
+//  周世宁陈江林数据库增加主键：时间：2014-08-25 sql：
+// 添加Para_BizTypeDictionary表数据 2014-08-25
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('1','companyType','企业类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('2','countyAndStreet','乡村街道','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('3','litigantType','当事人类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('4','caseTypeDic','案件类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('5','punishmentTypeDic','处罚类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('6','lawEnforcementTypeDic','执法类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('7','investigateTypeDic','调查类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('8','qdlxTypeDic','启动类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('9','mjTypeDic','密级类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('10','gkcdTypeDic','公开程度类型','2014-08-21 00:00:00','1',null,null)
+Insert Into [Para_BizTypeDictionary] ([id],[lx],[mc],[cjsj],[sfqy],[qxzj],[bz]) Values('11','fwlxTypeDic','发文类型','2014-08-21 00:00:00','1',null,null)
+
+// 添加Para_BizTypeItem数据 2014-08-25
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('1','1','饮食服务业','1','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('2','2','工业企业','1','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('3','1','市桥街','2','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('4','2','沙家镇','2','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('5','1','个体工商户','3','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('6','2','个人独资企业','3','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('7','3','法人','3','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('8','4','个人','3','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('9','5','其他','3','5','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('10','1','建设项目管理类','4','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('11','2','不正常使用污染治理设施','4','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('12','3','水污染物超标类','4','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('13','4','建设项目管理类','4','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('14','5','大气污染物超标类','4','5','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('15','6','超总量类','4','6','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('16','7','危险废物处理处置类','4','7','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('17','8','辐射放射类','4','8','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('18','9','其他','4','9','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('19','1','污染防治设施现场检查情况','7','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('20','2','建设项目现场监督检查情况','7','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('21','3','限制治理项目现场监察情况','7','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('22','4','限制治理项目现场监察情况','7','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('23','5','许可证现场检查情况','7','5','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('24','6','排污申报情况','7','6','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('25','7','危废监察','7','7','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('26','8','生态监察','7','8','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('27','9','辐射监察','7','9','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('28','10','其他监察','7','10','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('29','11','信访监察','7','11','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('30','1','建设项目类','5','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('31','2','水污染防治类','5','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('32','3','水污染防治类','5','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('33','4','固废污染防治类','5','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('34','5','噪声污染防治类','5','5','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('35','6','水限期治理类','5','6','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('36','7','大气限期治理类','5','7','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('37','8','水超标处罚类','5','8','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('38','9','大气超标处罚类','5','9','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('39','10','排污许可证','5','10','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('40','11','其它类','5','11','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('41','1','VOC专项','6','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('42','2','重金属专项','6','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('43','3','锅炉专项','6','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('44','4','国控','6','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('45','5','水资源保护区','6','5','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('46','6','涉嫌环境犯罪','6','6','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('47','7','危废','6','7','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('48','8','油烟监控','6','8','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('49','9','养殖业','6','9','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('50','10','辐射','6','10','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('51','11','机动车检测','6','11','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('52','12','排污许可证','6','12','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('53','13','总量减排','6','13','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('54','14','在线监控','6','14','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('55','15','挂牌督办','6','15','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('56','16','排污费拒缴','6','16','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('57','17','风险隐患','6','17','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('58','18','一类污染物','6','18','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('59','19','洗水','6','19','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('60','20','印染','6','20','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('61','21','制革','5','21','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('62','22','制革','6','22','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('63','23','事故','6','23','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('64','24','其他','6','24','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('65','1','执法检查','8','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('66','2','信访举报','8','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('67','3','专项检查','8','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('68','4','污染事故处置','8','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('69','5','其他','8','5','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('70','1','发文类型1','11','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('71','2','发文类型2','11','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('72','3','发文类型3','11','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('73','1','一级','9','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('74','2','二级','9','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('75','3','三级','9','3','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('76','4','四级','9','4','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('77','1','主动公开','10','1','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('78','2','依申请公开','10','2','1',null,'2014-08-21 00:00:00')
+Insert Into [Para_BizTypeItem] ([id],[csz],[mc],[flid],[pxh],[sfqy],[sbdm],[cjsj]) Values('79','3','不予分开','10','3','1',null,'2014-08-21 00:00:00')
+
+// 修改Para_BizTypeDictionary表结构 添加新字段： 2014-08-25
+ALTER TABLE Para_BizTypeDictionary add qxzjs nvarchar(50) NULL
+EXEC sys.sp_addextendedproperty @name=N'qxzj', @value=N'权限组集名称' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Para_BizTypeDictionary', @level2type=N'COLUMN',@level2name=N'bz'
+GO
+
+
+

@@ -1,0 +1,344 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    大事记审核
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--tab控件-->
+            <div style="margin-top: 10px;">
+                <!--信息内容-->
+                <div data-id="talDiv" style="margin-top: 5px;">
+                    <ul data-id="tittleBar">
+                        <li data-id="activity-tab-ProjectTab_a"><a>待您审核(<span data-bind="text:waitCheckCount"></span>)</a></li>
+                        <li data-id="activity-tab-ProjectTab_b"><a>已通过您审核(<span data-bind="text:throughCheckCount"></span>)</a></li>
+                        <li data-id="activity-tab-ProjectTab_c"><a>未通过您审核(<span data-bind="text:unThroughCheckCount"></span>)</a></li>
+                        <li data-id="activity-tab-ProjectTab_e"><a>会签(<span data-bind="text:countersignCount"></span>)</a></li>
+                    </ul>
+                    <!--待审核-->
+                    <div data-id="activity-tab-ProjectTab_a-content">
+                        <!--文章表-->
+                        <div data-id="waitCheckGrid">
+                            <table class="table table-bordered table-condensed table-striped">
+                                <thead>
+                                    <tr class="sort">
+                                        <th style="width: 250px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">名称</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">权限设置</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">作者</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="CreateTime" data-sortkey="CreateTime">上传时间</a></th>
+                <!--                        <th style="width: 50px; text-align: center; background: white">编辑</th>
+                                        <th style="width: 50px; text-align: center; background: white">打印</th>-->
+                                        <th style="width: 150px; text-align: center; background: white">审核</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <!--<span data-bind="text:NewsTitle,click:function(){$root.editArticle(NewsId)}" data-id="view"></span>-->
+                                            <span data-bind="text:NewsTitle,click:function(){$root._getDocumentCenterCheckView(NewsId)}" style="color:black"></span>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <select class="form-control" data-bind="value:publicRange" disabled="disabled">
+                                                <option value="0">所有人员查看</option>
+                                                <option value="1">指定人员查看</option>
+                                                <option value="2">局领导</option>
+                                            </select>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <span class="" data-bind="text:CreateMan"></span>
+                                        </td>
+                                        <td style="text-align: center" data-bind="html:$root.setDateTime(CreateTime)">
+                                            <!--<span class="" data-bind="text:CreateTime"></span>-->
+                                        </td>
+
+                                  <!--      <td style="text-align: center">
+                                            <a data-bind="click: $root.editRow">编辑</a>
+                                        </td>
+                                        <td style="text-align: center">
+                                            <a data-bind="">打印</a>
+                                        </td>-->
+                                        <td style="text-align: center">
+                                            <button class="btn btn-default" style="margin-top: 5px;" data-bind="click:function(){$root._setChkResultThrough(NewsId)}">通过</button>
+                                            <button class="btn btn-default" style="margin-top: 5px;" data-bind="click:function(){$root._setChkResultUnthrough(NewsId)}">不通过</button>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div data-id="activity-tab-ProjectTab_b-content">
+                        <!--已通过审核-->
+                        <div data-id="throughCheckGrid">
+                            <table class="table table-bordered table-condensed table-striped">
+                                <thead>
+                                    <tr class="sort">
+                                        <th style="width: 250px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">名称</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">权限设置</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">作者</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="CreateTime" data-sortkey="CreateTime">上传时间</a></th>
+                                    <!--    <th style="width: 50px; text-align: center; background: white">编辑</th>
+                                        <th style="width: 50px; text-align: center; background: white">打印</th>-->
+                                        <th style="width: 50px; text-align: center; background: white"></th>
+                                        <!--<th style="width: 150px; text-align: center; background: white">审核</th>-->
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td >
+                                            <!--<span data-bind="text:NewsTitle,click:function(){$root.editArticle(NewsId)}" data-id="view"></span>-->
+                                            <span data-bind="text:NewsTitle,click:function(){$root._getDocumentCenterCheckView(NewsId)}" style="color:black" class="btn btn-link"></span>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <select class="form-control" data-bind="value:publicRange" disabled="disabled">
+                                                <option value="0">所有人员查看</option>
+                                                <option value="1">指定人员查看</option>
+                                                <option value="2">局领导</option>
+                                            </select>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <span class="" data-bind="text:CreateMan"></span>
+                                        </td>
+                                        <td style="text-align: center" data-bind="html:$root.setDateTime(CreateTime)">
+                                            <!--<span class="" data-bind="text:CreateTime"></span>-->
+                                        </td>
+
+                                    <!--    <td style="text-align: center">
+                                            <a data-bind="click: $root.editRow">编辑</a>
+                                        </td>
+                                        <td style="text-align: center">
+                                            <a data-bind="">打印</a>
+                                        </td>-->
+                                        <td style="text-align: center">
+                                            <button class="btn btn-default" data-bind="click:function(){$root._checkAgain(NewsId)}">重新审核</button>
+                                        </td>
+                                        <!--    <td style="text-align: center">
+                                    <button class="btn btn-default" style="margin-top: 5px;">通过</button>
+                                    <button class="btn btn-default" style="margin-top: 5px;" data-bind="click:function(){$root._setChkResultUnthrough(NewsId)}">不通过</button>
+                                </td>-->
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-id="activity-tab-ProjectTab_c-content">
+                        <!--未通过审核-->
+                        <div data-id="unThroughCheckGrid">
+                            <table class="table table-bordered table-condensed table-striped">
+                                <thead>
+                                    <tr class="sort">
+                                        <th style="width: 250px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">名称</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">权限设置</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">作者</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="CreateTime" data-sortkey="CreateTime">上传时间</a></th>
+                                <!--        <th style="width: 50px; text-align: center; background: white">编辑</th>
+                                        <th style="width: 50px; text-align: center; background: white">打印</th>-->
+                                        <th style="width: 50px; text-align: center; background: white"></th>
+                                        <!--<th style="width: 150px; text-align: center; background: white">审核</th>-->
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <!--<span data-bind="text:NewsTitle,click:function(){$root.editArticle(NewsId)}" data-id="view"></span>-->
+                                            <span data-bind="text:NewsTitle,click:function(){$root._getDocumentCenterCheckView(NewsId)}" style="color:black" class="btn btn-link"></span>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <select class="form-control" data-bind="value:publicRange" disabled="disabled">
+                                                <option value="0">所有人员查看</option>
+                                                <option value="1">指定人员查看</option>
+                                                <option value="2">局领导</option>
+                                            </select>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <span class="" data-bind="text:CreateMan"></span>
+                                        </td>
+                                        <td style="text-align: center" data-bind="html:$root.setDateTime(CreateTime)">
+                                            <!--<span class="" data-bind="text:CreateTime"></span>-->
+                                        </td>
+
+                                      <!--  <td style="text-align: center">
+                                            <a data-bind="click: $root.editRow">编辑</a>
+                                        </td>
+                                        <td style="text-align: center">
+                                            <a data-bind="">打印</a>
+                                        </td>-->
+                                        <td style="text-align: center">
+                                            <button class="btn btn-default" data-bind="click:function(){$root._checkAgain(NewsId)}">重新审核</button>
+                                        </td>
+                                        <!--    <td style="text-align: center">
+                                    <button class="btn btn-default" style="margin-top: 5px;">通过</button>
+                                    <button class="btn btn-default" style="margin-top: 5px;" data-bind="click:function(){$root._setChkResultUnthrough(NewsId)}">不通过</button>
+                                </td>-->
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-id="activity-tab-ProjectTab_e-content">
+                        <!--会签-->
+                        <div data-id="countersignGrid">
+                            <table class="table table-bordered table-condensed table-striped">
+                                <thead>
+                                    <tr class="sort">
+                                        <th style="width: 250px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">名称</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">权限设置</a></th>
+                                        <th style="width: 100px; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">作者</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="ChkM" data-sortkey="ChkM">审核人</a></th>
+                                        <th style="width: 120px; text-align: center; background: white"><a href="CreateTime" data-sortkey="CreateTime">上传时间</a></th>
+                                        <!--<th style="width: 50px; text-align: center; background: white">打印</th>-->
+                                        <th style="width: 50px; text-align: center; background: white"></th>
+                                        <!--<th style="width: 150px; text-align: center; background: white">审核</th>-->
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td >
+                                            <!--<span data-bind="text:NewsTitle,click:function(){$root.editArticle(NewsId)}" data-id="view"></span>-->
+                                            <span data-bind="text:NewsTitle,click:function(){$root._getDocumentCenterCheckView(NewsId)}" style="color:black" class="btn btn-link"></span>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <select class="form-control" data-bind="value:publicRange" disabled="disabled">
+                                                <option value="0">所有人员查看</option>
+                                                <option value="1">指定人员查看</option>
+                                                <option value="2">局领导</option>
+                                            </select>
+                                        </td>
+
+                                        <td style="text-align: center">
+                                            <span class="" data-bind="text:CreateMan"></span>
+                                        </td>
+                                        <td style="text-align: center">
+                                            <span class="" data-bind="text:ChkM"></span>
+                                        </td>
+                                        <td style="text-align: center" data-bind="html:$root.setDateTime(CreateTime)">
+                                            <!--<span class="" data-bind="text:CreateTime"></span>-->
+                                        </td>
+                                    <!--    <td style="text-align: center">
+                                            <a data-bind="">打印</a>
+                                        </td>-->
+                                        <td style="text-align: center">
+                                            <button class="btn btn-default" data-bind="click:function(){$root._checkAgain(NewsId)}">重新审核</button>
+                                        </td>
+                                        <!--    <td style="text-align: center">
+                                    <button class="btn btn-default" style="margin-top: 5px;">通过</button>
+                                    <button class="btn btn-default" style="margin-top: 5px;" data-bind="click:function(){$root._setChkResultUnthrough(NewsId)}">不通过</button>
+                                </td>-->
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--页数显示-->
+                            <div>
+                                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                    <ul class="pagination" data-bind="foreach: paginator">
+                                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                            <!-- ko if: name != '...' -->
+                                            <a data-bind="text: name, click: $root.setPage"></a>
+                                            <!-- /ko -->
+                                            <!-- ko if: name == '...' -->
+                                            <span>...</span><!-- /ko -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="float: right;">
+                                    <ul class="pagination pagination-right">
+                                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="display: none" data-id="CheckAddvice">
+    <label class="col-md-3 control-label">审核意见：</label>
+    <textarea cols="9" class="col-md-9" data-bind="value:addviceContent"></textarea>
+</div>

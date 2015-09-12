@@ -1,0 +1,12 @@
+--------------------------------------------------------------------------------------
+时间：2015-09-06 10:51:00
+内容：
+异常信息：System.Exception: QueryObject ERR：列名 'flag' 无效。 ---> System.Data.SqlClient.SqlException: 列名 'flag' 无效。
+   在 IWorkFlow.DataBase.DbFactory.GetSingleReader(String sql, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.GetData(String userid, String caseId, String baid, String actid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 36
+异常信息：QueryObject ERR：列名 'flag' 无效。
+异常堆栈：   在 IWorkFlow.DataBase.MsSqlDataBase.QueryObject[T](T obj)
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.GetData(String userid, String caseId, String baid, String actid) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 36

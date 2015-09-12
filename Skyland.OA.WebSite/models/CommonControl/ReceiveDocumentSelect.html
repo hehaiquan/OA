@@ -1,0 +1,49 @@
+﻿<div data-role="unitGrid1">
+    <table class="table table-bordered table-condensed table-striped">
+        <thead>
+            <tr class="sort">
+                <th style="width: 150px; background: white"><a  href="wjbt" data-sortkey="wjbt">标题</a></th>
+                <th style="width: 100px; background: white"><a  href="cjsj" data-sortkey="cjsj">创建时间</a></th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="text" placeholder="" value="" data-filterkey="wjbt" style="width: 100%;">
+                </th>
+                <th>
+                    <input type="text" placeholder="" value="" data-filterkey="cjsj" style="width:100%;">
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td style="">
+                    <span class="btn btn-link" data-bind="text:wjbt,click:$root.editRow,showAllContentDiv:{length:30}"></span>
+                </td>
+                <td style="">
+                    <span data-bind="text:cjsj"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--页数显示-->
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        <div style="float: right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,450 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <!--标题-->
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    档案管理
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div data-id="humanGrid">
+                <div style="margin-top: 15px" class="row">
+                    <div class="table-responsive" data-role="emailTableGrid" data-id="emailTableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <div class="rightPanel" style="height: 635px; -ms-overflow-x: hidden; -ms-overflow-y: auto;">
+                            <table class="table table-striped doingcase">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 11%">
+                                            <span>员工编号</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>姓名</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>性别</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>所属部门</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>工作职位</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>入职时间</span>
+                                        </th>
+                                        <th style="width: 11%">
+                                            <span>操作</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                    <tr>
+                                        <td>
+                                            <span class="btn btn-link" data-bind="text:UserID,click:function(){$root.getSingleManage(UserID)}"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text:CnName"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text:SEX"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text:DPName"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text:JobPosition"></span>
+                                        </td>
+                                        <td>
+                                            <span data-bind="text:EntryTime"></span>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <div style="float: left; display: none;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li class="active" data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage">1</a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li class="active" data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-id="humanDetailInfor" style="display:none">
+                 <div style="margin-bottom: 10px; height: 35px;">
+                    <!--<button data-id="update" class="col-md-0.5 btn btn-primary" style="float: left; margin-right: 5px"><i class="fa fa-save" />刷新</button>-->
+                    <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="goBack">
+                        <span class="icon-reply" style="color: rgb(0, 0, 0);"></span>
+                        返回</button>
+
+                            <button class="btn btn-default" style="margin-top: 5px; float: left;margin-left:5px" data-id="saveBtn">
+                        <span class="icon-save" style="color: rgb(0, 0, 0);"></span>
+                       保存</button>
+                     </div>
+                <div data-id="readonlyDiv" style="height: 100%">
+                    <table style="/* BORDER-COLLAPSE: collapse */" cellspacing="0" cellpadding="0" width="100%" align="center" bgcolor="#ffffff" bordercolorlight="#cccccc" class="tbcontent" border="1">
+                        <tbody>
+                            <tr bgcolor="#efefef" height="24">
+                                <td style="PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 3px" colspan="8" lblstatus="">
+                                    <div class="minus">基本信息</div>
+                                </td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">档案编号</td>
+                                <td align="left" colspan="3"><span id="LBNumber">test</span></td>
+                                <td align="center">员工工号</td>
+                                <td colspan="2"><span id="LBEmployeeNO"></span>&nbsp;</td>
+                                <td align="center" rowspan="8">
+                                    <img id="LBPhoto" src="../../images/new/icons/hrphoto.png" border="0" style="height: 140px; width: 100px;"></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%"><font face="宋体">姓&nbsp;&nbsp;&nbsp;&nbsp;名</font></td>
+                                <td align="left" width="17%"><span id="LBUserName">测试用户</span></td>
+                                <td align="center" width="8%"><font face="宋体">曾&nbsp;用&nbsp;名</font></td>
+                                <td width="17%"><span id="LBPastName"></span></td>
+                                <td align="center" width="8%"><font face="宋体">英&nbsp;文&nbsp;名</font></td>
+                                <td width="17%" colspan="2"><span id="LBEngName"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center"><font face="宋体">性&nbsp;&nbsp;&nbsp;&nbsp;别</font></td>
+                                <td><span id="LBSex">男</span></td>
+                                <td align="center"><font face="宋体">民&nbsp;&nbsp;&nbsp;&nbsp;族</font></td>
+                                <td><span id="LBNation"></span></td>
+                                <td align="center"><font face="宋体">籍&nbsp;&nbsp;&nbsp;&nbsp;贯</font></td>
+                                <td colspan="2"><span id="LBPlace"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">身份证号</td>
+                                <td><span id="LBIDCode"></span></td>
+                                <td align="center">出生日期</td>
+                                <td><span id="LBBirthday">1979-09-14</span></td>
+                                <td align="center"><font face="宋体">年&nbsp;&nbsp;&nbsp;&nbsp;龄</font></td>
+                                <td colspan="2"><span id="lblAge">36</span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">政治面貌</td>
+                                <td><span id="LBPolity"></span></td>
+                                <td align="center">入党时间</td>
+                                <td><span id="labRDSJ"></span><font face="宋体">&nbsp;</font></td>
+                                <td align="center">本人成份</td>
+                                <td colspan="2"><span id="LBFrom"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center"><font face="宋体">身高(cm)</font></td>
+                                <td><span id="LBHeight"></span>&nbsp;</td>
+                                <td align="center"><font face="宋体">体重(kg)</font></td>
+                                <td><span id="LBWeight"></span>&nbsp;</td>
+                                <td align="center"><font face="宋体">血&nbsp;&nbsp;&nbsp; 型</font></td>
+                                <td colspan="2"><font face="宋体">
+								<span id="lblUserXX"></span></font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">健康状况</td>
+                                <td>
+                                    <span id="LBHealth"></span></td>
+                                <td align="center"><font face="宋体">证书编号</font></td>
+                                <td>
+                                    <span id="lblHealthNum"></span></td>
+                                <td align="center"><font face="宋体">证书期限</font></td>
+                                <td colspan="2"><font face="宋体">
+								<span id="lblHealthTerm"></span></font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">婚姻状况</td>
+                                <td><span id="LBMarriage">已婚</span></td>
+                                <td align="center">户口性质</td>
+                                <td><span id="lblUserAccount"></span></td>
+                                <td align="center"><font face="宋体">出 生 地</font></td>
+                                <td colspan="2"><span id="LBBirthAddress"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">户口地址</td>
+                                <td colspan="7"><span id="LBResidence"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">档案存放</td>
+                                <td colspan="7"><span id="LBDocument"></span><font face="宋体">&nbsp;
+								<span disabled="disabled"><input id="chkIsDoc" type="checkbox" name="chkIsDoc" disabled="disabled"><label for="chkIsDoc">是否调档</label></span></font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">政治面貌<br>
+                                    注释</td>
+                                <td colspan="7"><span id="LBZZMMQS"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">专长爱好</td>
+                                <td colspan="7"><span id="LBMajor"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr bgcolor="#efefef" height="24">
+                                <td style="PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 3px" colspan="8" lblstatus="">
+                                    <div class="minus">工作信息</div>
+                                </td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%">工作职位</td>
+                                <td><span id="LBWorker"></span></td>
+                                <td align="center" width="8%">技术职务</td>
+                                <td><span id="LBProfessionName"></span></td>
+                                <td align="center" width="8%">所属部门</td>
+                                <td><span id="LBDept"></span></td>
+                                <td align="center" width="8%"><font face="宋体"><font face="宋体">所在中心、科室</font></font></td>
+                                <td width="17%"><font face="宋体">
+								<span id="lblJobRoom"></span></font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%"><font face="宋体">参加工作日</font></td>
+                                <td>
+                                    <span id="LBJoinWork"></span></td>
+                                <td align="center" width="8%"><font face="宋体">参加工作地</font></td>
+                                <td>
+                                    <span id="lblJoinWorkPlace"></span></td>
+                                <td align="center" width="8%"><font face="宋体">岗位级别</font></td>
+                                <td>
+                                    <span id="lblJobGrade"></span></td>
+                                <td align="center" width="8%"><font face="宋体">岗位类别</font></td>
+                                <td width="17%">
+                                    <span id="lblJobType"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center"><font face="宋体">入职日期</font></td>
+                                <td><span id="LBRZTime"></span></td>
+                                <td align="center"><font face="宋体">转正日期</font></td>
+                                <td><span id="LBFireDate">&nbsp;</span></td>
+                                <td align="center"><font face="宋体">工&nbsp;&nbsp;&nbsp;&nbsp;龄</font></td>
+                                <td><span id="LBWorkAge"></span></td>
+                                <td align="center"><font face="宋体">上岗时间</font></td>
+                                <td><span id="lblStarDate">&nbsp;</span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center"><font face="宋体">合同签定日</font></td>
+                                <td>
+                                    <span id="lblContDate">2014-09-17</span></td>
+                                <td align="center"><font face="宋体">合同到期</font></td>
+                                <td>
+                                    <span id="LBHTDQ">2014-10-31</span></td>
+                                <td align="center"><font face="宋体">聘用方式</font></td>
+                                <td><span id="LBPY"></span></td>
+                                <td align="center"><font face="宋体">聘用来源</font></td>
+                                <td>
+                                    <span id="lblEmpSourse"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">
+                                    <span id="lbPostType">在岗状态</span></td>
+                                <td><span id="LBWorkStatus">请选择</span></td>
+                                <td align="center">全职/兼职</td>
+                                <td><span id="LBWorkMode"></span></td>
+                                <td align="center"><font face="宋体">入行业时间</font></td>
+                                <td><font face="宋体">
+								<span id="lblJoinWorkTime">  &nbsp;</span></font></td>
+                                <td align="center">专业领域</td>
+                                <td><span id="LBProfessionField"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">技术职称</td>
+                                <td><span id="LBZC"></span></td>
+                                <td align="center">职称级别</td>
+                                <td><span id="LBZCType"></span></td>
+                                <td align="center">评定时间</td>
+                                <td><span id="LBWorkNameTime"></span></td>
+                                <td align="center">执业资格</td>
+                                <td><span id="LBPractice"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center"><font face="宋体">转岗时间</font></td>
+                                <td><font face="宋体">
+								<span id="lblTranDate">&nbsp;</span></font></td>
+                                <td align="center"><font face="宋体">原岗位</font></td>
+                                <td>
+                                    <span id="lblFormerJob"></span></td>
+                                <td align="center"><font face="宋体">养老保险号</font></td>
+                                <td>
+                                    <span id="lblPension"></span></td>
+                                <td align="center"><font face="宋体">福利保障种类</font></td>
+                                <td>
+                                    <span id="lblPensionType"></span></td>
+                            </tr>
+                            <tr height="25">
+
+                                <td align="center">工作表现</td>
+                                <td><font face="宋体">
+								<span id="LBUserAddress"></span></font></td>
+
+                                <td align="center">分管部门</td>
+                                <td colspan="7"><span id="LBFunDept"></span></td>
+                            </tr>
+                            <tr bgcolor="#efefef" height="24">
+                                <td style="PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 3px" colspan="8" lblstatus="">
+                                    <div class="minus">受教育信息</div>
+                                </td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%"><font face="宋体">学&nbsp;&nbsp;&nbsp;&nbsp;历<br>
+								(全日制)</font></td>
+                                <td><span id="labQRZXL">&nbsp;</span></td>
+                                <td align="center" width="8%">毕业学校<br>
+                                    (全日制)</td>
+                                <td><span id="LBSchool"></span></td>
+                                <td align="center">专业名称<br>
+                                    (全日制)</td>
+                                <td><span id="LBProfession"></span></td>
+                                <td align="center" width="8%"><font face="宋体">毕业时间<br>
+								(全日制)</font></td>
+                                <td><span id="LBLeaveDate">&nbsp;</span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%"><font face="宋体">学&nbsp;&nbsp;&nbsp;&nbsp;历<br>
+								(在职)</font></td>
+                                <td><span id="labZZXL">&nbsp;</span></td>
+                                <td align="center" width="8%"><font face="宋体">毕业学校<br>
+								(在职)</font></td>
+                                <td width="17%"><span id="labZZXX"></span></td>
+                                <td align="center" width="8%"><font face="宋体">专业名称<br>
+								(在职)</font></td>
+                                <td width="17%"><span id="labZZZY"></span></td>
+                                <td align="center" width="8%"><font face="宋体">毕业时间<br>
+								(在职)<br>
+							</font>
+                                </td>
+                                <td width="17%"><span id="LBStu">&nbsp;</span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%">最高学历</td>
+                                <td wu="12%"><span id="LBHighest">&nbsp;</span></td>
+                                <td align="center" width="8%"><font face="宋体">普&nbsp;通&nbsp;话</font></td>
+                                <td wu="12%"><span id="LBPTH"></span></td>
+                                <td align="center">外语语种1</td>
+                                <td><span id="LBLang1"></span></td>
+                                <td align="center">语种水平</td>
+                                <td><span id="LBLevel1"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">外语语种2</td>
+                                <td><span id="LBLang2"></span></td>
+                                <td align="center">语种水平</td>
+                                <td><span id="LBLevel2"></span></td>
+                                <td align="center">外语语种3</td>
+                                <td><span id="LBLang3"></span></td>
+                                <td align="center">语种水平</td>
+                                <td><span id="LBLevel3"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%"><font face="宋体">计算机能力</font></td>
+                                <td><span id="LBComputer"></span></td>
+                                <td align="center">驾驶能力</td>
+                                <td><span id="LBJS"></span></td>
+                                <td align="center"><font face="宋体">粤语程度</font></td>
+                                <td><span id="LBYY"></span></td>
+                                <td align="center"><font face="宋体">&nbsp;</font></td>
+                                <td><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="80">
+                                <td align="center">专业证书<br>
+                                    信息</td>
+                                <td valign="top" colspan="7"><span id="lblProfessInfo"></span></td>
+                            </tr>
+                            <tr bgcolor="#efefef" height="24">
+                                <td style="PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 3px" colspan="8" lblstatus="">
+                                    <div class="minus">通讯信息</div>
+                                </td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center" width="8%"><font face="宋体">手机号码</font></td>
+                                <td align="left" width="17%"><span id="LBUserHandSet"></span></td>
+                                <td align="center"><font face="宋体">小 灵 通</font></td>
+                                <td align="left" width="17%"><span id="LBXLT"></span></td>
+                                <td align="center" width="8%">办公电话</td>
+                                <td align="left" width="17%"><span id="TBOfficePhone"></span>&nbsp;</td>
+                                <td align="center" width="8%"><font face="宋体">短&nbsp;&nbsp;&nbsp;&nbsp;号</font></td>
+                                <td align="left" width="17%"><span id="labTelShort"></span>&nbsp;</td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">住宅电话</td>
+                                <td align="left"><span id="LBZZTel"></span></td>
+                                <td align="center">电子邮箱</td>
+                                <td align="left"><span id="LBEmail"></span></td>
+                                <td align="center">QQ</td>
+                                <td><span id="LBQQ"></span></td>
+                                <td align="center">MSN</td>
+                                <td><span id="LBMSN"></span></td>
+                            </tr>
+                            <tr id="a1" height="25">
+                                <td align="center">办公地址</td>
+                                <td colspan="5"><span id="lblJobPlace"></span></td>
+                                <td align="center"><font face="宋体">联系电话</font></td>
+                                <td><span id="lblLinkPhone"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center"><font face="宋体">通讯地址</font></td>
+                                <td colspan="5"><span id="LBAddress"></span><font face="宋体">&nbsp;</font></td>
+                                <td align="center">邮政编码</td>
+                                <td><span id="LBPosCode"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">紧急情况<br>
+                                    通知</td>
+                                <td colspan="3"><span id="LBAccident"></span>
+                                </td>
+                                <td align="center"><font face="宋体">紧急联系人</font></td>
+                                <td><span id="lblLinkMan"></span><font face="宋体">&nbsp;</font></td>
+                                <td align="center"><font face="宋体">彼此关系</font></td>
+                                <td><span id="lblLinkRel"></span><font face="宋体">&nbsp;</font></td>
+                            </tr>
+                            <tr bgcolor="#efefef" height="24">
+                                <td style="PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 3px" colspan="8" lblstatus="">
+                                    <div class="minus">其他信息</div>
+                                </td>
+                            </tr>
+                            <tr height="80">
+                                <td align="center" width="8%">主要论著</td>
+                                <td valign="top" colspan="7"><span id="LBMast"></span></td>
+                            </tr>
+                            <tr height="80">
+                                <td align="center">培训进修</td>
+                                <td valign="top" colspan="7"><span id="LBResume"></span></td>
+                            </tr>
+                            <tr height="80">
+                                <td align="center">本人曾受过何种<br>
+                                    奖励和处分</td>
+                                <td valign="top" colspan="7"><span id="LBAccept"></span></td>
+                            </tr>
+                            <tr height="80">
+                                <td align="center">学习工作<br>
+                                    经历</td>
+                                <td valign="top" colspan="7"><span id="LBExperience"></span></td>
+                            </tr>
+                            <tr height="80">
+                                <td align="center">其它信息</td>
+                                <td valign="top" colspan="7"><span id="LBOther"></span></td>
+                            </tr>
+                            <tr height="25">
+                                <td align="center">附件文件</td>
+                                <td colspan="7">
+                                    <table cellspacing="0" rules="all" border="0" id="DataGridInfo" style="border-width: 0px; width: 100%; border-collapse: collapse;">
+                                    </table>
+                                    <span id="Message"><font color="red">暂无附件文件！</font></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+        </div>
+    </div>
+</div>

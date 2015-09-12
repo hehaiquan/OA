@@ -1,0 +1,187 @@
+﻿<div class="panel panel-info" data-id="editent">
+    <div class="panel-heading">
+        <div class="panel-title" style="font-size: 18px;">
+            出差查询
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal" data-id="search">
+
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">部门
+                    </span>
+                    <input type="text" class="form-control" data-bind="value:dpname,TreeDepartmentSource:{opt:false,dpname:dpname}" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" data-id="ParticipantName" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">姓名
+                    </span>
+                    <input type="text" class="form-control" data-bind="value:travelerName" />
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-2" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">状态
+                    </span>
+                    <select data-id="travelStatus" data-bind="DictOptions: {dictype: 'travelStatus', value:travelStatus }" class="form-control">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group col-sm-4 col-lg-3" style="margin-right: 0px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: none;">日期
+                    </span>
+                    <input type="text" data-id="StartTime" data-bind="value:StartTime, datetimeFormat:'yy-mm-dd hh:mm:ss'" class="form-control" />
+                    <span class="input-group-addon">到</span>
+                    <input type="text" data-id="EndTime" data-bind="value:EndTime, datetimeFormat:'yy-mm-dd hh:mm:ss'" class="form-control" />
+
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-lg-3" style="margin-right: 0px;">
+                <button class="btn btn-default" style="float: left;" data-id="searchBtn">
+                    <span class="icon-search" style="color: rgb(0, 0, 0);"></span>
+                    查询</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="todayBtn">今天</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="tomorrowBtn">明天</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="weekBtn">本周</button>
+                <button class="btn btn-default" style="margin-left: 5px; float: left;" data-id="monthBtn">本月</button>
+            </div>
+        </div>
+
+
+        <div data-role="listGrid" data-id="listGrid" class="table-responsive">
+            <table class="table table-striped doingcase">
+                <thead>
+                    <tr>
+                        <th style="width: 50px">序号</th>
+                        <th style="width: 80px" colspan='1'>
+                            <span>部门</span>
+                        </th>
+                        <th style="width: 80px" colspan='1'>
+                            <span>姓名</span>
+                        </th>
+                        <th style="width: 80px" colspan='1'>
+                            <span>状态</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>开始时间</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>预计结束时间</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>出差事由</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>出差地点</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>预计费用</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>天数</span>
+                        </th>
+                        <th style="width: 140px">
+                            <span>备注</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <select class="form-control" data-filterkey="dpname" />
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="travelerName">
+                        </th>
+                        <th>
+                            <select class="form-control" data-filterkey="StatusText" />
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="travelStartTime">
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="travelEndTime"></th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="travelReason">
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="travelAddress">
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="travelFee">
+                        </th>
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="totalDays"></th>
+
+                        <th>
+                            <input type="text" class="form-control" value="" data-filterkey="remark"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                    <tr>
+                        <td data-bind="text: $root.itemNumber($index())"></td>
+                        <td>
+                            <span class="btn" data-bind="text:dpname"></span>
+                        </td>
+                        <td>
+                            <span class="btn" data-bind="text:travelerName"></span>
+                        </td>
+                        <td>
+                            <span class="btn" data-bind="text:StatusText"></span>
+                        </td>
+                        <td>
+                            <span class="btn" data-bind="text:travelStartTime"></span>
+                        </td>
+                        <td>
+                            <span class="btn" data-bind="text:travelEndTime"></span>
+                        </td>
+                        <td>
+                            <span class="btn" data-bind="text:travelReason"></span>
+                        </td>
+                        <td>
+                            <span class="btn" data-bind="text:travelAddress"></span>
+                        </td>
+                        <th><span class="btn" data-bind="text:travelFee"></span></th>
+                        <th><span class="btn" data-bind="text:totalDays"></span></th>
+                        <th><span class="btn" data-bind="text:remark"></span></th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--页数显示-->
+            <div>
+                <div style="float: left;" data-bind="visible: paginator().length > 1">
+                    <ul class="pagination" data-bind="foreach: paginator">
+                        <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                            <!-- ko if: name != '...' -->
+                            <a data-bind="text: name, click: $root.setPage"></a>
+                            <!-- /ko -->
+                            <!-- ko if: name == '...' -->
+                            <span>...</span><!-- /ko -->
+                        </li>
+                    </ul>
+                </div>
+                <div style="float: right;">
+                    <ul class="pagination pagination-right">
+                        <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                        <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

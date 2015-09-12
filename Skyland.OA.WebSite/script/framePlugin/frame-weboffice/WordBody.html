@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="quote.js"></script>
+    <style>
+        html, body
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #doc
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+        }
+    </style>
+    <script>
+        //
+        function GetFileExtension(fileName) {
+            var index1 = fileName.lastIndexOf(".");
+            var index2 = fileName.length;
+            var postf = fileName.substring(index1 + 1, index2);//后缀名
+            return postf.toLowerCase();
+        }
+
+        function OfficeInvoke(action, data, callback) {
+            var obj = new Object();
+            obj["action"] = action;
+            switch (action) {
+                //初始化
+                case "Init":
+                    if (data == undefined) break;
+                    //如果有绝对路径先找绝对路径
+                    var filepath = data.HttpParams["severFilePath"] || data.HttpParams["relativeRootPath"];
+                    if (!filepath) { alert("未指定正确的文件路径"); return; }
+                    var ExtenName = GetFileExtension(filepath);
+                    var FileType = null;
+                    //if (ExtenName == "docx" || ExtenName == "doc" || ExtenName == "dot") FileType = ".doc";
+                    //if (ExtenName == "xls" || ExtenName == "xlsx") FileType = ".xls";
+                    //if (ExtenName == "wps") FileType = ".wps";
+                    //if (ExtenName == "ppt") FileType = ".ppt";
+                    FileType = "." + ExtenName;
+                    if (FileType)
+                    {
+                        var temp = new Object();
+                        temp["FileType"] = FileType;
+                        data["OfficeParams"] = $.extend({}, data["OfficeParams"], temp);
+                    }
+
+                    WebOffice.EditType = "-1,0,0,1,0,1,1,1";
+                    //WebOffice.WebUrl = "/IWorkFlowWordManage.data?" + $.param(data["HttpParams"]);
+                    WebOffice.WebUrl = "Word_Operation.ashx?" + $.param(data["HttpParams"]);
+                    if (data["OfficeParams"]) {   //打入参数
+                        for (var name in data["OfficeParams"]) WebOffice[name] = data["OfficeParams"][name];
+                    }
+                    //
+                    var flag;
+                    try {
+                        flag = WebOffice.WebOpen();
+
+                        //如果使用了WebOffice控件自带的Bookmarks功能
+                        if (data.WebOfficeBookmarks) {
+                            for (name in data.WebOfficeBookmarks) {
+                                var Key = name;
+                                var Value = data.WebOfficeBookmarks[Key];
+                                WebOffice.WebSetBookmarks(Key, Value); 
+                            }
+                        }
+                        if (data.WebOfficeOpenLocal == true)
+                            WebOffice.WebOpenLocal();
+                    } catch (e) {
+                        alert("请先安装iWebOffice插件");
+                    }
+                    if (callback) callback(obj);
+
+                    //判断是否有标签号和文件路径
+                    if (data["MarkName"] && data["MainBodyPath"]) {
+                        WebOffice.WebUrl += "&MarkName=" + data["MarkName"];
+                        WebOffice.WebUrl += "&MainBodyPath=" + data["MainBodyPath"];
+                        WebOffice.WebInsertFile();
+                    }
+
+                    break;
+                    //打开本地
+                case "Open": WebOffice.WebOpenLocal(); break;
+                    //服务端保存
+                case "Save":
+                    var result = WebOffice.WebSave(true);
+                    obj["result"] = result; if (!result) alert("保存失败");
+                    else { alert("保存成功"); WebOffice.WebSaveAsHtml("8"); }
+                    if (callback) callback(obj);
+                    return;
+                    // 另存本地
+                case "Save As": WebOffice.WebSaveLocal(); break;
+                case "clear": if (callback) callback(obj); WebOffice.WebSetRevision(false, true, false, false); break;
+                case "modify": if (callback) callback(obj); WebOffice.WebSetRevision(true, true, false, false); break;
+                case "Print": if (callback) callback(obj); WebOffice.WebOpenPrint(); break;
+                case "DownLoad": if (callback) callback(obj); window.location.href = "Word_Down.ashx?" + $.param(data["HttpParams"]); break;
+                default: break;
+            }
+        }
+        //
+        $(document).ready(function () {
+            WebOffice.ShowToolBar = 0;
+            WebOffice.ShowWindow = 1;
+            WebOffice.ShowMenu = 0;
+            WebOffice.ShowTitle = 0;
+            WebOffice.Print = "1";
+        });
+    </script>
+</head>
+<body>
+    <div id="doc" style="position: absolute; top: -20px;">
+        <object id="WebOffice" width="100%" height="100%" classid="clsid:8B23EA28-2009-402F-92C4-59BE0E063499"
+            codebase="iWebOffice2009.ocx#version=10,4,6,0">
+        </object>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<div class="shadow_for_panel container-fluid">
+    <!-- 意见填写区域，预备加入工作流控件 -->
+    <div class="row">
+        <div class="col-md-12" data-id="WF_RemarkBox"></div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    通知公告发布
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12" data-id="baseInfo">
+                <div class="row form-horizontal form-bordered">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">标题<span style="color: red">*</span></label>
+                        <div class="col-md-8">
+                            <input data-bind="value:NewsTitle" type="text" class="form-control required" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <input type="checkbox" id="urgent" data-bind="checked:isUrgent" />
+                            <label for="urgent" style="color: red; font-weight: bold;">紧急公告</label>
+                        </div>
+                    </div>
+
+                    <!--                    <div class="form-group">
+                        <label class="col-md-2 control-label">文件类型<span style="color: red">*</span>：</label>
+                        <div class="col-md-8">
+                       
+                        </div>
+                    </div>-->
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">可见范围</label>
+                        <div class="col-md-3">
+                            <select class="form-control required" data-id="publicRange" data-bind="value:publicRange">
+                                <option value="0">所有人员查看</option>
+                                <option value="1">指定人员查看</option>
+                            </select>
+                        </div>
+
+                        <div data-id="rangePeoleView" data-bind="visible:publicRange()=='1'">
+                            <label class="col-md-2 control-label">指定人员查看<span style="color: red">*</span></label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="hidden" data-id="rangeCheckManId" />
+                                    <input type="text" class="form-control" data-bind="value:rangeCheckManName,TreeUserSourceControl:{opt:true,username:rangeCheckManName,userid:rangeCheckManId}" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">内容</label>
+                        <div class="col-md-10" data-id='aticleText_Update'>
+                            <!--富文本编辑-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

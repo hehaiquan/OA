@@ -1,0 +1,226 @@
+﻿<div class="panel panel-info">
+    <div class="panel-heading">
+        <div data-id="tittleInform">
+            <div class="panel-title" style="font-size: 18px;">
+                电话记录管理
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row" style="margin-top: 5px;">
+            <!--左边查询-->
+            <div class="col-md-4" data-id="list">
+                <div style="margin-bottom: 5px; height: 35px;">
+                    <button class="btn btn-default" style="float: left;" data-id="refresh">
+                        <span class="icon-repeat" style="color: rgb(0, 0, 0);"></span>
+                        刷新</button>
+                    <button class="btn btn-default" style="float: left; margin-left: 5px" data-id="add">
+                        <span class=" icon-plus" style="color: rgb(0, 0, 0);"></span>
+                        新增</button>
+                </div>
+                <!--工具栏-->
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-6">
+                        <select data-filterkey="recordDate" style="width: 100%">
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="来电人姓名" value="" data-filterkey="incomeManName" style="width: 100%">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="来电人单位" value="" data-filterkey="incomeOrgnization" style="width: 100%">
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 10px;">
+                        <input type="text" placeholder="来电人电话号码" value="" data-filterkey="incomePhoneNumber" style="width: 100%">
+                    </div>
+                </div>
+                <!--表格显示-->
+                <table class=" table table-striped table-bordered">
+                    <tbody data-id="tbodyList" data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <!--接待时间-->
+                                    <div class="col-md-12">
+                                        <a data-bind="click: $root.editRow" class="btn-link">录入日期：<span style="font-weight: bold;" data-bind="text:recordDate" id="content"></span>
+                                        </a>
+                                        <a class="btn-link" id="delete" style="float: right;" data-bind="click: $root.removeRow"><i class="fa fa-times" style="margin-top: 3px"></i></a>
+                                    </div>
+                                    <div class="col-md-12" style="padding-top: 8px;">
+                                        来电人姓名：<span data-bind="text:incomeManName"></span>&nbsp;&nbsp
+                                              来电单位：<span data-bind="text:incomeOrgnization"></span>&nbsp;&nbsp;
+                                               来电人电话：<span data-bind="text:incomePhoneNumber"></span>&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--页数显示-->
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <!-- ko if: name != '...' -->
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <!-- /ko -->
+                                <!-- ko if: name == '...' -->
+                                <span>...</span><!-- /ko -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--右边显示-->
+            <div class="col-md-8">
+                <div style="margin-bottom: 5px; height: 35px;">
+                    <button class="btn btn-default" style="float: left;" data-id="save">
+                        <span class="icon-save" style="color: rgb(0, 0, 0);"></span>
+                        保存</button>
+                </div>
+
+                <div class="pageContainer">
+                    <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;" data-id="detailent">
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">录入日期：</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control datetime required" data-bind="value: recordDate,datetimeFormat:'yy-mm-dd hh:mm'" />
+                            </div>
+                            <label class="col-md-2 control-label">来电人姓名：</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" data-bind="value: incomeManName" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">来电人单位：</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" data-bind="value: incomeOrgnization" />
+                            </div>
+                            <label class="col-md-2 control-label">来电人电话：</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" data-bind="value: incomePhoneNumber" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">接电话人：</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" data-bind="value: answerMan" />
+                            </div>
+                            <label class="col-md-2 control-label">接电话人部门：</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" data-bind="value: answerOrgnization" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">受理人：</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" style="z-index: auto" class="form-control" data-bind="value:todoManName,TreeUserSource:{opt:false,username:todoManName,userid:todoManId}" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-id="todoManId" type="button">...</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">通话主要内容：</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" data-bind="value:mainTitle" rows="6"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">代办事项：</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" data-bind="value:todoSomething" rows="6"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" data-id="showBox" style="display: none;">
+    <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;" data-id="addData">
+        <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;" data-id="detailent">
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">录入日期：</label>
+                <div class="col-md-4">
+                    <input style="width: 99%;" type="text" class="form-control datetime required" data-bind="value: recordDate,datetimeFormat:'yy-mm-dd hh:mm'" />
+                </div>
+                <label class="col-md-2 control-label">来电任姓名：</label>
+                <div class="col-md-4">
+                    <input  class="form-control" type="text" data-bind="value: incomeManName" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">来电人单位：</label>
+                <div class="col-md-4">
+                    <input  class="form-control" type="text" data-bind="value: incomeOrgnization" />
+                </div>
+                <label class="col-md-2 control-label">来电人电话：</label>
+                <div class="col-md-4">
+                    <input  class="form-control" type="text" data-bind="value: incomePhoneNumber" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">接电话人：</label>
+                <div class="col-md-4">
+                    <input  class="form-control" type="text" data-bind="value: answerMan" />
+                </div>
+                <label class="col-md-2 control-label">接电话人部门：</label>
+                <div class="col-md-4">
+                    <input style="width: 99%;" type="text" data-bind="value: answerOrgnization" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">受理人：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" style="z-index: auto" class="form-control" data-bind="value:todoManName,TreeUserSource:{opt:false,username:todoManName,userid:todoManId}" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" data-id="todoManId" type="button">...</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">通话主要内容：</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" data-bind="value:mainTitle" rows="8"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">代办事项：</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" data-bind="value:todoSomething" rows="8"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

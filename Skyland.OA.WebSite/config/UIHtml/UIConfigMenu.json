@@ -1,0 +1,66 @@
+﻿[ 
+{module:'M0',model:'portalmodel',text:'门户',param:'',closable:false,children:[
+{key:'portalmodel',url:'M0.portalmodel:{title:"门户"}',text:'门户'}]
+},
+{module:'casemodule',text:'业务办理',closable:false,iconCls:'fafa-home',children:[
+{key:'doingcase',url:'casemodule.doingcase:{}',text:'待办箱',iconCls:'fafa-download-alt'},
+{url:'',text:'-'},
+{key:'havebeendone',url:'casemodule.havebeendone:{title:"在办箱"}',text:'在办箱',iconCls:'fafa-upload-alt'},
+{key:'donecase',url:'casemodule.donecase:{title:"办结箱"}',text:'办结箱'},
+{url:'',text:'-'},
+{key:'m2',url:'m2.email:{title:"常用功能"}',text:'常用功能'},
+{url:'',text:'-'},
+{key:'MaxPrivilege',url:'sysmodule.SysNavSkip:{title:"系统功能"}',text:'系统功能'},
+{key:'basedatamodule',url:'basedatamodule.blankPage:{title:"数据管理"}',text:'数据管理'},
+{key:'searchdatamodule',url:'searchdatamodule.blankPage:{title:"业务查询"}',text:'业务查询'}
+]
+},
+{module:'sysmodule',text:'系统功能',closable:true,iconCls:'fafa-cog',hidden:true,children:[
+{key:'MaxPrivilege',url:'sysmodule.MaxPrivilege:{}',text:'权限管理'},
+{key:'MaxJsonEditor',url:'sysmodule.MaxJsonEditor:{title:"Json编辑器"}',text:'Json编辑器'},
+{key:'MaxUserManage',url:'sysmodule.MaxUserManage:{title:"顶级用户管理"}',text:'用户管理',iconCls:'fafa-user'},
+{key:'MaxRoleManage',url:'sysmodule.MaxRoleManage:{title:"顶级角色管理"}',text:'角色管理'},
+{key:'MaxRankManage',url:'sysmodule.MaxRankManage:{title:"用户部门排序"}',text:'用户部门排序'},
+{url:'',text:'-'},
+{key:'MaxDbManage',url:'sysmodule.MaxDbManage:{title:"数据库表管理"}',text:'数据库表管理'},
+{key:'formdesign',url:'sys.formdesign:{title:"表单管理"}',text:'表单管理'},
+{key:'workflowdesign',url:'sys2.workflowdesign:{title:"工作流管理"}',text:'工作流管理'}]
+},
+{module:'m2',text:'常用功能',closable:true,hidden:true,children:[
+{key:'email',url:'m2.email:{}',text:'邮件管理',type:'group',children:[
+{key:'emailinbox',url:'m2.email:{type:"inbox"}',text:'收件箱'},
+{key:'emailoutbox',url:'m2.email:{type:"outbox"}',text:'发件箱'},
+{key:'emaildraftbox',url:'m2.email:{type:"draftbox"}',text:'草稿箱'},
+{key:'emailgabbagebox',url:'m2.email:{type:"gabbagebox"}',text:'垃圾箱'}
+]},
+{key:'notice',url:'m2.notice:{title:"通知公告管理"}',text:'通知公告',type:'group',children:[
+{key:'searchNotice',url:'m2.searchNotice:{title:"公告查询"}',text:'公告查询'},
+{key:'addnotice',url:'m2.addnotice:{title:"新增公告"}',text:'新增公告'}
+]},
+{key:'publish',url:'m2.publish:{title:"信息发布管理"}',text:'信息发布',type:'group',children:[
+{key:'publishsearch',url:'m2.publishsearch:{title:"发布信息查询"}',text:'发布信息查询'},
+{key:'addpublish',url:'m2.addpublish:{title:"发布信息"}',text:'发布信息'}
+]},
+{key:'Schedule',url:'m2.Schedule:{title:"日程管理"}',text:'日程管理',type:'group',children:[
+{key:'Schedulesearch',url:'m2.Schedulesearch:{title:"领导日程查询"}',text:'领导日程查询'},
+{key:'Schedulesearch_gr',url:'m2.Schedulesearch_gr:{title:"个人日程查询"}',text:'个人日程查询'},
+{key:'addSchedule',url:'m2.addSchedule:{title:"日程安排"}',text:'日程安排'}
+]},
+{key:'file',url:'m2.file:{title:"文档管理"}',text:'文档管理',type:'group',children:[
+{key:'fileMaintain',url:'m2.fileMaintain:{title:"文档维护"}',text:'文档维护'},
+{key:'sharefile',url:'m2.sharefile:{title:"文档共享"}',text:'文档共享'},
+{key:'searchfile',url:'m2.searchfile:{title:"文档查询"}',text:'文档查询'}
+]},
+]
+},
+{module:'basedatamodule',text:'基础数据管理',closable:true,hidden:true,children:[
+	{key:'unitinfomodule',url:'basedatamodule.unitinfomodule:{title:"基础数据管理"}',text:'单位信息管理'},
+	{url:'',text:'-'},
+	{key:'conferenceRoom',url:'basedatamodule.conferenceRoom:{title:"会议室信息"}',text:'会议室管理'},
+	{key:'Para_OA_CarInfo',url:'basedatamodule.Para_OA_CarInfo:{title:"车辆信息"}',text:'车辆管理'},
+	{url:'',text:'-'},
+	{key:'bizTypeDictionary',url:'basedatamodule.bizTypeDictionary:{title:"数据字典类型表"}',text:'通用参数类型设置'},
+	{key:'bizTypeItem',url:'basedatamodule.bizTypeItem:{title:"数据字典表"}',text:'通用参数设置'}
+	]
+},
+]

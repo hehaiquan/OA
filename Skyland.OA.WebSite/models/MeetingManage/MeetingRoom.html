@@ -1,0 +1,177 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    会议室信息
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--表格部分查看-->
+            <div data-id="inBoxGrid_Part">
+                <!--按钮栏部分--->
+                <div style="margin-bottom: 10px; height: 35px;">
+                    <button class="btn btn-default" style="margin-top: 5px; float: left;" data-id="addNewBtn">
+                        <span class="icon-plus-sign" style="color: rgb(0, 0, 0);"></span>
+                        新增</button>
+                    <button class="btn btn-default" style="float: left; margin-top: 5px; margin-left: 5px" data-id="deleteBtn">
+                        <span class="glyphicon glyphicon-trash" style="color: rgb(0, 0, 0);"></span>
+                        删除</button>
+                </div>
+
+                <div style="margin-top: 15px" class="row">
+                    <div data-role="meetingroomTableGrid" data-id="meetingroomTableGrid" style="padding-left: 3px; padding-right: 3px;">
+                        <table class="table table-striped doingcase">
+                            <thead>
+                                <tr>
+                                    <!--checkBox-->
+                                    <th style="width: 30px"></th>
+                                    <th style="width: 35px">
+                                        <span>编辑</span>
+                                    </th>
+                                    <th style="width: 100px">
+                                        <span>名称</span>
+                                    </th>
+                                    <th style="width: 50px">
+                                        <span>容纳人数</span>
+                                    </th>
+                                    <th style="width: 100px">
+                                        <span>设备情况</span>
+                                    </th>
+                                    <th style="width: 60px">
+                                        <span>使用状态</span>
+                                    </th>
+                                    <th style="width: 680px">
+                                        <span>备注</span>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th></th>
+                                  
+                                    <th></th>
+                                  
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="MeetingRoomName" />
+                                    </th>
+                                  
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="Number" />
+                                    </th>
+                                    
+                                    <!--设备情况-->
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="Device" />
+                                    </th>
+                                    <th>
+                                        <select  class="form-control" data-filterkey="StatusText" />
+                                    </th>
+                                    
+                                    
+
+                                    <th>
+                                        <input type="text" class="form-control" value="" data-filterkey="Remark" />
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                                <tr>
+                                    <!--checkBox控件-->
+                                    <td>
+                                        <input type="checkbox" data-bind="checked:isCheck" />
+                                    </td>
+                                    <!--编辑-->
+                                    <td>
+                                        <a data-bind="click:$root.editRow">
+                                            <span class="icon-pencil" style="color: rgb(0, 0, 0);"></span>
+                                        </a>
+                                    </td>
+                                    <!--名称-->
+                                    <td>
+                                        <span data-bind="text:MeetingRoomName"></span>
+                                    </td>
+                                    <!--容纳人数-->
+                                    <td>
+                                        <span data-bind="text:Number"></span>
+                                    </td>
+                                    <!--设备情况-->
+                                     <td>
+                                        <span data-bind="text:Device"></span>
+                                    </td>
+                                    <td>
+                                        <span data-bind="text:StatusText"></span>
+                                    </td>
+                                    
+                                    <!--备注-->
+                                    <td>
+                                        <span data-bind="text:Remark"></span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--页数显示-->
+                        <div>
+                            <div style="float: left;" data-bind="visible: paginator().length > 1">
+                                <ul class="pagination" data-bind="foreach: paginator">
+                                    <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                        <!-- ko if: name != '...' -->
+                                        <a data-bind="text: name, click: $root.setPage"></a>
+                                        <!-- /ko -->
+                                        <!-- ko if: name == '...' -->
+                                        <span>...</span><!-- /ko -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="float: right;">
+                                <ul class="pagination pagination-right">
+                                    <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                                    <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-id="editMeetingroom" style="display: none">
+    <div class="row form-horizontal form-bordered">
+        <div class="form-group">
+            <label class="col-md-2 control-label">名称
+                <span style="color: red;">*</span>
+            </label>
+            
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:MeetingRoomName"/>
+            </div>
+            <label class="col-md-2 control-label">容纳人数
+                <span style="color: red;">*</span>
+            </label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-bind="value:Number" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">使用状态</label>
+            <div class="col-md-4">
+                <select class="form-control" data-id="MeetingRoomStatus" data-bind="value:Status">
+                    <option value="0">启用</option>
+                    <option value="1">停用</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">备注</label>
+            <div class="col-md-10">
+                <textarea class="form-control" data-bind="value:Remark" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

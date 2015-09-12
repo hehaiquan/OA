@@ -1,0 +1,58 @@
+﻿<div class="shadow_for_panel">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div data-id="tittleInform">
+                <div class="panel-title" style="font-size: 18px;">
+                    支队发文管理
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--树状图-->
+            <div class="col-md-4" data-id="documentThree">
+                <div class="leftPanel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">支队发文管理</div>
+                            <button type="button" class="btn btn-default" data-id="addBtn">
+                                添加
+                            </button>
+                            <button type="button" class="btn btn-default" data-id="editBtn">
+                                修改
+                            </button>
+                            <button type="button" class="btn btn-default" data-id="deleteBtn">
+                                删除
+                            </button>
+                             <button type="button" class="btn btn-default" data-id="loadBtn">
+                                加载页面
+                            </button>
+                        </div>
+                        <div class="panel-body">
+                            <ul data-id="ZhiDuiSendTree" class="ztree" style="height: 100%; border: 0; overflow: auto;"></ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8" data-id="loadPage"></div>
+        </div>
+    </div>
+</div>
+
+<!--添加文件夹弹窗-->
+<div style="display: none" data-id="editDocumentClass">
+    
+    <table class="table table-striped doingcase">
+        <tbody>
+            <tr>
+                <td align="center" style="width: 86px;">
+                    <span>文件夹名称</span>
+                </td>
+                <td>
+                    <input style="width: 225px;" class="form-control" data-bind="value:FileTypeName">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

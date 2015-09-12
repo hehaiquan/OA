@@ -1,0 +1,255 @@
+﻿<div class="row" style="margin: 10px; margin-right: 20px">
+    <div class="pageContainer">
+        <div data-id="searchDiv" class="bg-info row" style="padding: 1px; height: 55px">
+            <div class="col-md-12">
+                <table>
+                    <tr>
+                        <td style="width:60px;">
+                            <a data-bind="text:$root._setName(-7),click:function(){$root._search(-7)}" style="margin-left:10px"></a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(-6),click:function(){$root._search(-6)}" style="margin-left:10px"></a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(-5),click:function(){$root._search(-5)}" style="margin-left:10px"></a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(-4),click:function(){$root._search(-4)}" style="margin-left:10px"></a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(-3),click:function(){$root._search(-3)}" style="margin-left:10px"></a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(-2),click:function(){$root._search(-2)}" style="margin-left:10px"></a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(-1),click:function(){$root._search(-1)}" style="margin-left:10px">昨天</a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-bind="text:$root._setName(0),click:function(){$root._search(0)}">今天</a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-id="zjqt">七天前</a>
+                        </td>
+                        <td style="width:60px">
+                            <a data-id="zjygy">一个月前</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-7),click:function(){$root._search(-7)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-6),click:function(){$root._search(-6)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-5),click:function(){$root._search(-5)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-4),click:function(){$root._search(-4)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-3),click:function(){$root._search(-3)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-2),click:function(){$root._search(-2)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(-1),click:function(){$root._search(-1)}"></a>
+                        </td>
+                        <td>
+                            <a data-bind="text:$root._setWeek(0),click:function(){$root._search(0)}"></a>
+                            
+                        </td>
+                        <td>
+                         
+                        </td>
+                            <td>
+                         
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12" style="margin-top: 5px; margin-bottom: 5px">
+                <div class="bg-info row" style="padding-bottom: 5px;">
+                    <label class="col-md-3 col-lg-1 control-label">起始日期：</label>
+                    <div class="col-md-9 col-lg-5">
+                        <div class="input-group">
+                            <input data-id="beginText" type="text" class="form-control" data-bind="value: datetime, datetimeFormat:'yy-mm-dd'" style="float: left" />
+                            <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                            <input data-id="endText" type="text" class="form-control" data-bind="value: datetime1, datetimeFormat:'yy-mm-dd'" style="float: left" />
+
+                            <span class="input-group-addon"><i class="fa fa-calendar" style="float: left"></i></span>
+                            <span class="input-group-btn">
+                                <button data-id="searchBn" class="btn btn-default" type="button" style="float: left">查询 </button>
+                            </span>
+                            <span class="input-group-btn">
+                                <button data-id="AddBn" class="btn btn-default" type="button" style="margin-left: 5px">添加</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin: 10px">
+            <div data-role="workLogList">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan='1'>行号</th>
+                            <th colspan='1'>
+                                <span>日期</span>
+                            </th>
+                            <th>
+                                <span>部门名称</span>
+                            </th>
+                            <th>
+                                <span>加班时间</span>
+                            </th>
+                            <th>
+                                <span>日志类型</span>
+                            </th>
+                            <th>
+                                <span>内容</span>
+                            </th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <!--行号-->
+                            <th></th>
+                           <!--日期-->
+                            <th>
+                                 <select data-filterkey="createDate" />
+                            </th>
+                           <!--部门名称-->
+                            <th>
+                               <select data-filterkey="departmentName" />
+                            </th>
+                            <!--加班时间-->
+                            <th colspan='1'>
+                                <select data-filterkey="workOvertime" />
+                            </th>
+                            <!--日志类型-->
+                            <th>
+                                 <select data-filterkey="logTypeName" />
+                            </th>
+                            <!--内容-->
+                            <th>
+                                <input type="text" class="form-control" value="" data-filterkey="substance">
+                            </th>
+                            <!--编辑-->
+                            <th></th>
+                            <!--删除-->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+                        <tr>
+                            <!--行号-->
+                            <td width="30px" data-bind="text: $root.itemNumber($index())"></td>
+                            <!--日期-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:createDate,showAllContentDiv:{length:30}"></span>
+                            </td>
+                            <!--部门名称-->
+                            <td width="150px">
+                                <span class="btn" data-bind="text:departmentName,showAllContentDiv:{length:30}"></span>
+                            </td>
+                            <!--加班时间-->
+                            <td width="30px">
+                                <span class="btn" data-bind="text:workOvertime,showAllContentDiv:{length:30}"></span>
+                            </td>
+                            <!--日志类型-->
+                            <td width="15px">
+                                <span class="btn" data-bind="text:logTypeName,showAllContentDiv:{length:30}"></span>
+                            </td>
+                            <!--内容-->
+                            <td>
+                                <span class="btn" data-bind="text:substance,showAllContentDiv:{length:20}"></span>
+                            </td>
+                            <!--编辑按钮-->
+                            <td width="20px">
+                                <span class="btn btn-link" data-bind="click: $root.editRow">编辑</span>
+                            </td>
+                            <!--删除按钮-->
+                            <td width="10px">
+                                <span class="btn btn-link" data-bind='click: $root.removeRow'><i class="fa fa-times"></i></span>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--页数显示-->
+                <div>
+                    <div style="float: left;" data-bind="visible: paginator().length > 1">
+                        <ul class="pagination" data-bind="foreach: paginator">
+                            <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                                <!-- ko if: name != '...' -->
+                                <a data-bind="text: name, click: $root.setPage"></a>
+                                <!-- /ko -->
+                                <!-- ko if: name == '...' -->
+                                <span>...</span><!-- /ko -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="float: right;">
+                        <ul class="pagination pagination-right">
+                            <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                            <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--编辑页面-->
+<div class="col-md-12" data-id="editMyWorkLog" style="display: none;">
+    <div class="row">
+        <div data-id="editform">
+            <div class="form-horizontal form-bordered">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">日期：</label>
+                    <div class="col-md-3">
+                        <input type="text" required="required" data-id="dataCreateDate" class="form-control" data-bind="value:createDate,datetimeFormat:'yy-mm-dd'" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">加班时间：</label>
+                    <div class="col-md-3">
+                        <input data-id="dataWorkOvertime" data-bind="value:workOvertime" type="text" class="form-control" />
+                    </div>
+                </div>
+                <!--   <div class="form-group">
+                    <label class="col-md-2 control-label">日志类型：</label>
+                    <div class="col-md-3">
+                        <select class="form-control" data-bind=" value: logType, DictOptions: {dictype: 'logTypeDic', displaychoose: true}">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label">附件：</label>
+                    <div class="col-md-3">
+                        <span class="btn btn-link" data-bind="uploadFileControl:{value:attachment,saveFolderPath:'attachment/worklog',extension:'.xls,.doc,.docx'}">添加文件&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">工作内容：</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" required="required" data-id="dataSustance" data-bind="value:substance" rows="8"></textarea>
+                    </div>
+                </div>
+                <div class="form-group"  data-bind="visible:logType() == 1">
+                    <label class="col-md-5 control-label" style="color: red">此日志已经提交，无法修改或暂存！</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

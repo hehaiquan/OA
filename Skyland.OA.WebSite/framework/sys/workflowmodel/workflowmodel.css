@@ -1,0 +1,42 @@
+﻿.workflowmodel-start,.workflowmodel-comm,.workflowmodel-split,.workflowmodel-join,.workflowmodel-end,.workflowmodel-link,.workflowmodel-sub,.workflowmodel-line,.workflowmodel-coo
+{
+	background-image: url(images/icon-24x24.png);
+	height: 24px;
+	width: 24px;
+	margin:-6px;
+	display:block;
+}
+.workflowmodel-comm{
+	background-position: -24px;
+}
+.workflowmodel-split{
+	background-position: -48px;
+}
+.workflowmodel-join{
+	background-position: -72px;
+}
+.workflowmodel-end{
+	background-position: -144px;
+}
+.workflowmodel-link{
+	background-position: -96px;
+}
+.workflowmodel-sub{
+	background-position: -120px;
+}
+.workflowmodel-line{
+	background-position: -168px;
+}
+.workflowmodel-coo{
+	background-position: -192px;
+}
+.workflowmodel-toolbar{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #b6c7d3;
+	background-color: #F4F8FB;
+}
+.workflowmodel-toolbar-item {
+display:inline-block !important;
+
+}

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AC8886E-0922-47DF-9A03-EF1C7D514EF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skyland.OA.Service</RootNamespace>
+    <AssemblyName>Skyland.OA.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ImageCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="iMsgServer2000, Version=8.1.0.6, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\iMsgServer2000.dll</HintPath>
+    </Reference>
+    <Reference Include="IWorkFlow.BaseService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IWorkFlow.BaseService.dll</HintPath>
+    </Reference>
+    <Reference Include="IWorkFlow.DataBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IWorkFlow.DataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="IWorkFlow.Engine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IWorkFlow.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="IWorkFlow.EngineService, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IWorkFlow.EngineService.dll</HintPath>
+    </Reference>
+    <Reference Include="IWorkFlow.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IWorkFlow.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="Kriging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Kriging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AtmoDispersion.cs" />
+    <Compile Include="Common\clsCoordinateTran.cs" />
+    <Compile Include="Common\ComBusinessHelper.cs" />
+    <Compile Include="Common\ComClass.cs" />
+    <Compile Include="Common\ComCreatHtml.cs" />
+    <Compile Include="Common\ComDataDict.cs" />
+    <Compile Include="Common\ComDBHelper.cs" />
+    <Compile Include="Common\ComDocumentCenterOperate.cs" />
+    <Compile Include="Common\ComFileOperate.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\CommonFunctional.cs" />
+    <Compile Include="Common\ComPageQuery.cs" />
+    <Compile Include="Common\ComPageQuery_Oracle.cs" />
+    <Compile Include="Common\ConvertHelper.cs" />
+    <Compile Include="Common\ExcelRender.cs" />
+    <Compile Include="Common\HardwareInfo.cs" />
+    <Compile Include="Common\HttpHelper.cs" />
+    <Compile Include="Common\ReadAndWriteExcel.cs" />
+    <Compile Include="Common\SightureOperation.cs" />
+    <Compile Include="Common\UserSelectControlSvc.cs" />
+    <Compile Include="entitys\BASE\BASE_DataDictItem.cs" />
+    <Compile Include="entitys\BASE\BASE_DataDictType.cs" />
+    <Compile Include="entitys\BASE\B_Common_CreateDoc.cs" />
+    <Compile Include="entitys\BASE\B_OA_Participant.cs" />
+    <Compile Include="entitys\BASE\B_OA_WorkingDay.cs" />
+    <Compile Include="entitys\BASE\B_OA_WorkingTimes.cs" />
+    <Compile Include="entitys\BASE\FX_BArea.cs" />
+    <Compile Include="entitys\BASE\FX_Department.cs" />
+    <Compile Include="entitys\BASE\FX_RYLXInfo.cs" />
+    <Compile Include="entitys\BASE\FX_UserInfo.cs" />
+    <Compile Include="entitys\BASE\Para_BizTypeDictionary.cs" />
+    <Compile Include="entitys\BASE\Para_BizTypeItem.cs" />
+    <Compile Include="entitys\BASE\Para_ConferenceRoom.cs" />
+    <Compile Include="entitys\BASE\Para_CP_EIACompany.cs" />
+    <Compile Include="entitys\BASE\Para_EIA_ExpertsInfo.cs" />
+    <Compile Include="entitys\BASE\Para_EmissionFate.cs" />
+    <Compile Include="entitys\BASE\Para_OA_CarInfo.cs" />
+    <Compile Include="entitys\BASE\Para_ZfUniti.cs" />
+    <Compile Include="entitys\BASE\Setting_Standard_Condition.cs" />
+    <Compile Include="entitys\BASE\Setting_Standard_Item.cs" />
+    <Compile Include="entitys\BASE\Setting_Standard_Monitor.cs" />
+    <Compile Include="entitys\BASE\Setting_Standard_Product.cs" />
+    <Compile Include="entitys\B_DischargePermitInfo\B_DischargePermitInfo.cs" />
+    <Compile Include="entitys\B_DP_ApprovelDocInfo\B_DP_ApprovelDocInfo.cs" />
+    <Compile Include="entitys\B_ReceiveManage\B_ReceiveManage.cs" />
+    <Compile Include="entitys\B_WorkLog\B_WorkLog.cs" />
+    <Compile Include="entitys\CommonWords\Sys_CommonWords.cs" />
+    <Compile Include="entitys\DictManage\DICT_ElementsValue.cs" />
+    <Compile Include="entitys\DictManage\DICT_ElementsValueType.cs" />
+    <Compile Include="entitys\FX_Sighture.cs" />
+    <Compile Include="OA\entity\FX_UserInfo_Add.cs" />
+    <Compile Include="entitys\FX_WORKFLOWBUSACT.cs" />
+    <Compile Include="entitys\FX_WorkFlowCase.cs" />
+    <Compile Include="entitys\Para_CP_ProjectTrade.cs" />
+    <Compile Include="entitys\Para_LawRegulations\Para_LawRegulations.cs" />
+    <Compile Include="entitys\UsedPhrase\Para_UsedPhrase.cs" />
+    <Compile Include="OA\BBSSectionSvc.cs" />
+    <Compile Include="OA\B_BigEventsManageSvc.cs" />
+    <Compile Include="OA\B_EmailDocumentSvc.cs" />
+    <Compile Include="OA\B_EmailSvc.cs" />
+    <Compile Include="OA\B_Email_One_Svc.cs" />
+    <Compile Include="OA\B_GoodsSvc.cs" />
+    <Compile Include="OA\B_OA_AddressBookSvc.cs" />
+    <Compile Include="OA\B_OA_AttendanceSvc.cs" />
+    <Compile Include="OA\B_OA_CarSvc.cs" />
+    <Compile Include="OA\B_OA_ConferenceMainSvc.cs" />
+    <Compile Include="OA\B_OA_DeviceSvc.cs" />
+    <Compile Include="OA\B_OA_DocSetSvc.cs" />
+    <Compile Include="OA\B_OA_LeaveSvc.cs" />
+    <Compile Include="OA\B_OA_MeetingRoomSvc.cs" />
+    <Compile Include="OA\B_OA_MeetingSvc.cs" />
+    <Compile Include="OA\B_OA_NoticeSvc.cs" />
+    <Compile Include="OA\B_OA_OrganizationSvc.cs" />
+    <Compile Include="OA\B_OA_PunchSvc.cs" />
+    <Compile Include="OA\B_OA_ReceiveDocSvc.cs" />
+    <Compile Include="OA\B_OA_ScheduleSvc.cs" />
+    <Compile Include="OA\B_OA_SendDocSvc.cs" />
+    <Compile Include="OA\B_OA_SendDoc_Inner_QuZhanSvc.cs" />
+    <Compile Include="OA\B_OA_SendDoc_QuZhanSvc.cs" />
+    <Compile Include="OA\B_OA_SendDoc_ScienceSvc.cs" />
+    <Compile Include="OA\B_OA_SendDoc_ZhiDuiSvc.cs" />
+    <Compile Include="OA\B_OA_SinghtureSvc.cs" />
+    <Compile Include="OA\B_OA_SupervisionStaticSvc.cs" />
+    <Compile Include="OA\B_OA_Supervision_AssignSvc.cs" />
+    <Compile Include="OA\B_OA_Supervision_Assign_DocSvc.cs" />
+    <Compile Include="OA\B_OA_Supervision_Delay_ApplySvc.cs" />
+    <Compile Include="OA\B_OA_Supervision_ReminderSvc.cs" />
+    <Compile Include="OA\B_OA_TrafficFlow_NoticeVerifySvc.cs" />
+    <Compile Include="OA\B_OA_TrafficFlow_PublicNoticeSvc.cs" />
+    <Compile Include="OA\B_OA_TravelSvc.cs" />
+    <Compile Include="OA\B_OA_UserSvc.cs" />
+    <Compile Include="OA\B_OA_WorkPlanSvc.cs" />
+    <Compile Include="OA\B_PhoneRecordSvc.cs" />
+    <Compile Include="OA\B_ReceiveManageSvc.cs" />
+    <Compile Include="OA\DailyReceiveDocumentSvc.cs" />
+    <Compile Include="OA\DocumentCenterSvc.cs" />
+    <Compile Include="OA\entity\B_BBSReply.cs" />
+    <Compile Include="OA\entity\B_BBSSection.cs" />
+    <Compile Include="OA\entity\B_BBSTopic.cs" />
+    <Compile Include="OA\entity\B_BigEvents.cs" />
+    <Compile Include="OA\entity\B_Email.cs" />
+    <Compile Include="OA\entity\B_EmailDocument.cs" />
+    <Compile Include="OA\entity\B_Goods.cs" />
+    <Compile Include="OA\entity\B_GoodsStatusRecord.cs" />
+    <Compile Include="OA\entity\B_OA_AddressBook.cs" />
+    <Compile Include="OA\entity\B_OA_Attendance.cs" />
+    <Compile Include="OA\entity\B_OA_Car.cs" />
+    <Compile Include="OA\entity\B_OA_CommonCode.cs" />
+    <Compile Include="OA\entity\B_OA_ConferenceMain.cs" />
+    <Compile Include="OA\entity\B_OA_Conf_Agenda.cs" />
+    <Compile Include="OA\entity\B_OA_Device.cs" />
+    <Compile Include="OA\entity\B_OA_DocumentCenter.cs" />
+    <Compile Include="OA\entity\B_OA_Email_Mark.cs" />
+    <Compile Include="OA\entity\B_OA_FileList.cs" />
+    <Compile Include="OA\entity\B_OA_FileType.cs" />
+    <Compile Include="OA\entity\B_OA_FileType_DefineLink.cs" />
+    <Compile Include="OA\entity\B_OA_FileType_Order.cs" />
+    <Compile Include="OA\entity\B_OA_LeaveList.cs" />
+    <Compile Include="OA\entity\B_OA_LeaveMain.cs" />
+    <Compile Include="OA\entity\B_OA_Meeting.cs" />
+    <Compile Include="OA\entity\B_OA_MeetingRoom.cs" />
+    <Compile Include="OA\entity\B_OA_Notice.cs" />
+    <Compile Include="OA\entity\B_OA_Notice_Addvice.cs" />
+    <Compile Include="OA\entity\B_OA_Notice_AppointManSee.cs" />
+    <Compile Include="OA\entity\B_OA_Notice_Comments.cs" />
+    <Compile Include="OA\entity\B_OA_Notice_FileType_R.cs" />
+    <Compile Include="OA\entity\B_OA_Notice_ReadRecord.cs" />
+    <Compile Include="OA\entity\B_OA_OnDuty.cs" />
+    <Compile Include="OA\entity\B_OA_Organization.cs" />
+    <Compile Include="OA\entity\B_OA_PrintParagragh.cs" />
+    <Compile Include="OA\entity\B_OA_Punch.cs" />
+    <Compile Include="OA\entity\B_OA_ReceiveDoc.cs" />
+    <Compile Include="OA\entity\B_OA_ReceiveDoc_QuZhan.cs" />
+    <Compile Include="OA\B_OA_ReceiveDoc_QuZhanSvc.cs" />
+    <Compile Include="OA\entity\B_OA_Schedule.cs" />
+    <Compile Include="OA\entity\B_OA_SendDoc.cs" />
+    <Compile Include="OA\entity\B_OA_SendDoc_Inner_QuZhan.cs" />
+    <Compile Include="OA\entity\B_OA_SendDoc_QuZhan.cs" />
+    <Compile Include="OA\entity\B_OA_SendDoc_R.cs" />
+    <Compile Include="OA\entity\B_OA_SendDoc_Science.cs" />
+    <Compile Include="OA\entity\B_OA_SendDoc_ZhiDui.cs" />
+    <Compile Include="OA\entity\B_OA_Sighture.cs" />
+    <Compile Include="OA\entity\B_OA_Supervision.cs" />
+    <Compile Include="OA\entity\B_OA_SupervisionMsg.cs" />
+    <Compile Include="OA\entity\B_OA_SupervisionReminder.cs" />
+    <Compile Include="OA\entity\B_OA_Supervision_Bill.cs" />
+    <Compile Include="OA\entity\B_OA_Supervision_Complete.cs" />
+    <Compile Include="OA\entity\B_OA_Supervision_Delay_Apply.cs" />
+    <Compile Include="OA\entity\B_OA_Supervision_Notice.cs" />
+    <Compile Include="OA\entity\B_OA_Supervision_Reminder_Notice.cs" />
+    <Compile Include="OA\entity\B_OA_TaskList.cs" />
+    <Compile Include="OA\entity\B_OA_TaskMain.cs" />
+    <Compile Include="OA\entity\B_OA_TravelList.cs" />
+    <Compile Include="OA\entity\B_OA_TravelMain.cs" />
+    <Compile Include="OA\entity\B_OA_WorkPlan.cs" />
+    <Compile Include="OA\entity\B_PhoneRecord.cs" />
+    <Compile Include="OA\entity\V_FX_UserInfoAndDp.cs" />
+    <Compile Include="OA\FX_UserInforAddSvc.cs" />
+    <Compile Include="OA\OAInnerDocSearchSvc.cs" />
+    <Compile Include="OA\OAReceiveDocSearchSvc.cs" />
+    <Compile Include="OA\OASendDocSearchSvc.cs" />
+    <Compile Include="OA\Para_OA_CarInfoSvc.cs" />
+    <Compile Include="OA\SupervisionOfInspectorSvc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Account\AccountSvc.cs" />
+    <Compile Include="Services\B_WorkLog\B_WorkLogSvc.cs" />
+    <Compile Include="Services\Common\Biz_Para_LawRegulationsSvc.cs" />
+    <Compile Include="Services\Common\B_Common_CreateDocSvc.cs" />
+    <Compile Include="Services\Common\B_ComSvc.cs" />
+    <Compile Include="Services\Common\ChangeModel.cs" />
+    <Compile Include="Services\Common\CommonFunctionSvc.cs" />
+    <Compile Include="Services\Common\CommonWordsSvc.cs" />
+    <Compile Include="Services\Common\DocNumberRuleSvc.cs" />
+    <Compile Include="Services\Common\KOGridEdit.cs" />
+    <Compile Include="Services\Common\PrintDataSvc.cs" />
+    <Compile Include="Services\Common\SearchAndReportSvc.cs" />
+    <Compile Include="Services\Common\UsedPhraseSvc.cs" />
+    <Compile Include="Services\ComplaintStatic\ComplaintStaticSvc.cs" />
+    <Compile Include="Services\DataBaseServer\FX_RYLXInfoSvc.cs" />
+    <Compile Include="Services\DataBaseServer\Para_BizTypeDictionarySvc.cs" />
+    <Compile Include="Services\DataBaseServer\Para_BizTypeItemSvc.cs" />
+    <Compile Include="Services\DataBaseServer\Para_ConferenceRoomSvc.cs" />
+    <Compile Include="Services\FunctionSet\B_OA_WorkingDaySvc.cs" />
+    <Compile Include="Services\FX_Department\FX_DepartmentSvc.cs" />
+    <Compile Include="Services\GetUserInfoSvc\FX_UserInfoSvc.cs" />
+    <Compile Include="Services\ProjectSuperviseStatic\ProjectSuperviseStaticSvc.cs" />
+    <Compile Include="Services\Static\StaticSvc.cs" />
+    <Compile Include="SkyLandBizFrame.cs" />
+    <Compile Include="SkyLandDeveloper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="entitys\FX_WebDeclarationUser\" />
+    <Folder Include="Services\DictServer\" />
+    <Folder Include="Services\UnitManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeService\OfficeService.csproj">
+      <Project>{54c79020-230c-4955-8c2c-483d14d45620}</Project>
+      <Name>OfficeService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

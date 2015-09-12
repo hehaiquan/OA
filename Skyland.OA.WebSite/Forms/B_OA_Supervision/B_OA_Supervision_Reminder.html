@@ -1,0 +1,120 @@
+﻿<div class="row">
+    <div data-id="formContainer" class="pageContainer">
+        <!--头部按钮行-->
+        <div class="bg-info row" style="padding: 0 15px;">
+            <h3>督办催办</h3>
+        </div>
+
+        <div class="form-horizontal form-bordered" style="margin: 0 -15px; padding: 10px;">
+            <!--催办通知单-->
+            <div data-id="supervisionNotice" style="font-family: FangSong; margin: auto; width: 750px" class="form-group">
+
+                <div style="text-align: right; font-size: 18px">
+                    签发人：
+                                 <span data-bind="text:issuerManName"></span>
+                </div>
+                <br />
+                <h3 style="text-align: center; font-family: Microsoft YaHei; font-weight: bold">南宁市环保局办公室<u>催办</u>通知单 </h3>
+                <br />
+                <div style="text-align: center; font-size: 18px; font-family: 宋体">
+                    （<input type="text" data-bind="value:year" style="border: none; width: 50px; text-align: center" />年）第
+                                 <input type="text" data-bind="value:code" style="border: none; width: 50px; text-align: center" />
+                    号
+                </div>
+
+                <div data-id="supervisionNoticeBill" class="supervisionNoticeBill">
+                </div>
+
+                <div data-id="suprvisionNoticeBillShow">
+                </div>
+
+                <div style="text-align: right; font-size: 18px; float: right">
+                    <input type="text" style="border: none; width: auto" class="form-control" data-bind="value: createDate,datetimeFormat:'yy年mm月dd日'" />
+                </div>
+
+                <div style="text-align: left;">
+                    <button type="button" class="btn btn-primary btn-sm" data-id="saveNotice">
+                        浏览
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-id="editNotice">
+                        修改
+                    </button>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+
+            <div data-id="supervisionDetailModel">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">催办事项</label>
+                    <div class="col-md-4">
+                        <input class="form-control" style="width: 99%;" type="text" data-bind="value:title" />
+                    </div>
+
+                    <label class="col-md-2 control-label">催办编号</label>
+                    <div class="col-md-4">
+                        <input disabled="disabled" class="form-control" style="width: 99%;" type="text" data-bind="value:code" data-id="code"/>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label class="col-md-2 control-label">承办人</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input disabled="disabled" class="form-control" type="text" data-id="undertakeManName" data-bind="value:undertakeManName,TreeUserSourceControl:{opt:true,username:undertakeManName,userid:undertakeManId}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <label class="col-md-2 control-label">主要承办科室</label>
+                    <div class="col-md-4">
+                        <input class="form-control" disabled="disabled" type="text" data-bind="value: undertake_Department" data-id="undertake_Department" />
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">签发人</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input disabled="disabled" class="form-control" type="text" data-id="issuerManName" data-bind="value:issuerManName,TreeUserSourceControl:{opt:true,username:issuerManName,userid:issuerManId}" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">...</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <label class="col-md-2 control-label">催办依据</label>
+                    <div class="col-md-4">
+                        <a class="link-btn" data-bind="click:_getSupervisionByCaseId"><span class="help-block" data-bind="text:msgCaseTitle"></span></a>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">紧急程度</label>
+                    <div class="col-md-4">
+                        <select class="form-control" data-id="zclbOption" data-bind="DictOptions: {dictype: 'emergencyLevelDic',  value: enmergencyLevel }">
+                        </select>
+                    </div>
+
+                    <label class="col-md-2 control-label">生成日期</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control datetime" data-bind="value: createDate,datetimeFormat:'yy-mm-dd hh:mm'" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">备注</label>
+                    <div class="col-md-10">
+                        <textarea data-bind="value:explain" class="form-control" rows="3" style="width: 100%"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

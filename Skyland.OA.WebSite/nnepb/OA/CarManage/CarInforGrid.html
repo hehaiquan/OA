@@ -1,0 +1,209 @@
+﻿<div data-id="dataGrid">
+    <table class="table table-striped doingcase">
+        <thead>
+            <tr>
+                <th style="width: 11%">
+                    <span>用车人</span>
+                </th>
+                <th style="width: 11%">
+                    <span>创建时间</span>
+                </th>
+                <th style="width: 11%">
+                    <span>车辆名称</span>
+                </th>
+
+                <th style="width: 11%">
+                    <span>驾驶员</span>
+                </th>
+                <th style="width: 11%">
+                    <span>目的地</span>
+                </th>
+                <th>操作
+                </th>
+            </tr>
+
+            <!--     <tr>
+                         <th>
+                             <input type="text" class="form-control" value="" data-filterkey="useMan" />
+                         </th>
+                         <th>
+                             <input type="text" class="form-control" value="" data-filterkey="CreatTime" />
+                         </th>
+                         <th>
+                             <input type="text" class="form-control" value="" data-filterkey="carName">
+                         </th>
+                         <th>
+                             <input type="text" class="form-control" value="" data-filterkey="endDestination">
+                         </th>
+                         <th>
+                             <input type="text" class="form-control" value="" data-filterkey="endDestination" />
+                         </th>
+                         <th></th>
+                     </tr>-->
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td>
+                    <span data-bind="text:useMan"></span>
+                </td>
+                <td>
+                    <span data-bind="text:$root.formatCurDate(CreatTime)"></span>
+                </td>
+
+                <td>
+                    <span data-bind="text:carName"></span>
+                </td>
+                <td>
+                    <span data-bind="text:diverMan"></span>
+                </td>
+                <td>
+                    <span data-bind="text:endDestination"></span>
+                </td>
+                <th>
+                    <a data-bind="click:function(){$root.editInfor(workflowcaseid())}" class="btn-link fa fa-pencil" style="color: black"></a>
+                    <a data-bind="click:function(){$root._deleteRow(workflowcaseid())}" class="btn-link glyphicon glyphicon-trash" style="color: black"></a>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--页数显示-->
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        <div style="float: right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--编辑弹窗-->
+<div data-id="editWind" style="display: none">
+    <div data-id="baseInfo">
+        <div style="margin-top: 10px">
+            <div class="col-sm-12" style="margin-bottom: 5px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="background: transparent;">申请科室
+                    </span>
+                    <input disabled="disabled" type="text" data-id="applyDepartment" class="form-control input-sm" data-bind="value:applyDepartment" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">出差时间
+                </span>
+                <input type="text" data-id="travelStartTime" data-bind="value:strartTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm datetime" required="required" placeholder="" />
+                <span class="input-group-addon">至</span>
+                <input type="text" data-id="travelEndTime" data-bind="value:endTime, datetimeFormat:'yy-mm-dd hh:mm'" class="form-control input-sm datetime" required="required" placeholder="" />
+            </div>
+        </div>
+
+
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">出差地点
+                </span>
+                <input type="text" data-id="strarDestination" data-bind="value:strarDestination" class="form-control input-sm " required="required" placeholder="" />
+                <span class="input-group-addon">至</span>
+                <input type="text" data-id="endDestination" data-bind="value:endDestination" class="form-control input-sm" required="required" placeholder="" />
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">出差事由
+                </span>
+                <input type="text" data-id="travelReson" data-bind="value:travelReson" class="form-control input-sm" placeholder="" />
+            </div>
+        </div>
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">出差人员名单<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-bind="value:personList,TreeUserSourceControl:{opt:true,username:personList,userid:personListId}" disabled="disabled">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="Organizer" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">用车联系人<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-id="useMan" data-bind="value:useMan" disabled="disabled">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">联系电话<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-bind="value:useManPhone">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;" data-id="diverMan">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">派出驾驶员<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-bind="value:diverMan,TreeUserSourceSingleControl:{opt:true,username:diverMan,userid:diverManId}" disabled="disabled">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="diverManBtn" type="button">...</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6" style="margin-bottom: 5px;" data-id="carName">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">派出车辆<span style="color: red;">*</span>
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <input type="text" class="form-control input-sm" data-bind="value:carName" disabled="disabled">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="diverManBtn" data-bind="click:function (){$root._carInfoList()}" type="button">...</button>
+                    </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" data-id="carDetailBtn" data-bind="click:function (){$root._getCarInfor(carId())}" type="button">查看车辆详细信息</button>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+            <div class="input-group">
+                <span class="input-group-addon" style="background: transparent;">备注
+                </span>
+                <div class="input-group" style="width: 100%;">
+                    <textarea rows="3" type="text" class="form-control input-sm" data-bind="value:remark" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

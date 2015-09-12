@@ -1,0 +1,200 @@
+﻿<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td class="taTitle" colspan="2">
+                节点 ( <span class="form-control-static" data-bind="text:actID" field="节点编号"></span> )
+               类型:<span class="form-control-static" data-bind="text:actType" field="节点类型"></span>
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div data-id="activity-tab-info-content">
+                    <form class="form-horizontal">
+                        <fieldset>
+
+                            <div class="form-group">
+                                <span class="col-sm-2 control-label">节占名称</span>
+                                <div class="col-sm-4">
+                                    <input class="form-control" data-bind="value:actName" field="节占名称" />
+                                </div>
+                                <span class="col-sm-2 control-label">Key(唯一标识)</span>
+                                <div class="col-sm-4">
+                                    <input class="form-control" data-bind="value:actKey" field="节占Key" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-sm-2 control-label">协同类型</span>
+                                <div class="col-sm-4">
+                                    <select class="form-control" field="协同类型">
+                                        <option value="share">普通协同</option>
+                                        <option value="sign">会签协同</option>
+                                    </select>
+                                </div>
+                                <span class="col-sm-2 control-label">节占时限</span>
+                                <div class="col-sm-4">
+                                    <input class="form-control" data-bind="value:actLimit" field="节占时限" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-sm-2 control-label">描述</span>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" data-bind="value:actDesc" field="描述"></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="taTitle" colspan="2">节点关联工具条配置</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div data-id="activity-tab-toolbar-content">
+                    <form class="form-horizontal" style="margin:10px;">
+                        <fieldset>
+                            <div class="form-group">
+                                <span class="col-md-2 control-label">表单只读</span>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-link" style="margin:3px;" iwftype="editFormReadOnly">Json方式编辑</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-2 control-label">附件上传</span>
+                                <div class="col-md-4">
+                                    <span class="radio-inline">
+                                        <input type="radio" value="1" name="附件上传按钮">是
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="0" name="附件上传按钮">否
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="" name="附件上传按钮">不指定
+                                    </span>
+                                </div>
+                                <span class="col-md-2 control-label">评阅意见框</span>
+                                <div class="col-md-4">
+                                    <span class="radio-inline">
+                                        <input type="radio" value="1" name="评阅意见框">是
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="0" name="评阅意见框">否
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="" name="评阅意见框">不指定
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-2 control-label">办结</span>
+                                <div class="col-md-4">
+                                    <span class="radio-inline">
+                                        <input type="radio" value="1" name="办结按钮">是
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="0" name="办结按钮">否
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="" name="办结按钮">不指定
+                                    </span>
+                                </div>
+                                <span class="col-md-2 control-label">回退</span>
+                                <div class="col-md-4">
+                                    <span class="radio-inline">
+                                        <input type="radio" value="1" name="回退按钮">是
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="0" name="回退按钮">否
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="" name="回退按钮">不指定
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-2 control-label">审阅意见列表</span>
+                                <div class="col-md-4">
+                                    <span class="radio-inline">
+                                        <input type="radio" value="1" name="审阅意见列表">是
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="0" name="审阅意见列表">否
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="" name="审阅意见列表">不指定
+                                    </span>
+                                </div>
+                                <span class="col-md-2 control-label">发送下一步</span>
+                                <div class="col-md-4">
+                                    <span class="radio-inline">
+                                        <input type="radio" value="1" name="发送按钮">是
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="0" name="发送按钮">否
+                                    </span>
+                                    <span class="radio-inline">
+                                        <input type="radio" value="" name="发送按钮">不指定
+                                    </span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="taTitle" width="50%">角色管理</td>
+            <td class="taTitle">表单管理</td>
+        </tr>
+        <tr>
+            <td valign="top">
+
+                <div data-id="activity-tab-role-content" style="overflow: auto;max-height:300px;">
+                    <ul class="ztree"></ul>
+                </div>
+            </td>
+            <td>
+                <div data-id="activity-tab-form-content">
+                    <ul class="ztree"></ul>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%" class="taTitle">可选发送</td>
+            <td class="taTitle">默认发送</td>
+        </tr>
+
+        <tr>
+            <td valign="top">
+                <ul class="ztree" data-id="canSendtree"></ul>
+            </td>
+            <td valign="top">
+                <ul class="ztree" data-id="defaultSendtree"></ul>
+            </td>
+
+        <tr>
+            <td class="taTitle" colspan="2">默认接收</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div data-id="activity-tab-defaltReceive-content" style="overflow: auto;max-height:300px;">
+                    <ul class="ztree"></ul>
+                </div>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<style>
+    .taTitle {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+
+

@@ -1,0 +1,86 @@
+﻿<div data-id="documentDiv">
+
+    <table class="table table-striped doingcas">
+        <thead>
+            <tr class="sort">
+                <th style="width: 5%; text-align: center;">序号</th>
+                <th style="width: 30%; text-align: center; background: white"><a href="NewsTitle" data-sortkey="NewsTitle">名称</a></th>
+                <th style="width: 11%; text-align: center; background: white"><a href="CreateMan" data-sortkey="CreateMan">作者</a></th>
+                <th style="width: 11%; text-align: center; background: white"><a href="status" data-sortkey="status">状态</a></th>
+                <th style="width: 11%; text-align: center; background: white"><a href="CreateTime" data-sortkey="CreateTime">上传时间</a></th>
+                <th data-id="handler" style="width: 11%; text-align: center; background: white">操作</th>
+            </tr>
+
+            <tr>
+                <th></th>
+                <th>
+                    <input type="text" class="form-control" value="" data-filterkey="NewsTitle">
+                </th>
+                <th>
+                    <input type="text" class="form-control" value="" data-filterkey="CreateMan">
+                </th>
+                <th>
+                    <select class="form-control" data-filterkey="status" />
+                </th>
+                <th>
+                    <select tabindex="-1" class="form-control" data-filterkey-daterange="CreateTime" placeholder="创建时间"></select>
+                </th>
+                <th  data-id="handler"></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: elementsShow, visible: currentElements().length > 0">
+            <tr>
+                <td data-bind="text: $root.itemNumber($index())"></td>
+
+                <td>
+                    <a class="btn-link" data-bind="click:function(){$root._getDocumentCenterView(NewsId)}">
+                        <span data-bind="text:NewsTitle"></span>
+                    </a>
+                </td>
+                <td style="text-align: center">
+                    <span class="" data-bind="text:CreateMan"></span>
+                </td>
+                <!--状态-->
+                <td style="text-align: center">
+                    <span data-bind="text:status,style: { color: status() == '已通过' ? 'green' : 'red' }"></span>
+                </td>
+                <!--上传时间-->
+                <td style="text-align: center" data-bind="html:$root.setDateTime(CreateTime)"></td>
+                <!--操作-->
+                <td  data-id="handler" style="text-align: center">
+                    <table>
+                        <tbody>
+                            <tr style="width: 16px">
+                                <a data-bind="click: $root.editNotice" class="btn-link fa fa-pencil" style="color: black"></a>
+                            </tr>
+                            <tr style="width: 16px">
+                                <a data-bind="click:function() {$root.deleteNotice(NewsId())}" class="btn-link glyphicon glyphicon-trash" style="color: black"></a>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <div style="float: left;" data-bind="visible: paginator().length > 1">
+            <ul class="pagination" data-bind="foreach: paginator">
+                <li data-bind="css: { active:  name == $root.currentPaginatorPage() }">
+                    <!-- ko if: name != '...' -->
+                    <a data-bind="text: name, click: $root.setPage"></a>
+                    <!-- /ko -->
+                    <!-- ko if: name == '...' -->
+                    <span>...</span><!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        <div style="float: right;">
+            <ul class="pagination pagination-right">
+                <li data-bind="css: { active:  $root.elementsCount() == 5 }"><a data-pagecount="5">5</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 10 }"><a data-pagecount="10">10</a></li>
+                <li data-bind="css: { active:  $root.elementsCount() == 20 }"><a data-pagecount="20">20</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+--------------------------------------------------------------------------------------
+时间：2015-08-26 09:46:17
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9,toDoSug=@F_10 WHERE  caseid = @W_0 
+ dbParms:2015-08-21 11:57LW[2015]4南宁人民政府测试123C000029（一）《建设项目环境保护管理条例》（中华人民共和国国务院第253号发布） 第二十条建设项目竣工后，建设单位应当向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 环境保护设施竣工验收，应当与主体工程竣工验收同时进行。需要进行试生产的建设项目，建设单位应当自建设项目投入试生产之日起3个月内，向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 第二十一条分期建设、分期投入生产或者使用的建设项目，其相应的环境保护设施应当分期验收。 第二十三条建设项目需要配套建设的环境保护设施经验收合格，该建设项目方可正式投入生产或者使用。2015/8/27 0:00:0020150305101615_b0ec8bfe-153c-4a21-8874-816123b8fa67U000008系统管理员谭书记一行先后走访了位于邕武路片区的广西桂牧叮原种猪有限公司、广西壮牛水牛乳业有限责任公司、广西壮族自治区水牛研究所水牛种畜场、南宁市吉臣科贸有限公司洗涤分公司。谭书记仔细查看了各公司的污染防治设施运行情况，并向企业负责人详细了解超标排污的整改进度。C000029
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 112
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9,toDoSug=@F_10 WHERE  caseid = @W_0 
+ dbParms:2015-08-21 11:57LW[2015]4南宁人民政府测试123C000029（一）《建设项目环境保护管理条例》（中华人民共和国国务院第253号发布） 第二十条建设项目竣工后，建设单位应当向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 环境保护设施竣工验收，应当与主体工程竣工验收同时进行。需要进行试生产的建设项目，建设单位应当自建设项目投入试生产之日起3个月内，向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 第二十一条分期建设、分期投入生产或者使用的建设项目，其相应的环境保护设施应当分期验收。 第二十三条建设项目需要配套建设的环境保护设施经验收合格，该建设项目方可正式投入生产或者使用。2015/8/27 0:00:0020150305101615_b0ec8bfe-153c-4a21-8874-816123b8fa67U000008系统管理员谭书记一行先后走访了位于邕武路片区的广西桂牧叮原种猪有限公司、广西壮牛水牛乳业有限责任公司、广西壮族自治区水牛研究所水牛种畜场、南宁市吉臣科贸有限公司洗涤分公司。谭书记仔细查看了各公司的污染防治设施运行情况，并向企业负责人详细了解超标排污的整改进度。C000029
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 112
+--------------------------------------------------------------------------------------
+时间：2015-08-26 09:46:17
+内容：
+异常信息：System.Exception: 数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9,toDoSug=@F_10 WHERE  caseid = @W_0 
+ dbParms:2015-08-21 11:57LW[2015]4南宁人民政府测试123C000029（一）《建设项目环境保护管理条例》（中华人民共和国国务院第253号发布） 第二十条建设项目竣工后，建设单位应当向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 环境保护设施竣工验收，应当与主体工程竣工验收同时进行。需要进行试生产的建设项目，建设单位应当自建设项目投入试生产之日起3个月内，向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 第二十一条分期建设、分期投入生产或者使用的建设项目，其相应的环境保护设施应当分期验收。 第二十三条建设项目需要配套建设的环境保护设施经验收合格，该建设项目方可正式投入生产或者使用。2015/8/27 0:00:0020150305101615_b0ec8bfe-153c-4a21-8874-816123b8fa67U000008系统管理员谭书记一行先后走访了位于邕武路片区的广西桂牧叮原种猪有限公司、广西壮牛水牛乳业有限责任公司、广西壮族自治区水牛研究所水牛种畜场、南宁市吉臣科贸有限公司洗涤分公司。谭书记仔细查看了各公司的污染防治设施运行情况，并向企业负责人详细了解超标排污的整改进度。C000029
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 121
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 90
+异常信息：数据库操作:将截断字符串或二进制数据。
+语句已终止。 
+ SQL Err:UPDATE B_OA_ReceiveDoc_QuZhan SET lwrq=@F_0,code=@F_1,lwdw=@F_2,wjmc=@F_3,caseid=@F_4,remark=@F_5,zbsj=@F_6,lwdwTypeId=@F_7,recordManId=@F_8,recordManName=@F_9,toDoSug=@F_10 WHERE  caseid = @W_0 
+ dbParms:2015-08-21 11:57LW[2015]4南宁人民政府测试123C000029（一）《建设项目环境保护管理条例》（中华人民共和国国务院第253号发布） 第二十条建设项目竣工后，建设单位应当向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 环境保护设施竣工验收，应当与主体工程竣工验收同时进行。需要进行试生产的建设项目，建设单位应当自建设项目投入试生产之日起3个月内，向审批该建设项目环境影响报告书、环境影响报告表或者环境影响登记表的环境保护行政主管部门，申请该建设项目需要配套建设的环境保护设施竣工验收。 第二十一条分期建设、分期投入生产或者使用的建设项目，其相应的环境保护设施应当分期验收。 第二十三条建设项目需要配套建设的环境保护设施经验收合格，该建设项目方可正式投入生产或者使用。2015/8/27 0:00:0020150305101615_b0ec8bfe-153c-4a21-8874-816123b8fa67U000008系统管理员谭书记一行先后走访了位于邕武路片区的广西桂牧叮原种猪有限公司、广西壮牛水牛乳业有限责任公司、广西壮族自治区水牛研究所水牛种畜场、南宁市吉臣科贸有限公司洗涤分公司。谭书记仔细查看了各公司的污染防治设施运行情况，并向企业负责人详细了解超标排污的整改进度。C000029
+异常堆栈：   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 121
+   在 BizService.Services.B_OA_ReceiveDoc_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\entity\B_OA_ReceiveDoc_QuZhanSvc.cs:行号 90
+--------------------------------------------------------------------------------------
+时间：2015-08-26 16:19:49
+内容：
+异常信息：System.Exception: 数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 103
+异常信息：数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 103
+--------------------------------------------------------------------------------------
+时间：2015-08-26 16:19:49
+内容：
+异常信息：System.Exception: 数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 111
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 80
+异常信息：数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+异常堆栈：   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 111
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 80
+--------------------------------------------------------------------------------------
+时间：2015-08-26 16:19:58
+内容：
+异常信息：System.Exception: 数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 103
+异常信息：数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+异常堆栈：   在 IWorkFlow.DataBase.DbFactory.ExecuteNonQuery(String sql, IDbTransaction tran, DbParameter[] dbParms)
+   在 IWorkFlow.DataBase.DbFactory.Update[T](T obj, IDbTransaction tran)
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 103
+--------------------------------------------------------------------------------------
+时间：2015-08-26 16:19:58
+内容：
+异常信息：System.Exception: 数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 111
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 80
+异常信息：数据库操作:从字符串转换日期和/或时间时，转换失败。 
+ SQL Err:UPDATE B_OA_SendDoc_Inner_QuZhan SET underTakeDepId=@F_0,underTakeDep=@F_1,title=@F_2,content=@F_3,remark=@F_4,undertakeMan=@F_5,underTakeManId=@F_6,code=@F_7,createDate=@F_8,caseId=@F_9 WHERE  caseId = @W_0 
+ dbParms:1系统管理部门关于拟印发办公室各岗位职责的请示为更好地服务站中心工作，办公室进一步明确科室各岗位职责，拟印发各科室，以便于联系。
+妥否，请批示。
+2015年8月18日上午江南区环保局对淡村商贸城进行餐饮油烟专项整治工作。现场核查淡村商贸城南面小吃街和农贸区8栋约30家从事餐饮服务业的商铺，这些商铺存在的主要问题是在经营过程中产生的餐饮油烟未经净化处理直接排放,影响周边小区居民的生活。我局于当天下午约谈了广西淡村商贸城有限公司，责成其对商贸城内从事餐饮服务的商铺加强日常管理，完善油烟净化设施，改用液化气等清洁能源及相关环境保护措施。下一步我局将继续对淡村商贸城进行巡查，检查其完成整改情况，视情况采取相应措施。
+系统管理员U000008NB[2015]000012015年08月27日 00:00C000031C000031
+异常堆栈：   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.SaveData(GetDataModel data, IDbTransaction tran, String caseId) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 111
+   在 BizService.B_OA_SendDoc_Inner_QuZhanSvc.B_OA_SendDoc_Inner_QuZhanSvc.Send(String BizParams, String userid, String content) 位置 d:\软件项目\Skyland.OA\code\Skyland.OA.Service\OA\B_OA_SendDoc_Inner_QuZhanSvc.cs:行号 80
