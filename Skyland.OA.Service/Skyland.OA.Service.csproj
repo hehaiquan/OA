@@ -30,37 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\DocumentFormat.OpenXml.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="ImageCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ImageCommon.dll</HintPath>
     </Reference>
-    <Reference Include="iMsgServer2000, Version=8.1.0.6, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\iMsgServer2000.dll</HintPath>
+    <Reference Include="iMsgServer2000">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\iMsgServer2000.dll</HintPath>
     </Reference>
-    <Reference Include="IWorkFlow.BaseService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IWorkFlow.BaseService.dll</HintPath>
+    <Reference Include="IWorkFlow.BaseService">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\IWorkFlow.BaseService.dll</HintPath>
     </Reference>
-    <Reference Include="IWorkFlow.DataBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IWorkFlow.DataBase.dll</HintPath>
+    <Reference Include="IWorkFlow.DataBase">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\IWorkFlow.DataBase.dll</HintPath>
     </Reference>
-    <Reference Include="IWorkFlow.Engine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IWorkFlow.Engine.dll</HintPath>
+    <Reference Include="IWorkFlow.Engine">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\IWorkFlow.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="IWorkFlow.EngineService, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IWorkFlow.EngineService.dll</HintPath>
+    <Reference Include="IWorkFlow.EngineService">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\IWorkFlow.EngineService.dll</HintPath>
     </Reference>
     <Reference Include="IWorkFlow.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IWorkFlow.Host.dll</HintPath>
+      <HintPath>..\Skyland.OA.WebSite\fxdll\IWorkFlow.Host.dll</HintPath>
     </Reference>
     <Reference Include="Kriging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -70,13 +64,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NPOI.dll</HintPath>
+    <Reference Include="NPOI">
+      <HintPath>..\Skyland.OA.WebSite\fxdll\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
